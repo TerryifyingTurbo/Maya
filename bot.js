@@ -37,6 +37,8 @@ bot.on("ready", async () => {
   //bot.user.setGame("<Activity>!");
 });
 
+loadCmds();
+
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
@@ -66,6 +68,7 @@ bot.on("message", async message => {
   // Reload ALL commands listed.
     if(message.author.id == "297931837400023041")
     message.channel.send("All commands **reloaded**.")
+    loadCmds()
   }
   
   if(command === `${prefix}kick`){
@@ -100,7 +103,7 @@ bot.on("message", async message => {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
-    m.edit(`:ping_pong: ***Pong!***  x3 
+    m.edit(`:ping_pong: ***Pongg!***  x3 
 My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latency is **${Math.round(bot.ping)}ms.**`);
   }
 
