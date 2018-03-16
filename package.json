@@ -5,6 +5,7 @@
   "main": "bot.js",
   "author": "Bwapstustu Turbo",
   "license": "ISC",
+  "start": "node bot.js",
   "dependencies": {
     "discord.js": "^11.3.0",
     "superagent": "^3.8.2"
