@@ -5,22 +5,6 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
-// fs.readdir("./commands/", (err, files) => {
-
-//     if(err) console.log(err);
-//     let jsfile = files.filter(f => f.split(".").pop() === "js")
-//     if(jsfile.length <= 0){
-//       console.log("Couldn't find commands.");
-//       return;
-//     }
-  
-//     jsfile.forEach((f, i) =>{
-//       let props = require(`./commands/${f}`);
-//       console.log(`${f} loaded!`);
-//       bot.commands.set(props.help.name,props);
-//     });
-     
-//   });
 
 bot.on("ready", async () => {
   console.log(`${bot.user.id} ${bot.user.username} online! Ready when you are Boss xd`);
@@ -36,8 +20,6 @@ bot.on("ready", async () => {
 
   //bot.user.setGame("<Activity>!");
 });
-
-loadCmds();
 
 bot.on("message", async message => {
   if(message.author.bot) return;
@@ -67,8 +49,7 @@ bot.on("message", async message => {
     else
   // Reload ALL commands listed.
     if(message.author.id == "297931837400023041")
-    message.channel.send("All commands **reloaded**.")
-    loadCmds()
+    message.channel.send("All commands **reloaded")
   }
   
   if(command === `${prefix}kick`){
@@ -103,7 +84,7 @@ bot.on("message", async message => {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
-    m.edit(`:ping_pong: ***Pongg!***  x3 
+    m.edit(`:ping_pong: ***Pong!***  x3 
 My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latency is **${Math.round(bot.ping)}ms.**`);
   }
 
