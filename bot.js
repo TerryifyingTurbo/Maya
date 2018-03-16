@@ -63,8 +63,9 @@ bot.on("message", async message => {
     if(message.author.id !== "297931837400023041")
     return message.channel.send("Only Master can use this command!");
     else
-  
-    if(message.author.id == "297931837400023041");
+  // Reload ALL commands listed.
+    if(message.author.id == "297931837400023041")
+    message.channel.send("All commands **reloaded**.")
   }
   
   if(command === `${prefix}kick`){
