@@ -5,22 +5,22 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
-fs.readdir("./commands/", (err, files) => {
+// fs.readdir("./commands/", (err, files) => {
 
-    if(err) console.log(err);
-    let jsfile = files.filter(f => f.split(".").pop() === "js")
-    if(jsfile.length <= 0){
-      console.log("Couldn't find commands.");
-      return;
-    }
+//     if(err) console.log(err);
+//     let jsfile = files.filter(f => f.split(".").pop() === "js")
+//     if(jsfile.length <= 0){
+//       console.log("Couldn't find commands.");
+//       return;
+//     }
   
-    jsfile.forEach((f, i) =>{
-      let props = require(`./commands/${f}`);
-      console.log(`${f} loaded!`);
-      bot.commands.set(props.help.name,props);
-    });
+//     jsfile.forEach((f, i) =>{
+//       let props = require(`./commands/${f}`);
+//       console.log(`${f} loaded!`);
+//       bot.commands.set(props.help.name,props);
+//     });
      
-  });
+//   });
 
 bot.on("ready", async () => {
   console.log(`${bot.user.id} ${bot.user.username} online! Ready when you are Boss xd`);
