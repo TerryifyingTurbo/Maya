@@ -56,8 +56,7 @@ bot.on("message", async message => {
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer Only >:c")
     .setColor("RANDOM")
-    .addField("CMD", "shutdown", "reload")
-    .addField("CMD2", "shardcheck")
+    .addField("CMD", "shutdown, reload, shardcheck, gamepresence")
     
     message.channel.send(devembed);
   }
