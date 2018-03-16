@@ -52,11 +52,12 @@ bot.on("message", async message => {
     message.channel.send("All commands **reloaded")
   }
   
-    if(command ===`${prefix}devhelp`){
+  if(command ===`${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer Only >:c")
-    .addField("CMD", "shutdown", "reload", "shardcheck")
     .setColor("RANDOM")
+    .addField("CMD", "shutdown", "reload")
+    .addField("CMD2", "shardcheck")
     
     message.channel.send(devembed);
   }
