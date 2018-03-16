@@ -339,4 +339,4 @@ message.channel.send(catembed);
 
 });
 
-bot.login(process.env.token);
+bot.login(botsettings.token);
