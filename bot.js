@@ -51,7 +51,7 @@ bot.on("message", async message => {
     if(message.author.id == "297931837400023041")
     message.channel.send("All commands **reloaded")
   }
-  
+
   if(command ===`${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer Only >:c")
@@ -109,11 +109,11 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   }
 
   if(command === `${prefix}8ball`){
-    if(!args[2]) return message.chanel.send("Actually ask a question, first?");
-    let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely."];
+    if(!args[1]) return message.chanel.send("Actually ask a question?");
+    let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely.", "Without a doubt.", "For real? No."];
 
     let result = Math.floor((Math.random() * replies.length))
-    let question = args.slice(1).join(" ");
+    let question = args.slice(0).join(" ");
 
     let ballembed = new Discord.RichEmbed()
     .setAuthor(message.author.tag)
@@ -161,7 +161,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   }
   
 
-  if(command ===`${prefix}realshit`){
+  if(command ===`${prefix}fortunecookie`){
     let replies = ["Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.",
     "Before you ask why someone hates you, ask yourself why you should care deeply.",
     "The fears we don't face **become our limits**.",
@@ -325,11 +325,11 @@ message.channel.send(catembed);
       .setDescription("Here are my commands so far x3")
       .addField("Random Commands","serverinfo, botinfo, ping")
       .addField("Moderator","purge, kick, ban, giverole, removerole")
-      .addField("Fun", "say, cat, dog, 8ball, realshit, coinflip")
+      .addField("Fun", "say, cat, dog, 8ball, fortunecookie, coinflip")
+      .addField("NSFW", "Classified, Classified, Classified")
 
       return message.channel.send(botembed);
   }
-
 
 });
 
