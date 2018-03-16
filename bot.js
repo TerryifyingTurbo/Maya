@@ -157,7 +157,8 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     let replies = ["It's __***Heads.***__", "It's __***Tails.***__"];
     
     let result = Math.floor((Math.random() * replies.length))
-    message.channel.send(replies[result]);
+    const m = await message.channel.send("Flipping :arrows_counterclockwise:");
+    m.edit(message.channel.send(replies[result]));
   }
   
 
@@ -264,7 +265,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 
   if(command ===`${prefix}cat`){
     let{body} = await superagent
-.get(`https://random.cat/meow`);
+    .get(`https://random.cat/meow`);
 
 let catembed = new Discord.RichEmbed()
 .setColor("#ff9900")
