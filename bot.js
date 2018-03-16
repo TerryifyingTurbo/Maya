@@ -52,6 +52,15 @@ bot.on("message", async message => {
     message.channel.send("All commands **reloaded")
   }
   
+    if(command ===`${prefix}devhelp`){
+    let devembed = new Discord.RichEmbed()
+    .setDescription("Developer Only >:c")
+    .addField("CMD", "shutdown", "reload", "shardcheck")
+    .setColor("RANDOM")
+    
+    message.channel.send(devembed);
+  }
+  
   if(command === `${prefix}kick`){
 
     //!kick @daeshan askin for it
