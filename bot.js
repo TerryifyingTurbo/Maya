@@ -155,16 +155,16 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
   }
-
+  
   if(command ===`${prefix}coinflip`){
     let replies = ["Heads.", "Tails."];
     
     let result = Math.floor((Math.random() * replies.length))
-    let msTimeout = 1500;
-    const m = await message.channel.send("Flipping...");
-    then(message => {
+    let msTimeout = 1000;
+    const m = await message.channel.send("Flipping...")
+    .then(message => {
       setTimeout(() => {
-        m.edit((replies[result]));
+        m.edit((`replies[result]`));
       });
 });
 
