@@ -118,7 +118,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     let question = args.slice(0).join(" ");
 
     let ballembed = new Discord.RichEmbed()
-    .setAuthor(message.author.tag + "asked...")
+    .setAuthor(message.author.tag + " asked...")
     .setColor("#FF9900")
     .addField("Question", question)
     .addField("Answer", replies[result]);
