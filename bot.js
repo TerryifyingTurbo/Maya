@@ -111,7 +111,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   }
 
   if(command === `${prefix}8ball`){
-    if(!args[1]) return message.chanel.send("Actually ask a question?");
+    if(!args[1]) return message.channel.send("Actually ask a question?");
     let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely.", "Without a doubt.", "For real? No."];
 
     let result = Math.floor((Math.random() * replies.length))
