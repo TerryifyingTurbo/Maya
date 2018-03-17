@@ -184,7 +184,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 message.channel.send('Flipping...')
 await (message => {
     setTimeout(() => {
-      cooldown.m.edit(replies[result])
+      cooldown.m.edit(`replies[result]`)
     }, cdseconds * 1000);
 });
 
@@ -327,7 +327,6 @@ message.channel.send(catembed);
     
     // get the delete count, as an actual number.
     const deleteCount = parseInt(args[0], 10);
-    
     
     // Ooooh nice, combined conditions. <3
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
