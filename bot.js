@@ -111,7 +111,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   }
 
   if(command === `${prefix}8ball`){
-    if(!args[1]) return message.channel.send("Actually ask a question?");
+    if(!args[2]) return message.channel.send("Actually ask a question?");
     let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely.", "Without a doubt.", "For real? No."];
 
     let result = Math.floor((Math.random() * replies.length))
@@ -156,10 +156,13 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   }
 
   if(command ===`${prefix}coinflip`){
+    
     let replies = ["Heads.", "Tails."];
     
-    let result = Math.floor((Math.random() * replies.length))
-    let msTimeout = 1500
+    let result = Math.floor((Math.random() * replies.length));
+    
+    let msTimeout = 1000
+    
     message.channel.send('Flipping...').then(message => {
         setTimeout(() => {
             message.edit(replies[result]);
@@ -197,7 +200,8 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     "If you can't get somebody off your mind, they're probably supposed to be there.",
     "Hurting someone can be as easy as throwing a stone in the sea. Do you have any idea how deep that stone can go?",
     "If you hate a person, then you're defeated by them.",
-    "When anger rises, think of the consequences."];
+    "When anger rises, think of the consequences.",
+    "As long as you're making progress, it does not matter how fast or how slow it is."];
 
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
