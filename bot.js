@@ -149,7 +149,14 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     "The best sex is when you don't have to worry about how loud you are",
     "You may have a bad mouth but you can sure do great things with it~",
     "Moanday, Tongueday, Wetday, Thirstday, Freakday, Sexday, Suckday.",
-    "Roses are red, nuts are round, skirts are up, panties are down, belly to belly, skin to skin, when it's stiff, **stick it in!**"];
+    "Roses are red, nuts are round, skirts are up, panties are down, belly to belly, skin to skin, when it's stiff, **stick it in!**",
+    "Your face would look better between my legs~",
+    "I wanna do bad things to you~",
+    "I just want you to be happy... and also naked as well.",
+    "Spank me. It's the only way I'll learn~",
+    "It may be between your legs, but it belongs to me. **Understand**?",
+    "I'd look so good on you right about now.",
+    "Naughty or nice? I can do both."];
 
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
