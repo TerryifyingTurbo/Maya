@@ -163,7 +163,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     let msTimeout = 500;
     message.channel.send('Flipping...').then(message => {
         setTimeout(() => {
-            msg.edit('replies[result]');
+            message.edit('replies[result]');
         });
 });
 
