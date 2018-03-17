@@ -49,7 +49,9 @@ bot.on("message", async message => {
     else
   // Reload ALL commands listed.
     if(message.author.id == "297931837400023041")
-    message.channel.send("All commands **reloaded")
+    await message.channel.send("**Reloading.** :arrows_counterclockwise:")
+    .then(message => bot.destroy())
+    .then(() => bot.login(botsettings.token));
   }
 
   if(command ===`${prefix}devhelp`){
