@@ -49,7 +49,7 @@ bot.on("message", async message => {
     else
   // Reload ALL commands listed.
     if(message.author.id == "297931837400023041")
-    await message.channel.send("**Reloadng.** :arrows_counterclockwise:")
+    await message.channel.send("**Reloading.** :arrows_counterclockwise:")
     .then(message => bot.destroy())
     .then(() => bot.login(botsettings.token));
   }
