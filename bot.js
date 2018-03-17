@@ -155,7 +155,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
   }
-  
+
   if(command ===`${prefix}coinflip`){
     let replies = ["Heads.", "Tails."];
     
