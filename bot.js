@@ -52,7 +52,7 @@ bot.on("message", async message => {
     await message.channel.send("**Reloading.** :arrows_counterclockwise:")
     .then(message => bot.destroy())
     .then(() => bot.login(botsettings.token))
-    .then(message.channel.send("Reloaded."));
+    .then(await message.channel.send("Reloaded."));
   }
 
   if(command ===`${prefix}devhelp`){
