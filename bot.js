@@ -156,7 +156,12 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     "Spank me. It's the only way I'll learn~",
     "It may be between your legs, but it belongs to me. **Understand**?",
     "I'd look so good on you right about now.",
-    "Naughty or nice? I can do both."];
+    "Naughty or nice? I can do both.",
+    "I get turned on when you tell me how much you want me~",
+    "Let's misbehave~",
+    "I know I'm a handful, but that's what you got two hands for.",
+    "I licked it, it's mine now.",
+  ];
 
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
