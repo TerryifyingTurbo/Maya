@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "javascript Discord bot",
   "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "author": "Bwapstustu Turbo",
   "license": "ISC",
-  "start": "node bot.js",
   "dependencies": {
     "discord.js": "^11.3.0",
     "superagent": "^3.8.2"
