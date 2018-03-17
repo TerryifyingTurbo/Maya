@@ -339,7 +339,8 @@ message.channel.send(catembed);
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("My name is...", bot.user.username)
-    .addField("I was made on...", bot.user.createdAt);
+    .addField("I was made on...", bot.user.createdAt)
+    .addField("Total CMDs", "19");
 
     return message.channel.send(botembed);
   }
