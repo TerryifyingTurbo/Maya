@@ -47,12 +47,16 @@ bot.on("message", async message => {
     if(message.author.id !== "297931837400023041")
     return message.channel.send("Only Master can use this command!");
     else
-  // Reload ALL commands listed.
-    if(message.author.id == "297931837400023041")
+  
+    // Reload ALL commands listed.
+    
+  if(message.author.id == "297931837400023041")
     await message.channel.send("**Reloading.** :arrows_counterclockwise:")
-    .then(message => bot.destroy())
-    .then() (await bot.login(botsettings.token))
-    .then(message.channel.send("Reloaded."));
+    .then(message => bot.destroy());
+    
+    await bot.login(botsettings.token)
+    
+    message.channel.send("Reloaded.");
   }
 
 
