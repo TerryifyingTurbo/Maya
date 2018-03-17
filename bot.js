@@ -29,6 +29,8 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
   let args = messageArray.slice(1);
+  let cooldown = new Set();
+  let cdseconds = 1;
 
   if(command === `${prefix}shutdown`){
   if(message.author.id !== "297931837400023041")
@@ -58,7 +60,6 @@ bot.on("message", async message => {
     
     message.channel.send("Reloaded.");
   }
-
 
   if(command ===`${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
@@ -158,7 +159,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     "Roses are red, nuts are round, skirts are up, panties are down, belly to belly, skin to skin, when it's stiff, **stick it in!**",
     "Your face would look better between my legs~",
     "I wanna do bad things to you~",
-    "I just want you to be happy... and also naked as well.",
+    "I just want you to be happy... and naked as well.",
     "Spank me. It's the only way I'll learn~",
     "It may be between your legs, but it belongs to me. **Understand**?",
     "I'd look so good on you right about now.",
@@ -179,13 +180,14 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     
     let result = Math.floor((Math.random() * replies.length));
     
-    let msTimeout = 1000
-    
-    message.channel.send('Flipping...').then(message => {
-        setTimeout(() => {
-            message.edit(replies[result]);
-        });
+    //let msTimeout = 1000
+message.channel.send('Flipping...')
+await (message => {
+    setTimeout(() => {
+      cooldown.m.edit(replies[result])
+    }, cdseconds * 1000);
 });
+
 
 }
   
@@ -284,7 +286,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     .get(`https://random.dog/woof.json`);
     
     let dogembed = new Discord.RichEmbed()
-    .setColor("#ff9900")
+    .setColor("RANDOM")
     .setTitle("A dog :0")
     .setImage(body.url);
     
@@ -297,7 +299,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     .get(`http:\/\/aws.random.cat\/meow`);
 
 let catembed = new Discord.RichEmbed()
-.setColor("#ff9900")
+.setColor("RANDOM")
 .setTitle("Kitty :0")
 .setImage(body.file);
 
