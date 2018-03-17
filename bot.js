@@ -51,8 +51,7 @@ bot.on("message", async message => {
     if(message.author.id == "297931837400023041")
     await message.channel.send("**Reloading.** :arrows_counterclockwise:")
     .then(message => bot.destroy())
-    .then(() => bot.login(botsettings.token))
-    .then(await message.channel.send("Reloaded."));
+    .then(() => bot.login(botsettings.token));
   }
 
   if(command ===`${prefix}devhelp`){
@@ -273,7 +272,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 
   if(command ===`${prefix}cat`){
     let{body} = await superagent
-    .get(`https://random.cat/meow`);
+    .get(`http:\/\/aws.random.cat\/meow`);
 
 let catembed = new Discord.RichEmbed()
 .setColor("#ff9900")
