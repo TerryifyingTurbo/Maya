@@ -180,14 +180,13 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     
     let result = Math.floor((Math.random() * replies.length));
     
-    //let msTimeout = 1000
-message.channel.send('Flipping...')
+const m = await message.channel.send('Flipping...');
+
 await (message => {
     setTimeout(() => {
-      cooldown.m.edit(`replies[result]`)
+    m.edit(`replies[result]`)
     }, cdseconds * 1000);
 });
-
 
 }
   
