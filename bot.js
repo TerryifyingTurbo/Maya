@@ -161,7 +161,8 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     
     let result = Math.floor((Math.random() * replies.length))
     let msTimeout = 1500;
-    const m = await message.channel.send("Flipping...").then(message => {
+    const m = await message.channel.send("Flipping...");
+    then(message => {
       setTimeout(() => {
         m.edit((replies[result]));
       });
