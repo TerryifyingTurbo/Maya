@@ -176,18 +176,13 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 
   if(command ===`${prefix}coinflip`){
     
-    let replies = ["Heads.", "Tails."];
+    let replies = ["It's Heads.", "It's Tails."];
     
     let result = Math.floor((Math.random() * replies.length));
     
-const m = await message.channel.send("Flipping...");
-
-(message => {
-  setTimeout(() => {
-    m.edit(`replies[result]`)
-  }, cdseconds * 1000);
-});
-
+    await message.channel.send(":arrows_clockwise:  :currency_exchange:");
+    
+    message.channel.send(replies[result]);
 }
   
 
@@ -220,36 +215,39 @@ const m = await message.channel.send("Flipping...");
     "Hurting someone can be as easy as throwing a stone in the sea. Do you have any idea how deep that stone can go?",
     "If you hate a person, then you're defeated by them.",
     "When anger rises, think of the consequences.",
-    "As long as you're making progress, it does not matter how fast or how slow it is."];
+    "As long as you're making progress, it does not matter how fast or how slow it is.",
+    "Happiness is a choice. Life isn't about pleasing everybody.",
+    "Weakness is a choice. It's up to **you**.",
+    "Silence is definitely better than uncessary drama.",];
 
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
   }
   if(command === `${prefix}ban`){
 
-//     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-//     if(!bUser) return message.channel.send("Can't find user!");
-//     let bReason = args.join(" ").slice(22);
-//     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
-//     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!bUser) return message.channel.send("Can't find user!");
+    let bReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
-//     let banEmbed = new Discord.RichEmbed()
-//     .setDescription("~Ban~")
-//     .setColor("#bc0000")
-//     .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-//     .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-//     .addField("Banned In", message.channel)
-//     .addField("Time", message.createdAt)
-//     .addField("Reason", bReason);
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("~Ban~")
+    .setColor("#bc0000")
+    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
+    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Banned In", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", bReason);
 
-//     let incidentchannel = message.guild.channels.find(`name`, "incidents");
-//     if(!incidentchannel) return message.channel.send("Can't find incidents channel.");
+    let incidentchannel = message.guild.channels.find(`name`, "incidents");
+    if(!incidentchannel) return message.channel.send("Can't find incidents channel.");
 
-//     message.guild.member(bUser).ban(bReason);
-//     incidentchannel.send(banEmbed);
+    message.guild.member(bUser).ban(bReason);
+    incidentchannel.send(banEmbed);
 
 
-//     return;
+    return;
    }
 
   if(command === `${prefix}giverole`){
