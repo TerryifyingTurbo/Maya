@@ -176,12 +176,11 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 
   if(command ===`${prefix}coinflip`){
     
-    let replies = ["It's Heads.", "It's Tails."];
+    let replies = ["Heads.", "Tails."];
     
     let result = Math.floor((Math.random() * replies.length));
     
-    await message.channel.send(":arrows_clockwise:  :currency_exchange:");
-    
+    await message.channel.send(":currency_exchange:");
     message.channel.send(replies[result]);
 }
   
