@@ -352,7 +352,7 @@ message.channel.send(catembed);
   if(command === `${prefix}help`){
       let botembed = new Discord.RichEmbed()
       .setDescription("Here are my commands so far x3")
-      .addField("Random Commands","serverinfo, botinfo, ping")
+      .addField("Random Commands","serverinfo, botinfo, ping, devhelp")
       .addField("Moderator","purge, kick, ban, giverole, removerole")
       .addField("Fun", "say, cat, dog, 8ball, fortunecookie, coinflip")
       .addField("NSFW", "Classified, Classified, Classified")
