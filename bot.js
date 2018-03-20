@@ -362,17 +362,8 @@ message.channel.send(catembed);
       .addField("NSFW", "Classified, Classified, Classified")
 
       return message.channel.send(botembed);
-
-  if(command === `${prefix}add`){
-    let numArray = args.map(n=> parseInt(n));
-    let total = numArray.reduce( (p, c) => p+c);
-
-    message.channel.send(total);
-  }
-  
 }
 
- 
 });
 
 bot.login(botsettings.token);
