@@ -2,6 +2,9 @@ const botsettings = require("./botsettings.json");
 const Discord = require("discord.js");
 const superagent = require("superagent");
 const fs = require("fs");
+const ytdl = require("ytdl-core");
+const getYouTubeID =("get-youtube-id");
+const fetchVideoInfo = require("youtube-info");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
@@ -335,6 +338,7 @@ message.channel.send(catembed);
   }
 
 
+
   if(command === `${prefix}botinfo`){
 
     let bicon = bot.user.displayAvatarURL;
@@ -358,7 +362,15 @@ message.channel.send(catembed);
       .addField("NSFW", "Classified, Classified, Classified")
 
       return message.channel.send(botembed);
+
+  if(command === `${prefix}add`){
+    let numArray = args.map(n=> parseInt(n));
+    let total = numArray.reduce( (p, c) => p+c);
+
+    message.channel.send(total);
   }
+  
+}
 
 });
 
