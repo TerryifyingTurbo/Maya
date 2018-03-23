@@ -307,7 +307,7 @@ message.channel.send(catembed);
   }
 
 if(command === `${prefix}catfact`){
-let{body} = await superagent
+let {body} = await superagent
 .get(`https://catfact.ninja/fact`);
 
 let factembed = new Discord.RichEmbed()
