@@ -6,6 +6,9 @@ const ytdl = require("ytdl-core");
 const getYouTubeID =("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 const bot = new Discord.Client({disableEveryone: true});
+const cooldown = new Set();
+
+
 bot.commands = new Discord.Collection();
 
 
@@ -32,8 +35,6 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
   let args = messageArray.slice(1);
-  let cooldown = new Set();
-  let cdseconds = 1;
 
   if(command === `${prefix}shutdown`){
   if(message.author.id !== "297931837400023041")
@@ -304,6 +305,18 @@ let catembed = new Discord.RichEmbed()
 
 message.channel.send(catembed);
   }
+
+if(command === `${prefix}catfact`){
+let{body} = await superagent
+.get(`https://catfact.ninja/fact`);
+
+let factembed = new Discord.RichEmbed()
+.setColor("RANDOM")
+.setTitle("Fact:")
+.addField(body.url)
+
+message.channel.send(factembed);
+}
 
 
   if(command === `${prefix}serverinfo`){
