@@ -314,7 +314,7 @@ let factembed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setTitle("It's true that...")
 .addField("Fact:", body.fact)
-.addFooter("Response Time:", `${Math.round(bot.ping)}ms.`)
+.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
 
 message.channel.send(factembed);
 }
