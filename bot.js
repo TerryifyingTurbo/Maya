@@ -282,7 +282,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   }
 
   if(command ===`${prefix}dog`){
-    let{body} = await superagent
+    let {body} = await superagent
     .get(`https://random.dog/woof.json`);
     
     let dogembed = new Discord.RichEmbed()
@@ -295,7 +295,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     }
 
   if(command ===`${prefix}cat`){
-    let{body} = await superagent
+    let {body} = await superagent
     .get(`http:\/\/aws.random.cat\/meow`);
 
 let catembed = new Discord.RichEmbed()
@@ -312,9 +312,9 @@ let {body} = await superagent
 
 let factembed = new Discord.RichEmbed()
 .setColor("RANDOM")
-.setTitle("It's true that...")
-.addField("Fact:", body.fact)
-.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
+//.setTitle("It's true that...")
+.addField("It's true that...", body.fact);
+//.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
 
 message.channel.send(factembed);
 }
@@ -362,7 +362,7 @@ message.channel.send(factembed);
     .setThumbnail(bicon)
     .addField("My name is...", bot.user.username)
     .addField("I was made on...", bot.user.createdAt)
-    .addField("Total CMDs", "19");
+    .addField("Total CMDs", "24");
 
     return message.channel.send(botembed);
   }
@@ -372,7 +372,7 @@ message.channel.send(factembed);
       .setDescription("Here are my commands so far x3")
       .addField("Random Commands","serverinfo, botinfo, ping, devhelp")
       .addField("Moderator","purge, kick, ban, giverole, removerole")
-      .addField("Fun", "say, cat, dog, 8ball, fortunecookie, coinflip")
+      .addField("Fun", "say, cat, catfact, dog, 8ball, fortunecookie, coinflip")
       .addField("NSFW", "Classified, Classified, Classified")
 
       return message.channel.send(botembed);
