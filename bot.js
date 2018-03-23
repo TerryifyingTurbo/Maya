@@ -3,8 +3,9 @@ const Discord = require("discord.js");
 const superagent = require("superagent");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
-const getYouTubeID =("get-youtube-id");
+const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
+const leetspeak = require("leetspeak");
 const bot = new Discord.Client({disableEveryone: true});
 const cooldown = new Set();
 
@@ -119,6 +120,15 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     //message.delete().catch(O_o=>{}); 
         // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
+  }
+
+  if(command ===`${prefix}leetspeak`){
+    const sayMessage = args.join(" ");
+    const thing = leetspeak(args)
+    if(!sayMessage) return message.channel.send("Say something so I can encode it.")
+
+    message.channel.send(thing);
+
   }
 
   if(command === `${prefix}8ball`){
