@@ -310,12 +310,7 @@ if(command === `${prefix}catfact`){
 let{body} = await superagent
 .get(`https://catfact.ninja/fact`);
 
-let factembed = new Discord.RichEmbed()
-.setColor("RANDOM")
-.setTitle("Fact:")
-.addField(body)
-
-message.channel.send(factembed);
+message.channel.send(body.url);
 }
 
 
