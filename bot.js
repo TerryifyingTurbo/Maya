@@ -313,7 +313,7 @@ let{body} = await superagent
 let factembed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setTitle("Fact:")
-.addField(body.url)
+.addField(body)
 
 message.channel.send(factembed);
 }
