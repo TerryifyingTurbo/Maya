@@ -312,8 +312,8 @@ let{body} = await superagent
 
 let factembed = new Discord.RichEmbed()
 .setColor("RANDOM")
-.setTitle("Fact:")
-.addField("It's true that..." + body.fact)
+.setTitle("It's true that...")
+.addField(body.fact);
 
 message.channel.send(factembed);
 }
