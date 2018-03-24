@@ -132,6 +132,12 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 
   }
 
+  if(command ===`${prefix}listemojis`){
+    const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+    
+    message.channel.send(emojiList);
+  }
+
   if(command === `${prefix}8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
     let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely.", "Without a doubt.", "For real? No."];
