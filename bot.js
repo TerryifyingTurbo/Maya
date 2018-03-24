@@ -61,7 +61,7 @@ const reloading = bot.emojis.get("427234545805557771")
   
     // Reload ALL commands listed
 
-const reloading = bot.emojis.find("name", "reloading")
+const reloading = bot.emojis.find("name", "reloading");
 
   if(message.author.id == "297931837400023041")
 
