@@ -139,11 +139,11 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   message.channel.send(`${ayy} Lmao`);
 }
 
-const owo = bot.emojis.get("406790609035329538");
+const intensefear = bot.emojis.get("406790609035329538");
 
-if(message.content === "owo"){
-  const owo = bot.emojis.find("name", "owo");
-  message.channel.send(`${owo}`);
+if(message.content === "D:"){
+  const instensefear = bot.emojis.find("name", "intensefear");
+  message.channel.send(`${instensefear}`);
 }
 
   if(command === `${prefix}8ball`){
