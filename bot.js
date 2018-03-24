@@ -30,7 +30,8 @@ bot.on("ready", async () => {
 
 bot.on("message", async message => {
   if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
+  if(message.channel.type === "dm"){
+    return message.reply("Ew, not in my DMs. Go do that in a server");
 
   let prefix = botsettings.prefix;
   let messageArray = message.content.split(" ");
