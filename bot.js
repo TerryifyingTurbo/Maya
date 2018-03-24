@@ -135,8 +135,15 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   const ayy = bot.emojis.get("426999753830825995");
   
   if(message.content === "ayy"){
-  const ayy = bot.emojis.find("name", "ayy")
-  message.channel.send(`${ayy} Lmao`)
+  const ayy = bot.emojis.find("name", "ayy");
+  message.channel.send(`${ayy} Lmao`);
+}
+
+const owo = bot.emojis.get("406790609035329538");
+
+if(message.content === "owo"){
+  const owo = bot.emojis.find("name", "owo");
+  message.channel.send(`${owo}`);
 }
 
   if(command === `${prefix}8ball`){
