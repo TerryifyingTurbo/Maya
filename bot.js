@@ -146,6 +146,10 @@ if(message.content === "D:"){
   message.channel.send(`${instensefear}`);
 }
 
+if(message.content === ";;T"){
+  message.channel.reply(";;T");
+}
+
   if(command === `${prefix}8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
     let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely.", "Without a doubt.", "For real? No."];
