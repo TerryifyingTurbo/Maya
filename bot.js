@@ -52,13 +52,14 @@ bot.on("message", async message => {
   console.log("Bot killed");
   }
 
+  const reloading = bot.emojis.get("427234545805557771")
+
   if(command === `${prefix}reload`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("Only Master can use this command!");
     else
   
     // Reload ALL commands listed
-const reloading = bot.emojis.get("427234545805557771")
 
 const reloading = bot.emojis.find("name", "reloading")
 
