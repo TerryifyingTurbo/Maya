@@ -147,7 +147,7 @@ if(message.content === "D:"){
 }
 
 if(message.content === ";;T"){
-  message.channel.reply(";;T");
+  message.reply(";;T");
 }
 
   if(command === `${prefix}8ball`){
