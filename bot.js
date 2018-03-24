@@ -60,8 +60,9 @@ bot.on("message", async message => {
     // Reload ALL commands listed
   
   if(message.author.id == "297931837400023041")
-  const reloading = bot.emojis.get("427234545805557771");
-  const reloading = bot.emojis.find("name", "reloading");
+  const reloading = bot.emojis.get("427234545805557771")
+  
+  const reloading = bot.emojis.find("name", "reloading")
 
   await message.channel.send("**Reloading.**", `${reloading}`)
     .then(message => bot.destroy());
