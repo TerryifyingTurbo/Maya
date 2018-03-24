@@ -135,7 +135,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   if(command ===`${prefix}listemojis`){
     const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
     
-    message.channel.send(emojiList);
+    message.channel.send("Here", emojiList);
   }
 
   if(command === `${prefix}8ball`){
