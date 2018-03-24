@@ -52,7 +52,7 @@ bot.on("message", async message => {
   console.log("Bot killed");
   }
 
-const reloading = bot.emojis.get("427234545805557771")
+const refresh = bot.emojis.get("427234545805557771");
 
   if(command === `${prefix}reload`){
     if(message.author.id !== "297931837400023041")
@@ -61,11 +61,11 @@ const reloading = bot.emojis.get("427234545805557771")
   
     // Reload ALL commands listed
 
-const reloading = bot.emojis.find("name", "reloading");
+const refresh = bot.emojis.find("name", "refresh");
 
   if(message.author.id == "297931837400023041")
 
-  await message.channel.send("**Reloading.**", `${reloading}`)
+  await message.channel.send("**Reloading.**", `${refresh}`)
     .then(message => bot.destroy());
     
     await bot.login(botsettings.token)
