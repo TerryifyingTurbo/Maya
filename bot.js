@@ -132,11 +132,12 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 
   }
 
-  if(command ===`${prefix}listemojis`){
-    const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-    
-    message.channel.send("Here", emojiList);
-  }
+  const ayy = bot.emojis.get("426999753830825995");
+  
+  if(message.content === "ayy"){
+  const ayy = bot.emojis.find("name", "ayy")
+  message.channel.send(`${ayy} Lmao`)
+}
 
   if(command === `${prefix}8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
