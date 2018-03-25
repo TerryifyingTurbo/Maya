@@ -63,8 +63,8 @@ const refresh = bot.emojis.get("427234545805557771");
 
 
   if(message.author.id == "297931837400023041")
-  const refresh = bot.emojis.find("name", "refresh");
-  
+  //const refresh = bot.emojis.find("name", "refresh");
+
   await message.channel.send("**Reloading.**", `${refresh}`)
     .then(message => bot.destroy());
     
