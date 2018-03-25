@@ -61,10 +61,11 @@ const refresh = bot.emojis.get("427234545805557771");
   
     // Reload ALL commands listed
 
-const refresh = bot.emojis.find("name", "refresh");
+
   if(message.author.id == "297931837400023041")
-  await message.channel.send(`**Reloading.** ${refresh}`)
-    .then(message => bot.destroy());
+  const refresh = bot.emojis.find("name", "refresh");
+  await message.channel.send(`**Reloading.** ${refresh}`);
+  (message => bot.destroy());
     
     await bot.login(botsettings.token)
     message.channel.send(`Reloaded.`);
