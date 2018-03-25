@@ -31,9 +31,8 @@ bot.on("ready", async () => {
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm"){
-    return message.reply("Ew, not in my DMs. Go do that in a server");
+    return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
-
   let prefix = botsettings.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
@@ -52,23 +51,20 @@ bot.on("message", async message => {
   console.log("Bot killed");
   }
 
-const refresh = bot.emojis.get("427234545805557771");
-
-  if(command === `${prefix}reload`) {
+  if(command === `${prefix}reload`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("Only Master can use this command!");
     else
   
-    // Reload ALL commands listed
-
-
+    // Reload ALL commands listed.
+    
   if(message.author.id == "297931837400023041")
-  const refresh = bot.emojis.find("name", "refresh");
-  await message.channel.send(`**Reloading.** ${refresh}`);
-  (message => bot.destroy());
+    await message.channel.send("**Reloading.** :arrows_counterclockwise:")
+    .then(message => bot.destroy());
     
     await bot.login(botsettings.token)
-    message.channel.send(`Reloaded.`);
+    
+    message.channel.send("Reloaded.");
   }
 
   if(command ===`${prefix}devhelp`){
