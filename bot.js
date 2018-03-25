@@ -68,7 +68,7 @@ const refresh = bot.emojis.get("427234545805557771");
     
     await bot.login(botsettings.token)
     const refresh = bot.emojis.find("name", "refresh");
-    message.channel.send(`Reloaded. ${prefix}`);
+    message.channel.send(`Reloaded. ${refresh}`);
   }
 
   if(command ===`${prefix}devhelp`){
