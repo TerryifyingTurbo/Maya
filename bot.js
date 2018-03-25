@@ -63,12 +63,12 @@ const refresh = bot.emojis.get("427234545805557771");
 
 
   if(message.author.id == "297931837400023041")
-  await message.channel.send("**Reloading.**")
+  await message.channel.send(`**Reloading.** ${refresh}`)
     .then(message => bot.destroy());
     
     await bot.login(botsettings.token)
     const refresh = bot.emojis.find("name", "refresh");
-    message.channel.send(`Reloaded. ${refresh}`);
+    message.channel.send(`Reloaded.`);
   }
 
   if(command ===`${prefix}devhelp`){
