@@ -140,7 +140,7 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
   message.channel.send(`${ayy} Lmao`);
 }
 
-if(message.content.upper().startsWith == "HhaH"){
+if(message.content.upper() == "HhaH"){
   message.reply("HhaG*");
 }
 
