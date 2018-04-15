@@ -111,8 +111,8 @@ bot.on("message", async message => {
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
     m.edit(`:ping_pong: ***Pong!***  x3 
-Latency :satellite_orbital::**${m.createdTimestamp - message.createdTimestamp}ms.** 
-API Latency:satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
+Response :satellite_orbital::**${m.createdTimestamp - message.createdTimestamp}ms.** 
+API Response :satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `${prefix}say`) {
@@ -366,7 +366,7 @@ message.channel.send(factembed);
     
     // Ooooh nice, combined conditions. <3
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Provide a value between 2 and 100 for the number of messages that I'll delete");
+      return message.reply("What do you think this is, the movie? No, purge something with 2 or more msgs.");
     
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({count: deleteCount});
