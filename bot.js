@@ -115,6 +115,13 @@ Response :satellite_orbital::**${m.createdTimestamp - message.createdTimestamp}m
 API Response :satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
   }
 
+  if(command === `${prefix}leave`){
+    if(!owner) return message.channel.send("No. Only my creator can do that");
+    else
+    await message.channel.send("Okay, bye :<");
+    message.guild.leave();
+  }
+
   if(command === `${prefix}say`) {
         // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
         // To get the "message" itself we join the `args` back into a string with spaces: 
