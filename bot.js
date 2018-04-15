@@ -11,6 +11,7 @@ const bot = new cleverbot(cleverbot_user) + (cleverbot_key);
 const cooldown = new Set();
 
 
+
 bot.commands = new Discord.Collection();
 
 
