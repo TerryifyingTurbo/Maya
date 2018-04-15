@@ -19,7 +19,7 @@ bot.on("ready", async () => {
   console.log(`${bot.user.id} ${bot.user.username} online! Ready when you are Boss xd`);
 
   try {
-    let link = await bot.generateInvite(["CREATE_INSTANT_INVITE, KICK_MEMBERS, BAN_MEMBERS, MANAGE_CHANNELS, MANAGE_GUILD, ADD_REACTIONS, VIEW_CHANNEL, READ_MESSAGES, SEND_MESSAGES, SEND_TSS_MESSAGES, MANAGE_MESSAGES, EMBED_LINKS, ATTACH_FILES, READ_MESSAGE_HISTORY, USE_EXTERNAL_EMOJIS, EXTERNAL_EMOJIS, CONNECT, SPEAK, MUTE_MEMBERS, DEAFEN_MEMBERS, MOVE_MEMBERS, USE_VAD, CHANGE_NICKNAME, MANAGE_NICKNAMS, MANAGE_ROLES, MANAGE_ROLES, MANAGE_EMOJIS"]);
+    let link = await bot.generateInvite(["ADMINISTRATOR"]);
     console.log(link);
 } catch(e) {
     console.log(e.stack);
