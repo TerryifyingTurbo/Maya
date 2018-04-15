@@ -73,7 +73,7 @@ bot.on("message", async message => {
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer Only >:c")
     .setColor("RANDOM")
-    .addField("CMD", "shutdown, reload, shardcheck, gamepresence")
+    .addField("CMD", "shutdown, reload, eval, gamepresence, setavat, leave")
     
     message.channel.send(devembed);
   }
@@ -109,10 +109,11 @@ bot.on("message", async message => {
   if(command === `${prefix}ping`) {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Ping?");
-    m.edit(`:ping_pong: ***Pong!***  x3 
-Response :satellite_orbital::**${m.createdTimestamp - message.createdTimestamp}ms.** 
-API Response :satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
+    //const m = await message.channel.send("Ping?");
+    //m.edit
+    message.channel.send(`:ping_pong: ***Pong!***  x3 
+Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}ms.** 
+API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `${prefix}leave`){
@@ -287,7 +288,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 
   if(command === `${prefix}giverole`){
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
-    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.member(message.id.user()) || message.guild.members.get(args[0]); 
+    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.member(message.user.id()) || message.guild.members.get(args[0]); 
     if(!rMember) return message.reply("Yeah, let me just give a role to thin air");
     let role = args.join(" ").slice(22);
     if(!role) return message.reply("So what role do I add-");
