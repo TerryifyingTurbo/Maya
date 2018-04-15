@@ -132,7 +132,7 @@ if(command ===`${prefix}randuser`){
   message.guild.members.forEach(gm=>{
     pool.push(gm);
 
-    return message.channel.send(`I chose... ${u.username}` +  `${u.discriminator}`);
+    return message.channel.send(`I chose... ${user.Username}` + `${user.Discriminator}`);
   })
 }
 
