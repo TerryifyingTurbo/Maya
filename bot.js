@@ -116,7 +116,7 @@ API Response :satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `${prefix}leave`){
-    if(!owner) return message.channel.send("No. Only my creator can do that");
+    if(!`${owner}`) return message.channel.send("No. Only my creator can do that");
     else
     await message.channel.send("Okay, bye :<");
     message.guild.leave();
