@@ -6,7 +6,7 @@ const ytdl = require("ytdl-core");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 const leetspeak = require("leetspeak");
-const bot = new Discord.Client({disableEveryone: true}) + new cleverbot("fegoGmuinpvvNoBG","USa3PwahfNNguLzZuyr5PYKAdppwuwj4");
+const bot = new Discord.Client({disableEveryone: true}) + new Cleverbot("fegoGmuinpvvNoBG","USa3PwahfNNguLzZuyr5PYKAdppwuwj4");
 const cooldown = new Set();
 
 
