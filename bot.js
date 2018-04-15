@@ -7,6 +7,7 @@ const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 const leetspeak = require("leetspeak");
 const bot = new Discord.Client({disableEveryone: true});
+const bot = new cleverbot(cleverbot_user) + (cleverbot_key);
 const cooldown = new Set();
 
 
@@ -123,18 +124,6 @@ API Latency:satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
         // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
-
-if(command ===`${prefix}randuser`){
-  let pool = [ ];
-  
-  let gm = pool[(Math.random()*pool.length)];
-
-  message.guild.members.forEach(gm=>{
-    pool.push(gm);
-
-    return message.channel.send(`I chose... (message.member.username) + (message.member.discriminator)`);
-  })
-}
 
   const ayy = bot.emojis.get("426999753830825995");
   
