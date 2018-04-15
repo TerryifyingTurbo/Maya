@@ -109,7 +109,8 @@ bot.on("message", async message => {
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
     m.edit(`:ping_pong: ***Pong!***  x3 
-My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latency is **${Math.round(bot.ping)}ms.**`);
+Latency :satellite_orbital::**${m.createdTimestamp - message.createdTimestamp}ms.** 
+API Latency:satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `${prefix}say`) {
@@ -131,7 +132,7 @@ if(command ===`${prefix}randuser`){
   message.guild.members.forEach(gm=>{
     pool.push(gm);
 
-    return message.channel.send("I chose..." +  (guild.member.tag));
+    return message.channel.send("I chose..." +  (member.tag));
   })
 }
 
