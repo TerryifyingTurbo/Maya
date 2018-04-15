@@ -42,7 +42,7 @@ bot.on("message", async message => {
 
   if(command === `${prefix}shutdown`){
   if(message.author.id !== "297931837400023041")
-  return message.channel.send("Only Master can use this command!");
+  return message.channel.send("You ain't the creator!");
   
   else
 
@@ -55,7 +55,7 @@ bot.on("message", async message => {
 
   if(command === `${prefix}reload`){
     if(message.author.id !== "297931837400023041")
-    return message.channel.send("Only Master can use this command!");
+    return message.channel.send("You ain't the creator!");
     else
   
     // Reload ALL commands listed.
@@ -116,8 +116,11 @@ API Response :satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `${prefix}leave`){
-    if(!`${owner}`) return message.channel.send("No. Only my creator can do that");
+    if(message.author.id !== "297931837400023041")
+    return message.channel.send("No. Only my creator can do that");
+    
     else
+    
     await message.channel.send("Okay, bye :<");
     message.guild.leave();
   }
