@@ -123,15 +123,17 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
     message.channel.send(sayMessage);
   }
 
-  if(command ===`${prefix}leetspeak`){
-    const sayMessage = args.join(" ");
-    const thing = leetspeak(args);
-    
-    if(!sayMessage) return message.channel.send("Say something so I can encode it.")
+if(command ===`${prefix}randuser`){
+  let pool = [];
 
-    message.channel.send(thing);
+  message.guild.members.forEach(u=>{
+    pool.push(u);
 
-  }
+    let u = pool[Math.floor(Math.random()*pool.length)];
+
+    message.channel.send("I chose..." + (message.author.tag));
+  })
+}
 
   const ayy = bot.emojis.get("426999753830825995");
   
@@ -409,5 +411,4 @@ message.channel.send(factembed);
 }
 
 });
-
 bot.login(botsettings.token);
