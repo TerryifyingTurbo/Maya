@@ -47,7 +47,7 @@ bot.on("message", async message => {
   else
 
   if(message.author.id == "297931837400023041")
-  await message.channel.send("I'm sleep. *Aeztia deactivated*");
+  await message.channel.send("I'm sleep.");
   await bot.destroy();
   process.exit();
   console.log("Bot killed");
@@ -83,10 +83,10 @@ bot.on("message", async message => {
     //!kick @daeshan askin for it
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("Uh... Who do I kick...?");
+    if(!kUser) return message.channel.send("You think this is soccer? ***Who am I gonna kick***");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("I can't kick that person! They're too strong...");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**NO.** You don't have the ability to delete messages");
+    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not allowed to kick the ones who have the ability to delete messages");
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kick~")
@@ -117,11 +117,11 @@ API Response :satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
 
   if(command === `${prefix}leave`){
     if(message.author.id !== "297931837400023041")
-    return message.channel.send("No. Only my creator can do that");
+    return message.channel.send("**NO.** Only my creator can do that");
     
     else
     
-    await message.channel.send("Okay, bye :<");
+    await message.channel.send("Fine, I'll leave then. Jeez.");
     message.guild.leave();
   }
 
@@ -217,7 +217,6 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     
     let result = Math.floor((Math.random() * replies.length));
     
-    await message.channel.send(":currency_exchange:");
     message.channel.send(replies[result]);
 }
   
@@ -264,8 +263,8 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("Can't find user!");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("**NO.** You don't have the ability to ban members!");
+    if(bUser.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Not allowed to ban others who have the ability to ban");
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
@@ -287,27 +286,27 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
    }
 
   if(command === `${prefix}giverole`){
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("No. You don't have the ability to add or remove roles.");
+    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.member(message.id.user()) || message.guild.members.get(args[0]); 
-    if(!rMember) return message.reply("Did you specify a person...?");
+    if(!rMember) return message.reply("Yeah, let me just give a role to thin air");
     let role = args.join(" ").slice(22);
-    if(!role) return message.reply("Oh? What role do I add...?");
+    if(!role) return message.reply("So what role do I add-");
     let gRole = message.guild.roles.find(`name`,role);
-    if(!gRole) return message.reply("I was not able to find that role.");
+    if(!gRole) return message.reply("You either spelled it wrong or that role doesn't exist");
   
-    if(rMember.roles.has(gRole.id)) return message.reply("They already have that role.");
+    if(rMember.roles.has(gRole.id)) return message.reply("They already have that role");
     await(rMember.addRole(gRole.id));
     return message.reply (`Added ***${gRole.name}.***`);
   }
 
   if(command === `${prefix}removerole`){
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry pal, you can't do that.");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-    if(!rMember) return message.reply("Couldn't find that user, yo.");
+    if(!rMember) return message.reply("Yeah, I took the air's role away. I couldn't find that user, yo.");
     let role = args.join(" ").slice(22);
-    if(!role) return message.reply("Specify a role!");
+    if(!role) return message.reply("So what role do I take away-");
     let gRole = message.guild.roles.find(`name`, role);
-    if(!gRole) return message.reply("Couldn't find that role.");
+    if(!gRole) return message.reply("You either spelled it wrong or that role doesn't exist");
   
     if(!rMember.roles.has(gRole.id)) return message.reply("They don't have that role.");
     await(rMember.removeRole(gRole.id));
@@ -376,7 +375,7 @@ message.channel.send(factembed);
     
     // Ooooh nice, combined conditions. <3
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("What do you think this is, the movie? No, purge something with 2 or more msgs.");
+      return message.reply("What do you think this is, the movie? No, purge 2 or more messages.");
     
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({count: deleteCount});
