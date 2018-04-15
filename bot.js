@@ -127,7 +127,7 @@ API Latency:satellite_orbital:: **${Math.round(bot.ping)}ms.**`);
 if(command ===`${prefix}randuser`){
   let pool = [ ];
   
-  let gm = pool[Math.floor(Math.random()*pool.length)];
+  let gm = pool[(Math.random()*pool.length)];
 
   message.guild.members.forEach(gm=>{
     pool.push(gm);
