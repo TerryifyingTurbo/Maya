@@ -126,10 +126,10 @@ My Latency is **${m.createdTimestamp - message.createdTimestamp}ms.** API Latenc
 if(command ===`${prefix}randuser`){
   let pool = [];
 
-  message.guild.members.forEach(w=>{
-    pool.push(w);
+  message.guild.members.forEach(gm=>{
+    pool.push(gm);
 
-    let w = pool[Math.floor(Math.random()*pool.length)];
+    let gm = pool[Math.floor(Math.random()*pool.length)];
 
     message.channel.send("I chose..." + (message.author.tag));
   })
