@@ -71,11 +71,12 @@ bot.on("message", async message => {
 
   if(command === `${prefix}invite`){
     if(message.author.id !== "297931837400023041")
-    return message.channel.send("Whoa there, partner! Only my creator can invite");
+    return message.channel.send("Whoa there! Only my creator can invite");
+    
+  let link = bot.generateInvite(["ADMINISTRATOR"])
 
-
-    else message.channel.send("You got it, boss x3",
-    bot.generateInvite(["ADMINISTRATOR"]))
+  message.channel.send("You got it, boss x3", 
+  (link))
   }
 
   if(command ===`${prefix}devhelp`){
