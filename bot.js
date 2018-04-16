@@ -112,7 +112,7 @@ bot.on("message", async message => {
     //const m = await message.channel.send("Ping?");
     //m.edit
     message.channel.send(`:ping_pong: ***Pong!***  x3 
-Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}ms.** 
+Response :satellite_orbital: **${message.createdTimestamp - message.createdTimestamp}ms.** 
 API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
   }
 
