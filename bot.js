@@ -71,7 +71,7 @@ bot.on("message", async message => {
 
   if(command === `${prefix}invite`){
     if(message.author.id !== "297931837400023041")
-    return message.channel.send("Whoa there! Only my creator can invite");
+    return message.channel.send("I'm not allowed to give out my invite code to strangers");
     
   let link = bot.generateInvite(["ADMINISTRATOR"])
 
