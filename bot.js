@@ -75,8 +75,7 @@ bot.on("message", async message => {
     
   let link = bot.generateInvite(["ADMINISTRATOR"])
 
-  message.channel.send("You got it, boss x3", 
-  (link))
+  message.channel.send(link)
   }
 
   if(command ===`${prefix}devhelp`){
