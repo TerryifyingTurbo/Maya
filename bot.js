@@ -74,7 +74,7 @@ bot.on("message", async message => {
     return message.channel.send("Whoa there, partner! Only my creator can invite");
 
 
-    else messsage.channel.send("You got it, boss x3",
+    else message.channel.send("You got it, boss x3",
     bot.generateInvite(["ADMINISTRATOR"]))
   }
 
