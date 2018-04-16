@@ -66,14 +66,23 @@ bot.on("message", async message => {
     
     await bot.login(botsettings.token)
     
-    message.channel.send("Reloaded.");
+    message.channel.send("Reloaded. :arrow_forward:");
+  }
+
+  if(command === `${prefix}invite`){
+    if(message.author.id !== "297931837400023041")
+    return message.channel.send("Whoa there, partner! Only my creator can invite");
+
+
+    else messsage.channel.send("You got it, boss x3",
+    bot.generateInvite(["ADMINISTRATOR"]))
   }
 
   if(command ===`${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
-    .setDescription("Developer Only >:c")
+    .setDescription("Developer")
     .setColor("RANDOM")
-    .addField("CMD", "shutdown, reload, eval, gamepresence, setavat, leave")
+    .addField("Commands", "shutdown, reload, eval, gamepresence, setavat, leave, invite")
     
     message.channel.send(devembed);
   }
@@ -112,7 +121,7 @@ bot.on("message", async message => {
     const m = await message.channel.send("Ping?");
     m.edit(`:ping_pong: ***Pong!***  x3 
 Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}ms.** 
-API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
+API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
   }
 
   if(command === `${prefix}leave`){
