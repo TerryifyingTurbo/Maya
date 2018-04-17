@@ -93,7 +93,7 @@ ${invlink}`)
     //!kick @daeshan askin for it
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("You think this is soccer? ***Who am I gonna kick***");
+    if(!kUser) return message.reply("You think this is soccer? ***Who do I kick***");
     let kReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**NO.** You don't have the ability to delete messages");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not allowed to kick the ones who have the ability to delete messages");
@@ -271,7 +271,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
   if(command === `${prefix}ban`){
 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send("Can't find user!");
+    if(!bUser) return message.reply("Yeah, banned the air. ***Who do I ban***");
     let bReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("**NO.** You don't have the ability to ban members!");
     if(bUser.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Not allowed to ban others who have the ability to ban");
@@ -298,7 +298,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
   if(command === `${prefix}giverole`){
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]); 
-    if(!rMember) return message.reply("Yeah, let me just give a role to thin air");
+    if(!rMember) return message.reply("Yeah, let me just give a role to thin air. ***Who do I give a role to***");
     let role = args.join(" ").slice(22);
     if(!role) return message.reply("So what role do I add-");
     let gRole = message.guild.roles.find(`name`,role);
@@ -312,7 +312,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
   if(command === `${prefix}removerole`){
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-    if(!rMember) return message.reply("Yeah, I took the air's role away. I couldn't find that user, yo.");
+    if(!rMember) return message.reply("Yeah, I took the air's role away. ***Who do I take a role away from***");
     let role = args.join(" ").slice(22);
     if(!role) return message.reply("So what role do I take away-");
     let gRole = message.guild.roles.find(`name`, role);
