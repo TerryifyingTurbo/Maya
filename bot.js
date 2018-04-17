@@ -73,9 +73,9 @@ bot.on("message", async message => {
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
     
-  let invlink = bot.generateInvite(["ADMINISTRATOR"])
+  let invlink = await bot.generateInvite(["ADMINISTRATOR"])
 
-  message.channel.send("Here you go, boss x3", (invlink))
+  message.reply("Here you go, boss x3", [invlink])
   }
 
   if(command ===`${prefix}devhelp`){
