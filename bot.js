@@ -297,7 +297,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 
   if(command === `${prefix}giverole`){
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
-    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.member(message.user.id()) || message.guild.members.get(args[0]); 
+    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]); 
     if(!rMember) return message.reply("Yeah, let me just give a role to thin air");
     let role = args.join(" ").slice(22);
     if(!role) return message.reply("So what role do I add-");
