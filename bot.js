@@ -73,9 +73,10 @@ bot.on("message", async message => {
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
     
-  let invlink = await bot.generateInvite(["ADMINISTRATOR"])
+  let invlink = `https://discordapp.com/oauth2/authorize?client_id=417517654174334976&permissions=8&scope=bot`
 
-  message.reply("Here you go, boss x3", [invlink])
+  message.reply(`Here you go, boss x3
+${invlink}`)
   }
 
   if(command ===`${prefix}devhelp`){
