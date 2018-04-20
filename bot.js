@@ -1,5 +1,3 @@
-import { version } from "punycode";
-
 const botsettings = require("./botsettings.json");
 const Discord = require("discord.js");
 const superagent = require("superagent");
