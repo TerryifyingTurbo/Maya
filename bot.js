@@ -1,3 +1,5 @@
+import { version } from "punycode";
+
 const botsettings = require("./botsettings.json");
 const Discord = require("discord.js");
 const superagent = require("superagent");
@@ -166,11 +168,15 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 
 if(message.content ===`${prefix}succ`){
   let sucUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  let replies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
+  let Ureplies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
+  let Ttime = ["an hour later", "a couple of minutes later", "a really long time", "about half an hour", "a while"];
+  let Ppower = ["the best", "the sloppiest", "the mad", "a decent", "an aight'"]
 
-  let result = Math.floor((Math.random() * replies.length))
-  
-  if(!sucUser) return message.channel.send(`**${message.author.username}**`+ " gave themself the **succ** and seemed to have " + replies[result]);
+  let Uresult = Math.floor((Math.random() * Ureplies.length)) //for the reply options
+  let result = Math.floor((Math.random() * replies.length)) //for the time options
+
+  if(!sucUser) return message.channel.send(`**${message.author.username}**`+ " gave themself the **succ** and seemed to have " + Ureplies[Uresult]);
+  message.channel.send(`**${message.author.username} put that mouth to good use and` + ` gave ${message.guild.member} the`)
 }
 
   if(command === `${prefix}8ball`){
@@ -379,9 +385,9 @@ message.channel.send(factembed);
     .setColor("#15f153")
     .setThumbnail(sicon)
     .addField("Server Name", message.guild.name)
-    .addField("Made on...", message.guild.createdAt)
-    .addField("You joined...", message.member.joinedAt)
-    .addField("Total Members...", message.guild.memberCount);
+    .addField("Made on", message.guild.createdAt)
+    .addField("You joined", message.member.joinedAt)
+    .addField("Total Members", message.guild.memberCount);
 
     return message.channel.send(serverembed);
   }
@@ -411,9 +417,11 @@ message.channel.send(factembed);
     .setDescription("My info x3")
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .addField("My name is...", bot.user.username)
-    .addField("I was made on...", bot.user.createdAt)
-    .addField("Total CMDs", "24");
+    .addField("I am", bot.user.username, bot.user.discriminator)
+    .addField("Made on", bot.user.createdAt)
+    .addField("Made by", "Bwapstustu Turbo#5600")
+    .addField("Powered by...", version)
+    .addField("Total Commands", "24");
 
     return message.channel.send(botembed);
   }
