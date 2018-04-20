@@ -166,7 +166,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 
 if(message.content ===`${prefix}succ`){
   let sucUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!sucUser) return message.channel.send(`${message.author.username}`, "gave themselves the **succ~**");
+  if(!sucUser) return message.channel.send(`${message.author.username}`+ "gave themselves the **succ~**");
 }
 
   if(command === `${prefix}8ball`){
