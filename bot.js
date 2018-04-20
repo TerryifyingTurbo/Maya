@@ -166,7 +166,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 
 if(message.content ===`${prefix}succ`){
   let sucUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  let replies = ["loved it", "enjoyed it", "hate it", "want more", "wants it someone else instead", "worship it"];
+  let replies = ["loved it", "enjoyed it", "hate it", "want more", "wants it someone else instead", "worship it", "liked it"];
 
   let result = Math.floor((Math.random() * replies.length))
   
