@@ -166,10 +166,10 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 
 if(message.content ===`${prefix}succ`){
   let sucUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  let selfSucReplies = ["loved it, enjoyed it, hate it, want more"];
-  let selfSucResult = Math.floor((Math.random() * selfSucReplies.length))
+  let replies = ["loved it, enjoyed it, hate it, want more"];
+  let result = Math.floor((Math.random() * replies.length))
   
-  if(!sucUser) return message.channel.send(`**${message.author.username}**`+ " gave themselves the **succ~** and seemed to have", selfSucReplies[selfSucResult]);
+  if(!sucUser) return message.channel.send(`**${message.author.username}**`, " gave themselves the **succ~** and seemed to have", replies[result]);
 }
 
   if(command === `${prefix}8ball`){
