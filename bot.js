@@ -169,7 +169,7 @@ if(message.content ===`${prefix}succ`){
   let replies = ["loved it, enjoyed it, hate it, want more"];
   let result = Math.floor((Math.random() * replies.length))
   
-  if(!sucUser) return message.channel.send(`**${message.author.username}**`, " gave themselves the **succ~** and seemed to have", replies[result]);
+  if(!sucUser) return message.channel.send(`**${message.author.username}**`+ " gave themselves the **succ~** and seemed to have" + replies[result]);
 }
 
   if(command === `${prefix}8ball`){
