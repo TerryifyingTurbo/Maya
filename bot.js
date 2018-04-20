@@ -164,6 +164,11 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
   message.reply( ";;T");
 }
 
+if(message.content ===`${prefix}succ`){
+  let sucUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!sucUser) return message.channel.send(`${message.author.username}`, "gave themselves the **succ~**");
+}
+
   if(command === `${prefix}8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
     let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely.", "Without a doubt.", "For real? No."];
