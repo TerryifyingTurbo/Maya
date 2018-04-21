@@ -410,38 +410,37 @@ message.channel.send(factembed);
 
   if(command === `${prefix}botinfo`){
     let embed = {
-      "title": "title ~~(did you know you can have markdown here too?)~~",
-      "description": "this supports [named links](https://discordapp.com) on top of the previously shown subset of markdown. ```\nyes, even code blocks```",
-      "url": "https://discordapp.com",
+      "title": "My info x3",
+      //"url": "https://discordapp.com",
       "color": 15721660,
-      "timestamp": "2018-04-21T01:28:06.959Z",
+      //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
-        "text": "footer text"
+        "text": "Running on Discord.js v11.30"
       },
       "thumbnail": {
-        "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+        "url": `${bot.user.displayAvatarURL}` 
       },
-      "image": {
-        "url": "https://cdn.discordapp.com/embed/avatars/0.png"
-      },
+      //"image": {
+        //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
+      //},
       "author": {
-        "name": "author name",
-        "url": "https://discordapp.com",
-        "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+        "name": "Bwapstustu Turbo#5600",
+        //"url": "https://discordapp.com",
+        //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
       },
       "fields": [
         {
-          "name": "🤔",
-          "value": "some of these properties have certain limits..."
+          "name": "I am",
+          "value": `${bot.user.username, bot.user.discriminator}`
         },
         {
-          "name": "😱",
-          "value": "try exceeding some of them!"
+          "name": "Made on",
+          "value": `${bot.user.createdAt}`
         },
         {
-          "name": "🙄",
-          "value": "an informative error should show up, and this view will remain as-is until all issues are fixed"
+          "name": "I have...",
+          "value": "24 Commands (total)"
         },
         {
           "name": "<:thonkang:219069250692841473>",
@@ -455,7 +454,7 @@ message.channel.send(factembed);
         }
       ]
     };
-    message.channel.send("this `supports` __a__ **subset** *of* ~~markdown~~ 😃 ```js\nfunction foo(bar) {\n  console.log(bar);\n}\n\nfoo(1);```", { embed });
+    message.channel.send({ embed });
   
     // let bicon = bot.user.displayAvatarURL;
     // let botembed = new Discord.RichEmbed()
