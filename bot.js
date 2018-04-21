@@ -417,9 +417,10 @@ message.channel.send(factembed);
     .setThumbnail(bicon)
     .addField("I am", bot.user.username, bot.user.discriminator)
     .addField("Made on", bot.user.createdAt)
-    .addField("Made by", "Bwapstustu Turbo#5600")
-    .addField("Powered by...", "Discord.js 8.11.1 LTS")
-    .addField("Total Commands", "24");
+    .addBlankField(true)
+    .addField("Made by", "Bwapstustu Turbo#5600", true)
+    .addField("Powered by...", "Discord.js 8.11.1 LTS", true)
+    .addField("Total Commands", "24", true);
 
     return message.channel.send(botembed);
   }
