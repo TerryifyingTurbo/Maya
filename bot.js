@@ -40,7 +40,7 @@ bot.on("message", async message => {
   if(!message.content.startsWith(`${prefix}`)) return;
   if(cooldown.has(message.author.id)){
     message.delete();
-    return message.reply("Aye chill, dick. Just wait a second")
+    return message.reply("Aye chill, dick. Take it slow and steady")
   }
   if(!message.member.hasPermission("ADMINISTRATOR")){
     cooldown.add(message.author.id);
