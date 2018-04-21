@@ -36,6 +36,21 @@ bot.on("message", async message => {
   if(message.channel.type === "dm"){
     return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
+  
+  const ayy = bot.emojis.get("426999753830825995");
+  
+  if(message.content === "ayy"){
+  const ayy = bot.emojis.find("name", "ayy");
+  message.channel.send(`${ayy} Lmao`);
+}
+
+const intensefear = bot.emojis.get("406790609035329538");
+
+if(message.content === "D:"){
+  const instensefear = bot.emojis.find("name", "intensefear");
+  message.channel.send(`${instensefear}`);
+}
+  
   let prefix = botsettings.prefix;
   if(!message.content.startsWith(`${prefix}`)) return;
   if(cooldown.has(message.author.id)){
@@ -157,20 +172,6 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
 //message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
   }
-
-  const ayy = bot.emojis.get("426999753830825995");
-  
-  if(message.content === "ayy"){
-  const ayy = bot.emojis.find("name", "ayy");
-  message.channel.send(`${ayy} Lmao`);
-}
-
-const intensefear = bot.emojis.get("406790609035329538");
-
-if(message.content === "D:"){
-  const instensefear = bot.emojis.find("name", "intensefear");
-  message.channel.send(`${instensefear}`);
-}
 
 if(message.content === ";T" || (message.content === "kinky") || (message.content === "spicy") || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T")){
   message.reply( ";;T");
