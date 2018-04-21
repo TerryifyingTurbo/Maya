@@ -1,5 +1,3 @@
-import { RichEmbed } from "discord.js";
-
 const botsettings = require("./botsettings.json");
 const Discord = require("discord.js");
 const superagent = require("superagent");
@@ -415,19 +413,12 @@ message.channel.send(factembed);
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     
-    embed.fields[0].inline=true
-    embed.fields[1].inline=true
-    embed.fields[2].inline=true
-    embed.fields[3].inline=true
-    embed.fields[4].inline=true
-
     .setDescription("My info x3")
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("I am", bot.user.username, bot.user.discriminator)
     .addField("Made on", bot.user.createdAt)
-    .addField("Made by", "Bwapstustu Turbo#5600")
-    .addField("Powered by...", "Discord.js 8.11.1 LTS")
+    .addFooter("Made by", "Bwapstustu Turbo#5600")
     .addField("Total Commands", "24");
 
     return message.channel.send(botembed);
