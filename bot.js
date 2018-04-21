@@ -165,7 +165,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 }
 
 if(message.content ===`${prefix}succ`){
-  let sucUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]));
+  let sucUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   let Ureplies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
   let Treplies = ["an hour later", "a couple of minutes later", "a really long time", "about half an hour", "a while"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'"]
