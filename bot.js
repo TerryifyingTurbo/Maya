@@ -175,7 +175,7 @@ if(message.content ===`${prefix}succ`){
   let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
   let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
   
-  if(!sayMessage) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ")
+  if(!sayMessage) message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ")
 message.channel.send(`${message.author.username} puts that mouth to good use and gave` + sayMessage + " the mad succ");
 
   //if(!reciever) return message.channel.send(`**${message.author.username}** was flexible enough and`+ " gave themself the **succ**. They seemed to have " + Ureplies[Uresult]);
