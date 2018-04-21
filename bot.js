@@ -37,12 +37,12 @@ bot.on("message", async message => {
     return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
   let prefix = botsettings.prefix;
-  if(!message.content.startsWith(prefix)) return;
+  if(!message.content.startsWith(`${prefix}`)) return;
   if(cooldown.has(message.author.id)){
     return message.reply("Aye chill, dick! Wait")
   }
   //if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
+  cooldown.add(message.author.id);
   //}
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
