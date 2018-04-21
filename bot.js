@@ -39,20 +39,19 @@ bot.on("message", async message => {
   let prefix = botsettings.prefix;
   if(!message.content.startsWith(`${prefix}`)) return;
   if(cooldown.has(message.author.id)){
-    return message.reply("Aye chill, dick! Wait")
+    message.delete();
+    return message.reply("Aye chill, dick. Just wait a second")
   }
-  //if(!message.member.hasPermission("ADMINISTRATOR")){
-  cooldown.add(message.author.id);
-  //}
+  if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+  }
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
   let args = messageArray.slice(1);
 
   setTimeout(() => {
     cooldown.delete(message.author.id)
-  ,(cdseconds * 1000)
-  
-})
+  }, cdseconds * 1000)
 
   if(command === `${prefix}shutdown`){
   if(message.author.id !== "297931837400023041")
