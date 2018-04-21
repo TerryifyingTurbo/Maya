@@ -412,7 +412,7 @@ message.channel.send(factembed);
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    (embed.fields[0].inline= true)
+    (botembed[0].inline= true)
     .setDescription("My info x3")
     .setColor("#15f153")
     .setThumbnail(bicon)
