@@ -166,6 +166,10 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 if(message.content ===`${prefix}succ`){
   //let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   const sayMessage = args.join(" ");   
+  
+  if(!sayMessage) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ");
+message.channel.send(`${message.author.username} puts that mouth to good use and gave` + sayMessage + " the mad succ")
+
   let Ureplies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'"];
@@ -177,8 +181,6 @@ if(message.content ===`${prefix}succ`){
   //if(!reciever) return message.channel.send(`**${message.author.username}** was flexible enough and`+ " gave themself the **succ**. They seemed to have " + Ureplies[Uresult]);
   //if(!args[1]) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ");
   //message.channel.send(`**${message.author.username}**` + " puts that mouth to good use and gave " + reciever +  Preplies[Presult] + " succ " +  Treplies[Tresult] + " They seemed to have " +  Ureplies[Uresult]);
-if(!sayMessage) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ");
-message.channel.send(`${message.author.username} puts that mouth to good use and gave` + sayMessage + " the mad succ")
 }
 
   if(command === `${prefix}8ball`){
