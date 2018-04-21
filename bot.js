@@ -136,14 +136,13 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
   }
 
   if(command === `${prefix}say`) {
-        // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-        // To get the "message" itself we join the `args` back into a string with spaces: 
+
     const sayMessage = args.join(" ");
     if(!sayMessage) return message.channel.send("Say what? x3")
-        // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    //message.delete().catch(O_o=>{}); 
-        // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+//message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
   }
 
   const ayy = bot.emojis.get("426999753830825995");
@@ -166,7 +165,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 
 if(message.content ===`${prefix}succ`){
   //let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  const reciever = args.slice(0).join(" ");   
+  const sayMessage = args.join(" ");   
   let Ureplies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'"];
@@ -176,8 +175,10 @@ if(message.content ===`${prefix}succ`){
   let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
 
   //if(!reciever) return message.channel.send(`**${message.author.username}** was flexible enough and`+ " gave themself the **succ**. They seemed to have " + Ureplies[Uresult]);
-  if(!args[1]) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ");
-  message.channel.send(`**${message.author.username}**` + " puts that mouth to good use and gave " + reciever +  Preplies[Presult] + " succ " +  Treplies[Tresult] + " They seemed to have " +  Ureplies[Uresult]);
+  //if(!args[1]) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ");
+  //message.channel.send(`**${message.author.username}**` + " puts that mouth to good use and gave " + reciever +  Preplies[Presult] + " succ " +  Treplies[Tresult] + " They seemed to have " +  Ureplies[Uresult]);
+if(!sayMessage) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ");
+message.channel.send(`${message.author.username} puts that mouth to good use and gave` + sayMessage + " the mad succ")
 }
 
   if(command === `${prefix}8ball`){
