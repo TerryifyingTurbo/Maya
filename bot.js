@@ -412,16 +412,14 @@ message.channel.send(factembed);
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    RichEmbed()[0].inline= true
     .setDescription("My info x3")
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("I am", bot.user.username, bot.user.discriminator)
     .addField("Made on", bot.user.createdAt)
-    .addBlankField(true)
-    .addField("Made by", "Bwapstustu Turbo#5600", true)
-    .addField("Powered by...", "Discord.js 8.11.1 LTS", true)
-    .addField("Total Commands", "24", true);
+    .addBlankField("Made by", "Bwapstustu Turbo#5600", inline, true)
+    .addBlankField("Powered by...", "Discord.js 8.11.1 LTS", inline, true)
+    .addBlankField("Total Commands", "24", inline, true);
 
     return message.channel.send(botembed);
   }
