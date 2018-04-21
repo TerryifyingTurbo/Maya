@@ -257,7 +257,7 @@ if(command === `${prefix}8ball`){
 }
  
 if(command ===`${prefix}emoji`){
-  let replies = [":hearts:", "chocolate_bar:", ":cookie:", "kissing_heart:", "sweat_smile:", "wink", "blush", ":worried:"];
+  let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
   let result = Math.floor((Math.random() * replies.length));
   
   if(message.author.id !== "362472426258300928")
