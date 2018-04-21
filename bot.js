@@ -448,8 +448,8 @@ message.channel.send(factembed);
           "inline": true
         },
         {
-          "name": "test",
-          "value": "inline field2 true",
+          "name": "Warning",
+          "value": ":warning: Commands may be unstable",
           "inline": true
         }
       ]
