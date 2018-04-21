@@ -159,7 +159,7 @@ if(message.content === "D:"){
   message.channel.send(`${instensefear}`);
 }
 
-if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T")){
+if(message.content === ";T" || (message.content === "kinky") || (message.content === "spicy") || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T")){
   message.reply( ";;T");
 }
 
