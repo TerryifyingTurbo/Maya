@@ -168,7 +168,7 @@ if(command === `${prefix}suck`){
   const sayMessage = args.join(" ");
   let Ureplies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while"];
-  let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'"];
+  let Preplies = ["**the best**", "**the sloppiest**", "**the mad**", "**a decent**", "**an aight'**", "**the shittiest**"];
 
   let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
   let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
