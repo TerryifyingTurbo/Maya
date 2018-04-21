@@ -55,7 +55,7 @@ if(message.content === "D:"){
   if(!message.content.startsWith(`${prefix}`)) return;
   if(cooldown.has(message.author.id)){
     message.delete();
-    return message.reply("Aye chill, foo. Take it easy, yeah?")
+    return message.reply("Aye! Chill. Take it easy, yeah?")
   }
   if(!message.member.hasPermission("ADMINISTRATOR")){
     cooldown.add(message.author.id);
@@ -359,20 +359,6 @@ if(command ===`${prefix}emoji`){
     await(rMember.removeRole(gRole.id));
     return message.reply (`Removed ***${gRole.name}.***`);
   }
-
-  if(command ===`${prefix}dog`){
-    let {body} = await superagent
-    .get(`https://random.dog/woof.json`);
-    
-    let dogembed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setTitle("A dog :0")
-    .setImage(body.url);
-    
-    message.channel.send(dogembed);
-    
-    }
-
   if(command ===`${prefix}cat`){
     let {body} = await superagent
     .get(`http:\/\/aws.random.cat\/meow`);
@@ -381,8 +367,18 @@ let catembed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setTitle("Kitty :0")
 .setImage(body.file);
-
 message.channel.send(catembed);
+}
+  
+if(command ===`${prefix}dog`){
+    let {body} = await superagent
+    .get(`https://random.dog/woof.json`);
+    
+    let dogembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("A dog :0")
+    .setImage(body.url);
+    message.channel.send(dogembed);
   }
 
 if(command === `${prefix}catfact`){
