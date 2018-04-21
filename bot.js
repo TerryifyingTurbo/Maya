@@ -176,7 +176,7 @@ if(message.content === ";T" || (message.content === "kinky") || (message.content
   message.reply( ";;T");
 }
 
-if(command === `${prefix}suck`){
+if(command === `${prefix}succ`){
 
   const sayMessage = args.join(" ");
   let Ureplies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
