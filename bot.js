@@ -432,7 +432,7 @@ message.channel.send(factembed);
       "fields": [
         {
           "name": "I am",
-          "value": `${bot.user.username, bot.user.discriminator}`
+          "value": `${bot.user.username}` + ` #${bot.user.discriminator}`
         },
         {
           "name": "Made on",
