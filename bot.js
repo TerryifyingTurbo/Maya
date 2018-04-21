@@ -416,9 +416,9 @@ message.channel.send(factembed);
     .setDescription("My info x3")
     .setColor("#15f153")
     .setThumbnail(bicon)
+    .setAuthor("Made by", "Bwapstustu Turbo#5600")
     .addField("I am", bot.user.username, bot.user.discriminator)
     .addField("Made on", bot.user.createdAt)
-    .addField("Made by", "Bwapstustu Turbo#5600")
     .addField("Total Commands", "24");
 
     return message.channel.send(botembed);
