@@ -158,14 +158,16 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     // And we get the bot to say the thing: 
   }
 
+  const ayy = bot.emojis.get("426999753830825995");
+  
   if(message.content === "ayy"){
-    const ayy = bot.emojis.get("426999753830825995");
-    const ayy = bot.emojis.find("name", "ayy");
-    message.channel.send(`${ayy} Lmao`);
+  const ayy = bot.emojis.find("name", "ayy");
+  message.channel.send(`${ayy} Lmao`);
 }
 
+const intensefear = bot.emojis.get("406790609035329538");
+
 if(message.content === "D:"){
-  const intensefear = bot.emojis.get("406790609035329538");
   const instensefear = bot.emojis.find("name", "intensefear");
   message.channel.send(`${instensefear}`);
 }
