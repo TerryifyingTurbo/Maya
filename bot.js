@@ -415,7 +415,7 @@ message.channel.send(factembed);
       "color": 15721660,
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
-        "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+        "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
         "text": "Running on Discord.js v11.30"
       },
       "thumbnail": {
@@ -425,14 +425,14 @@ message.channel.send(factembed);
         //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
       //},
       "author": {
-        "name": "Bwapstustu Turbo#5600",
+        "name": "Made by Bwapstustu Turbo#5600",
         //"url": "https://discordapp.com",
         //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
       },
       "fields": [
         {
           "name": "I am",
-          "value": `${bot.user.username}` + ` #${bot.user.discriminator}`
+          "value": `${bot.user.username}` + `#${bot.user.discriminator}`
         },
         {
           "name": "Made on",
@@ -443,8 +443,8 @@ message.channel.send(factembed);
           "value": "24 Commands (total)"
         },
         {
-          "name": "<:thonkang:219069250692841473>",
-          "value": "these last two",
+          "name": "WIP",
+          "value": `${ayy} Work in progress.`,
           "inline": true
         },
         {
