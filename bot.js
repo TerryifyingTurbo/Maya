@@ -448,8 +448,8 @@ message.channel.send(factembed);
           "inline": true
         },
         {
-          "name": "<:thonkang:219069250692841473>",
-          "value": "are inline fields",
+          "name": "test",
+          "value": "inline field2 true",
           "inline": true
         }
       ]
