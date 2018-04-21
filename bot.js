@@ -184,7 +184,7 @@ if(command === `${prefix}suck`){
 
   const sayMessage = args.join(" ");
   if(!sayMessage) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ")
-  message.channel.send(`${message.author.user} puts that mouth to good use and gave `+ sayMessage + " the mad succ");
+  message.channel.send(`${message.author.username} puts that mouth to good use and gave `+ sayMessage + " the mad succ");
 }
   
 if(command === `${prefix}8ball`){
