@@ -176,7 +176,7 @@ if(message.content ===`${prefix}succ`){
   let Presult = Math.floor((Math.random() * Preplies.length)) //for the power options
 
   if(!reciever) return message.channel.send(`**${message.author.username}** was flexible enough and`+ " gave themself the **succ**. They seemed to have " + Ureplies[Uresult])
-  message.channel.send(`**${message.author.username} puts that mouth to good use and` + ` gave ${reciever} the ` + Preplies[Presult] +  Treplies[Tresult] + " They seemed to have " + Ureplies[Uresult])
+  message.channel.send(`**${message.author.username} puts that mouth to good use and` + " gave " + reciever + " the " + Preplies[Presult] +  Treplies[Tresult] + " They seemed to have " + Ureplies[Uresult])
 }
 
   if(command === `${prefix}8ball`){
