@@ -8,7 +8,8 @@ const fetchVideoInfo = require("youtube-info");
 const leetspeak = require("leetspeak");
 const bot = new Discord.Client({disableEveryone: true})
 const cleverbot = require("cleverbot", "cleverbot.io");
-const cooldown = new Set();
+let cooldown = new Set();
+let cdseconds = 2;
 
 
 
@@ -36,9 +37,22 @@ bot.on("message", async message => {
     return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
   let prefix = botsettings.prefix;
+  if(!message.content.startsWith(prefix)) return;
+  if(cooldown.has(message.author.id)){
+    return message.reply("Aye chill, dick! Wait")
+  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+  //}
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
   let args = messageArray.slice(1);
+
+  setTimeout(() => {
+    cooldown.delete(message.author.id)
+  ,(cdseconds * 1000)
+  
+})
 
   if(command === `${prefix}shutdown`){
   if(message.author.id !== "297931837400023041")
