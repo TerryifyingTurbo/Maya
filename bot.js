@@ -175,7 +175,7 @@ if(command === `${prefix}suck`){
   let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
 
   if(!sayMessage) return message.channel.send("You sucking the air? Go put your mouth to good use and give something *or someone*  the succ")
-  message.channel.send(`${message.author.username} puts that mouth to good use and gave `+ sayMessage + ` ${Preplies[Presult]} succ` + ` ${Treplies[Tresult]}` + " They seemed to have" + ` ${Ureplies[Uresult]}`);
+  message.channel.send(`**${message.author.username}** puts that mouth to good use and gave `+ sayMessage + ` ${Preplies[Presult]} succ` + ` ${Treplies[Tresult]}.` + " They seemed to have" + ` ${Ureplies[Uresult]}`);
 }
   
 if(command === `${prefix}8ball`){
