@@ -165,7 +165,8 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 }
 
 if(message.content ===`${prefix}succ`){
-  let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  //let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  let mentionuser = args.join(" ").slice(22);
   let Ureplies = ["**loved** it", "**enjoyed** it", "**hate** it", "**want** more", "want it **from someone else** instead", "**liked** it"];
   let Treplies = ["an hour later", "a couple of minutes later", "a really long time", "about half an hour", "a while"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'"]
@@ -175,7 +176,7 @@ if(message.content ===`${prefix}succ`){
   let Presult = Math.floor((Math.random() * Preplies.length)) //for the power options
 
   if(!user) return message.channel.send(`**${message.author.username}** was flexible enough and`+ " gave themself the **succ**. They seemed to have " + Ureplies[Uresult])
-  message.channel.send(`**${message.author.username} put that mouth to good use and` + ` gave ${user} the ` + Preplies[Presult] +  Treplies[Tresult] + " They seemed to have " + Ureplies[Uresult])
+  if(!mentionuser) message.channel.send(`**${message.author.username} put that mouth to good use and` + ` gave ${user} the ` + Preplies[Presult] +  Treplies[Tresult] + " They seemed to have " + Ureplies[Uresult])
 }
 
   if(command === `${prefix}8ball`){
