@@ -228,6 +228,7 @@ if(message.content ===`${prefix}succ`){
     "Let's misbehave~",
     "I know I'm a handful, but that's what you got two hands for.",
     "I licked it, it's mine now.",
+    "Sex is like math, add the bed, subtract the clothes, divide the legs and pray you don't multiply"
   ];
 
     let result = Math.floor((Math.random() * replies.length))
