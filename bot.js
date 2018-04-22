@@ -159,7 +159,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     
     else
     
-    await message.channel.send("Fine, I'll leave then. Jeez.");
+    await message.channel.send("Aight', later Boss!");
     message.guild.leave();
   }
 
