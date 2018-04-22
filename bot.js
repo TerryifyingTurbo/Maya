@@ -244,7 +244,7 @@ if(command === `${prefix}8ball`){
   }
 
   if(command === `${prefix}charq`){
-let sayMessage = args.slice(0).join(" ");
+let sayMessage = args.join(" ");
 let question = ["What's your nationality?",
 "What is your **worst** phobia?",
 "What is your gender *or sex* ***or both?***",
