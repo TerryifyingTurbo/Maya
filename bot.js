@@ -245,9 +245,6 @@ if(command === `${prefix}8ball`){
 
   if(command === `${prefix}charq`){
 let sayMessage = args.slice(0).join(" ");
-let result = Math.floor((Math.random() * question.length))
-if(!args[2]) return message.channel.send("Actually ask a question?");
-
 let question = ["What's your nationality?",
 "What is your **worst** phobia?",
 "What is your gender *or sex* ***or both?***",
@@ -257,6 +254,11 @@ let question = ["What's your nationality?",
 "Any allies/friends? If so, when, how and why?",
 "Are you **close** with someone *or something?*",
 "What are your morals? Why?"];
+
+let result = Math.floor((Math.random() * question.length))
+
+if(!args[2]) return message.channel.send("Actually ask a question?");
+
 if(!sayMessage) return message.channel.send(question[result]);
 
 message.channel.send(sayMessage);
