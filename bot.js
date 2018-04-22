@@ -257,8 +257,6 @@ let question = ["What's your nationality?",
 
 let result = Math.floor((Math.random() * question.length))
 
-if(!args[2]) return message.channel.send("Actually ask a question?");
-
 if(!sayMessage) return message.channel.send(question[result]);
 
 message.channel.send(sayMessage);
