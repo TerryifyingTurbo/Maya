@@ -212,11 +212,6 @@ let factembed = new Discord.RichEmbed()
 message.channel.send(factembed);
 }
 
-const Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
-const Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-const Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-const Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
-
 if(command === `${prefix}succ`){
 
   const sayMessage = args.join(" ");
@@ -224,6 +219,11 @@ if(command === `${prefix}succ`){
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
   let Posreplies = ["gets on their knees", "moves a strand of hair aside", "licks their own lips", "huffs", "gives a sly smile", "pouts", "makes a low groan"];
+
+let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
   message.channel.send(`***${message.member.displayName}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
@@ -236,6 +236,11 @@ if(command === `${prefix}makeme`){
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
   let Posreplies = ["get on their knees", "crave it", "beg for it"];
+
+  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
   message.channel.send(`***${message.member.displayName}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + ` *One can assume that the one who forced ${sayMessage}*` + ` ***${Ureplies[Uresult]}***`);
@@ -260,6 +265,11 @@ if(command ===`${prefix}fucc`){
                     `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`,
                     `***${sayMessage}*** *agrees to join in on some Monopoly with* ***${message.member.displayName}***—`,
                     `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}`];
+
+let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options                
 
   if(!sayMessage) return message.channel.send(`${message.member.displayName} must've went to go fuck themselves or something since they didn't say who otherwise`);
   message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
@@ -628,7 +638,7 @@ if(command ===`${prefix}emoji`){
         "fields": [
           {
             "name": "Random",
-            "value": "serverinfo, botinfo, ping, devhelp"
+            "value": "serverinfo, botinfo, ping, devhelp, dws"
           },
           {
             "name": "Moderation",
