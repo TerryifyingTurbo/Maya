@@ -324,14 +324,14 @@ if(command === `${prefix}dws`){
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": "Use !?dws<category>"
+        "text": "Use !?dws<specific selection>"
       },
       "thumbnail": {
         "url": `https://i.imgur.com/yztZj9k.png` 
       },
-      "image": {
-        "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
-      },
+      // "image": {
+      //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
+      // },
       // "author": {
       //   "name": "Called for help...",
       //   //"url": "https://discordapp.com",
@@ -344,20 +344,20 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Characters",
-          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant"
+          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Izumi"
         },
         {
           "name": "Vehicles",
-          "value": "GT-GalaxyTruck, Gargoyle, Wildcat"
+          "value": "GT-GalaxyTruck, Gargoyle, Wildcat, CK"
         },
         {
           "name": "Items",
-          "value": "Zannker0",
+          "value": "Zannker0, Left Hand of JEjuS",
           "inline": true
         },
          {
-           "name": "Misc",
-           "value": ":warning: Classified: █████",
+           "name": "Misc n' Shit",
+           "value": "Entity#, Dark Areas",
            "inline": true
         }
       ]
