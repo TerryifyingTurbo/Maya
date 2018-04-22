@@ -243,7 +243,7 @@ if(command === `${prefix}makeme`){
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
-  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and gives* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
+  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
 
 }
   
