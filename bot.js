@@ -226,7 +226,7 @@ if(command === `${prefix}succ`){
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
-  message.channel.send(`***${message.author.username}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
+  message.channel.send(`***${message.member.displayName}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
 
 }
 if(command === `${prefix}makeme`){
@@ -243,28 +243,31 @@ if(command === `${prefix}makeme`){
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
-  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + ` *One can assume that the one who forced ${sayMessage}*` + ` ***${Ureplies[Uresult]}***`);
+  message.channel.send(`***${message.member.displayName}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + ` *One can assume that the one who forced ${sayMessage}*` + ` ***${Ureplies[Uresult]}***`);
 }
 
 if(command ===`${prefix}fucc`){
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
-  let Preplies = [];
+  let Preplies = [`stifled moans could be heard from ${sayMessage}`, `lusty panting escaped from ${sayMessage}'s mouth`, `${sayMessage}'s hands knotted into fists as they got ruthlessly pounded`, `${sayMessage} teared of crying pain`, `shameless moans were forced out of ${sayMessage}`];
+  
   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.member.displayName}***`, 
-                    `***${sayMessage}*** *goes on all fours for* ***$message.guild.member}***`,
+                    `***${sayMessage}*** *goes on all fours for* ***${message.member.displayName}***`,
                     `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.member.displayName}***`,
                     ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.member.displayName}***`,
-                    `***${message.member.displayName}*** *gets aggressive and pins down* ***${sayMessage}*** *, taking complete control over them*`,
-                    `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`];
+                    `***${message.member.displayName}*** *gets aggressive and pins down* ***${sayMessage},*** *taking complete control over them*`,
+                    `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`,
+                    `***${sayMessage}*** *agrees to join in on some Monopoly with* ***${message.member.displayName}***—`,
+                    `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}`];
 
   let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the end reaction options
   let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
   let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
-  if(!sayMessage) return message.channel.send(`${message.author.username} must've went to go fuck themselves or something since they didn't say who otherwise`);
-  message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.***` + ` *It's safe to assume that they* ***${Ureplies[Uresult]}.***`);
+  if(!sayMessage) return message.channel.send(`${message.member.displayName} must've went to go fuck themselves or something since they didn't say who otherwise`);
+  message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*` + ` *In the end, it looks like they* ***${Ureplies[Uresult]}.***`);
 }
 
   
@@ -576,7 +579,7 @@ if(command ===`${prefix}emoji`){
           "text": "You can type help on certain commands."
         },
         "thumbnail": {
-          "url": `https://facilities.uw.edu/files/media/question-mark.png` 
+          "url": `http://www.clker.com/cliparts/a/a/5/9/1194994445711658913ark_help.svg.med.png` 
         },
         //"image": {
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
@@ -600,7 +603,7 @@ if(command ===`${prefix}emoji`){
             "value": "say, cat, catfact, dog, 8ball, fortunecookie, coinflip"
           },
           {
-            "name": "NSFW",
+            "name": " :warning: NSFW",
             "value": "Classified, Classified, Classified, Classified",
             "inline": true
           },
