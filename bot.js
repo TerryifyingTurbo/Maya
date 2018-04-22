@@ -243,9 +243,27 @@ if(command === `${prefix}makeme`){
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
-  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
-
+  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *Forced or not, they seem to have*" + ` ***${Ureplies[Uresult]}***`);
 }
+
+if(command ===`${prefix}fucc`){
+  const sayMessage = args.join(" ");
+  let Ureplies = ["loved it", "enjoyed it", "hate it", "wanted more", "liked it", "secretly liked it", "want a break from it for now"];
+  let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later"];
+  let Preplies = [];
+  let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.author.username}***`, 
+                    `***${sayMessage}*** *goes on all fours for* ***${message.author.username}***`,
+                    `***${sayMessage}*** *angles those hips of theirs and spreads their legs far and wide for* ***${message.author.user}***`];
+
+  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the end reaction options
+  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
+
+  if(!sayMessage) return message.channel.send(`${message.author.username} must've went to go fuck themselves or something since they didn't say who otherwise`);
+  message.channel.send(`${Posreplies[Posresult]}` + " *and the two bang for* " + `***${Treplies[Tresult]}.***` + ` *It's safe to assume that they both* ***${Ureplies[Uresult]}.***`);
+}
+
   
 if(command === `${prefix}8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
