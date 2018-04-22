@@ -177,6 +177,41 @@ if(message.content === ";T" || (message.content === "kinky") || (message.content
   message.reply( ";;T");
 }
 
+if(command ===`${prefix}cat`){
+  let {body} = await superagent
+  .get(`http:\/\/aws.random.cat\/meow`);
+
+let catembed = new Discord.RichEmbed()
+.setColor("RANDOM")
+.setTitle("Kitty :0")
+.setImage(body.file);
+message.channel.send(catembed);
+}
+
+if(command ===`${prefix}dog`){
+  let {body} = await superagent
+  .get(`https://random.dog/woof.json`);
+  
+  let dogembed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle("A dog :0")
+  .setImage(body.url);
+  message.channel.send(dogembed);
+}
+
+if(command === `${prefix}catfact`){
+let {body} = await superagent
+.get(`https://catfact.ninja/fact`);
+
+let factembed = new Discord.RichEmbed()
+.setColor("RANDOM")
+//.setTitle("It's true that...")
+.addField("It's true that...", body.fact);
+//.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
+
+message.channel.send(factembed);
+}
+
 if(command === `${prefix}succ`){
 
   const sayMessage = args.join(" ");
@@ -359,41 +394,6 @@ if(command ===`${prefix}emoji`){
     await(rMember.removeRole(gRole.id));
     return message.reply (`Removed ***${gRole.name}.***`);
   }
-  if(command ===`${prefix}cat`){
-    let {body} = await superagent
-    .get(`http:\/\/aws.random.cat\/meow`);
-
-let catembed = new Discord.RichEmbed()
-.setColor("RANDOM")
-.setTitle("Kitty :0")
-.setImage(body.file);
-message.channel.send(catembed);
-}
-  
-if(command ===`${prefix}dog`){
-    let {body} = await superagent
-    .get(`https://random.dog/woof.json`);
-    
-    let dogembed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setTitle("A dog :0")
-    .setImage(body.url);
-    message.channel.send(dogembed);
-  }
-
-if(command === `${prefix}catfact`){
-let {body} = await superagent
-.get(`https://catfact.ninja/fact`);
-
-let factembed = new Discord.RichEmbed()
-.setColor("RANDOM")
-//.setTitle("It's true that...")
-.addField("It's true that...", body.fact);
-//.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
-
-message.channel.send(factembed);
-}
-
 
   if(command === `${prefix}serverinfo`){
 
