@@ -226,7 +226,7 @@ if(command === `${prefix}succ`){
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
-  message.channel.send(`*${message.author.username} ${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` *${Preplies[Presult]} succ*` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` *${Ureplies[Uresult]}*`);
+  message.channel.send(`***${message.author.username}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
 }
   
 if(command === `${prefix}8ball`){
