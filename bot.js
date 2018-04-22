@@ -243,17 +243,18 @@ if(command === `${prefix}makeme`){
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
-  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *Forced or not, they seem to have*" + ` ***${Ureplies[Uresult]}***`);
+  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + ` *One can assume that the one who forced ${sayMessage}*` + ` ***${Ureplies[Uresult]}***`);
 }
 
 if(command ===`${prefix}fucc`){
   const sayMessage = args.join(" ");
-  let Ureplies = ["loved it", "enjoyed it", "hate it", "wanted more", "liked it", "secretly liked it", "want a break from it for now"];
+  let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later"];
   let Preplies = [];
   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.author.username}***`, 
                     `***${sayMessage}*** *goes on all fours for* ***${message.author.username}***`,
-                    `***${sayMessage}*** *angles those hips of theirs and spreads their legs far and wide for* ***${message.author.user}***`];
+                    `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.author.username}***`,
+                    ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.author.username}***`];
 
   let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the end reaction options
   let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
@@ -261,7 +262,7 @@ if(command ===`${prefix}fucc`){
   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send(`${message.author.username} must've went to go fuck themselves or something since they didn't say who otherwise`);
-  message.channel.send(`${Posreplies[Posresult]}` + " *and the two bang for* " + `***${Treplies[Tresult]}.***` + ` *It's safe to assume that they both* ***${Ureplies[Uresult]}.***`);
+  message.channel.send(`${Posreplies[Posresult]}` + " *and the two have some fun for* " + `***${Treplies[Tresult]}.***` + ` *It's safe to assume that they* ***${Ureplies[Uresult]}.***`);
 }
 
   
