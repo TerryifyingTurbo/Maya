@@ -561,9 +561,10 @@ if(command ===`${prefix}emoji`){
       .addField("Random Commands","serverinfo, botinfo, ping, devhelp")
       .addField("Moderator","purge, kick, ban, giverole, removerole")
       .addField("Fun", "say, cat, catfact, dog, 8ball, fortunecookie, coinflip")
-      .addField("NSFW", "Classified, Classified, Classified, Classified")
-
-      return message.channel.send(botembed);
+      .addField("NSFW", "Classified, Classified, Classified, Classified", true)
+      .setFooter("On certain cmds, you can type help for them", true);
+      
+      message.channel.send(botembed);
 }
 
 });
