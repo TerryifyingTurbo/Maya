@@ -179,7 +179,7 @@ if(message.content === ";T" || (message.content === "kinky") || (message.content
 
 if(command ===`${prefix}cat`){
   let {body} = await superagent
-  .get(`http:\/\/aws.random.cat\/meow`);
+  .get(`http://aws.random.cat/meow`);
 
 let catembed = new Discord.RichEmbed()
 .setColor("RANDOM")
