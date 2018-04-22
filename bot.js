@@ -556,15 +556,63 @@ if(command ===`${prefix}emoji`){
   }
   
   if(command === `${prefix}help`){
-      let botembed = new Discord.RichEmbed()
-      .setDescription("Here are my commands so far x3")
-      .addField("Random Commands","serverinfo, botinfo, ping, devhelp")
-      .addField("Moderator","purge, kick, ban, giverole, removerole")
-      .addField("Fun", "say, cat, catfact, dog, 8ball, fortunecookie, coinflip")
-      .addField("NSFW", "Classified, Classified, Classified, Classified", true)
-      .setFooter("On certain cmds, you can type help for them", true);
+      //let botembed = new Discord.RichEmbed()
       
-      message.channel.send(botembed);
+      // .setDescription("Here are my commands so far x3")
+      // .addField("Random Commands","serverinfo, botinfo, ping, devhelp")
+      // .addField("Moderator","purge, kick, ban, giverole, removerole")
+      // .addField("Fun", "say, cat, catfact, dog, 8ball, fortunecookie, coinflip")
+      // .addField("NSFW", "Classified, Classified, Classified, Classified", true)
+      // .setFooter("On certain cmds, you can type help for them", true);
+      
+      // message.channel.send(botembed);
+      let embed = {
+        "title": "Here x3",
+        //"url": "https://discordapp.com",
+        "color": 12121300,
+        //"timestamp": "2018-04-21T01:28:06.959Z",
+        "footer": {
+          "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
+          "text": "You can type help on certain commands."
+        },
+        "thumbnail": {
+          "url": `https://facilities.uw.edu/files/media/question-mark.png` 
+        },
+        //"image": {
+          //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
+        //},
+        "author": {
+          "name": "Called for help...",
+          //"url": "https://discordapp.com",
+          //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+        },
+        "fields": [
+          {
+            "name": "Random",
+            "value": "serverinfo, botinfo, ping, devhelp"
+          },
+          {
+            "name": "Moderation",
+            "value": "purge, kick, ban, giverole, removerole"
+          },
+          {
+            "name": "Fun",
+            "value": "say, cat, catfact, dog, 8ball, fortunecookie, coinflip"
+          },
+          {
+            "name": "NSFW",
+            "value": "Classified, Classified, Classified, Classified",
+            "inline": true
+          },
+          // {
+          //   "name": "Warning",
+          //   "value": ":warning: Commands may be unstable",
+          //   "inline": true
+          // }
+        ]
+      };
+      message.channel.send({ embed });
+
 }
 
 });
