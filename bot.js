@@ -354,7 +354,7 @@ if(command === `${prefix}dws`){
       ]
     };
     message.channel.send({ embed });
-}  
+}}  
 
 
 if(command === `${prefix}dirtyquote`){
