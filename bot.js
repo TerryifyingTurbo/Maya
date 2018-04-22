@@ -254,7 +254,7 @@ if(command ===`${prefix}fucc`){
   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.author.username}***`, 
                     `***${sayMessage}*** *goes on all fours for* ***${message.author.username}***`,
                     `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.author.username}***`,
-                    ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.author.username}***`
+                    ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.author.username}***`,
                     `***${message.author.username}*** *gets aggressive and pins down* ***${sayMessage}*** *,taking completele control over them*`,
                     `***${message.author.username}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`];
 
