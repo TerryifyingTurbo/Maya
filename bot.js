@@ -232,7 +232,7 @@ if(command === `${prefix}succ`){
 if(command === `${prefix}makeme`){
 
   const sayMessage = args.join(" ");
-  let Ureplies = ["loved it", "enjoyed it", "hates it", "wants more", "wants it from someone else instead", "liked it", "secretly like it", "wants a break from it"];
+  let Ureplies = ["loved it", "enjoyed it", "hates it", "wants more", "wants it from someone else instead", "liked it", "secretly liked it", "wants a break from it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
   let Posreplies = ["get on their knees", "crave it", "beg for it"];
@@ -255,7 +255,7 @@ if(command ===`${prefix}fucc`){
                     `***${sayMessage}*** *goes on all fours for* ***${message.author.username}***`,
                     `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.author.username}***`,
                     ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.author.username}***`,
-                    `***${message.author.username}*** *gets aggressive and pins down* ***${sayMessage}*** *,taking completele control over them*`,
+                    `***${message.author.username}*** *gets aggressive and pins down* ***${sayMessage}*** *, taking complete control over them*`,
                     `***${message.author.username}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`];
 
   let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the end reaction options
