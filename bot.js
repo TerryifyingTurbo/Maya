@@ -317,7 +317,6 @@ if(command === `${prefix}8ball`){
 // }
 
 if(command === `${prefix}dws`){
-  if(command === `${prefix}help`){
     let embed = {
       "title": "Dog with Sins",
       //"url": "https://discordapp.com",
@@ -364,7 +363,7 @@ if(command === `${prefix}dws`){
       ]
     };
     message.channel.send({ embed });
-}}  
+}
 
 
 if(command === `${prefix}dirtyquote`){
