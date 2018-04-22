@@ -250,7 +250,7 @@ if(command ===`${prefix}fucc`){
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
-  let Preplies = [`stifled moans could be heard from ${sayMessage}`, `lusty panting escaped from ${sayMessage}'s mouth`, `${sayMessage}'s hands knotted into fists as they got ruthlessly pounded`, `${sayMessage} teared of crying pain`, `shameless moans were forced out of ${sayMessage}`];
+  let Preplies = [`stifled moans could be heard from ${sayMessage}`, `lusty panting escaped from ${sayMessage}'s mouth`, `${sayMessage}'s hands knotted into fists as they got ruthlessly pounded`, `${sayMessage} teared of pleasuring pain`, `shameless moans were forced out of ${sayMessage}`];
   
   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.member.displayName}***`, 
                     `***${sayMessage}*** *goes on all fours for* ***${message.member.displayName}***`,
