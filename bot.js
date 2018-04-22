@@ -262,6 +262,10 @@ if(!sayMessage) return message.channel.send(question[result]);
 message.channel.send(sayMessage);
 message.delete().catch(O_o=>{}); 
   }
+if(command ===`${prefix}charq help`){
+  message.channel.send("`!?charq <args, question(s)>`",
+"If user does not supply question, a random one will be generated instead");
+}
 
   if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
