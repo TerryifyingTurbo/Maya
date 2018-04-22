@@ -212,6 +212,11 @@ let factembed = new Discord.RichEmbed()
 message.channel.send(factembed);
 }
 
+const Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+const Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+const Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+const Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
+
 if(command === `${prefix}succ`){
 
   const sayMessage = args.join(" ");
@@ -219,11 +224,6 @@ if(command === `${prefix}succ`){
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
   let Posreplies = ["gets on their knees", "moves a strand of hair aside", "licks their own lips", "huffs", "gives a sly smile", "pouts", "makes a low groan"];
-
-  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
-  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
 
   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
   message.channel.send(`***${message.member.displayName}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
@@ -237,11 +237,6 @@ if(command === `${prefix}makeme`){
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
   let Posreplies = ["get on their knees", "crave it", "beg for it"];
 
-  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
-  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
-
   if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
   message.channel.send(`***${message.member.displayName}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + ` *One can assume that the one who forced ${sayMessage}*` + ` ***${Ureplies[Uresult]}***`);
 }
@@ -250,7 +245,12 @@ if(command ===`${prefix}fucc`){
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
-  let Preplies = [`stifled moans could be heard from ${sayMessage}`, `lusty panting escaped from ${sayMessage}'s mouth`, `${sayMessage}'s hands knotted into fists as they got ruthlessly pounded`, `${sayMessage} teared of pleasuring pain`, `shameless moans were forced out of ${sayMessage}`];
+  
+  let Preplies = [`stifled moans could be heard from ${sayMessage}`, 
+                  `lusty panting escaped from ${sayMessage}'s mouth`, 
+                  `${sayMessage} grits their teeth and their hands knotted into fists as they got ruthlessly pounded`, 
+                  `${sayMessage} teared of pleasuring pain`, `shameless moans were forced out of ${sayMessage}`, 
+                  `${sayMessage} couldn't even pretend that they didn't like it`, ];
   
   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.member.displayName}***`, 
                     `***${sayMessage}*** *goes on all fours for* ***${message.member.displayName}***`,
@@ -261,13 +261,8 @@ if(command ===`${prefix}fucc`){
                     `***${sayMessage}*** *agrees to join in on some Monopoly with* ***${message.member.displayName}***—`,
                     `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}`];
 
-  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the end reaction options
-  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
-
   if(!sayMessage) return message.channel.send(`${message.member.displayName} must've went to go fuck themselves or something since they didn't say who otherwise`);
-  message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*` + ` *In the end, it looks like they* ***${Ureplies[Uresult]}.***`);
+  message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
 }
 
   
@@ -287,31 +282,82 @@ if(command === `${prefix}8ball`){
     message.channel.send(ballembed);
   }
 
-  if(command === `${prefix}charq`){
-let sayMessage = args.join(" ");
-let question = ["What's your nationality?",
-"What is your **worst** phobia?",
-"What is your gender *or sex* ***or both?***",
-"How old do you appear? **True** age?",
-"What is your height?",
-"Any enemimes? If so, when, how, and why?",
-"Any allies/friends? If so, when, how and why?",
-"Are you **close** with someone *or something?*",
-"What are your morals? Why?"];
+//   if(command === `${prefix}charq`){
+// let sayMessage = args.join(" ");
+// let question = ["What's your nationality?",
+// "What is your **worst** phobia?",
+// "What is your gender *or sex* ***or both?***",
+// "How old do you appear? **True** age?",
+// "What is your height?",
+// "Any enemimes? If so, when, how, and why?",
+// "Any allies/friends? If so, when, how and why?",
+// "Are you **close** with someone *or something?*",
+// "What are your morals? Why?"];
 
-let result = Math.floor((Math.random() * question.length))
+// let result = Math.floor((Math.random() * question.length))
 
-if(!sayMessage) return message.channel.send(question[result]);
+// if(!sayMessage) return message.channel.send(question[result]);
 
-message.channel.send(sayMessage);
-message.delete().catch(O_o=>{}); 
-  }
-if(command ===`${prefix}charq help`){
-  message.channel.send("`!?charq <args, question(s)>`",
-"If user does not supply question, a random one will be generated instead");
-}
+// message.channel.send(sayMessage);
+// message.delete().catch(O_o=>{}); 
+//   }
+// if(command ===`${prefix}charq help`){
+//   message.channel.send("`!?charq <args, question(s)>`",
+// "If user does not supply question, a random one will be generated instead");
+// }
 
-  if(command === `${prefix}dirtyquote`){
+if(command === `${prefix}dws`){
+  if(command === `${prefix}help`){
+    let embed = {
+      "title": "Dog with Sins",
+      //"url": "https://discordapp.com",
+      "color": 2156136,
+      //"timestamp": "2018-04-21T01:28:06.959Z",
+      "footer": {
+        "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
+        "text": "Use !?dws<category>"
+      },
+      "thumbnail": {
+        "url": `https://i.imgur.com/yztZj9k.png` 
+      },
+      "image": {
+        "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
+      },
+      // "author": {
+      //   "name": "Called for help...",
+      //   //"url": "https://discordapp.com",
+      //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+      // },
+      "fields": [
+        {
+          "name": "Intro",
+          "value": "Just some random shit to view any of my characters, lore n' shit"
+        },
+        {
+          "name": "Characters",
+          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant"
+        },
+        {
+          "name": "Vehicles",
+          "value": "GT-GalaxyTruck, Gargoyle, Wildcat"
+        },
+        {
+          "name": "Items",
+          "value": "Zannker0",
+          "inline": true
+        },
+         {
+           "name": "Misc",
+           "value": ":warning: Classified: █████",
+           "inline": true
+        }
+      ]
+    };
+    message.channel.send({ embed });
+}  
+
+
+if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
     "It's either ass or gas. Nobody rides for free",
     "Mm, no princess, can't stop won't stop ;D",
@@ -559,16 +605,6 @@ if(command ===`${prefix}emoji`){
   }
   
   if(command === `${prefix}help`){
-      //let botembed = new Discord.RichEmbed()
-      
-      // .setDescription("Here are my commands so far x3")
-      // .addField("Random Commands","serverinfo, botinfo, ping, devhelp")
-      // .addField("Moderator","purge, kick, ban, giverole, removerole")
-      // .addField("Fun", "say, cat, catfact, dog, 8ball, fortunecookie, coinflip")
-      // .addField("NSFW", "Classified, Classified, Classified, Classified", true)
-      // .setFooter("On certain cmds, you can type help for them", true);
-      
-      // message.channel.send(botembed);
       let embed = {
         "title": "Here x3",
         //"url": "https://discordapp.com",
