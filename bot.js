@@ -218,7 +218,7 @@ if(command === `${prefix}succ`){
   let Ureplies = ["loved it", "enjoyed it", "hate it", "want more", "want it from someone else instead", "liked it", "secretly like it", "want a break from it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
-  let Posreplies = ["gets on their knees", "moves a strand of hair aside", "licks their own lips", "huffs", "gives a sly smile", "pouts", "make a low groan"];
+  let Posreplies = ["gets on their knees", "moves a strand of hair aside", "licks their own lips", "huffs", "gives a sly smile", "pouts", "makes a low groan"];
 
   let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
   let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
@@ -227,6 +227,24 @@ if(command === `${prefix}succ`){
 
   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
   message.channel.send(`***${message.author.username}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
+
+}
+if(command === `${prefix}makeme`){
+
+  const sayMessage = args.join(" ");
+  let Ureplies = ["loved it", "enjoyed it", "hate it", "want more", "want it from someone else instead", "liked it", "secretly like it", "want a break from it"];
+  let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
+  let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
+  let Posreplies = ["get on their knees", "crave it", "beg for it"];
+
+  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
+
+  if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
+  message.channel.send(`***${message.author.username}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and gives* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
+
 }
   
 if(command === `${prefix}8ball`){
@@ -522,7 +540,7 @@ if(command ===`${prefix}emoji`){
       .addField("Random Commands","serverinfo, botinfo, ping, devhelp")
       .addField("Moderator","purge, kick, ban, giverole, removerole")
       .addField("Fun", "say, cat, catfact, dog, 8ball, fortunecookie, coinflip")
-      .addField("NSFW", "Classified, Classified, Classified")
+      .addField("NSFW", "Classified, Classified, Classified, Classified")
 
       return message.channel.send(botembed);
 }
