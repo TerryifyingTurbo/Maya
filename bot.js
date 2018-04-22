@@ -232,7 +232,7 @@ if(command === `${prefix}succ`){
 if(command === `${prefix}makeme`){
 
   const sayMessage = args.join(" ");
-  let Ureplies = ["loved it", "enjoyed it", "hate it", "want more", "want it from someone else instead", "liked it", "secretly like it", "want a break from it"];
+  let Ureplies = ["loved it", "enjoyed it", "hates it", "wants more", "wants it from someone else instead", "liked it", "secretly like it", "wants a break from it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
   let Posreplies = ["get on their knees", "crave it", "beg for it"];
@@ -248,7 +248,7 @@ if(command === `${prefix}makeme`){
 
 if(command ===`${prefix}fucc`){
   const sayMessage = args.join(" ");
-  let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now"];
+  let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later"];
   let Preplies = [];
   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.author.username}***`, 
