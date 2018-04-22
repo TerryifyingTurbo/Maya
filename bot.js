@@ -251,12 +251,12 @@ if(command ===`${prefix}fucc`){
   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
   let Preplies = [];
-  let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.guild.member}***`, 
+  let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.member.displayName}***`, 
                     `***${sayMessage}*** *goes on all fours for* ***$message.guild.member}***`,
-                    `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.guild.member}***`,
-                    ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.guild.member}***`,
-                    `***${message.guild.member}*** *gets aggressive and pins down* ***${sayMessage}*** *, taking complete control over them*`,
-                    `***${message.guild.member}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`];
+                    `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.member.displayName}***`,
+                    ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.member.displayName}***`,
+                    `***${message.member.displayName}*** *gets aggressive and pins down* ***${sayMessage}*** *, taking complete control over them*`,
+                    `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`];
 
   let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the end reaction options
   let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
