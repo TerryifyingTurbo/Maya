@@ -344,7 +344,7 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Characters",
-          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Izumi"
+          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato"
         },
         {
           "name": "Vehicles",
