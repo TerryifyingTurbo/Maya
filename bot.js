@@ -320,7 +320,7 @@ if(command === `${prefix}dws`){
     let embed = {
       "title": "Dog with Sins",
       //"url": "https://discordapp.com",
-      "color": 2156136,
+      "color": 1156136,
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
@@ -352,7 +352,7 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Items",
-          "value": "Zannker0, Left Hand of JEjuS",
+          "value": "Zanneker0, Left Hand of JEjuS",
           "inline": true
         },
          {
