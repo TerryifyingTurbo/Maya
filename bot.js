@@ -365,7 +365,7 @@ if(command === `${prefix}dws`){
     message.channel.send({ embed });
 }
 
-if(command === `${prefix}zanneker0`){
+if(command === `${prefix}dwszanneker0`){
   let embed = {
     "title": "Zanneker0",
     //"url": "https://discordapp.com",
