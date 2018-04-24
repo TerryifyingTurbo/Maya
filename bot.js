@@ -348,11 +348,11 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Vehicles",
-          "value": "GT-GalaxyTruck, Gargoyle, Wildcat, CK"
+          "value": "GT-GalaxyTruck, Gargoyle, Wildcat, CK, Nauti Buoy"
         },
         {
           "name": "Items",
-          "value": "Zanneker0, Left Hand of JEjuS",
+          "value": "Zanneker0, Left Hand of JejuS",
           "inline": true
         },
          {
@@ -365,6 +365,36 @@ if(command === `${prefix}dws`){
     message.channel.send({ embed });
 }
 
+if(command ===`${prefix}dws zanneker0`){
+  let embed = {
+    "title": "Zannker",
+    //"url": "https://discordapp.com",
+    "color": 0006136,
+    //"timestamp": "2018-04-21T01:28:06.959Z",
+    // "footer": {
+    //   "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
+    //   "text": "Use !?dws<specific selection>"
+    // },
+    "thumbnail": {
+      "url": `https://photos.google.com/photo/AF1QipOjxmY5u-pC3dsIR5qjIclS06PKvGEKKEeMVIt3` 
+    },
+    // "image": {
+    //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
+    // },
+    // "author": {
+    //   "name": "Called for help...",
+    //   //"url": "https://discordapp.com",
+    //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    // },
+    "fields": [
+      {
+        "name": "Overview",
+        "value": "Synthetic lethal narcotic."
+      },
+    ]
+  };
+  message.channel.send({ embed });
+}
 
 if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
@@ -546,7 +576,7 @@ if(command ===`${prefix}emoji`){
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({count: deleteCount});
     message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+      .catch(error => message.reply(`Couldn't delete messages because of ***${error}***`));
   }
 
 
