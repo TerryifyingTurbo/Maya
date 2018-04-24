@@ -344,7 +344,7 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Characters",
-          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato"
+          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, "
         },
         {
           "name": "Vehicles",
@@ -352,7 +352,7 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Items",
-          "value": "Zanneker0, Left Hand of JejuS",
+          "value": "Zanneker0, Left Hand of Jejus",
           "inline": true
         },
          {
@@ -373,7 +373,7 @@ if(command === `${prefix}dwszanneker0`){
     "timestamp": "2011-04-21",
     "footer": {
       "icon_url": "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg",
-      "text": "Lethal overdoses"
+      "text": "Highly addictive"
     },
     "thumbnail": {
       "url": `https://i.imgur.com/p99ZnBd.jpg` 
@@ -389,7 +389,7 @@ if(command === `${prefix}dwszanneker0`){
     "fields": [
       {
         "name": "Overview",
-        "value": "Synthetic lethal narcotic."
+        "value": "A synthetic narcotic described as *a combination of all hallucinogens combined.*"
       },
     ]
   };
