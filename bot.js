@@ -389,7 +389,8 @@ if(command === `${prefix}dwszanneker0`){
     "fields": [
       {
         "name": "Overview",
-        "value": "A synthetic narcotic described as *a combination of all hallucinogens combined.*"
+        "value": "Zanneker0 is a recreational synthetic NMDA receptor antagonist narcotic. It is known as the ‘combination of PCP and Ketamine’ It's chemical formula is C17 H25 N. Manufactured in 2008 as an alternative to most hallucinogenic drugs like Ketamine and Nitrous Oxide and also to dominate the Black Market Originally created for recreational use, it also has been used as a date rape drug in some cases which contributed to one of the main reasons as why it was immediately outlawed shortly after its rising popularity. The ultimate reason why Zanneker0 is outlawed is due to its raw ‘experimental’ lethal effects that were induced via consumption or even inhalation. Even the smallest dosage was enough to inflict life-threatening symptoms upon the user."
+
       },
     ]
   };
