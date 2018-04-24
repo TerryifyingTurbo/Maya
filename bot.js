@@ -365,7 +365,7 @@ if(command === `${prefix}dws`){
     message.channel.send({ embed });
 }
 
-if(command ===`${prefix}zanneker0 dws`){
+if(command === `${prefix}zanneker0`){
   let embed = {
     "title": "Zannker",
     //"url": "https://discordapp.com",
@@ -373,7 +373,7 @@ if(command ===`${prefix}zanneker0 dws`){
     //"timestamp": "2018-04-21T01:28:06.959Z",
     // "footer": {
     //   "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-    //   "text": "Use !?dws<specific selection>"
+    //   "text": "Use !?<specific selection>"
     // },
     "thumbnail": {
       "url": `https://photos.google.com/photo/AF1QipOjxmY5u-pC3dsIR5qjIclS06PKvGEKKEeMVIt3` 
