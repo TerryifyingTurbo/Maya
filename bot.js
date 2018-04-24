@@ -370,11 +370,11 @@ if(command === `${prefix}dwszanneker0`){
     "title": "Zanneker0",
     //"url": "https://discordapp.com",
     "color": 0006136,
-    //"timestamp": "2018-04-21T01:28:06.959Z",
-    // "footer": {
-    //   "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-    //   "text": "Use !?<specific selection>"
-    // },
+    "timestamp": "2011-04-21",
+    "footer": {
+      "icon_url": "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg",
+      "text": "Lethal overdoses"
+    },
     "thumbnail": {
       "url": `https://i.imgur.com/p99ZnBd.jpg` 
     },
