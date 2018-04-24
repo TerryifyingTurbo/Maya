@@ -264,7 +264,7 @@ if(command ===`${prefix}fucc`){
                     `***${message.member.displayName}*** *gets aggressive and pins down* ***${sayMessage},*** *taking complete control over them*`,
                     `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`,
                     `***${sayMessage}*** *agrees to join in on some Monopoly with* ***${message.member.displayName}***—`,
-                    `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}`];
+                    `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}***`];
 
 let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
 let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
@@ -389,7 +389,7 @@ if(command === `${prefix}dwszanneker0`){
     "fields": [
       {
         "name": "Overview",
-        "value": "*Zanneker0 is a synthetic __NMDA receptor antagonist__ narcotic. It is known as the *‘combination of PCP and Ketamine’.* __Chemical formula: C17 H25 N__. First manufactured in 2008 as an alternative to most hallucinogenic drugs like __PCP__ and __Nitrous Oxide__ and also to dominate the Black Market. It has gained a highly negative reputation among users as it has been commonly used as a __date rape drug__ in some cases, which contributed to one of the main reasons as why it was immediately outlawed shortly after its rising popularity. The ultimate reason why Zanneker0 is outlawed is due to its *‘experimental’* lethal effects that were induced via consumption or even inhalation. Even the smallest dosage in its raw state was enough to inflict **life-threatening** symptoms upon the user."
+        "value": "Zanneker0 is a synthetic __NMDA receptor antagonist__ narcotic. It is known as the *‘combination of PCP and Ketamine’.* __Chemical formula: C17 H25 N__. First manufactured in 2008 as an alternative to most hallucinogenic drugs like __PCP__ and __Nitrous Oxide__ and also to dominate the Black Market. It has gained a highly negative reputation among users as it has been commonly used as a __date rape drug__ in some cases, which contributed to one of the main reasons as why it was immediately outlawed shortly after its rising popularity. The ultimate reason why Zanneker0 is outlawed is due to its *‘experimental’* lethal effects that were induced via consumption or even inhalation. Even the smallest dosage in its raw state was enough to inflict **life-threatening** symptoms upon the user."
 
       },
     ]
