@@ -324,7 +324,7 @@ if(command === `${prefix}dws`){
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": "Use !?dws<specific selection>"
+        "text": "Use !?<specific selection> dws"
       },
       "thumbnail": {
         "url": `https://i.imgur.com/yztZj9k.png` 
@@ -365,7 +365,7 @@ if(command === `${prefix}dws`){
     message.channel.send({ embed });
 }
 
-if(command ===`${prefix}dws zanneker0`){
+if(command ===`${prefix}zanneker0 dws`){
   let embed = {
     "title": "Zannker",
     //"url": "https://discordapp.com",
