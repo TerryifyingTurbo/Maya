@@ -367,7 +367,7 @@ if(command === `${prefix}dws`){
 
 if(command === `${prefix}zanneker0`){
   let embed = {
-    "title": "Zannker",
+    "title": "Zanneker0",
     //"url": "https://discordapp.com",
     "color": 0006136,
     //"timestamp": "2018-04-21T01:28:06.959Z",
@@ -376,7 +376,7 @@ if(command === `${prefix}zanneker0`){
     //   "text": "Use !?<specific selection>"
     // },
     "thumbnail": {
-      "url": `https://photos.google.com/photo/AF1QipOjxmY5u-pC3dsIR5qjIclS06PKvGEKKEeMVIt3` 
+      "url": `https://i.imgur.com/p99ZnBd.jpg` 
     },
     // "image": {
     //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
