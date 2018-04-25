@@ -390,8 +390,11 @@ if(command === `${prefix}dwszanneker0`){
       {
         "name": "Overview",
         "value": "Zanneker0 is a synthetic __NMDA receptor antagonist__ narcotic. It is known as the *‘combination of PCP and Ketamine’.* __Chemical formula: C17 H25 N__. First manufactured in 2008 as an alternative to most hallucinogenic drugs like __PCP__ and __Nitrous Oxide__ and also to dominate the Black Market. It has gained a highly negative reputation among users as it has been commonly used as a __date rape drug__ in some cases, which contributed to one of the main reasons as why it was immediately outlawed shortly after its rising popularity. The ultimate reason why Zanneker0 is outlawed is due to its *‘experimental’* lethal effects that were induced via consumption or even inhalation. Even the smallest dosage in its raw state was enough to inflict **life-threatening** symptoms upon the user."
-
       },
+      {
+        "name": "Physical Appearance",
+        "value": "The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but *never no more than 3lbs* [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 *emit an appealing, strong sweet odor* which can prove difficult to hide.",
+     }
     ]
   };
   message.channel.send({ embed });
