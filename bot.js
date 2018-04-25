@@ -344,7 +344,7 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Characters",
-          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, "
+          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, Yannis Seifer, Roxuhn"
         },
         {
           "name": "Vehicles",
@@ -357,7 +357,7 @@ if(command === `${prefix}dws`){
         },
          {
            "name": "Misc n' Shit",
-           "value": "Entity#, Dark Areas",
+           "value": "Entity#, Dark Areas, SpaceBar",
            "inline": true
         }
       ]
