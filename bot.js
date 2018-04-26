@@ -339,7 +339,7 @@ if(command === `${prefix}dws`){
       // },
       "fields": [
         {
-          "name": "Intro",
+          //"name": "Intro",
           "value": "Just some random shit to view any of my characters, lore n' shit"
         },
         {
@@ -356,9 +356,14 @@ if(command === `${prefix}dws`){
           "inline": true
         },
          {
-           "name": "Misc n' Shit",
-           "value": "Entity#, Dark Areas, SpaceBar",
+           "name": "Journal n' Documentation",
+           "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer'",
            "inline": true
+        },
+        {
+          "name": "Misc n' Shit",
+          "value": "Entity#, Dark Areas, SpaceBar",
+          "inline": true
         }
       ]
     };
