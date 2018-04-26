@@ -167,6 +167,22 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     message.guild.leave();
   }
 
+  if(command ===`${prefix}coinflip`){
+    
+    let replies = ["Heads.", "Tails."];
+    
+    let result = Math.floor((Math.random() * replies.length));
+
+    let msTimeout = 500;
+message.channel.send('Flipping...').then(message => {
+    setTimeout(() => {
+        message.edit(`${replies[result]}`);
+    });
+});
+    
+    message.channel.send(replies[result]);
+}
+
   if(command === `${prefix}say`) {
 
     const sayMessage = args.join(" ");
@@ -479,15 +495,6 @@ if(command === `${prefix}dirtyquote`){
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
   }
-
-  if(command ===`${prefix}coinflip`){
-    
-    let replies = ["Heads.", "Tails."];
-    
-    let result = Math.floor((Math.random() * replies.length));
-    
-    message.channel.send(replies[result]);
-}
  
 if(command ===`${prefix}emoji`){
   let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
