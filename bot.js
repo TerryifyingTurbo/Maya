@@ -389,11 +389,46 @@ if(command === `${prefix}dwszanneker0`){
     "fields": [
       {
         "name": "Overview",
-        "value": "Zanneker0 is a synthetic __NMDA receptor antagonist__ narcotic. It is known as the *‘combination of PCP and Ketamine’.* __Chemical formula: C17 H25 N__. First manufactured in 2008 as an alternative to most hallucinogenic drugs like __PCP__ and __Nitrous Oxide__ and also to dominate the Black Market. It has gained a highly negative reputation among users as it has been commonly used as a __date rape drug__ in some cases, which contributed to one of the main reasons as why it was immediately outlawed shortly after its rising popularity. The ultimate reason why Zanneker0 is outlawed is due to its *‘experimental’* lethal effects that were induced via consumption or even inhalation. Even the smallest dosage in its raw state was enough to inflict **life-threatening** symptoms upon the user."
+        "value": "*placeholder; need to revise*", 
       },
       {
         "name": "Physical Appearance",
         "value": "The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but *never no more than 3lbs* [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 *emit an appealing, strong sweet odor* which can prove difficult to hide.",
+     }
+    ]
+  };
+  message.channel.send({ embed });
+}
+
+if(command === `${prefix}dwsspacebar`){
+  let embed = {
+    "title": "SpaceBar",
+    //"url": "https://discordapp.com",
+    "color": 0006136,
+    //"timestamp": "2011-04-21",
+    "footer": {
+      "icon_url": "https://image.flaticon.com/icons/png/512/189/189662.png",
+      "text": "Safe House"
+    },
+    "thumbnail": {
+      "url": `https://i.imgur.com/6XlvXmY.jpg` 
+    },
+    // "image": {
+    //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
+    // },
+    // "author": {
+    //   "name": "Called for help...",
+    //   //"url": "https://discordapp.com",
+    //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    // },
+    "fields": [
+      {
+        "name": "Overview",
+        "value": "A medium-sized bar in literal space, on the Moon. Somehow built mysteriously and is currently owned by __Jesse Green__ and __Travis Rilynar__ (Co-Owner). It is only accessible by these two as they carry the proper key and __GT-GalaxyTruck__ for entry. There are multiple rooms throughout the entire perimeter, some of them being concealed such as *Jesse's 'Doggo' cabinet* and *Travis's secured locker*.",
+      },
+      {
+        "name": "Appearance",
+        "value": "The SpaceBar is no ordinary bar; the building itself is less than 45 x 15ft. Because it is on the Moon and in outer space, all windows and doors are air-locked. A *35+ Soundtrack playlist of EDM* available for playing, the bar contains a surrounding counter in the centre. Behind the counter lies wine racks, signature displays, shelves of ingredients and the control panel to the lighting system. The decor of the SpaceBar is meant to be set to give off a nightclub atmosphere; a strip dance pole which is located near the centre to provide a *'good show'.* The maximum occupancy of the bar is estimated to be about *150 people.* A large game room is also included within the bar and is located northeast of the entryway. Includes, but not limited to: Air hockey tables, pool game tables, classic darts, and the arcade game machines from the 90s. ",
      }
     ]
   };
@@ -523,34 +558,6 @@ if(command ===`${prefix}emoji`){
 
     return;
    }
-
-  if(command === `${prefix}giverole`){
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
-    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]); 
-    if(!rMember) return message.reply("Yeah, let me just give a role to thin air. ***Who do I give a role to***");
-    let role = args.join(" ").slice(22);
-    if(!role) return message.reply("So what role do I add-");
-    let gRole = message.guild.roles.find(`name`,role);
-    if(!gRole) return message.reply("You either spelled it wrong or that role doesn't exist");
-  
-    if(rMember.roles.has(gRole.id)) return message.reply("They already have that role");
-    await(rMember.addRole(gRole.id));
-    return message.reply (`Added ***${gRole.name}.***`);
-  }
-
-  if(command === `${prefix}removerole`){
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("**NO.** You don't have the ability to give or remove roles!");
-    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-    if(!rMember) return message.reply("Yeah, I took the air's role away. ***Who do I take a role away from***");
-    let role = args.join(" ").slice(22);
-    if(!role) return message.reply("So what role do I take away-");
-    let gRole = message.guild.roles.find(`name`, role);
-    if(!gRole) return message.reply("You either spelled it wrong or that role doesn't exist");
-  
-    if(!rMember.roles.has(gRole.id)) return message.reply("They don't have that role.");
-    await(rMember.removeRole(gRole.id));
-    return message.reply (`Removed ***${gRole.name}.***`);
-  }
 
   if(command === `${prefix}serverinfo`){
 
