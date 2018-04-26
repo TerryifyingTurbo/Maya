@@ -409,7 +409,7 @@ if(command === `${prefix}dwsspacebar`){
   let embed = {
     "title": "SpaceBar",
     //"url": "https://discordapp.com",
-    "color": 0006136,
+    "color": "RANDOM",
     //"timestamp": "2011-04-21",
     "footer": {
       "icon_url": "https://image.flaticon.com/icons/png/512/189/189662.png",
