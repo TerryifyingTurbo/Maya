@@ -339,7 +339,7 @@ if(command === `${prefix}dws`){
       // },
       "fields": [
         {
-          //"name": "Intro",
+          "name": " ",
           "value": "Just some random shit to view any of my characters, lore n' shit"
         },
         {
