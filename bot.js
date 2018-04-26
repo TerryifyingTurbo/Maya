@@ -173,14 +173,14 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     
     let result = Math.floor((Math.random() * replies.length));
 
-    let msTimeout = 500;
+    let msTimeout = 1000;
 message.channel.send('Flipping...').then(message => {
     setTimeout(() => {
         message.edit(`${replies[result]}`);
     });
 });
     
-    message.channel.send(replies[result]);
+    //message.channel.send(replies[result]);
 }
 
   if(command === `${prefix}say`) {
