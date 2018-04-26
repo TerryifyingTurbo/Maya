@@ -174,7 +174,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     let result = Math.floor((Math.random() * replies.length));
 
     let msTimeout = 1000;
-message.channel.send('Flipping...').then(message => {
+message.channel.send('***Flipping...***').then(message => {
   setTimeout(() => {
     message.edit(`${replies[result]}`)
   }, cdseconds * 1000)
