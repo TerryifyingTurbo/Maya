@@ -339,7 +339,7 @@ if(command === `${prefix}dws`){
       // },
       "fields": [
         {
-          "name": " ",
+          "name": "Intro",
           "value": "Just some random shit to view any of my characters, lore n' shit"
         },
         {
@@ -364,7 +364,7 @@ if(command === `${prefix}dws`){
           "name": "Misc n' Shit",
           "value": "Entity#, Dark Areas, SpaceBar",
           "inline": true
-        }
+        },
       ]
     };
     message.channel.send({ embed });
