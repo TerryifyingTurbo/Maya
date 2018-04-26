@@ -374,7 +374,7 @@ if(command === `${prefix}dwszanneker0`){
   let embed = {
     "title": "Zanneker0",
     //"url": "https://discordapp.com",
-    "color": 0006136,
+    "color": 8069462,
     //"timestamp": "2011-04-21",
     "footer": {
       "icon_url": "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg",
@@ -409,7 +409,7 @@ if(command === `${prefix}dwsspacebar`){
   let embed = {
     "title": "SpaceBar",
     //"url": "https://discordapp.com",
-    "color": "16477631",
+    "color": 16477631,
     //"timestamp": "2011-04-21",
     "footer": {
       "icon_url": "https://image.flaticon.com/icons/png/512/189/189662.png",
