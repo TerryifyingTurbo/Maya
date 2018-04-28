@@ -183,7 +183,7 @@ message.channel.send('***Flipping...***').then(message => {
     //message.channel.send(replies[result]);
 }
 
-if(command ===`${prefix}`){
+if(command ===`${prefix}rolldice`){
   let dice = Math.floor(Math.random() * 5 + 1);
   message.channel.send("You rolled a :gaming_dice:" + ` ${dice}`);
 }
