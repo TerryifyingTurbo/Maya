@@ -177,7 +177,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
 message.channel.send('***Flipping...***').then(message => {
   setTimeout(() => {
     message.edit(`*${replies[result]}*`)
-  }, cdseconds * 1500)
+  }, cdseconds * 1000)
 });
     
     //message.channel.send(replies[result]);
