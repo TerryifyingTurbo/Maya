@@ -185,7 +185,7 @@ message.channel.send('***Flipping...***').then(message => {
 
 if(command ===`${prefix}rolldice`){
   let dice = Math.floor(Math.random() * 5 + 1);
-  message.channel.send("You rolled a :gaming_dice:" + ` ${dice}`);
+  message.channel.send("You rolled a :game_die:" + ` ${dice}`);
 }
 
   if(command === `${prefix}say`) {
