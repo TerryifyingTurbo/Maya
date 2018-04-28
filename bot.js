@@ -289,9 +289,9 @@ if(command === `${prefix}8ball`){
     let question = args.slice(0).join(" ");
 
     let ballembed = new Discord.RichEmbed()
-    .setAuthor(message.author.tag + " asked...")
-    .setColor("#FF9900")
-    .addField("Question", question)
+    .setAuthor(message.member.displayName + " asked...")
+    .setColor("RANDOM")
+    .addField("Question :8ball:", question)
     .addField("Answer", replies[result]);
 
     message.channel.send(ballembed);
@@ -687,7 +687,7 @@ if(command ===`${prefix}emoji`){
           },
           {
             "name": "Fun",
-            "value": "say, cat, catfact, dog, 8ball, fortunecookie, coinflip"
+            "value": "say, cat, catfact, dog, 8ball, fortunecookie, coinflip, rolldice"
           },
           {
             "name": " :warning: NSFW",
