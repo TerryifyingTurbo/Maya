@@ -177,7 +177,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
 message.channel.send('***Flipping...***').then(message => {
   setTimeout(() => {
     message.edit(`*${replies[result]}*`)
-  }, cdseconds * 2000)
+  }, cdseconds * 1500)
 });
     
     //message.channel.send(replies[result]);
@@ -249,22 +249,6 @@ let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the posit
   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
   message.channel.send(`***${message.member.displayName}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
 
-}
-if(command === `${prefix}makeme`){
-
-  const sayMessage = args.join(" ");
-  let Ureplies = ["loved it", "enjoyed it", "hates it", "wants more", "wants it from someone else instead", "liked it", "secretly liked it", "wants a break from it"];
-  let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
-  let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
-  let Posreplies = ["get on their knees", "crave it", "beg for it"];
-
-  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
-  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
-
-  if(!sayMessage) return message.channel.send(`${message.author.username}, you didnt make anyone *or anything*  give you the succ...`)
-  message.channel.send(`***${message.member.displayName}***` + " *makes*" + ` *${sayMessage}*` + ` ***${Posreplies[Posresult]}***` + ` *and forces them to give* ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + ` *One can assume that the one who forced ${sayMessage}*` + ` ***${Ureplies[Uresult]}***`);
 }
 
 if(command ===`${prefix}fucc`){
