@@ -177,10 +177,15 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
 message.channel.send('***Flipping...***').then(message => {
   setTimeout(() => {
     message.edit(`*${replies[result]}*`)
-  }, cdseconds * 1000)
+  }, cdseconds * 2000)
 });
     
     //message.channel.send(replies[result]);
+}
+
+if(command ===`${prefix}`){
+  let dice = Math.floor(Math.random() * 5 + 1);
+  message.channel.send("You rolled a :gaming_dice:" + ` ${dice}`);
 }
 
   if(command === `${prefix}say`) {
