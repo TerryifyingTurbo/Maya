@@ -567,7 +567,7 @@ if(command ===`${prefix}emoji`){
     .setDescription(message.guild.name)
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Owner", `${message.guild.owner.user.username}`)
+    .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator`)
     .addField("Made on", message.guild.createdAt)
     .addField("You joined", message.member.joinedAt)
     .addField("Total Members", message.guild.memberCount);
