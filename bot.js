@@ -645,6 +645,8 @@ if(command ===`${prefix}emoji`){
   if(command === `${prefix}serverinfo`){
 
     let sicon = message.guild.iconURL;
+    let humans = message.guild.members.filter(!member.user.bot).size
+    let bots = message.guild.members.filter(member.user.bot).size
     let serverembed = new Discord.RichEmbed()
     .setDescription(message.guild.name)
     .setColor("#15f153")
@@ -652,8 +654,6 @@ if(command ===`${prefix}emoji`){
     .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
     .addField("Made on", message.guild.createdAt, true)
     .addField("You joined", message.member.joinedAt, true)
-    let humans = message.guild.members.filter(member => !member.user.bot).size
-    let bots = message.guild.members.filter(member => member.user.bot).size
     .addField("Humans", `${humans}`, true)
     .addField("Bots", `${bots}`, true)
     .addField("Total Members", message.guild.memberCount, true);
