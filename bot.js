@@ -435,7 +435,7 @@ if(command === `${prefix}dwsgtgalaxytruck`){
       "text": "Vehicle"
     },
     "thumbnail": {
-      "url": `https://i.imgur.com/qp9f9tn.jpg` 
+      "url": `https://i.imgur.com/qp9f9tn.jpg?1` 
     },
     // "image": {
     //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
@@ -446,6 +446,30 @@ if(command === `${prefix}dwsgtgalaxytruck`){
     //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
     // },
     "fields": [
+      {
+        "name": "Top Speed",
+        "value": "*Mach 1/767mph/1234kph*"
+      },
+      {
+        "name": "0-60",
+        "value": "*1.7 seconds*"
+      },
+      {
+        "name": "MPG",
+        "value": "*3*"
+      },
+      {
+        "name": "Engine",
+        "value": "*9.7L V8 Duramax*"
+      },
+      {
+        "name": "Curb Weight",
+        "value": "*3300lbs. [1497kg]*" 
+      },
+      {
+        "name": "Layout",
+        "value": "*AWD, Front Engine*"
+      },
       {
         "name": "Overview",
         "value": "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon. Though it is registered under the names of Travis Rilynar and Jesse Green, it is unknown when exactly the Galaxy Truck was manufactured. The five-seater truck has been modified to sustain the extreme atmospheric pressure, speed, and temperature*",
