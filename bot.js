@@ -114,7 +114,7 @@ ${invlink}`)
     if(!status) return message.channel.send("Do I watch the void? What *or who* am I supposed to watch?")
     await bot.user.setActivity(`${status}`, {type: "WATCHING"})
     .catch(error => message.reply(`I'm not watching that because of __***${error}***__`));
-    message.channel.send(`Now watching **${status}!**`);
+    message.channel.send(`Now watching: **${status}**`);
   }
 
   if(command ===`${prefix}gamepresence`){
@@ -123,14 +123,23 @@ ${invlink}`)
     if(!status) return message.channel.send("Do I play with someones feelings or something? What *or who* am I supposed to play?")
     await bot.user.setActivity(`${status}`, {type: "PLAYING"})
     .catch(error => message.reply(`I'm not playing that because of __***${error}***__`));
-    message.channel.send(`Now playing **${status}!**`);
+    message.channel.send(`Now playing: **${status}**`);
+  }
+
+  if(command ===`${prefix}listenpresence`){
+    let status = args.join(' ');
+    if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am listening to!***");
+    if(!status) return message.channel.send("Do I listen to someones bullshit or something? What *or who* am I supposed to listen to?")
+    await bot.user.setActivity(`${status}`, {type: "LISTENING"})
+    .catch(error => message.reply(`I'm not listening to that because of __***${error}***__`));
+    message.channel.send(`Now listening: **${status}**`);
   }
   
   if(command ===`${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer")
     .setColor("RANDOM")
-    .addField("Commands", "shutdown, reload, eval, watchpresence, gamepresence, setavat, leave, invite")
+    .addField("Commands", "shutdown, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite", true);
     
     message.channel.send(devembed);
   }
