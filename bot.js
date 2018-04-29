@@ -526,6 +526,17 @@ if(command === `${prefix}dwsgtgalaxytruck`){
   message.channel.send({ embed });
 }
 
+if(command === `${prefix}dwsnautibuoy`){
+  let nbembed = new Discord.RichEmbed()
+  .setTitle("Nauti Buoy")
+  .setColor("#4270dd")
+  .setFooter("Vehicle", "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png")
+  .setThumbnail("https://i.imgur.com/pl5u2IG.png")
+  .addField("Overview", "*test; a luxury superyacht raided and stolen by Travis and the organization: Yo Ouila*", true);
+
+  message.channel.send(nbembed);
+}
+
 
 if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
@@ -652,11 +663,7 @@ if(command ===`${prefix}emoji`){
     .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
     .addField("Made on", message.guild.createdAt, true)
     .addField("You joined", message.member.joinedAt, true)
-    .addField("Total Members", message.guild.memberCount, true)
-    .addField("A test", message.guild.memberCount, true)
-    .addField("Another test", message.guild.memberCount, true)
-    .addField("Extra test", message.guild.memberCount, true)
-
+    .addField("Total Members", message.guild.memberCount, true);
 
     return message.channel.send(serverembed);
   }
