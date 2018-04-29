@@ -617,7 +617,7 @@ if(command ===`${prefix}emoji`){
       "fields": [
         {
           "name": "I am",
-          "value": `${bot.user.username}` + `#${bot.user.discriminator}`
+          "value": `${bot.user.displayName} in here but I am truly __${bot.user.username}#${bot.user.discriminator}__`
         },
         {
           "name": "Made on",
@@ -629,12 +629,12 @@ if(command ===`${prefix}emoji`){
         },
         {
           "name": "WIP",
-          "value": `${ayy} Work in progress.`,
+          "value": `${ayy} Work in progress. Don't expect much`,
           "inline": true
         },
         {
           "name": "Warning",
-          "value": ":warning: Commands may be unstable",
+          "value": ":warning: Commands may be unstable; I'm not perfect yet",
           "inline": true
         }
       ]
