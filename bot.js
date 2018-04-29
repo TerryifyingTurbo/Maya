@@ -34,15 +34,13 @@ bot.on("message", async message => {
     return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
   
-  const ayy = bot.emojis.get("426999753830825995");
-  
+const ayy = bot.emojis.get("426999753830825995");
   if(message.content === "ayy"){
   const ayy = bot.emojis.find("name", "ayy");
   message.channel.send(`${ayy} Lmao`);
 }
 
 const intensefear = bot.emojis.get("406790609035329538");
-
 if(message.content === "D:"){
   const instensefear = bot.emojis.find("name", "intensefear");
   message.channel.send(`${instensefear}`);
@@ -169,7 +167,7 @@ ${invlink}`)
     return;
   }
 
-  if(command === `${prefix}ping`){
+if(command === `${prefix}ping`){
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
@@ -188,7 +186,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     message.guild.leave();
   }
 
-  if(command ===`${prefix}coinflip`){
+  if(command ===`${prefix}flipcoin`){
     
     let replies = ["Heads.", "Tails."];
     
@@ -223,7 +221,7 @@ if(command ===`${prefix}cat`){
   let {body} = await superagent
   .get(`http://aws.random.cat/meow`);
 
-let catembed = new Discord.RichEmbed()
+  let catembed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setTitle("Kitty :0")
 .setImage(body.file);
@@ -263,6 +261,12 @@ if(command === `${prefix}dadjoke`){
   .setDescription("**" + body.attachments.map(a => a.text) + "**");
 
   message.channel.send(o);
+}
+
+if(command === `${prefix}clapify`){
+  let randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
+  if (args.length < 1) return message.channel.send("Give :clap: me :clap: something :clap: to :clap: on");
+  message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
 
 if(command === `${prefix}succ`){
@@ -703,7 +707,7 @@ if(command ===`${prefix}emoji`){
         },
         {
           "name": "I have...",
-          "value": "24 Commands (total)"
+          "value": "29 Commands (total)"
         },
         {
           "name": "WIP",
@@ -765,11 +769,11 @@ if(command ===`${prefix}emoji`){
           },
           {
             "name": "Fun",
-            "value": "say, cat, catfact, dog, 8ball, fortunecookie, coinflip, rolldice"
+            "value": "say, cat, catfact, dog, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify"
           },
           {
             "name": " :warning: NSFW",
-            "value": "Classified, Classified, Classified, Classified",
+            "value": "~~Classified, Classified, Classified, Classified~~",
             "inline": true
           },
           // {
