@@ -116,20 +116,26 @@ ${invlink}`)
     .catch(error => message.reply(`I'm not watching that because of __***${error}***__`));
     message.channel.send(`Now watching **${status}!**`);
   }
+
+  if(command ===`${prefix}gamepresence`){
+    let status = args.join(' ');
+    if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
+    if(!status) return message.channel.send("I can't watch the void! What am I supposed to watch?")
+    await bot.user.setActivity(`${status}`, {type: "PLAYING"})
+    .catch(error => message.reply(`I'm not playing that because of __***${error}***__`));
+    message.channel.send(`Now playing **${status}!**`);
+  }
   
   if(command ===`${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer")
     .setColor("RANDOM")
-    .addField("Commands", "shutdown, reload, eval, watchpresence, setavat, leave, invite")
+    .addField("Commands", "shutdown, reload, eval, watchpresence, gamepresence, setavat, leave, invite")
     
     message.channel.send(devembed);
   }
   
   if(command === `${prefix}kick`){
-
-    //!kick @daeshan askin for it
-
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.reply("You think this is soccer? ***Who do I kick***");
     let kReason = args.join(" ").slice(22);
