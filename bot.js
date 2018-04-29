@@ -25,9 +25,6 @@ bot.on("ready", async () => {
 } catch(e) {
     console.log(e.stack);
 }
-
-  bot.user.setActivity("out for trouble!", {type: "WATCHING"});
-
   //bot.user.setGame("<Activity>!");
 });
 
@@ -111,11 +108,19 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 ${invlink}`)
   }
 
+  if(command ===`${prefix}watchpresence`){
+    let status = args.join(' ');
+    if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
+    if(!status) return message.channel.send("I can't watch the void! What am I supposed to watch?");
+    
+    bot.user.setActivity(`${status}`, {type: "WATCHING"});
+  }
+  
   if(command ===`${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer")
     .setColor("RANDOM")
-    .addField("Commands", "shutdown, reload, eval, gamepresence, setavat, leave, invite")
+    .addField("Commands", "shutdown, reload, eval, watchpresence, setavat, leave, invite")
     
     message.channel.send(devembed);
   }
