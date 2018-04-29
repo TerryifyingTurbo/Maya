@@ -488,7 +488,7 @@ if(command === `${prefix}dwsgtgalaxytruck`){
     "fields": [
       {
         "name": "Top Speed",
-        "value": "*Mach 1/767mph/1234kph*",
+        "value": "*Mach 1/767 mph/1234 kph*",
         "inline": true
       },
       {
@@ -508,7 +508,7 @@ if(command === `${prefix}dwsgtgalaxytruck`){
       },
       {
         "name": "Curb Weight",
-        "value": "*3300lbs. [1497kg]*",
+        "value": "*3300 lbs/1497 kg*",
         "inline": true 
       },
       {
@@ -532,6 +532,7 @@ if(command === `${prefix}dwsgtgalaxytruck`){
   };
   message.channel.send({ embed });
 }
+// .addField(" ","* *", true)
 
 if(command === `${prefix}dwsnautibuoy`){
   let nbembed = new Discord.RichEmbed()
@@ -539,7 +540,14 @@ if(command === `${prefix}dwsnautibuoy`){
   .setColor("#4270dd")
   .setFooter("Vehicle", "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png")
   .setThumbnail("https://i.imgur.com/pl5u2IG.png")
-  .addField("Overview", "*test; a luxury superyacht raided and stolen by Travis and the organization: Yo Ouila*", true);
+  .addField("Top Speed", "*56 knots/64 mph/103 kph*", true)
+  .addField("0-60", "*95.7 seconds*", true)
+  .addField("Engine", "*Twin Diesel 757,000L RK280*", true)
+  .addField("Curb Weight", "*25,557 lbs/12,500 kg/13 tons*", true)
+  .addField("Overall Length","*414 ft/126 m*", true)
+  .addField("Accomodations","*41 Cabins*", true)
+  .addField("Overview", "*An enormous $24,000,000 luxury super yacht owned by the gang, Reyes de La Calle.*", true)
+  .addField("Appearance","*placeholder test; huge ass boat*", true);
 
   message.channel.send(nbembed);
 }
