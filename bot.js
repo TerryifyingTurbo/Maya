@@ -306,7 +306,7 @@ if(command === `${prefix}dws`){
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": "Use !?dws<specific selection>"
+        "text": "!?dws<specific selection>"
       },
       "thumbnail": {
         "url": `https://i.imgur.com/yztZj9k.png` 
@@ -334,18 +334,15 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Items",
-          "value": "Zanneker0, Left Hand of Jejus",
-          "inline": true
+          "value": "Zanneker0, Bizid, Left Hand of Jejus"
         },
          {
            "name": "Journal n' Documentation",
-           "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer'",
-           "inline": true
+           "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer'"
         },
         {
           "name": "Misc n' Shit",
-          "value": "Entity#, Dark Areas, SpaceBar",
-          "inline": true
+          "value": "Entity#, Dark Areas, SpaceBar"
         },
       ]
     };
