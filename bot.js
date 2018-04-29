@@ -297,29 +297,6 @@ if(command === `${prefix}8ball`){
     message.channel.send(ballembed);
   }
 
-//   if(command === `${prefix}charq`){
-// let sayMessage = args.join(" ");
-// let question = ["What's your nationality?",
-// "What is your **worst** phobia?",
-// "What is your gender *or sex* ***or both?***",
-// "How old do you appear? **True** age?",
-// "What is your height?",
-// "Any enemimes? If so, when, how, and why?",
-// "Any allies/friends? If so, when, how and why?",
-// "Are you **close** with someone *or something?*",
-// "What are your morals? Why?"];
-
-// let result = Math.floor((Math.random() * question.length))
-
-// if(!sayMessage) return message.channel.send(question[result]);
-
-// message.channel.send(sayMessage);
-// message.delete().catch(O_o=>{}); 
-//   }
-// if(command ===`${prefix}charq help`){
-//   message.channel.send("`!?charq <args, question(s)>`",
-// "If user does not supply question, a random one will be generated instead");
-// }
 
 if(command === `${prefix}dws`){
     let embed = {
@@ -410,6 +387,8 @@ if(command === `${prefix}dwszanneker0`){
   message.channel.send({ embed });
 }
 
+
+
 if(command === `${prefix}dwsspacebar`){
   let embed = {
     "title": "SpaceBar",
@@ -417,7 +396,7 @@ if(command === `${prefix}dwsspacebar`){
     "color": 690351,
     //"timestamp": "2011-04-21",
     "footer": {
-      "icon_url": "https://image.flaticon.com/icons/png/512/189/189662.png",
+      "icon_url": "http://www.yourcts.org/wp-content/uploads/2018/02/icon-residential.png",
       "text": "Safe House"
     },
     "thumbnail": {
@@ -444,6 +423,46 @@ if(command === `${prefix}dwsspacebar`){
   };
   message.channel.send({ embed });
 }
+
+if(command === `${prefix}dwsgtgalaxytruck`){
+  let embed = {
+    "title": "GT-GalaxyTruck",
+    //"url": "https://discordapp.com",
+    "color": 431330,
+    //"timestamp": "2011-04-21",
+    "footer": {
+      "icon_url": "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png",
+      "text": "Safe House"
+    },
+    "thumbnail": {
+      "url": `https://i.imgur.com/qp9f9tn.jpg` 
+    },
+    // "image": {
+    //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
+    // },
+    // "author": {
+    //   "name": "Called for help...",
+    //   //"url": "https://discordapp.com",
+    //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    // },
+    "fields": [
+      {
+        "name": "Overview",
+        "value": "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon. Though it is registered under the names of Travis Rilynar and Jesse Green, it is unknown when exactly the Galaxy Truck was manufactured. The five-seater truck has been modified to sustain the extreme atmospheric pressure, speed, and temperature*",
+      },
+      {
+        "name": "Appearance",
+        "value": "*Equipped with military-grade, high-end materials: Bullet-resistant glass, reinforced carbon fiber plating, and a hardened drivetrain. This off-road, five-seater also has an elegant wrap that glows. The interior is custom built: Motorsport racetrack seats with harnesses and steering wheel, UV-resistant tinted windows, 8ball gear shifter, and a fuzzy dashboard with a Hawaiian girl bobble-head.*",
+     },
+      {
+        "name": "Performance",
+        "value": "*Offers absolutely horrible power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1. With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is a four-wheel drive (4WD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*"
+      }
+    ]
+  };
+  message.channel.send({ embed });
+}
+
 
 if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
@@ -617,7 +636,7 @@ if(command ===`${prefix}emoji`){
       "fields": [
         {
           "name": "I am",
-          "value": `${bot.message.member.displayName} in here but I am truly __${bot.user.username}#${bot.user.discriminator}__`
+          "value": `${bot.user.username}#${bot.user.discriminator}__`
         },
         {
           "name": "Made on",
