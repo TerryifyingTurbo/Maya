@@ -264,8 +264,8 @@ if(command === `${prefix}dadjoke`){
 }
 
 if(command === `${prefix}clapify`){
-  let randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
-  if (args.length < 1) return message.channel.send("Give :clap: me :clap: something :clap: to :clap: on");
+  let randomizeCase = word => word.split('').map(c => Math.random() > 0.4 ? c.toUpperCase() : c.toLowerCase()).join('');
+  if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:on***");
   message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
 
