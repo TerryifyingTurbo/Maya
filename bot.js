@@ -645,8 +645,8 @@ if(command ===`${prefix}emoji`){
   if(command === `${prefix}serverinfo`){
 
     let sicon = message.guild.iconURL;
-    let humans = member.guild.members.filter(m => !m.user.bot).size;
-    let bots = member.guild.members.filter(m => m.user.bot).size;
+    let humans = member.guild.members.filter(member => !member.user.bot).size;
+    let bots = member.guild.members.filter(member => member.user.bot).size;
     let serverembed = new Discord.RichEmbed()
     .setDescription(message.guild.name)
     .setColor("#15f153")
