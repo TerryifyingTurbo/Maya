@@ -207,6 +207,13 @@ if(command ===`${prefix}rolldice`){
   message.channel.send("You rolled a :game_die:" + ` ${dice}`);
 }
 
+if(command ===`${prefix}gaymeter`){
+  let metre = Math.floor(Math.random() * 99 + 1);
+  let thing = args.join(" ");
+  if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay indeed.`)
+  message.channel.send(`I'd say ${thing} is about **${metre}%** gay indeed.`)
+}
+
   if(command === `${prefix}say`) {
 
     const sayMessage = args.join(" ");
@@ -780,7 +787,7 @@ if(command ===`${prefix}emoji`){
           },
           {
             "name": "Fun",
-            "value": "say, cat, catfact, dog, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify"
+            "value": "say, cat, catfact, dog, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify, gaymeter"
           },
           {
             "name": " :warning: NSFW",
