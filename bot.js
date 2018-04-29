@@ -111,7 +111,7 @@ ${invlink}`)
   if(command ===`${prefix}watchpresence`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
-    if(!status) return message.channel.send("I can't watch the void! What am I supposed to watch?")
+    if(!status) return message.channel.send("Do I watch the void? What *or who* am I supposed to watch?")
     await bot.user.setActivity(`${status}`, {type: "WATCHING"})
     .catch(error => message.reply(`I'm not watching that because of __***${error}***__`));
     message.channel.send(`Now watching **${status}!**`);
@@ -120,7 +120,7 @@ ${invlink}`)
   if(command ===`${prefix}gamepresence`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am playing!***");
-    if(!status) return message.channel.send("I can't watch the void! What am I supposed to watch?")
+    if(!status) return message.channel.send("Do I play with someones feelings or something? What *or who* am I supposed to play?")
     await bot.user.setActivity(`${status}`, {type: "PLAYING"})
     .catch(error => message.reply(`I'm not playing that because of __***${error}***__`));
     message.channel.send(`Now playing **${status}!**`);
