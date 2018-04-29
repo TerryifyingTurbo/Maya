@@ -241,7 +241,7 @@ if(command === `${prefix}dadjoke`){
   .setColor("RANDOM")
   .setDescription("**" + body.attachments.map(a => a.text) + "**");
 
-  message.channel.send(0);
+  message.channel.send(o);
 }
 
 if(command === `${prefix}succ`){
