@@ -564,10 +564,10 @@ if(command ===`${prefix}emoji`){
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
-    .setDescription("Here's what I found...")
+    .setDescription(message.guild.name)
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
+    .addField("Owner", `${message.guild.owner.user.username}`)
     .addField("Made on", message.guild.createdAt)
     .addField("You joined", message.member.joinedAt)
     .addField("Total Members", message.guild.memberCount);
