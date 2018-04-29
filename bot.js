@@ -428,7 +428,7 @@ if(command === `${prefix}dwsgtgalaxytruck`){
   let embed = {
     "title": "GT-GalaxyTruck",
     //"url": "https://discordapp.com",
-    "color": 431330,
+    "color": 7551373,
     //"timestamp": "2011-04-21",
     "footer": {
       "icon_url": "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png",
@@ -473,14 +473,17 @@ if(command === `${prefix}dwsgtgalaxytruck`){
       {
         "name": "Overview",
         "value": "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon. Though it is registered under the names of Travis Rilynar and Jesse Green, it is unknown when exactly the Galaxy Truck was manufactured. The five-seater truck has been modified to sustain the extreme atmospheric pressure, speed, and temperature*",
+        "inline": true
       },
       {
         "name": "Appearance",
         "value": "*Equipped with military-grade, high-end materials: Bullet-resistant glass, reinforced carbon fiber plating, and a hardened drivetrain. This off-road, five-seater also has an elegant wrap that glows. The interior is custom built: Motorsport racetrack seats with harnesses and steering wheel, UV-resistant tinted windows, 8ball gear shifter, and a fuzzy dashboard with a Hawaiian girl bobble-head.*",
+        "inline": true
      },
       {
         "name": "Performance",
-        "value": "*Offers absolutely horrible power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1. With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*"
+        "value": "*Offers absolutely horrible power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1. With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*",
+        "inline": true
       }
     ]
   };
