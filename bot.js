@@ -380,7 +380,7 @@ if(command === `${prefix}dwszanneker0`){
       },
       {
         "name": "Physical Appearance",
-        "value": "The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but *never no more than 3lbs* [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 *emit an appealing, strong sweet odor* which can prove difficult to hide.",
+        "value": "*The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but never no more than 3lbs [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 emit an appealing, strong sweet odor which can prove difficult to hide.*",
      }
     ]
   };
@@ -413,11 +413,11 @@ if(command === `${prefix}dwsspacebar`){
     "fields": [
       {
         "name": "Overview",
-        "value": "A medium-sized bar in literal space, on the Moon. Somehow built mysteriously and is currently owned by __Jesse Green__ and __Travis Rilynar__ (Co-Owner). It is only accessible by these two as they carry the proper key and __GT-GalaxyTruck__ for entry. There are multiple rooms throughout the entire perimeter, some of them being concealed such as *Jesse's 'Doggo' cabinet* and *Travis's secured locker*.",
+        "value": "*A medium-sized bar in literal space, on the Moon. Somehow built mysteriously and is currently owned by Jesse Green__ and Travis Rilynar (Co-Owner). It is only accessible by these two as they carry the proper key and GT-GalaxyTruck for entry. There are multiple rooms throughout the entire perimeter, some of them being concealed such as Jesse's 'Doggo' cabinet and Travis's secured locker.*",
       },
       {
         "name": "Appearance",
-        "value": "The SpaceBar is no ordinary bar; the building itself is less than 45 x 15ft. Because it is on the Moon and in outer space, all windows and doors are air-locked. A *35+ Soundtrack playlist of EDM* available for playing, the bar contains a surrounding counter in the centre. Behind the counter lies wine racks, signature displays, shelves of ingredients and the control panel to the lighting system. The decor of the SpaceBar is meant to be set to give off a nightclub atmosphere; a strip dance pole which is located near the centre to provide a *'good show'.* The maximum occupancy of the bar is estimated to be about *150 people.* A large game room is also included within the bar and is located northeast of the entryway. Includes, but not limited to: Air hockey tables, pool game tables, classic darts, and the arcade game machines from the 90s. ",
+        "value": "*The SpaceBar is no ordinary bar; the building itself is less than 45 x 15ft. Because it is on the Moon and in outer space, all windows and doors are air-locked. A 35+ Soundtrack playlist of EDM* available for playing, the bar contains a surrounding counter in the centre. Behind the counter lies wine racks, signature displays, shelves of ingredients and the control panel to the lighting system. The decor of the SpaceBar is meant to be set to give off a nightclub atmosphere; a strip dance pole which is located near the centre to provide a 'good show'. The maximum occupancy of the bar is estimated to be about 150 people. A large game room is also included within the bar and is located northeast of the entryway. Includes, but not limited to: Air hockey tables, pool game tables, classic darts, and the arcade game machines from the 90s.*",
      }
     ]
   };
@@ -432,7 +432,7 @@ if(command === `${prefix}dwsgtgalaxytruck`){
     //"timestamp": "2011-04-21",
     "footer": {
       "icon_url": "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png",
-      "text": "Safe House"
+      "text": "Vehicle"
     },
     "thumbnail": {
       "url": `https://i.imgur.com/qp9f9tn.jpg` 
@@ -456,7 +456,7 @@ if(command === `${prefix}dwsgtgalaxytruck`){
      },
       {
         "name": "Performance",
-        "value": "*Offers absolutely horrible power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1. With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is a four-wheel drive (4WD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*"
+        "value": "*Offers absolutely horrible power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1. With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*"
       }
     ]
   };
@@ -636,7 +636,7 @@ if(command ===`${prefix}emoji`){
       "fields": [
         {
           "name": "I am",
-          "value": `${bot.user.username}#${bot.user.discriminator}__`
+          "value": `${bot.user.username}#${bot.user.discriminator}`
         },
         {
           "name": "Made on",
