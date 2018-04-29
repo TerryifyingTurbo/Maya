@@ -645,14 +645,18 @@ if(command ===`${prefix}emoji`){
   if(command === `${prefix}serverinfo`){
 
     let sicon = message.guild.iconURL;
+    let humans = member.guild.members.filter(m => !m.user.bot).size;
+    let bots = member.guild.members.filter(m => m.user.bot).size;
     let serverembed = new Discord.RichEmbed()
     .setDescription(message.guild.name)
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-    .addField("Made on", message.guild.createdAt)
-    .addField("You joined", message.member.joinedAt)
-    .addField("Total Members", message.guild.memberCount);
+    .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+    .addField("Made on", message.guild.createdAt, true)
+    .addField("You joined", message.member.joinedAt, true)
+    .addField("Humans", `${humans}`, true)
+    .addField("Bots", `${bots}`, true)
+    .addField("Total Members", message.guild.memberCount, true);
 
     return message.channel.send(serverembed);
   }
