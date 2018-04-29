@@ -119,7 +119,7 @@ ${invlink}`)
 
   if(command ===`${prefix}gamepresence`){
     let status = args.join(' ');
-    if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
+    if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am playing!***");
     if(!status) return message.channel.send("I can't watch the void! What am I supposed to watch?")
     await bot.user.setActivity(`${status}`, {type: "PLAYING"})
     .catch(error => message.reply(`I'm not playing that because of __***${error}***__`));
