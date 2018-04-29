@@ -233,6 +233,17 @@ let factembed = new Discord.RichEmbed()
 message.channel.send(factembed);
 }
 
+if(command === `${prefix}dadjoke`){
+  let {body} = await superagent
+  .get(`https://icanhazdadjoke.com/slack`);
+
+  let o = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription("**" + body.attachments.map(a => a.text) + "**");
+
+  message.channel.send(0);
+}
+
 if(command === `${prefix}succ`){
 
   const sayMessage = args.join(" ");
