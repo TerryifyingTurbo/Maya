@@ -111,9 +111,10 @@ ${invlink}`)
   if(command ===`${prefix}watchpresence`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
-    if(!status) return message.channel.send("I can't watch the void! What am I supposed to watch?");
-    
-    bot.user.setActivity(`${status}`, {type: "WATCHING"});
+    if(!status) return message.channel.send("I can't watch the void! What am I supposed to watch?")
+    await bot.user.setActivity(`${status}`, {type: "WATCHING"})
+    .catch(error => message.reply(`I'm not watching that because of __***${error}***__`));
+    message.channel.send(`I'm now watching for **${status}!**`);
   }
   
   if(command ===`${prefix}devhelp`){
