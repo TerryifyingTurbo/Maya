@@ -617,7 +617,7 @@ if(command ===`${prefix}emoji`){
       "fields": [
         {
           "name": "I am",
-          "value": `${bot.member.displayName} in here but I am truly __${bot.user.username}#${bot.user.discriminator}__`
+          "value": `${bot.message.member.displayName} in here but I am truly __${bot.user.username}#${bot.user.discriminator}__`
         },
         {
           "name": "Made on",
