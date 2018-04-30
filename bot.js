@@ -35,7 +35,7 @@ bot.on("message", async message => {
   }
   
 const ayy = bot.emojis.get("426999753830825995");
-  if(message.content === "ayy"){
+  if(message.content.toUpperCase === "ayy"){
   const ayy = bot.emojis.find("name", "ayy");
   message.channel.send(`${ayy} Lmao`);
 }
@@ -208,10 +208,35 @@ if(command ===`${prefix}rolldice`){
 }
 
 if(command ===`${prefix}gaymeter`){
-  let metre = Math.floor(Math.random() * 99 + 1);
+  let metre = Math.floor(Math.random() * 999 + 1);
   let thing = args.join(" ");
   if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay indeed.`)
-  message.channel.send(`I'd say ${thing} is about **${metre}%** gay indeed.`)
+  await message.channel.send(`*${thing}?* I'd say about **${metre}%** gay indeed.`)
+  
+  if(metre < 50)
+  (message => {
+    setTimeout(() => {
+      message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
+      ***Eh, not that gay but still isn't 0%***`)
+    }, cdseconds * 1300)
+  });
+
+  else if (metre > 100)
+  (message => {
+    setTimeout(() => {
+      message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
+      ***That's pretty gay***`)
+    }, cdseconds * 1300)
+  });
+
+  else if (metre > 250)
+  (message => {
+    setTimeout(() => {
+      message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
+      ***Mega gay no dodge***`)
+    }, cdseconds * 1300)
+  });
+
 }
 
   if(command === `${prefix}say`) {
