@@ -35,7 +35,7 @@ bot.on("message", async message => {
   }
   
 const ayy = bot.emojis.get("426999753830825995");
-  if(message.content.toUpperCase === "ayy"){
+  if(message.content.toUpperCase("ayy")){
   const ayy = bot.emojis.find("name", "ayy");
   message.channel.send(`${ayy} Lmao`);
 }
