@@ -211,32 +211,7 @@ if(command ===`${prefix}gaymeter`){
   let metre = Math.floor(Math.random() * 149 + 1);
   let thing = args.join(" ");
   if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay indeed.`)
-  await message.channel.send(`*${thing}?* I'd say about **${metre}%** gay indeed.`)
-  
-  if(metre < 50)
-  then(message => {
-    setTimeout(() => {
-      message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
-      ***Eh, not that gay but still isn't 0%***`)
-    }, cdseconds * 1300)
-  });
-
-  else if (metre > 100)
-  then(message => {
-    setTimeout(() => {
-      message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
-      ***That's pretty gay***`)
-    }, cdseconds * 1300)
-  });
-
-  else if (metre > 250)
-  then(message => {
-    setTimeout(() => {
-      message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
-      ***Mega gay no dodge***`)
-    }, cdseconds * 1300)
-  });
-
+  message.channel.send(`__${thing}?__ I'd say about **${metre}%** gay indeed.`)
 }
 
   if(command === `${prefix}say`) {
