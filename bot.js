@@ -34,11 +34,11 @@ bot.on("message", async message => {
     return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
   
-const ayy = bot.emojis.get("426999753830825995");
-  if(message.content.toUpperCase("ayy")){
-  const ayy = bot.emojis.find("name", "ayy");
-  message.channel.send(`${ayy} Lmao`);
-}
+// const ayy = bot.emojis.get("426999753830825995");
+//   if(message.content.toUpperCase("ayy")){
+//   const ayy = bot.emojis.find("name", "ayy");
+//   message.channel.send(`${ayy} Lmao`);
+// }
 
 const intensefear = bot.emojis.get("406790609035329538");
 if(message.content === "D:"){
