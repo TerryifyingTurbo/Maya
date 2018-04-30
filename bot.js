@@ -214,7 +214,7 @@ if(command ===`${prefix}gaymeter`){
   await message.channel.send(`*${thing}?* I'd say about **${metre}%** gay indeed.`)
   
   if(metre < 50)
-  (message => {
+  then(message => {
     setTimeout(() => {
       message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
       ***Eh, not that gay but still isn't 0%***`)
@@ -222,7 +222,7 @@ if(command ===`${prefix}gaymeter`){
   });
 
   else if (metre > 100)
-  (message => {
+  then(message => {
     setTimeout(() => {
       message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
       ***That's pretty gay***`)
@@ -230,7 +230,7 @@ if(command ===`${prefix}gaymeter`){
   });
 
   else if (metre > 250)
-  (message => {
+  then(message => {
     setTimeout(() => {
       message.edit(`*${thing}?* I'd say about **${metre}%** gay indeed. 
       ***Mega gay no dodge***`)
