@@ -34,11 +34,11 @@ bot.on("message", async message => {
     return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
   
-// const ayy = bot.emojis.get("426999753830825995");
-//   if(message.content.toUpperCase("ayy")){
-//   const ayy = bot.emojis.find("name", "ayy");
-//   message.channel.send(`${ayy} Lmao`);
-// }
+const ayy = bot.emojis.get("426999753830825995");
+  if(message.content === "ayy"){
+  const ayy = bot.emojis.find("name", "ayy");
+  message.channel.send(`${ayy} Lmao`);
+}
 
 const intensefear = bot.emojis.get("406790609035329538");
 if(message.content === "D:"){
@@ -196,7 +196,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
 message.channel.send('***Flipping...***').then(message => {
   setTimeout(() => {
     message.edit(`*${replies[result]}*`)
-  }, cdseconds * 1000)
+  }, cdseconds * 1200)
 });
     
     //message.channel.send(replies[result]);
@@ -349,7 +349,7 @@ if(command === `${prefix}dws`){
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": "!?dws<specific selection>"
+        "text": "!?dws<selection>"
       },
       "thumbnail": {
         "url": `https://i.imgur.com/yztZj9k.png` 
@@ -377,15 +377,15 @@ if(command === `${prefix}dws`){
         },
         {
           "name": "Items",
-          "value": "Zanneker0, Bizid, Left Hand of Jejus"
+          "value": "Zanneker0, Bizid, Left Hand of Jejus, Graveyard Grumble"
         },
          {
            "name": "Journal n' Documentation",
-           "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer'"
+           "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer', Note #4, 'Termination Order'"
         },
         {
           "name": "Misc n' Shit",
-          "value": "Entity#, Dark Areas, SpaceBar"
+          "value": "Entity#, Dark Areas, SpaceBar, Decommissioned Bunker"
         },
       ]
     };
@@ -540,13 +540,13 @@ if(command === `${prefix}dwsnautibuoy`){
   .setColor("#4270dd")
   .setFooter("Vehicle", "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png")
   .setThumbnail("https://i.imgur.com/pl5u2IG.png")
-  .addField("Top Speed", "*56 knots/64 mph/103 kph*", true)
-  .addField("0-60", "*95.7 seconds*", true)
+  .addField("Top Speed", "*28 knots/32 mph/52 kph*", true)
+  .addField("0-60", "*N/A*", true)
   .addField("Engine", "*Twin Diesel 757,000L RK280*", true)
   .addField("Curb Weight", "*25,557 lbs/12,500 kg/13 tons*", true)
   .addField("Overall Length","*414 ft/126 m*", true)
   .addField("Accomodations","*41 Cabins*", true)
-  .addField("Overview", "*An enormous $24,000,000 luxury super yacht owned by the gang, Reyes de La Calle.*", true)
+  .addField("Overview", "*An enormous $24,000,000 luxury super yacht owned by the 2nd most notorious gang: Reyes de La Calle.*", true)
   .addField("Appearance","*placeholder test; huge ass boat*", true);
 
   message.channel.send(nbembed);
