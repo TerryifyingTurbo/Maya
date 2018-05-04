@@ -547,11 +547,18 @@ if(command === `${prefix}dwsnautibuoy`){
   .addField("Overall Length","*414 ft/126 m*", true)
   .addField("Accomodations","*41 Cabins*", true)
   .addField("Overview", "*An enormous $24,000,000 luxury super yacht owned by the 2nd most notorious gang: Reyes de La Calle.*", true)
-  .addField("Appearance","*placeholder test; huge ass boat*", true);
+  .addField("Appearance","*placeholder test; huge ass boat with bright accent purple*", true);
 
   message.channel.send(nbembed);
 }
 
+if(command === `${prefix}dwsgraveyardgrumble`){
+  let ggembed = new Discord.RichEmbed()
+  .setTitle("Graveyard Grumble")
+  .setColor("#7d2e3e")
+  .setFooter("Signature Beverage")
+  //.setThumbnail()
+}
 
 if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
@@ -690,6 +697,7 @@ if(command ===`${prefix}emoji`){
     const deleteCount = parseInt(args[0], 10);
     
     // Ooooh nice, combined conditions. <3
+    if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("**No.** You need the following: ADMINSTRATOR");
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       return message.reply("What do you think this is, the movie? No, purge 2 or more messages.");
     
