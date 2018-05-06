@@ -106,7 +106,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
 ${invlink}`)
   }
 
-  if(command ===`${prefix}watchpresence`){
+  if(command === `${prefix}watchpresence`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
     if(!status) return message.channel.send("Do I watch the void? What *or who* am I supposed to watch?")
@@ -115,7 +115,7 @@ ${invlink}`)
     message.channel.send(`Now watching: **${status}**`);
   }
 
-  if(command ===`${prefix}gamepresence`){
+  if(command === `${prefix}gamepresence`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am playing!***");
     if(!status) return message.channel.send("Do I play with someones feelings or something? What *or who* am I supposed to play?")
@@ -124,7 +124,7 @@ ${invlink}`)
     message.channel.send(`Now playing: **${status}**`);
   }
 
-  if(command ===`${prefix}listenpresence`){
+  if(command === `${prefix}listenpresence`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am listening to!***");
     if(!status) return message.channel.send("Do I listen to someones bullshit or something? What *or who* am I supposed to listen to?")
@@ -133,7 +133,7 @@ ${invlink}`)
     message.channel.send(`Now listening: **${status}**`);
   }
   
-  if(command ===`${prefix}devhelp`){
+  if(command === `${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer")
     .setColor("RANDOM")
@@ -186,7 +186,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     message.guild.leave();
   }
 
-  if(command ===`${prefix}flipcoin`){
+  if(command === `${prefix}flipcoin`){
     
     let replies = ["Heads.", "Tails."];
     
@@ -202,12 +202,12 @@ message.channel.send('***Flipping...***').then(message => {
     //message.channel.send(replies[result]);
 }
 
-if(command ===`${prefix}rolldice`){
+if(command === `${prefix}rolldice`){
   let dice = Math.floor(Math.random() * 5 + 1);
   message.channel.send("You rolled a :game_die:" + ` ${dice}`);
 }
 
-if(command ===`${prefix}gaymeter`){
+if(command === `${prefix}gaymeter`){
   let metre = Math.floor(Math.random() * 149 + 1);
   let thing = args.join(" ");
   if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay indeed.`)
@@ -224,18 +224,17 @@ if(command ===`${prefix}gaymeter`){
     // And we get the bot to say the thing: 
   }
 
-if(command ===`${prefix}cat`){
+if(command === `${prefix}cat`){
   let {body} = await superagent
   .get(`http://aws.random.cat/meow`);
-
   let catembed = new Discord.RichEmbed()
-.setColor("RANDOM")
-.setTitle("Kitty :0")
-.setImage(body.file);
-message.channel.send(catembed);
+  .setColor("RANDOM")
+  .setTitle("Kitty :0")
+  .setImage(body.file);
+  message.channel.send(catembed);
 }
 
-if(command ===`${prefix}dog`){
+if(command === `${prefix}dog`){
   let {body} = await superagent
   .get(`https://random.dog/woof.json`);
   
@@ -247,16 +246,14 @@ if(command ===`${prefix}dog`){
 }
 
 if(command === `${prefix}catfact`){
-let {body} = await superagent
-.get(`https://catfact.ninja/fact`);
-
-let factembed = new Discord.RichEmbed()
-.setColor("RANDOM")
-//.setTitle("It's true that...")
-.addField("It's true that...", body.fact);
-//.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
-
-message.channel.send(factembed);
+ let {body} = await superagent
+ .get(`https://catfact.ninja/fact`);
+ let factembed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ //.setTitle("It's true that...")
+ .addField("It's true that...", body.fact);
+ //.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
+ message.channel.send(factembed);
 }
 
 if(command === `${prefix}dadjoke`){
@@ -283,28 +280,24 @@ if(command === `${prefix}succ`){
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
   let Posreplies = ["gets on their knees", "moves a strand of hair aside", "licks their own lips", "huffs", "gives a sly smile", "pouts", "makes a low groan"];
-
-let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
-let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
-
+  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
   message.channel.send(`***${message.member.displayName}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
 
 }
 
-if(command ===`${prefix}fucc`){
+if(command === `${prefix}fucc`){
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
-  
   let Preplies = [`stifled moans could be heard from ${sayMessage}`, 
                   `lusty panting escaped from ${sayMessage}'s mouth`, 
                   `${sayMessage} grits their teeth and their hands knotted into fists as they got ruthlessly pounded`, 
                   `${sayMessage} teared of pleasuring pain`, `shameless moans were forced out of ${sayMessage}`, 
                   `${sayMessage} couldn't even pretend that they didn't like it`, ];
-  
   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.member.displayName}***`, 
                     `***${sayMessage}*** *goes on all fours for* ***${message.member.displayName}***`,
                     `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.member.displayName}***`,
@@ -313,13 +306,11 @@ if(command ===`${prefix}fucc`){
                     `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`,
                     `***${sayMessage}*** *agrees to join in on some Monopoly with* ***${message.member.displayName}***—`,
                     `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}***`];
-
-let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
-let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options                
-
-  if(!sayMessage) return message.channel.send(`${message.member.displayName} must've went to go fuck themselves or something since they didn't say who otherwise`);
+ let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+ let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+ let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+ let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options                
+ if(!sayMessage) return message.channel.send(`${message.member.displayName} must've went to go fuck themselves or something since they didn't say who otherwise`);
   message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
 }
 
@@ -594,8 +585,23 @@ if(command === `${prefix}dwsjejus`){
   .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." + 
   " Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
   .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." + 
-  " He strongly believes in the morals of justice and is willing to serve if necessary", true);
+  " He strongly believes in the morals of justice and is willing to serve if necessary*", true);
   message.channel.send(jembed);
+}
+
+if(command === `${prefix}dwsaeztia`){
+  let aembed = new Discord.RichEmbed()
+  .setTitle("Aeztia Lavender")
+  .setColor("#46437b")
+  .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
+  .setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
+  .addField("Height", "*5'5/165 cm/1.6 m", true)
+  .addField("Weight", "*120 lbs./54 kg*", true)
+  .addField("Gender", "*Female*", true)
+  .addField("Age", "*99 Googolplexian years (99^10^10^100)*", true)
+  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
+  message.channel.send(aembed);
+
 }
 
 if(command === `${prefix}dirtyquote`){
@@ -638,7 +644,7 @@ if(command === `${prefix}dirtyquote`){
     message.channel.send(replies[result]);
   }
  
-if(command ===`${prefix}emoji`){
+if(command === `${prefix}emoji`){
   let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
   let result = Math.floor((Math.random() * replies.length));
   
@@ -649,7 +655,7 @@ if(command ===`${prefix}emoji`){
     message.channel.send(replies[result]);
 }
 
-  if(command ===`${prefix}fortunecookie`){
+  if(command === `${prefix}fortunecookie`){
     let replies = ["Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.",
     "Before you ask why someone hates you, ask yourself why you should care deeply.",
     "The fears we don't face **become our limits**.",
