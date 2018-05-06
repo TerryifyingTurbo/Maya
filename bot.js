@@ -581,7 +581,7 @@ if(command === `${prefix}dwsjejus`){
   .addField("Height", "*6'7/204 cm/2 m*", true)
   .addField("Weight", "*219 lbs./99 kg*", true)
   .addField("Gender", "*Male*", true)
-  .addField("Age", "*42.1 million years*", true)
+  .addField("Age", "*42.1 million*", true)
   .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." + 
   " Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
   .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." + 
@@ -595,10 +595,10 @@ if(command === `${prefix}dwsaeztia`){
   .setColor("#46437b")
   .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   .setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
-  .addField("Height", "*5'5/165 cm/1.6 m", true)
+  .addField("Height", "*5'5/165 cm/1.6 m*", true)
   .addField("Weight", "*120 lbs./54 kg*", true)
   .addField("Gender", "*Female*", true)
-  .addField("Age", "*99 Googolplexian years (99^10^10^100)*", true)
+  .addField("Age", "*99 Googolplexian*", true)
   .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
   message.channel.send(aembed);
 
