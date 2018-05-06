@@ -591,10 +591,8 @@ if(command === `${prefix}dwsjejus`){
   .addField("Weight", "*219 lbs./99 kg*", true)
   .addField("Gender", "*Male*", true)
   .addField("Age", "*42.1 million years*", true)
-  .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." + 
-  " Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
-  .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." + 
-  " He strongly believes in the morals of justice and is willing to serve if necessary*", true);
+  .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006. Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
+  .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute. He strongly believes in the morals of justice and is willing to serve if necessary*", true);
   message.channel.send(jembed);
 }
 
