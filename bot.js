@@ -518,15 +518,18 @@ if(command === `${prefix}dwsgtgalaxytruck`){
       },
       {
         "name": "Overview",
-        "value": "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon. Though it is registered under the names of Travis Rilynar and Jesse Green, it is unknown when exactly the Galaxy Truck was manufactured. The five-seater truck has been modified to sustain the extreme atmospheric pressure, speed, and temperature*",
+        "value": "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon." + 
+        " Though it is registered under the names of Travis Rilynar and Jesse Green, it is unknown when exactly the Galaxy Truck was manufactured. The five-seater truck has been modified to sustain the extreme atmospheric pressure, speed, and temperature*",
       },
       {
         "name": "Appearance",
-        "value": "*Equipped with military-grade, high-end materials: Bullet-resistant glass, reinforced carbon fiber plating, and a hardened drivetrain. This off-road, five-seater also has an elegant wrap that glows. The interior is custom built: Motorsport racetrack seats with harnesses and steering wheel, UV-resistant tinted windows, 8ball gear shifter, and a fuzzy dashboard with a Hawaiian girl bobble-head.*",
+        "value": "*Equipped with military-grade, high-end materials: Bullet-resistant glass, reinforced carbon fiber plating, and a hardened drivetrain." + 
+        " This off-road, five-seater also has an elegant wrap that glows. The interior is custom built: Motorsport racetrack seats with harnesses and steering wheel, UV-resistant tinted windows, 8ball gear shifter, and a fuzzy dashboard with a Hawaiian girl bobble-head.*",
      },
       {
         "name": "Performance",
-        "value": "*Offers absolutely horrible power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1. With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*"
+        "value": "*Offers extremely poor power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1." + 
+        " With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*"
       }
     ]
   };
@@ -558,6 +561,25 @@ if(command === `${prefix}dwsgraveyardgrumble`){
   .setColor("#7d2e3e")
   .setFooter("Signature Beverage")
   //.setThumbnail()
+  .addField("Overview", 
+  "*This coffin-shaped bottle is made of translucent bloodshot red glass. The taste is almost described as strong and sour with a foul aftertaste." + 
+  " It has a long neck, stands about nine inches tall, and it has no label other than it displaying a warning: 'So strong it's something to DIE FOR'.*", true);
+  message.channel.send(ggembed);
+}
+
+if(command === `${prefix}dwsdecommissionedbunker`){
+  let dbembed = new Discord.RichEmbed()
+  .setTitle("Decommisssioned Bunker")
+  .setColor("#d3b385")
+  .setFooter("Safe House", "http://www.yourcts.org/wp-content/uploads/2018/02/icon-residential.png")
+  .setThumbnail("https://i.imgur.com/7EG1emR.jpg")
+  .addField("Manufacture Date", "1944", true)
+  .addField("Bunker Size", "155,000sq ft²")
+  .addField("Overview", "*A condemned bunker now used as the headquarters/hideout of the organization: Yo Ouila*", true)
+  .addBlankField(true)
+  .addField("Description", "*Includes a corridor that leads to the armory roomn, garage, control room, and conference room.*", true)
+  
+  message.channel.send(dbembed);
 }
 
 if(command === `${prefix}dirtyquote`){
@@ -697,7 +719,7 @@ if(command ===`${prefix}emoji`){
     const deleteCount = parseInt(args[0], 10);
     
     // Ooooh nice, combined conditions. <3
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("**No.** You need the following: ADMINSTRATOR");
+    if(!message.member.hasPermission("ADMINSTRATOR")) return message.channel.send("**No.** You need the following: ADMINSTRATOR");
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       return message.reply("What do you think this is, the movie? No, purge 2 or more messages.");
     
