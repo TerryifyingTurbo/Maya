@@ -574,12 +574,28 @@ if(command === `${prefix}dwsdecommissionedbunker`){
   .setFooter("Safe House", "http://www.yourcts.org/wp-content/uploads/2018/02/icon-residential.png")
   .setThumbnail("https://i.imgur.com/7EG1emR.jpg")
   .addField("Manufacture Date", "1944", true)
-  .addField("Bunker Size", "155,000sq ft²")
+  .addField("Bunker Size", "155,000sq ft²", true)
   .addField("Overview", "*A condemned bunker now used as the headquarters/hideout of the organization: Yo Ouila*", true)
-  .addBlankField(true)
-  .addField("Description", "*Includes a corridor that leads to the armory roomn, garage, control room, and conference room.*", true)
+  .addField("Description", "*Includes a corridor that leads to the armory roomn, garage, control room, and conference room.*", true);
   
   message.channel.send(dbembed);
+}
+
+if(command === `${prefix}dwsjejus`){
+  let jembed = new Discord.RichEmbed()
+  .setTitle("Jejus")
+  .setColor("#87c285")
+  .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
+  .setThumbnail("https://i.imgur.com/8cHcPvv.jpg?1")
+  .addField("Height", "*6'7/204 cm/2 m*", true)
+  .addField("Weight", "*219 lbs./99 kg*", true)
+  .addField("Gender", "*Male*", true)
+  .addField("Age", "*42.1 million years*", true)
+  .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." + 
+  " Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
+  .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." + 
+  " He strongly believes in the morals of justice and is willing to serve if necessary", true);
+  message.channel.send(jembed);
 }
 
 if(command === `${prefix}dirtyquote`){
