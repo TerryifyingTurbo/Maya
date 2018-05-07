@@ -851,7 +851,7 @@ if(command === `${prefix}emoji`){
           },
           {
             "name": " :warning: NSFW",
-            "value": "~~Classified, Classified, Classified, Classified~~",
+            "value": "dirtyquote, fucc, succ, smut",
             "inline": true
           },
           // {
