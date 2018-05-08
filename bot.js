@@ -99,11 +99,9 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
   if(command === `${prefix}invite`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
-    
-  let invlink = `https://discordapp.com/oauth2/authorize?client_id=417517654174334976&permissions=8&scope=bot`
-
-  message.channel.send(`Here you go, boss x3
-${invlink}`)
+    let invlink = `https://discordapp.com/oauth2/authorize?client_id=417517654174334976&permissions=8&scope=bot`
+    message.channel.send(`Here you go, boss x3
+    ${invlink}`)
   }
 
   if(command === `${prefix}watchpresence`){
@@ -314,6 +312,15 @@ if(command === `${prefix}fucc`){
   message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
 }
 
+if(command === `${prefix}smut`){
+  let smutembed = new Discord.RichEmbed()
+  .setTitle(" :lemon: Lemon-Scented Smut")
+  .setColor("#d68998")
+  .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
+  .setFooter("!?smut<specifc selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
+  .addField("The Holy Sins", "*(yes await until added)*", true);
+  message.channel.send(smutembed);
+}
   
 if(command === `${prefix}8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
@@ -741,7 +748,9 @@ if(command === `${prefix}emoji`){
     const deleteCount = parseInt(args[0], 10);
     
     // Ooooh nice, combined conditions. <3
-    if(!message.member.hasPermission("ADMINSTRATOR")) return message.channel.send("**No.** You need the following: ADMINSTRATOR");
+    if(!message.member.hasPermission("ADMINISTRATOR"))
+    return message.channel.send("**No.** You need the following: ADMINISTRATOR");
+    
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       return message.reply("What do you think this is, the movie? No, purge 2 or more messages.");
     
