@@ -602,10 +602,12 @@ if(command === `${prefix}dwsaeztia`){
   .setColor("#46437b")
   .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   .setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
+  .addField("Status", "*Alive*", true)
   .addField("Height", "*5'5/165 cm/1.6 m*", true)
   .addField("Weight", "*120 lbs./54 kg*", true)
   .addField("Gender", "*Female*", true)
   .addField("Age", "*99 Googolplexian*", true)
+  .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
   message.channel.send(aembed);
 
