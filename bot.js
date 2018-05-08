@@ -318,7 +318,7 @@ if(command === `${prefix}smut`){
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut<specifc selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField("The Holy Sins", "*(yes await until added)*", true);
+  .addField("The Holy List of Story Sins", "*(yes await until added)*", true);
   message.channel.send(smutembed);
 }
   
