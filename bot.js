@@ -34,7 +34,7 @@ bot.on("message", async message => {
   }
   
 const ayy = bot.emojis.get("426999753830825995");
-  if(message.content === "ayy" || "ayyy"){
+  if(message.content === "ayy" || (message.content === "ayyy")){
   const ayy = bot.emojis.find("name", "ayy");
   message.channel.send(`${ayy} Lmao`);
 }
@@ -609,8 +609,8 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
-  .addField("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
-  .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*")
+  .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
+  .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
   message.channel.send(aembed);
 
 }
