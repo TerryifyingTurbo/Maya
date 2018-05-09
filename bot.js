@@ -5,7 +5,6 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
-const leetspeak = require("leetspeak");
 const bot = new Discord.Client({disableEveryone: true})
 const cleverbot = require("cleverbot", "cleverbot.io");
 let cooldown = new Set();
@@ -35,7 +34,7 @@ bot.on("message", async message => {
   }
   
 const ayy = bot.emojis.get("426999753830825995");
-  if(message.content === "ayy"){
+  if(message.content === "ayy" || "ayyy"){
   const ayy = bot.emojis.find("name", "ayy");
   message.channel.send(`${ayy} Lmao`);
 }
@@ -191,8 +190,8 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     let result = Math.floor((Math.random() * replies.length));
 
     let msTimeout = 1000;
-message.channel.send('***Flipping...***').then(message => {
-  setTimeout(() => {
+    message.channel.send('***Flipping...***').then(message => {
+    setTimeout(() => {
     message.edit(`*${replies[result]}*`)
   }, cdseconds * 1200)
 });
@@ -206,7 +205,7 @@ if(command === `${prefix}rolldice`){
 }
 
 if(command === `${prefix}gaymeter`){
-  let metre = Math.floor(Math.random() * 149 + 1);
+  let metre = Math.floor(Math.random() * 99 + 1);
   let thing = args.join(" ");
   if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay indeed.`)
   message.channel.send(`${thing}? I'd say about **${metre}%** gay indeed.`)
@@ -585,6 +584,7 @@ if(command === `${prefix}dwsjejus`){
   .setColor("#87c285")
   .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   .setThumbnail("https://i.imgur.com/8cHcPvv.jpg?1")
+  .addField("Status", "*Alive*", true)
   .addField("Height", "*6'7/204 cm/2 m*", true)
   .addField("Weight", "*219 lbs./99 kg*", true)
   .addField("Gender", "*Male*", true)
@@ -608,10 +608,14 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Gender", "*Female*", true)
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
+  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
+  .addField("—————", "Special Abilities", true)
+  .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*")
   message.channel.send(aembed);
 
 }
+
+
 
 if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
