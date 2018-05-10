@@ -612,10 +612,8 @@ if(command === `${prefix}dwsaeztia`){
   // .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
   // .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
   // "*type* __*more*__ *for more info*"
-  message.channel.send(aembed).then(message => {
-    setTimeout(() => {
-      message.channel.send("*type* `more` *for more info or* `cancel` *to back out*")
-  }, cdseconds * 1000)
+  message.channel.send(aembed)
+  .then(message.channel.send("*type* `more` *for more info or* `cancel` *to back out*"))
     
   if(message.content.startsWith("more")){
    let aembed2 = new Discord.RichEmbed()
@@ -628,7 +626,7 @@ if(command === `${prefix}dwsaeztia`){
   else if(message.content.startsWith("cancel")){
     return message.channel.send("*Cancelled.*");
   }
-  })};
+  }
   
 
 
