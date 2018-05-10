@@ -609,19 +609,21 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Overview", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
-  // .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
-  // .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  // "*type* __*more*__ *for more info*"
-  await message.channel.send(aembed)
-  message.channel.send("*type* `more` *for more info or* `cancel` *to back out*");
-  if(message.content === "more"){
-   let embed2 = new Discord.RichEmbed()
+
+  let embed2 = new Discord.RichEmbed()
    .setTitle("Aeztia Lavender (Con.)")
    .setColor("#46437b")
    .setFooter("End")
    .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
    .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*", true);
-   message.channel.send(embed2)
+
+  // .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
+  // .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
+  // "*type* __*more*__ *for more info*"
+  await message.channel.send(aembed)
+  message.channel.send("*type* `more` *for more info or* `cancel` *to back out*")
+  if(message.content === "more"){
+    message.channel.send(embed2)
   }
   else if(message.content === "cancel"){
     return message.channel.send("*Cancelled.*");
