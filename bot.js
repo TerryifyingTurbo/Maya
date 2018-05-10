@@ -612,16 +612,16 @@ if(command === `${prefix}dwsaeztia`){
   // .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
   // .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
   // "*type* __*more*__ *for more info*"
-  await message.channel.send(aembed)
+  await message.channel.send({ aembed } + "*type* __*more*__ *for more info*")
     
-  if(message.content.startsWith === "more"){
+  if(message.content === "more"){
    let aembed2 = new Discord.RichEmbed()
    .setTitle("Aeztia Lavender (Con.)")
    .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
    .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*", true);
-   message.channel.send({ aembed2 } + "*type* __*more*__ *for more info*")
+   message.channel.send(aembed2)
   }
-  else if(message.content.startsWith === "cancel"){
+  else if(message.content === "cancel"){
     return;
   }
 }
