@@ -611,7 +611,7 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Overview", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
   // .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
   // .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  await message.channel.send(aembed + 
+  await message.channel.send(`${aembed}` + 
     "*type* __*more*__ *for more info*")
     
   if(message.content.startsWith === "more"){
