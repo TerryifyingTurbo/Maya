@@ -614,7 +614,7 @@ if(command === `${prefix}dwsaeztia`){
   // "*type* __*more*__ *for more info*"
   await message.channel.send(aembed)
   message.channel.send("*type* `more` *for more info or* `cancel` *to back out*");
-  if(message.content.startsWith("more")){
+  if(message.content === "more"){
    let embed2 = new Discord.RichEmbed()
    .setTitle("Aeztia Lavender (Con.)")
    .setColor("#46437b")
@@ -623,7 +623,7 @@ if(command === `${prefix}dwsaeztia`){
    .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*", true);
    message.channel.send(embed2)
   }
-  else if(message.content.startsWith("cancel")){
+  else if(message.content === "cancel"){
     return message.channel.send("*Cancelled.*");
   }
 }
