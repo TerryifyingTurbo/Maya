@@ -608,11 +608,14 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Gender", "*Female*", true)
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Overview", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
+  .addField("Overview", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
   // .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
   // .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
   // "*type* __*more*__ *for more info*"
-  await message.channel.send({ aembed } + "*type* __*more*__ *for more info*")
+  message.channel.send(aembed).then(message => {
+    setTimeout(() => {
+    await message.channel.send("*type* __*more*__ *for more info*")
+  }, cdseconds * 1000)
     
   if(message.content === "more"){
    let aembed2 = new Discord.RichEmbed()
@@ -624,8 +627,8 @@ if(command === `${prefix}dwsaeztia`){
   else if(message.content === "cancel"){
     return;
   }
-}
-
+})};
+  
 
 
 if(command === `${prefix}dirtyquote`){
