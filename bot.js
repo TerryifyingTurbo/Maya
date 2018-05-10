@@ -624,11 +624,11 @@ if(command === `${prefix}dwsaeztia`){
   message.channel.send("*type* `more` *for more info or* `cancel` *to back out*")
   if(message.content === "more"){
     message.channel.send(embed2)
-  }
-  else if(message.content === "cancel"){
+  
+    if(message.content === "cancel"){
     return message.channel.send("*Cancelled.*");
   }
-}
+}}
   
 
 
