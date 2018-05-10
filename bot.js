@@ -614,7 +614,7 @@ if(command === `${prefix}dwsaeztia`){
   // "*type* __*more*__ *for more info*"
   message.channel.send(aembed).then(message => {
     setTimeout(() => {
-    await message.channel.send("*type* __*more*__ *for more info*")
+      message.channel.send("*type* __*more*__ *for more info*")
   }, cdseconds * 1000)
     
   if(message.content === "more"){
