@@ -608,29 +608,30 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Gender", "*Female*", true)
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Overview", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
+  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
+  .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
+  .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
+  message.channel.send(aembed);
 
-  let embed2 = new Discord.RichEmbed()
-   .setTitle("Aeztia Lavender (Con.)")
-   .setColor("#46437b")
-   .setFooter("End")
-   .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
-   .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*", true);
+}
 
-  // .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
-  // .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  // "*type* __*more*__ *for more info*"
-  await message.channel.send(aembed)
-  message.channel.send("*type* `more` *for more info or* `cancel` *to back out*")
-  if(message.content === "more"){
-    message.channel.send(embed2)
-  
-    if(message.content === "cancel"){
-    return message.channel.send("*Cancelled.*");
-  }
-}}
-  
-
+if(command === `${prefix}dwstravis`){
+  let tembed = new Discord.RichEmbed()
+  .setTitle("Travis \"Vortex\" Rilynar")
+  .setColor("#07a56c")
+  .setFooter("Story Character", "https://i.imgur.com/uOFLi1A.png")
+  .setThumbnail("https://i.imgur.com/jVM8fdc.jpg")
+  .addField("Status", "*Alive*", true)
+  .addField("Height", "*5'9/175 cm/1.7 m*", true)
+  .addField("Weight", "*130 lbs./59 kg*", true)
+  .addField("Gender", "*Male*", true)
+  .addField("Age", "*22*", true)
+  .addField("Zodiac Sign", "*Scorpio*", true)
+  .addField("Physical Appearance", "*Travis is a Hispanic male who is at the age of 22 with very dark brown hair and brown eyes. He has a medium build, standing 5’9 [175cm] and weighs at 130lbs. [59kg]. His skin tone is a III medium white (Fitzpatrick Scale). Travis's physique is slightly thinner compared to most of the others such as Riley, Connor, Carlos, and even his own brother, Marlowe." +  
+  "This most certainly comes from his time as a catcher and his stint in prison. Taking from his father's side, Travis and Relonimar both take their father's personality but is not as severe. The two brothers also inherit their father's dominant hand, which is the left hand—often frowned upon when doing tasks that were made for the right dominant hand." + 
+  "Travis is the person who wears casual clothing that usually consists of dark jeans, black two-tone converses, unique shirts with psychedelic logos covered by his galaxy hoodie.*", true)
+  message.channel.send(tembed);
+}
 
 if(command === `${prefix}dirtyquote`){
     let replies = ["I'm straight, but hey, $20 is $20.", 
