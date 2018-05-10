@@ -614,7 +614,6 @@ if(command === `${prefix}dwsaeztia`){
   // "*type* __*more*__ *for more info*"
   message.channel.send(aembed)
   .then(message.channel.send("*type* `more` *for more info or* `cancel` *to back out*"))
-    
   if(message.content.startsWith("more")){
    let aembed2 = new Discord.RichEmbed()
    .setTitle("Aeztia Lavender (Con.)")
@@ -625,8 +624,7 @@ if(command === `${prefix}dwsaeztia`){
   }
   else if(message.content.startsWith("cancel")){
     return message.channel.send("*Cancelled.*");
-  }
-  }
+  }}
   
 
 
