@@ -230,7 +230,7 @@ if(command === `${prefix}gaymeter`){
   message.channel.send(`${thing}? I'd say about **${metre}%** gay indeed.`)
 }
 
-  if(command === `${prefix}say`) {
+if(command === `${prefix}say`) {
 
     const sayMessage = args.join(" ");
     if(!sayMessage) return message.channel.send("Say what? x3")
@@ -239,6 +239,12 @@ if(command === `${prefix}gaymeter`){
 //message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
   }
+
+if(command === `${prefix}avatar`){
+  let User = message.mentions.users.first()
+  if(!User) return message.channel.send(message.author.displayAvatarURL);
+  message.channel.send(message.User.displayAvatarURL)
+}
   
 if(command === `${prefix}listemotes`){
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
@@ -897,7 +903,7 @@ if(command === `${prefix}emoji`){
         "fields": [
           {
             "name": "Random",
-            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes"
+            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar"
           },
           {
             "name": "Moderation",
