@@ -66,7 +66,8 @@ if(message.content === "aeztiareload"){
 const bweary = bot.emojis.get("444751259308916756");
 if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
   const reload = bot.emojis.find("name", "reload")
-  message.reply(`${bweary}`);
+  message.reply(` ;;T
+  ${bweary}`);
 }
   
   let prefix = botsettings.prefix;
@@ -114,6 +115,24 @@ if(command === `${prefix}reload`){
 });
   }
 
+  if(command === `${prefix}status`){
+    let bstatus = ["online" || "invisible" || "idle" || "dnd"]
+    if(args[0] !== "online" || args[0] !== "invisible" || args[0] !== "idle" || args[0] !== "dnd");
+    return message.channel.send(`${redx} That won't work! It's either: \`online\`, \`invisible\`, \`idle\`, or \`dnd\`! `)
+    if (message.content === "online")
+    bot.user.setStatus("online");
+    
+    else if (args[0] === "invisble")
+    bot.user.setStatus("invisible");
+
+    else if (args[0] === "idle")
+    bot.user.setStatus("idle");
+
+    else if (args[0] === "dnd")
+    bot.user.setStatus("dnd");
+
+  }
+
   if(command === `${prefix}invite`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
@@ -153,7 +172,7 @@ if(command === `${prefix}reload`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer")
     .setColor("RANDOM")
-    .addField("Commands", "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite", true);
+    .addField("Commands", "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite, status", true);
     
     message.channel.send(devembed);
   }
