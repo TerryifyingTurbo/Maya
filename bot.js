@@ -109,11 +109,9 @@ if(command === `${prefix}reload`){
   if(message.author.id == "297931837400023041")
   message.channel.send(`***Reloading.*** ${reload}`).then(message => {
     setTimeout(() => {
-    message.edit(`*Reloaded. ${greencheck}`)
-  }, cdseconds * 2000)
+    message.edit(`*Reloaded.* ${greencheck}`)
+  }, cdseconds * 8000)
 });
-    
-    message.edit(`Reloaded. ${greencheck}`);
   }
 
   if(command === `${prefix}invite`){
@@ -294,7 +292,7 @@ if(command === `${prefix}dadjoke`){
 }
 
 if(command === `${prefix}clapify`){
-  let randomizeCase = word => word.split('').map(c => Math.random() > 0.4 ? c.toUpperCase() : c.toLowerCase()).join('');
+  let randomizeCase = word => word.split('').map(c => Math.random() > 0.6 ? c.toUpperCase() : c.toLowerCase()).join('');
   if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:on***");
   message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
