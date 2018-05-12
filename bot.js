@@ -160,26 +160,26 @@ if(command === `${prefix}reload`){
   }
   
   if(command === `${prefix}kick`){
-    let kUser = message.mentions.users.first()
-    if(!kUser) return message.reply("You think this is soccer? ***Who do I kick***");
-    let kReason = args.slice(1).join(" ");
+    let User = message.mentions.users.first()
+    if(!User) return message.reply("You think this is soccer? ***Who do I kick***");
+    let Reason = args.slice(1).join(" ");
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**NO.** You don't have the ability to delete messages");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not allowed to kick the ones who have the ability to delete messages");
+    //if(User.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not allowed to kick the ones who have the ability to delete messages");
 
     let kickEmbed = new Discord.RichEmbed()
     .setTitle("Yeet! Out you go...")
     .setDescription("Kick")
     .setColor("#e56b00")
-    .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
+    .addField("Kicked User", `${User} with ID ${User.id}`)
     .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kicked In", message.channel)
     .addField("Time", message.createdAt)
-    .addField("Reason", kReason);
+    .addField("Reason", `${Reason}`);
 
     //let kickChannel = message.guild.channels.find(`name`, "incidents");
     //if(!kickChannel) return message.channel.send("Can't find incidents channel.");
 
-    message.guild.member(kUser).kick(kReason);
+    User.kick(Reason);
     message.channel.send(kickEmbed);
   }
 
