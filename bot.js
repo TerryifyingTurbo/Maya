@@ -115,24 +115,6 @@ if(command === `${prefix}reload`){
 });
   }
 
-  if(command === `${prefix}status`){
-    let bstatus = args.join(" ");
-    if(!bstatus || (bstatus !== "online") (bstatus !== "invisible") (bstatus !== "idle") (bstatus !== "dnd"))
-    return message.channel.send(`${redx} That won't work! It's either: \`online\`, \`invisible\`, \`idle\`, or \`dnd\`! `)
-    if (message.content === "online")
-    bot.user.setStatus("online");
-    
-    else if (bstatus === "invisble")
-    bot.user.setStatus("invisible");
-
-    else if (bstatus === "idle")
-    bot.user.setStatus("idle");
-
-    else if (bstatus === "dnd")
-    bot.user.setStatus("dnd");
-
-  }
-
   if(command === `${prefix}invite`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
@@ -178,28 +160,27 @@ if(command === `${prefix}reload`){
   }
   
   if(command === `${prefix}kick`){
-    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let kUser = message.mentions.users.first()
     if(!kUser) return message.reply("You think this is soccer? ***Who do I kick***");
-    let kReason = args.join(" ").slice(22);
+    let kReason = args.slice(1).join(" ");
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**NO.** You don't have the ability to delete messages");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not allowed to kick the ones who have the ability to delete messages");
 
     let kickEmbed = new Discord.RichEmbed()
-    .setDescription("~Kick~")
+    .setTitle("Yeet! Out you go...")
+    .setDescription("Kick")
     .setColor("#e56b00")
     .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
     .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kicked In", message.channel)
-    .addField("Tiime", message.createdAt)
+    .addField("Time", message.createdAt)
     .addField("Reason", kReason);
 
-    let kickChannel = message.guild.channels.find(`name`, "incidents");
-    if(!kickChannel) return message.channel.send("Can't find incidents channel.");
+    //let kickChannel = message.guild.channels.find(`name`, "incidents");
+    //if(!kickChannel) return message.channel.send("Can't find incidents channel.");
 
     message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickEmbed);
-
-    return;
+    message.channel.send(kickEmbed);
   }
 
 if(command === `${prefix}ping`){
@@ -769,9 +750,9 @@ if(command === `${prefix}emoji`){
   }
   if(command === `${prefix}ban`){
 
-    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let bUser = message.mentions.users.first()
     if(!bUser) return message.reply("Yeah, banned the air. ***Who do I ban***");
-    let bReason = args.join(" ").slice(22);
+    let bReason = args.slice(1).join(" ");
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("**NO.** You don't have the ability to ban members!");
     if(bUser.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Not allowed to ban others who have the ability to ban");
 
