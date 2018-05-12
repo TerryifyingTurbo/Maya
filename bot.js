@@ -57,8 +57,16 @@ if(message.content === "aeztiadeny"){
   message.channel.send(`${redx}`);
 }
 
+const reload = bot.emojis.get("444751183505260575");
+if(message.content === "aeztiareload"){
+  const reload = bot.emojis.find("name", "reload");
+  message.channel.send(`${reload}`);
+}
+
+const bweary = bot.emojis.get("444751259308916756");
 if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
-  message.reply( ";;T");
+  const reload = bot.emojis.find("name", "reload")
+  message.reply(`${bweary}`);
 }
   
   let prefix = botsettings.prefix;
@@ -67,7 +75,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     message.delete();
     return message.reply("Aye! Chill. Take it easy, yeah?")
   }
-  if(!message.member.hasPermission("ADMINISTRATOR")){
+if(!message.member.hasPermission("ADMINISTRATOR")){
     cooldown.add(message.author.id);
   }
   let messageArray = message.content.split(" ");
@@ -78,9 +86,9 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
 
-  if(command === `${prefix}shutdown`){
+if(command === `${prefix}shutdown`){
   if(message.author.id !== "297931837400023041")
-  return message.channel.send("You ain't the creator!");
+  return message.channel.send(`${redx} You ain't the creator!`);
   
   else
 
@@ -91,7 +99,7 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
   console.log("Bot killed");
   }
 
-  if(command === `${prefix}reload`){
+if(command === `${prefix}reload`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("You ain't the creator!");
     else
@@ -99,12 +107,12 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     // Reload ALL commands listed.
     
   if(message.author.id == "297931837400023041")
-    await message.channel.send("**Reloading.** :arrows_counterclockwise:")
+    await message.channel.send(`**Reloading.** ${reload}`)
     .then(message => bot.destroy());
     
     await bot.login(botsettings.token)
     
-    message.channel.send("Reloaded. :arrow_forward:");
+    message.edit(`Reloaded. ${greencheck}`);
   }
 
   if(command === `${prefix}invite`){
@@ -120,8 +128,8 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
     if(!status) return message.channel.send("Do I watch the void? What *or who* am I supposed to watch?")
     await bot.user.setActivity(`${status}`, {type: "WATCHING"})
-    .catch(error => message.reply(`I'm not watching that because of __***${error}***__`));
-    message.channel.send(`Now watching: **${status}**`);
+    .catch(error => message.reply(`${redx} I'm not watching that because of __***${error}***__`));
+    message.channel.send(`${greencheck} Now watching: **${status}**`);
   }
 
   if(command === `${prefix}gamepresence`){
@@ -129,8 +137,8 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am playing!***");
     if(!status) return message.channel.send("Do I play with someones feelings or something? What *or who* am I supposed to play?")
     await bot.user.setActivity(`${status}`, {type: "PLAYING"})
-    .catch(error => message.reply(`I'm not playing that because of __***${error}***__`));
-    message.channel.send(`Now playing: **${status}**`);
+    .catch(error => message.reply(`${redx} I'm not playing that because of __***${error}***__`));
+    message.channel.send(`${greencheck} Now playing: **${status}**`);
   }
 
   if(command === `${prefix}listenpresence`){
@@ -138,8 +146,8 @@ if(message.content === ";T" || (message.content === ";;T") || (message.content =
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am listening to!***");
     if(!status) return message.channel.send("Do I listen to someones bullshit or something? What *or who* am I supposed to listen to?")
     await bot.user.setActivity(`${status}`, {type: "LISTENING"})
-    .catch(error => message.reply(`I'm not listening to that because of __***${error}***__`));
-    message.channel.send(`Now listening: **${status}**`);
+    .catch(error => message.reply(`${redx} I'm not listening to that because of __***${error}***__`));
+    message.channel.send(`${prefix} Now listening to: **${status}**`);
   }
   
   if(command === `${prefix}devhelp`){
@@ -235,8 +243,11 @@ if(command === `${prefix}gaymeter`){
   
 if(command === `${prefix}listemojis`){
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-  message.channel.send(emojiList);
-  }
+  message.channel.send('***Fetching...***').then(message => {
+    setTimeout(() => {
+    message.edit(`${emojiList}`)
+  }, cdseconds * 1500)
+})}
 
 if(command === `${prefix}cat`){
   let {body} = await superagent
@@ -880,14 +891,14 @@ if(command === `${prefix}emoji`){
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
         //},
         "author": {
-          "name": "Called for help...",
+          "name": "Called for help!",
           //"url": "https://discordapp.com",
           //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
         },
         "fields": [
           {
             "name": "Random",
-            "value": "serverinfo, botinfo, ping, devhelp, dws"
+            "value": "serverinfo, botinfo, ping, devhelp, dws, listemojis"
           },
           {
             "name": "Moderation",
