@@ -110,7 +110,7 @@ if(command === `${prefix}reload`){
   message.channel.send(`***Reloading.*** ${reload}`).then(message => {
     setTimeout(() => {
     message.edit(`*Reloaded.* ${greencheck}`)
-  }, cdseconds * 8000)
+  }, cdseconds * 3000)
 });
   }
 
