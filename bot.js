@@ -116,19 +116,19 @@ if(command === `${prefix}reload`){
   }
 
   if(command === `${prefix}status`){
-    let bstatus = ["online" || "invisible" || "idle" || "dnd"]
-    if(args[0] !== "online" || args[0] !== "invisible" || args[0] !== "idle" || args[0] !== "dnd");
+    let bstatus = args.join(" ");
+    if(!bstatus || (bstatus !== "online") (bstatus !== "invisible") (bstatus !== "idle") (bstatus !== "dnd"))
     return message.channel.send(`${redx} That won't work! It's either: \`online\`, \`invisible\`, \`idle\`, or \`dnd\`! `)
     if (message.content === "online")
     bot.user.setStatus("online");
     
-    else if (args[0] === "invisble")
+    else if (bstatus === "invisble")
     bot.user.setStatus("invisible");
 
-    else if (args[0] === "idle")
+    else if (bstatus === "idle")
     bot.user.setStatus("idle");
 
-    else if (args[0] === "dnd")
+    else if (bstatus === "dnd")
     bot.user.setStatus("dnd");
 
   }
