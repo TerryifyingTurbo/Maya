@@ -86,14 +86,14 @@ if(!message.member.hasPermission("ADMINISTRATOR")){
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
 
-if(command === `${prefix}shutdown`){
+if(command === `${prefix}shutoff`){
   if(message.author.id !== "297931837400023041")
   return message.channel.send(`${redx} You ain't the creator!`);
   
   else
 
   if(message.author.id == "297931837400023041")
-  await message.channel.send("I'm sleep.");
+  await message.channel.send("***Killing all processes.***");
   await bot.destroy();
   process.exit();
   console.log("Bot killed");
@@ -107,10 +107,11 @@ if(command === `${prefix}reload`){
     // Reload ALL commands listed.
     
   if(message.author.id == "297931837400023041")
-    await message.channel.send(`**Reloading.** ${reload}`)
-    .then(message => bot.destroy());
-    
-    await bot.login(botsettings.token)
+  message.channel.send(`***Reloading.*** ${reload}`).then(message => {
+    setTimeout(() => {
+    message.edit(`*Reloaded. ${greencheck}`)
+  }, cdseconds * 2000)
+});
     
     message.edit(`Reloaded. ${greencheck}`);
   }
@@ -147,14 +148,14 @@ if(command === `${prefix}reload`){
     if(!status) return message.channel.send("Do I listen to someones bullshit or something? What *or who* am I supposed to listen to?")
     await bot.user.setActivity(`${status}`, {type: "LISTENING"})
     .catch(error => message.reply(`${redx} I'm not listening to that because of __***${error}***__`));
-    message.channel.send(`${prefix} Now listening to: **${status}**`);
+    message.channel.send(`${greencheck} Now listening to: **${status}**`);
   }
   
   if(command === `${prefix}devhelp`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer")
     .setColor("RANDOM")
-    .addField("Commands", "shutdown, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite", true);
+    .addField("Commands", "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite", true);
     
     message.channel.send(devembed);
   }
@@ -241,7 +242,7 @@ if(command === `${prefix}gaymeter`){
     // And we get the bot to say the thing: 
   }
   
-if(command === `${prefix}listemojis`){
+if(command === `${prefix}listemotes`){
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
   message.channel.send('***Fetching...***').then(message => {
     setTimeout(() => {
@@ -898,7 +899,7 @@ if(command === `${prefix}emoji`){
         "fields": [
           {
             "name": "Random",
-            "value": "serverinfo, botinfo, ping, devhelp, dws, listemojis"
+            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes"
           },
           {
             "name": "Moderation",
