@@ -240,10 +240,10 @@ if(command === `${prefix}say`) {
     // And we get the bot to say the thing: 
   }
 
-if(command === `${prefix}avatar`){
-  let User = message.mentions.users.first()
-  if(!User) return message.channel.send(message.author.displayAvatarURL);
-  message.channel.send(message.User.displayAvatarURL)
+if(message.content === 'what is my pfp'){
+  // let User = message.mentions.users.first()
+  // if(!User) return message.channel.send(message.author.displayAvatarURL);
+  message.channel.send(message.author.displayAvatarURL)
 }
   
 if(command === `${prefix}listemotes`){
