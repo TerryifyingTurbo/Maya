@@ -45,6 +45,18 @@ if(message.content === "D:"){
   message.channel.send(`${instensefear}`);
 }
 
+const greencheck = bot.emojis.get("444736840940126208");
+if(message.content === "aeztiaconfirm"){
+  const greencheck = bot.emojis.find("name", "greencheck");
+  message.channel.send(`${greencheck}`);
+}
+
+const redx = bot.emojis.get("444736917217476608");
+if(message.content === "aeztiadeny"){
+  const greencheck = bot.emojis.find("name", "redx");
+  message.channel.send(`${redx}`);
+}
+
 if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
   message.reply( ";;T");
 }
@@ -219,6 +231,11 @@ if(command === `${prefix}gaymeter`){
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
 //message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
+  }
+  
+if(command === `${prefix}listemojis`){
+  const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+  message.channel.send(emojiList);
   }
 
 if(command === `${prefix}cat`){
