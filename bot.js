@@ -635,7 +635,7 @@ if(command === `${prefix}dwsaeztia`){
   let aembed = new Discord.RichEmbed()
   .setTitle("Aeztia Lavender")
   .setColor("#46437b")
-  .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
+  .setFooter("OP Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   .setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
   .addField("Status", "*Alive*", true)
   .addField("Height", "*5'5/165 cm/1.6 m*", true)
@@ -682,7 +682,7 @@ if(command === `${prefix}dwsroxuhn`){
   .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Description", "*Immortal reaper who is also known as the \"Wanderer\"*", true)
   .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
-  .addField("Decay", "*Rapidy accelerate the age life of an object, person or any entity.* ***Extremely deadly");
+  .addField("Decay", "*Rapidy accelerate the age life of an object, person or any entity.* ***Extremely deadly towards all life forms***");
   message.channel.send(rembed);
 }
 
