@@ -66,8 +66,7 @@ if(message.content === "aeztiareload"){
 const bweary = bot.emojis.get("444751259308916756");
 if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
   const reload = bot.emojis.find("name", "reload")
-  message.reply(` ;;T
-  ${bweary}`);
+  message.reply(` ;;T`);
 }
   
   let prefix = botsettings.prefix;
