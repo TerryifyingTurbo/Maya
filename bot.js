@@ -643,10 +643,21 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Gender", "*Female*", true)
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
-  .addField("Special Abilities", "▬▬▬▬▬▬▬▬▬▬▬▬", true)
+  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
+  //.addField("Special Abilities", "▬▬▬▬▬▬▬▬▬▬▬▬", true)
+  //.addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
+  await message.channel.send(aembed);
+  await message.channel.send("*type \`more\` for more info or \`cancel\`*");
+  let ambed2 = new Discord.RichEmbed()
+  .setTitle("Aeztia (con.)")
+  .setColor("#46437b")
+  .addField("Special Abilities", "▬", true)
   .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  message.channel.send(aembed);
+  if(message.content.startsWith("more"))
+  message.channel.send(ambed2);
+  else if(message.content.startsWith("cancel"))
+  return message.channel.send("*canceled*")
+
 
 }
 
