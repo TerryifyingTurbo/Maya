@@ -246,92 +246,8 @@ if(message.content === 'what is my pfp'){
   message.channel.send(message.author.displayAvatarURL)
 }
 
-if(command === `${prefix}leet`){
-  let _inverseReplacementsCached = null;
-const getInverseReplacements = replacements => {
-    if (_inverseReplacementsCached) {
-        return _inverseReplacementsCached;
-    }
-    const inverseReplacements = new Map();
-    Object.keys(replacements)
-        .map(letter => {
-            replacements[letter].forEach(replacement => {
-                inverseReplacements.set(new RegExp(global.utils.quoteRegex(replacement), 'gi'), letter);
-            });
-        });
 
-    _inverseReplacementsCached = inverseReplacements;
 
-    return inverseReplacements;
-};
-
-    const parsedArgs = bot.utils.parseArgs(args, ['e', 't']);
-
-    if (parsedArgs.leftover.length < 1) {
-        throw 'Provide text to be leeted.';
-    }
-
-    let parsed;
-
-    if (parsedArgs.options.e) {
-        const extendedLeetReplacements = {
-            'a': ['4', '@', '/-\\', 'Д'],
-            'b': ['ß'],
-            'c': ['¢', '©'],
-            'e': ['3', '€'],
-            'f': ['ph', 'ƒ'],
-            'g': ['6'],
-            'i': ['1', '!'],
-            'l': ['7'],
-            'n': ['И', 'ท'],
-            'q': ['Ø'],
-            'r': ['®', 'Я'],
-            's': ['5', '$', '§'],
-            't': ['†'],
-            'u': ['|_|', 'µ', 'บ'],
-            'v': ['\\/'],
-            'w': ['\\/\\/', 'VV', 'Ш', 'พ'],
-            'x': ['Ж', '×'],
-            'y': ['¥']
-        };
-
-        const inverseReplacements = getInverseReplacements(extendedLeetReplacements);
-        if (parsedArgs.options.t) {
-            parsed = parsedArgs.leftover.join(' ');
-
-            for (let [replacement, origValue] of inverseReplacements) {
-                parsed = parsed.replace(replacement, origValue);
-            }
-        } else {
-            parsed = parsedArgs.leftover
-                .join(' ')
-                .replace(/[a-z]/gi, str => {
-                    let selection = bot.utils.randomSelection(extendedLeetReplacements[str.toLowerCase()] || [str]);
-                    selection = bot.utils.quoteRegex(selection);
-                    return selection;
-                });
-        }
-    } else {
-        const simpleLeetReplacements = '4BCD3F6H1JKLMN0PQR57';
-        if (parsedArgs.options.t) {
-            parsed = parsedArgs.leftover.join(' ').replace(/[a-z0-9]/g, function (a) {
-                let foundInReplacements = simpleLeetReplacements.indexOf(a);
-                if (foundInReplacements === -1) {
-                    return a;
-                }
-                return String.fromCharCode(97 + foundInReplacements);
-            });
-        } else {
-            parsed = parsedArgs.leftover.join(' ').replace(/[a-z]/g, function f(a) {
-                return simpleLeetReplacements[parseInt(a, 36) - 10] || a.replace(/[a-t]/gi, f);
-            }).toLowerCase();
-        }
-    }
-
-    message.delete();
-    message.channel.send(parsed);
-}
-  
 if(command === `${prefix}listemotes`){
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
   message.channel.send('***Fetching...***').then(message => {
@@ -949,12 +865,16 @@ if(command === `${prefix}emoji`){
           "value": `${bot.user.username}#${bot.user.discriminator}`
         },
         {
-          "name": "Made on",
+          "name": "Made at",
           "value": `${bot.user.createdAt}`
         },
         {
           "name": "I have...",
           "value": "29 Commands (total)"
+        },
+        {
+          "name": "RAM Usage",
+          "value": `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`
         },
         {
           "name": "WIP",
