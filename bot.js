@@ -650,6 +650,7 @@ if(command === `${prefix}dwsaeztia`){
 
 }
 
+// ▬▬▬▬▬▬▬▬▬▬▬▬
 if(command === `${prefix}dwstravis`){
   let tembed = new Discord.RichEmbed()
   .setTitle("Travis \"Vortex\" Rilynar")
@@ -672,7 +673,7 @@ if(command === `${prefix}dwsroxuhn`){
   let rembed = new Discord.RichEmbed()
   .setTitle("Roxuhn")
   .setColor("#000001")
-  .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
+  .setFooter("OP Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   //.setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
   .addField("Status", "*Alive*", true)
   .addField("Height", "*6'2/188 cm/1.8 m*", true)
@@ -681,7 +682,7 @@ if(command === `${prefix}dwsroxuhn`){
   .addField("Age", "*400 Quintillion*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Description", "*Immortal reaper who is also known as the \"Wanderer\"*", true)
-  .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
+  .addField(".", "Special Abilities", true)
   .addField("Decay", "*Rapidy accelerate the age life of an object, person or any entity.* ***Extremely deadly when used on all life forms***");
   message.channel.send(rembed);
 }
