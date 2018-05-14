@@ -300,7 +300,7 @@ if(command === `${prefix}dadjoke`){
 }
 
 if(command === `${prefix}clapify`){
-  let randomizeCase = word => word.split('').map(c => Math.random() > 0.6 ? c.toUpperCase() : c.toLowerCase()).join('');
+  let randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
   if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:on***");
   message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
@@ -673,18 +673,17 @@ if(command === `${prefix}dwsroxuhn`){
   .setTitle("Roxuhn")
   .setColor("#000001")
   .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
-  .setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
+  //.setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
   .addField("Status", "*Alive*", true)
-  .addField("Height", "*5'5/165 cm/1.6 m*", true)
-  .addField("Weight", "*120 lbs./54 kg*", true)
-  .addField("Gender", "*Female*", true)
-  .addField("Age", "*99 Googolplexian*", true)
+  .addField("Height", "*6'2/188 cm/1.8 m*", true)
+  .addField("Weight", "*160 lbs./73 kg*", true)
+  .addField("Gender", "*Male*", true)
+  .addField("Age", "*400 Quintillion*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
+  .addField("Description", "*Immortal reaper who is also known as the \"Wanderer\"*", true)
   .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
-  .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
+  .addField("Decay", "*Rapidy accelerate the age life of an object, person or any entity.* ***Extremely deadly");
   message.channel.send(rembed);
-
 }
 
 if(command === `${prefix}dirtyquote`){
