@@ -643,23 +643,10 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Gender", "*Female*", true)
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true);
-  //.addField("Special Abilities", "▬▬▬▬▬▬▬▬▬▬▬▬", true)
-  //.addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  await message.channel.send(aembed);
-  message.channel.send("*type \`more\` for more info or \`cancel\`*");
-  let ambed2 = new Discord.RichEmbed()
-  .setTitle("Aeztia (con.)")
-  .setColor("#46437b")
-  .addField("Special Abilities", "▬", true)
+  .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
+  .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
   .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  
-  if(message.content === "more")
-  message.channel.send(ambed2); 
-  
-  if(message.content === "cancel")
-  return message.channel.send("*canceled*");
-  
+  message.channel.send(aembed);
 
 }
 
@@ -695,7 +682,7 @@ if(command === `${prefix}dwsroxuhn`){
   .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Description", "*Immortal reaper who is also known as the \"Wanderer\"*", true)
   .addField("▬▬▬▬▬▬▬▬▬▬▬▬", "Special Abilities", true)
-  .addField("Decay", "*Rapidy accelerate the age life of an object, person or any entity.* ***Extremely deadly towards all life forms***");
+  .addField("Decay", "*Rapidy accelerate the age life of an object, person or any entity.* ***Extremely deadly when used on all life forms***");
   message.channel.send(rembed);
 }
 
