@@ -653,9 +653,10 @@ if(command === `${prefix}dwsaeztia`){
   .setColor("#46437b")
   .addField("Special Abilities", "▬", true)
   .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  if(message.content.startsWith("more"))
+  if(command === "more")
   message.channel.send(ambed2);
-  else if(message.content.startsWith("cancel"))
+  
+  else if(command === "cancel")
   return message.channel.send("*canceled*")
 
 
