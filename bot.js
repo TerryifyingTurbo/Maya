@@ -239,10 +239,14 @@ if(command === `${prefix}say`) {
     // And we get the bot to say the thing: 
   }
 
-if(message.content === 'what is my pfp'){
-  // let User = message.mentions.users.first()
-  // if(!User) return message.channel.send(message.author.displayAvatarURL);
-  message.channel.send(message.author.displayAvatarURL)
+if(command === `${prefix}avatar`){
+  let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
+
+  let embed = new Discord.RichEmbed() 
+  .setTitle(member.tag + '\' avatar')
+  .setColor("RANDOM")
+	.setImage(member.avatarURL);
+  message.channel.send({embed})
 }
 
 
@@ -353,6 +357,20 @@ if(command === `${prefix}smut`){
   .setFooter("!?smut<specifc selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
   .addField("The Holy List of Story Sins", "*placeholder story, placeholder story (yes await until added)*", true);
   message.channel.send(smutembed);
+}
+
+if(command === `${prefix}neko`){
+  let {body} = await superagent
+    .get(`https://nekos.life/api/lewd/neko`);
+    
+    if (!message.channel.nsfw) return message.reply("You can use this command only on nsfw channels!");
+  
+    let hentaiEmbed = new Discord.RichEmbed()
+    .setColor("#ff9900")
+    .setTitle("Nngh~ Lewd")
+    .setImage(body.neko);
+
+    message.channel.send(hentaiEmbed);
 }
   
 if(command === `${prefix}8ball`){
@@ -942,7 +960,7 @@ if(command === `${prefix}emoji`){
           },
           {
             "name": " :warning: NSFW",
-            "value": "dirtyquote, fucc, succ, smut",
+            "value": "dirtyquote, fucc, succ, smut, neko",
             "inline": true
           },
           // {
