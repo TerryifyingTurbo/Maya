@@ -271,7 +271,19 @@ if(command === `${prefix}cat`){
   .setColor("RANDOM")
   .setTitle("Kitty :0")
   .setImage(body.file);
-  message.channel.send(catembed);
+  message.channel.send(catembed)
+  .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
+}
+
+if(command === `${prefix}fox`){
+  let {body} = await superagent
+  .get(`https://randomfox.ca/floof/`);
+  let foxembed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle("Foxy :0")
+  .setImage(body.file);
+  message.channel.send(foxembed)
+  .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `${prefix}dog`){
@@ -282,7 +294,8 @@ if(command === `${prefix}dog`){
   .setColor("RANDOM")
   .setTitle("A dog :0")
   .setImage(body.url);
-  message.channel.send(dogembed);
+  message.channel.send(dogembed)
+  .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `${prefix}catfact`){
@@ -377,7 +390,8 @@ if(command === `${prefix}neko`){
     .setTitle("Nya~")
     .setImage(body.neko);
 
-    message.channel.send(hentaiEmbed);
+    message.channel.send(hentaiEmbed)
+    .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `${prefix}dirtyquote`){
