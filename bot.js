@@ -40,31 +40,31 @@ const ayy = bot.emojis.get("426999753830825995");
 }
 
 const intensefear = bot.emojis.get("406790609035329538");
-if(message.content === "D:"){
+  if(message.content === "D:"){
   const instensefear = bot.emojis.find("name", "intensefear");
   message.channel.send(`${instensefear}`);
 }
 
 const greencheck = bot.emojis.get("444736840940126208");
-if(message.content === "aeztiaconfirm"){
+  if(message.content === "aeztiaconfirm"){
   const greencheck = bot.emojis.find("name", "greencheck");
   message.channel.send(`${greencheck}`);
 }
 
 const redx = bot.emojis.get("444736917217476608");
-if(message.content === "aeztiadeny"){
+  if(message.content === "aeztiadeny"){
   const greencheck = bot.emojis.find("name", "redx");
   message.channel.send(`${redx}`);
 }
 
 const reload = bot.emojis.get("444751183505260575");
-if(message.content === "aeztiareload"){
+  if(message.content === "aeztiareload"){
   const reload = bot.emojis.find("name", "reload");
   message.channel.send(`${reload}`);
 }
 
 const bweary = bot.emojis.get("444751259308916756");
-if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
+  if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
   const reload = bot.emojis.find("name", "reload")
   message.reply(` ;;T`);
 }
@@ -643,7 +643,7 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Age", "*99 Googolplexian*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
-  .addField(".", "Special Abilities", true)
+  .addField(".", "Powers and Special Abilities", true)
   .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
   message.channel.send(aembed);
 
@@ -672,6 +672,7 @@ if(command === `${prefix}dwsroxuhn`){
   let rembed = new Discord.RichEmbed()
   .setTitle("Roxuhn")
   .setColor("#000001")
+  .setThumbnail("https://i.imgur.com/XbIae1y.png?1")
   .setFooter("OP Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   //.setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
   .addField("Status", "*Alive*", true)
@@ -680,9 +681,11 @@ if(command === `${prefix}dwsroxuhn`){
   .addField("Gender", "*Male*", true)
   .addField("Age", "*400 Quintillion*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Description", "*Immortal reaper who is also known as the \"Wanderer\"*", true)
-  .addField(".", "Special Abilities", true)
-  .addField("Decay", "*Rapidy accelerate the age life of an object, person or any entity.* ***Extremely deadly when used on all life forms***");
+  .addField("Description", "*An ōkami that has been also known as the \"Wanderer\". As with all other ōkami, Roxuhn preys and feeds on human victims.*", true)
+  .addField(".", "Powers and Abilities", true)
+  .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly used on all forms of life***", true)
+  .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
+  .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.", true);
   message.channel.send(rembed);
 }
 
