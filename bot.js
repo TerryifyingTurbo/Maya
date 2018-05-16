@@ -309,12 +309,12 @@ if(command === `${prefix}dadjoke`){
 
 if(command === `${prefix}clapify`){
   let randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
-  if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:on***");
+  if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:clap:clap:on:clap:***");
   message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
 
 if(command === `${prefix}succ`){
-
+  if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "want more", "want it from someone else instead", "liked it", "secretly like it", "want a break from it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
@@ -330,6 +330,7 @@ if(command === `${prefix}succ`){
 }
 
 if(command === `${prefix}fucc`){
+  if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
@@ -355,6 +356,7 @@ if(command === `${prefix}fucc`){
 }
 
 if(command === `${prefix}smut`){
+  if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let smutembed = new Discord.RichEmbed()
   .setTitle("Lemon-Scented Smut")
   .setColor("#d68998")
@@ -368,11 +370,11 @@ if(command === `${prefix}neko`){
   let {body} = await superagent
     .get(`https://nekos.life/api/lewd/neko`);
     
-    if (!message.channel.nsfw) return message.reply("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+    if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
-    .setTitle("Nngh~ Lewd")
+    .setTitle("Nya~")
     .setImage(body.neko);
 
     message.channel.send(hentaiEmbed);
