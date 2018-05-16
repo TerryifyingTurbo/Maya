@@ -153,7 +153,7 @@ if(command === `${prefix}reload`){
     let devembed = new Discord.RichEmbed()
     .setDescription("Developer")
     .setColor("RANDOM")
-    .addField("Commands", "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite, status", true);
+    .addField("Commands", "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite, status, ramcheck", true);
     
     message.channel.send(devembed);
   }
@@ -199,6 +199,11 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
     
     await message.channel.send("Aight', later Boss!");
     message.guild.leave();
+  }
+
+  if(command === `${prefix}ramcheck`){
+    if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
+    message.channel.send(`*I am running with...* ***${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB***`);
   }
 
   if(command === `${prefix}flipcoin`){
@@ -363,7 +368,7 @@ if(command === `${prefix}neko`){
   let {body} = await superagent
     .get(`https://nekos.life/api/lewd/neko`);
     
-    if (!message.channel.nsfw) return message.reply("You can use this command only on nsfw channels!");
+    if (!message.channel.nsfw) return message.reply("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
@@ -882,7 +887,7 @@ if(command === `${prefix}emoji`){
       "fields": [
         {
           "name": "I am",
-          "value": `${bot.user.username}#${bot.user.discriminator}`
+          "value": `${bot.user.username}#${bot.user.discriminator} with ID of (${bot.user.id})`
         },
         {
           "name": "Made at",
@@ -890,7 +895,7 @@ if(command === `${prefix}emoji`){
         },
         {
           "name": "I have...",
-          "value": "29 Commands (total)"
+          "value": "32 Commands (total)"
         },
         {
           "name": "RAM Usage",
