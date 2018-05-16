@@ -685,7 +685,7 @@ if(command === `${prefix}dwsroxuhn`){
   .addField(".", "Powers and Abilities", true)
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly used on all forms of life***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
-  .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.", true);
+  .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
   message.channel.send(rembed);
 }
 
