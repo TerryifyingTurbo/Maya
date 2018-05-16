@@ -379,6 +379,48 @@ if(command === `${prefix}neko`){
 
     message.channel.send(hentaiEmbed);
 }
+
+if(command === `${prefix}dirtyquote`){
+  if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  
+  let replies = ["\"I'm straight, but hey, $20 is $20.\"", 
+  "\"It's either ass or gas. Nobody rides for free\"",
+  "\"Mm, no princess, can't stop won't stop\"",
+  "\"You must be my favorite car because I wanna put you into overdrive~\"",
+  "\"My tongue could tease you more than my words can~\"",
+  "\"Make me -3-\"",
+  "\"I love calling you a good girl because we both know you aren't~\"",
+  "\"You can cover your mouth all you want, I'm still gonna make you scream~\"",
+  "\"PUSSY, Push.. Until.. She.. Screams.. Yess~\"",
+  "\"Roses are red, Foxes are clever, I like your butt, let me touch it forever.\"",
+  "\"My mind is a dirty place and I love having you in it~\"",
+  "\"You know what would look good on me? You.\"",
+  "\"Every beauty needs a beast~\"",
+  "\"Sex is not the answer. Sex is the question, yes is the answer.\"",
+  "\"All these drugs, but I still wanna do you.\"",
+  "\"It's not that I'm horny all the time. It's just that you're always so sexy~\"",
+  "\"Your pants. They bother me, take them off.\"",
+  "\"The best sex is when you don't have to worry about how loud you are\"",
+  "\"You may have a bad mouth but you can sure do great things with it~\"",
+  "\"Moanday, Tongueday, Wetday, Thirstday, Freakday, Sexday, Suckday.\"",
+  "\"Roses are red, nuts are round, skirts are up, panties are down, belly to belly, skin to skin, when it's stiff, stick it in!\"",
+  "\"Your face would look better between my legs~\"",
+  "\"I wanna do bad things to you~\"",
+  "\"I just want you to be happy... and naked as well.\"",
+  "\"Spank me. It's the only way I'll learn~\"",
+  "\"It may be between your legs, but it belongs to me. Understand?\"",
+  "\"I'd look so good on you right about now.\"",
+  "\"Naughty or nice? I can do both.\"",
+  "\"I get turned on when you tell me how much you want me~\"",
+  "\"Let's misbehave~\"",
+  "\"I know I'm a handful, but that's what you got two hands for.\"",
+  "\"I licked it, it's mine now.\"",
+  "\"Sex is like math, add the bed, subtract the clothes, divide the legs and pray you don't multiply\""
+ ];
+
+  let result = Math.floor((Math.random() * replies.length))
+  message.channel.send(`*${replies[result]}*`);
+}
   
 if(command === `${prefix}8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
@@ -713,46 +755,6 @@ if(command === `${prefix}dwsroxuhn`){
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
   message.channel.send(rembed);
 }
-
-if(command === `${prefix}dirtyquote`){
-    let replies = ["\"I'm straight, but hey, $20 is $20.\"", 
-    "\"It's either ass or gas. Nobody rides for free\"",
-    "\"Mm, no princess, can't stop won't stop\"",
-    "\"You must be my favorite car because I wanna put you into overdrive~\"",
-    "\"My tongue could tease you more than my words can~\"",
-    "\"Make me -3-\"",
-    "\"I love calling you a good girl because we both know you aren't~\"",
-    "\"You can cover your mouth all you want, I'm still gonna make you scream~\"",
-    "\"PUSSY, Push.. Until.. She.. Screams.. Yess~\"",
-    "\"Roses are red, Foxes are clever, I like your butt, let me touch it forever.\"",
-    "\"My mind is a dirty place and I love having you in it~\"",
-    "\"You know what would look good on me? You.\"",
-    "\"Every beauty needs a beast~\"",
-    "\"Sex is not the answer. Sex is the question, yes is the answer.\"",
-    "\"All these drugs, but I still wanna do you.\"",
-    "\"It's not that I'm horny all the time. It's just that you're always so sexy~\"",
-    "\"Your pants. They bother me, take them off.\"",
-    "\"The best sex is when you don't have to worry about how loud you are\"",
-    "\"You may have a bad mouth but you can sure do great things with it~\"",
-    "\"Moanday, Tongueday, Wetday, Thirstday, Freakday, Sexday, Suckday.\"",
-    "\"Roses are red, nuts are round, skirts are up, panties are down, belly to belly, skin to skin, when it's stiff, stick it in!\"",
-    "\"Your face would look better between my legs~\"",
-    "\"I wanna do bad things to you~\"",
-    "\"I just want you to be happy... and naked as well.\"",
-    "\"Spank me. It's the only way I'll learn~\"",
-    "\"It may be between your legs, but it belongs to me. Understand?\"",
-    "\"I'd look so good on you right about now.\"",
-    "\"Naughty or nice? I can do both.\"",
-    "\"I get turned on when you tell me how much you want me~\"",
-    "\"Let's misbehave~\"",
-    "\"I know I'm a handful, but that's what you got two hands for.\"",
-    "\"I licked it, it's mine now.\"",
-    "\"Sex is like math, add the bed, subtract the clothes, divide the legs and pray you don't multiply\""
-  ];
-
-    let result = Math.floor((Math.random() * replies.length))
-    message.channel.send(`*${replies[result]}*`);
-  }
  
 if(command === `${prefix}emoji`){
   let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
