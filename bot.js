@@ -281,7 +281,7 @@ if(command === `${prefix}fox`){
   let foxembed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle("Foxy :0")
-  .setImage(body.url);
+  .setImage(body.image);
   message.channel.send(foxembed)
   .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
