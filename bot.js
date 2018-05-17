@@ -469,12 +469,9 @@ if(command === `${prefix}8ball`){
   }
 
   if(command === `${prefix}pick`){
-    let opt1 = args[0];
-    let opt2 = args[1];
-    let opts = [opt1, opt2];
-    let result = Math.floor((Math.random() * opts.length));
+    let opt = args;
+    let result = Math.floor((Math.random() * args.length));
     if(args.length < 2) return message.channel.send("I need two options to decide.");
-
     message.channel.send(`I pick ${opts[result]}`);
   }
 
