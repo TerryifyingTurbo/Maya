@@ -5,6 +5,8 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
+const urban = require("urban");
+const snekfetch = require("snekfetch");
 const bot = new Discord.Client({disableEveryone: true})
 const cleverbot = require("cleverbot", "cleverbot.io");
 let cooldown = new Set();
@@ -149,15 +151,6 @@ if(command === `${prefix}reload`){
     message.channel.send(`${greencheck} Now listening to: **${status}**`);
   }
   
-  if(command === `${prefix}devhelp`){
-    let devembed = new Discord.RichEmbed()
-    .setDescription("Developer")
-    .setColor("RANDOM")
-    .addField("Commands", "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite, status, ramcheck", true);
-    
-    message.channel.send(devembed);
-  }
-  
   if(command === `${prefix}kick`){
     let User = message.mentions.users.first()
     if(!User) return message.reply("You think this is soccer? ***Who do I kick***");
@@ -234,6 +227,22 @@ if(command === `${prefix}gaymeter`){
   message.channel.send(`${thing}? I'd say about **${metre}%** gay indeed.`)
 }
 
+if(command === `${prefix}urban`){
+  if(args.length < 1) return message.channel.send("Urban what? Enter something to look up.");
+  let str = args.join(" ");
+  
+  urban(str).first(json => {
+    if(!json) return message.channel.send(`Nothing was found for __${str}__.`)
+    let urembed = new Discord.RichEmbed()
+    .setTitle(json.word)
+    .setColor("RANDOM")
+    .setDescription(json.definition)
+    .addField("Upvotes", json.thumbs_up + ` ${greencheck}`, true)
+    .addField("Downvotes", json.thumbs_down + ` ${redx}`, true);
+    message.channel.send(urembed);
+});
+}
+
 if(command === `${prefix}say`) {
 
     const sayMessage = args.join(" ");
@@ -248,7 +257,7 @@ if(command === `${prefix}avatar`){
   let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 
   let embed = new Discord.RichEmbed() 
-  .setTitle(member.tag + '\' avatar')
+  .setTitle(member + '\' avatar')
   .setColor("RANDOM")
 	.setImage(member.avatarURL);
   message.channel.send({embed})
@@ -272,7 +281,7 @@ if(command === `${prefix}cat`){
   .setTitle("Kitty :0")
   .setImage(body.file);
   message.channel.send(catembed)
-  .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
+  .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `${prefix}fox`){
@@ -283,7 +292,7 @@ if(command === `${prefix}fox`){
   .setTitle("Foxy :0")
   .setImage(body.image);
   message.channel.send(foxembed)
-  .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
+  .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `${prefix}dog`){
@@ -295,7 +304,7 @@ if(command === `${prefix}dog`){
   .setTitle("A dog :0")
   .setImage(body.url);
   message.channel.send(dogembed)
-  .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
+  .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `${prefix}catfact`){
@@ -328,6 +337,7 @@ if(command === `${prefix}clapify`){
 
 if(command === `${prefix}succ`){
   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "want more", "want it from someone else instead", "liked it", "secretly like it", "want a break from it"];
   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
@@ -970,6 +980,11 @@ if(command === `${prefix}emoji`){
         },
         "fields": [
           {
+            "name": "Developer",
+            "value": "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite, status, ramcheck",
+            "inline": true
+          },
+          {
             "name": "Random",
             "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar"
           },
@@ -979,7 +994,7 @@ if(command === `${prefix}emoji`){
           },
           {
             "name": "Fun",
-            "value": "say, cat, catfact, dog, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify, gaymeter"
+            "value": "say, cat, catfact, dog, fox, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify, gaymeter"
           },
           {
             "name": " :warning: NSFW",
