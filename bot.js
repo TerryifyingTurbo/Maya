@@ -247,6 +247,7 @@ if(command === `${prefix}urban`){
     message.channel.send(urembed);
 });
 };
+// Weed Key qLZXyPT
 
 if(command === `${prefix}say`) {
 
@@ -465,6 +466,16 @@ if(command === `${prefix}8ball`){
     .addField("Answer", replies[result]);
 
     message.channel.send(ballembed);
+  }
+
+  if(command === `${prefix}pick`){
+    let opt1 = args[0].join(" ");
+    let opt2 = args[1].join(" ");
+    let opts = [opt1, opt2];
+    let result = Math.floor((Math.random() * opts.length));
+    if(args.length < 2) return message.channel.send("I need two options to decide.");
+
+    message.channel.send(`I pick ${opts[result]}`);
   }
 
 
