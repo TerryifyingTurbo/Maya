@@ -176,6 +176,8 @@ if(command === `${prefix}reload`){
   }
 
 if(command === `${prefix}ping`){
+  if(args[0] == "help")
+  return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*")
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
@@ -185,6 +187,8 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`)
   }
 
   if(command === `${prefix}leave`){
+    if(args[0] == "help")
+    return message.channel.send("I'll leave this server if necessary.")
     if(message.author.id !== "297931837400023041")
     return message.channel.send("**NO.** Only my creator can do that");
     
