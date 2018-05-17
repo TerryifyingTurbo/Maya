@@ -233,16 +233,17 @@ if(command === `${prefix}gaymeter`){
 
 if(command === `${prefix}urban`){
   let str = args.join(" ");
-  if(!str) return message.channel.send("Urban what? Enter something to look up.")
-  let urembed = new Discord.RichEmbed()
-  .setTitle(json.word)
-  .setColor("RANDOM")
-  .setDescription(json.definition)
-  .addField("Upvotes", json.thumbs_up + ` ${greencheck}`, true)
-  .addField("Downvotes", json.thumbs_down + ` ${redx}`, true);
+  if(!str) return message.channel.send("Urban what? Enter something to look up.");
   
   urban(str).first(json => {
-    if(!json) return message.channel.send(`Nothing was found for __${str}__.`)
+    if(!json) return message.channel.send(`Nothing was found for __${str}__.`);
+    
+    let urembed = new Discord.RichEmbed()
+    .setTitle(json.word)
+    .setColor("RANDOM")
+    .setDescription(json.definition)
+    .addField("Upvotes", json.thumbs_up + ` ${greencheck}`, true)
+    .addField("Downvotes", json.thumbs_down + ` ${redx}`, true);
     message.channel.send(urembed);
 });
 };
