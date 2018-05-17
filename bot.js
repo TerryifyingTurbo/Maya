@@ -468,11 +468,11 @@ if(command === `${prefix}8ball`){
     message.channel.send(ballembed);
   }
 
-  if(command === `${prefix}pick`){
+if(command === `${prefix}pick`){
     let opt = args;
     let result = Math.floor((Math.random() * args.length));
     if(args.length < 2) return message.channel.send("I need two options to decide.");
-    message.channel.send(`I pick ${opt[result]}`);
+    message.channel.send(`I pick **${opt[result]}**`);
   }
 
 
