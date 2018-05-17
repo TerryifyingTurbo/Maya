@@ -232,8 +232,8 @@ if(command === `${prefix}gaymeter`){
 }
 
 if(command === `${prefix}urban`){
-  if(args.length < 1) return message.channel.send("Urban what? Enter something to look up.");
   let str = args.join(" ");
+  if(args.length < 1) return message.channel.send("Urban what? Enter something to look up.")
   
   urban(str).first(json => {
     if(!json) return message.channel.send(`Nothing was found for __${str}__.`)
@@ -245,7 +245,7 @@ if(command === `${prefix}urban`){
     .addField("Downvotes", json.thumbs_down + ` ${redx}`, true);
     message.channel.send(urembed);
 });
-}
+};
 
 if(command === `${prefix}say`) {
 
