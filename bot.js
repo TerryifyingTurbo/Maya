@@ -124,7 +124,7 @@ if(command === `${prefix}reload`){
     ${invlink}`)
   }
 
-  if(command === `${prefix}watchpresence`){
+  if(command === `${prefix}watchp`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
     if(!status) return message.channel.send("Do I watch the void? What *or who* am I supposed to watch?")
@@ -133,7 +133,7 @@ if(command === `${prefix}reload`){
     message.channel.send(`${greencheck} Now watching: **${status}**`);
   }
 
-  if(command === `${prefix}gamepresence`){
+  if(command === `${prefix}gamep`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am playing!***");
     if(!status) return message.channel.send("Do I play with someones feelings or something? What *or who* am I supposed to play?")
@@ -142,7 +142,7 @@ if(command === `${prefix}reload`){
     message.channel.send(`${greencheck} Now playing: **${status}**`);
   }
 
-  if(command === `${prefix}listenpresence`){
+  if(command === `${prefix}listenp`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am listening to!***");
     if(!status) return message.channel.send("Do I listen to someones bullshit or something? What *or who* am I supposed to listen to?")
@@ -981,7 +981,7 @@ if(command === `${prefix}emoji`){
         "fields": [
           {
             "name": "Developer",
-            "value": "shutoff, reload, eval, listenpresence, watchpresence, gamepresence, setavat, leave, invite, status, ramcheck",
+            "value": "shutoff, reload, eval, listenp, watchp, gamep, setavat, leave, invite, status, ramcheck",
             "inline": true
           },
           {
