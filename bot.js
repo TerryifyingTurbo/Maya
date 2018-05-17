@@ -923,7 +923,7 @@ if(command === `${prefix}emoji`){
         },
         {
           "name": "I have...",
-          "value": "32 Commands (total)"
+          "value": "34 Commands (total)"
         },
         {
           "name": "RAM Usage",
@@ -986,7 +986,7 @@ if(command === `${prefix}emoji`){
           },
           {
             "name": "Random",
-            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar"
+            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar, urban"
           },
           {
             "name": "Moderation",
