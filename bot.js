@@ -72,14 +72,14 @@ const bweary = bot.emojis.get("444751259308916756");
 }
   
   let prefix = botsettings.prefix;
-  if(!message.content.startsWith(`${prefix}`)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("Aye! Chill. Take it easy, yeah?")
-  }
-if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
-  }
+//   if(!message.content.startsWith(`${prefix}`)) return;
+//   if(cooldown.has(message.author.id)){
+//     message.delete();
+//     return message.reply("Aye! Chill. Take it easy, yeah?")
+//   }
+// if(!message.member.hasPermission("ADMINISTRATOR")){
+//     cooldown.add(message.author.id);
+//   }
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
   let args = messageArray.slice(1);
@@ -460,7 +460,7 @@ if(command === `${prefix}8ball`){
     let question = args.slice(0).join(" ");
 
     let ballembed = new Discord.RichEmbed()
-    .setAuthor(message.member.displayName + " asked...")
+    .setAuthor(message.member.displayName + " asked—")
     .setColor("RANDOM")
     .addField("Question :8ball:", question)
     .addField("Answer", replies[result]);
@@ -469,7 +469,7 @@ if(command === `${prefix}8ball`){
   }
 
   if(command === `${prefix}pick`){
-    let opt = args.split(",");
+    let opt = args;
     let result = Math.floor((Math.random() * args.length));
     if(args.length < 2) return message.channel.send("I need two options to decide.");
     message.channel.send(`I pick ${opt[result]}`);
@@ -999,7 +999,7 @@ if(command === `${prefix}emoji`){
           },
           {
             "name": "Random",
-            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar, urban"
+            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar, urban, pick"
           },
           {
             "name": "Moderation",
