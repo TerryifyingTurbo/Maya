@@ -84,7 +84,7 @@ const bweary = bot.emojis.get("444751259308916756");
   // let command = messageArray[0];
   // let args = messageArray.slice(1);
 
-  const args = message.content.slice(prefix);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
   // setTimeout(() => {
@@ -812,7 +812,7 @@ if(command === `${prefix}emoji`){
     //return message.channel.send(botembed);
   }
   
-  if(command === `${prefix}help`){
+  if(command === `help`){
     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
     else if(args[0] == "pick") return message.channel.send(`Usage: !?pick <options> <options> | There is a bug for pick; All spaces used **will split choices** ${redx} | To avoid this, use an underscore _ to bind words in a single option`);
     else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*");   
