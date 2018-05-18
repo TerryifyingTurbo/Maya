@@ -732,7 +732,7 @@ if(command === `${prefix}dws`){
     else if(args[0] == "aeztia") return message.channel.send(`${aembed}`);
     else if(args[0] == "travis") return message.channel.send(`${tembed}`);
     else if(args[0] == "roxuhn") return message.channel.send(`${rembed}`);
-    message.channel.send(`${dwsembed}`);
+    message.channel.send(dwsembed);
 }
  
 if(command === `${prefix}emoji`){
