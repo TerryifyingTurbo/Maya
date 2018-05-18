@@ -465,7 +465,7 @@ if(command === `${prefix}8ball`){
   }
 
 if(command === `${prefix}pick`){
-    let opt = message.content.split(',').slice(bot.settings.prefix);
+    let opt = message.content.split(',').slice(botsettings.prefix);
     let result = Math.floor((Math.random() * opt.length));
     if(!opt[2]) return message.channel.send("I need two options to decide.");
     message.channel.send(`I pick **${opt[result]}**`);
