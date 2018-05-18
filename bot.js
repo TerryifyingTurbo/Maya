@@ -91,7 +91,7 @@ const bweary = bot.emojis.get("444751259308916756");
   //   cooldown.delete(message.author.id)
   // }, cdseconds * 1000)
 
-if(command === `${prefix}shutoff`){
+if(command === `shutoff`){
   if(message.author.id !== "297931837400023041")
   return message.channel.send(`${redx} You ain't the creator!`);
   
@@ -104,7 +104,7 @@ if(command === `${prefix}shutoff`){
   console.log("Bot killed");
   }
 
-if(command === `${prefix}reload`){
+if(command === `reload`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("You ain't the creator!");
     else
@@ -119,7 +119,7 @@ if(command === `${prefix}reload`){
 });
   }
 
-  if(command === `${prefix}invite`){
+  if(command === `invite`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
     let invlink = `https://discordapp.com/oauth2/authorize?client_id=417517654174334976&permissions=8&scope=bot`
@@ -127,7 +127,7 @@ if(command === `${prefix}reload`){
     ${invlink}`)
   }
 
-  if(command === `${prefix}watchp`){
+  if(command === `watchp`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am watching!***");
     if(!status) return message.channel.send("Do I watch the void? What *or who* am I supposed to watch?")
@@ -136,7 +136,7 @@ if(command === `${prefix}reload`){
     message.channel.send(`${greencheck} Now watching: **${status}**`);
   }
 
-  if(command === `${prefix}gamep`){
+  if(command === `gamep`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am playing!***");
     if(!status) return message.channel.send("Do I play with someones feelings or something? What *or who* am I supposed to play?")
@@ -145,7 +145,7 @@ if(command === `${prefix}reload`){
     message.channel.send(`${greencheck} Now playing: **${status}**`);
   }
 
-  if(command === `${prefix}listenp`){
+  if(command === `listenp`){
     let status = args.join(' ');
     if(message.author.id !== "297931837400023041") return message.channel.send("***Only my creator can change what I am listening to!***");
     if(!status) return message.channel.send("Do I listen to someones bullshit or something? What *or who* am I supposed to listen to?")
@@ -154,7 +154,7 @@ if(command === `${prefix}reload`){
     message.channel.send(`${greencheck} Now listening to: **${status}**`);
   }
   
-  if(command === `${prefix}kick`){
+  if(command === `}kick`){
     let User = message.mentions.users.first()
     if(!User) return message.reply("You think this is soccer? ***Who do I kick***");
     let Reason = args.slice(1).join(" ");
@@ -178,7 +178,7 @@ if(command === `${prefix}reload`){
     message.channel.send(kickEmbed);
   }
 
-if(command === `${prefix}ping`){
+if(command === `ping`){
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
@@ -187,7 +187,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
   }
 
-  if(command === `${prefix}leave`){
+  if(command === `leave`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("**NO.** Only my creator can do that");
     
@@ -197,12 +197,12 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
     message.guild.leave();
   }
 
-  if(command === `${prefix}ramcheck`){
+  if(command === `ramcheck`){
     if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
     message.channel.send(`*I am running with...* ***${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB***`);
   }
 
-  if(command === `${prefix}flipcoin`){
+  if(command === `flipcoin`){
     
     let replies = ["Heads.", "Tails."];
     
@@ -218,19 +218,19 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
     //message.channel.send(replies[result]);
 }
 
-if(command === `${prefix}rolldice`){
+if(command === `rolldice`){
   let dice = Math.floor(Math.random() * 5 + 1);
   message.channel.send("You rolled a :game_die:" + ` ${dice}`);
 }
 
-if(command === `${prefix}gaymeter`){
+if(command === `gaymeter`){
   let metre = Math.floor(Math.random() * 99 + 1);
   let thing = args.join(" ");
   if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay indeed.`)
   message.channel.send(`${thing}? I'd say about **${metre}%** gay indeed.`)
 }
 
-if(command === `${prefix}urban`){
+if(command === `urban`){
   let str = args.join(" ");
   if(!str) return message.channel.send("Urban what? Enter something to look up.");
   
@@ -248,7 +248,7 @@ if(command === `${prefix}urban`){
 };
 // Weed Key qLZXyPT
 
-if(command === `${prefix}say`) {
+if(command === `say`) {
 
     const sayMessage = args.join(" ");
     if(!sayMessage) return message.channel.send("Say what? x3")
@@ -258,7 +258,7 @@ if(command === `${prefix}say`) {
     // And we get the bot to say the thing: 
   }
 
-if(command === `${prefix}avatar`){
+if(command === `avatar`){
   let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 
   let embed = new Discord.RichEmbed() 
@@ -270,7 +270,7 @@ if(command === `${prefix}avatar`){
 
 
 
-if(command === `${prefix}listemotes`){
+if(command === `listemotes`){
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
   message.channel.send('***Fetching...***').then(message => {
     setTimeout(() => {
@@ -278,7 +278,7 @@ if(command === `${prefix}listemotes`){
   }, cdseconds * 1500)
 })}
 
-if(command === `${prefix}cat`){
+if(command === `cat`){
   let {body} = await superagent
   .get(`http://aws.random.cat/meow`);
   let catembed = new Discord.RichEmbed()
@@ -289,7 +289,7 @@ if(command === `${prefix}cat`){
   .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
-if(command === `${prefix}fox`){
+if(command === `fox`){
   let {body} = await superagent
   .get(`https://randomfox.ca/floof/`);
   let foxembed = new Discord.RichEmbed()
@@ -300,7 +300,7 @@ if(command === `${prefix}fox`){
   .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
-if(command === `${prefix}dog`){
+if(command === `dog`){
   let {body} = await superagent
   .get(`https://random.dog/woof.json`);
   
@@ -312,7 +312,7 @@ if(command === `${prefix}dog`){
   .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
-if(command === `${prefix}catfact`){
+if(command === `catfact`){
  let {body} = await superagent
  .get(`https://catfact.ninja/fact`);
  let factembed = new Discord.RichEmbed()
@@ -323,7 +323,7 @@ if(command === `${prefix}catfact`){
  message.channel.send(factembed);
 }
 
-if(command === `${prefix}dadjoke`){
+if(command === `dadjoke`){
   let {body} = await superagent
   .get(`https://icanhazdadjoke.com/slack`);
 
@@ -334,13 +334,13 @@ if(command === `${prefix}dadjoke`){
   message.channel.send(o);
 }
 
-if(command === `${prefix}clapify`){
+if(command === `clapify`){
   let randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
   if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:clap:clap:on:clap:***");
   message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
 
-if(command === `${prefix}succ`){
+if(command === `succ`){
   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
 
   const sayMessage = args.join(" ");
@@ -357,7 +357,7 @@ if(command === `${prefix}succ`){
 
 }
 
-if(command === `${prefix}fucc`){
+if(command === `fucc`){
   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   const sayMessage = args.join(" ");
   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
@@ -383,7 +383,7 @@ if(command === `${prefix}fucc`){
   message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
 }
 
-if(command === `${prefix}smut`){
+if(command === `smut`){
   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let smutembed = new Discord.RichEmbed()
   .setTitle("Lemon-Scented Smut")
@@ -394,7 +394,7 @@ if(command === `${prefix}smut`){
   message.channel.send(smutembed);
 }
 
-if(command === `${prefix}neko`){
+if(command === `neko`){
   let {body} = await superagent
     .get(`https://nekos.life/api/lewd/neko`);
     
@@ -409,7 +409,7 @@ if(command === `${prefix}neko`){
     .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
-if(command === `${prefix}dirtyquote`){
+if(command === `dirtyquote`){
   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
   let replies = ["\"I'm straight, but hey, $20 is $20.\"", 
@@ -451,7 +451,7 @@ if(command === `${prefix}dirtyquote`){
   message.channel.send(`*${replies[result]}*`);
 }
   
-if(command === `${prefix}8ball`){
+if(command === `8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
     let replies = ["Yes.", "No.", "Maybe.", "Ask some other time.", "Cannot say now.", "Absolutely.", "Without a doubt.", "For real? No."];
 
@@ -468,7 +468,7 @@ if(command === `${prefix}8ball`){
   }
 
 if(command === `pick`){
-    let opt = message.content.slice(args.length[1]).trim().split(',');
+    let opt = message.content.slice(prefix.length).trim().split(',');
     let result = Math.floor((Math.random() * opt.length));
     if(opt.length < 2) return message.channel.send("I need two options to decide.");
     message.channel.send(`I pick **${opt[result]}**`);
@@ -622,7 +622,7 @@ let rembed = new Discord.RichEmbed()
 // ▬▬▬▬▬▬▬▬▬▬▬▬
 }
 
-if(command === `${prefix}dws`){
+if(command === `dws`){
     if(args[0] == "zanneker0") return message.channel.send(zanembed);
     else if(args[0] == "spacebar") return message.channel.send(spaceembed);
     else if(args[0] == "gtgalaxytruck") return message.channel.send(galeembed);
@@ -636,7 +636,7 @@ if(command === `${prefix}dws`){
     message.channel.send(dwsembed);
 }
  
-if(command === `${prefix}emoji`){
+if(command === `emoji`){
   let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
   let result = Math.floor((Math.random() * replies.length));
   
@@ -647,7 +647,7 @@ if(command === `${prefix}emoji`){
     message.channel.send(replies[result]);
 }
 
-  if(command === `${prefix}fortunecookie`){
+  if(command === `fortunecookie`){
     let replies = ["Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.",
     "Before you ask why someone hates you, ask yourself why you should care deeply.",
     "The fears we don't face **become our limits**.",
@@ -684,7 +684,7 @@ if(command === `${prefix}emoji`){
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(replies[result]);
   }
-  if(command === `${prefix}ban`){
+  if(command === `ban`){
 
     let bUser = message.mentions.users.first()
     if(!bUser) return message.reply("Yeah, banned the air. ***Who do I ban***");
@@ -711,7 +711,7 @@ if(command === `${prefix}emoji`){
     return;
    }
 
-  if(command === `${prefix}serverinfo`){
+  if(command === `serverinfo`){
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
@@ -726,7 +726,7 @@ if(command === `${prefix}emoji`){
     return message.channel.send(serverembed);
   }
 
-  if(command === `${prefix}purge`){
+  if(command === `purge`){
     // This command removes all messages from all users in the channel, up to 100.
     
     // get the delete count, as an actual number.
@@ -746,7 +746,7 @@ if(command === `${prefix}emoji`){
   }
 
 
-  if(command === `${prefix}botinfo`){
+  if(command === `botinfo`){
     let embed = {
       "title": "My info x3",
       //"url": "https://discordapp.com",
@@ -813,8 +813,8 @@ if(command === `${prefix}emoji`){
   }
   
   if(command === `help`){
-    if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
-    else if(args[0] == "pick") return message.channel.send(`Usage: !?pick <options> <options> | There is a bug for pick; All spaces used **will split choices** ${redx} | To avoid this, use an underscore _ to bind words in a single option`);
+    if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
+    else if(args[0] == "pick") return message.channel.send(`Usage: !?pick <options> <options> | All commas used **will split choices**.`);
     else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*");   
     else if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
     else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
