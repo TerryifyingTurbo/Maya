@@ -82,7 +82,8 @@ const bweary = bot.emojis.get("444751259308916756");
 //   }
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
-  let args = messageArray.slice(1);
+  //let args = messageArray.slice(1);
+  let args = message.content.split(" ").slice(1);
 
   // setTimeout(() => {
   //   cooldown.delete(message.author.id)
@@ -465,7 +466,7 @@ if(command === `${prefix}8ball`){
   }
 
 if(command === `${prefix}pick`){
-    let opt = args;
+    let opt = args.split(',');
     let result = Math.floor((Math.random() * args.length));
     if(args.length < 2) return message.channel.send("I need two options to decide.");
     message.channel.send(`I pick **${opt[result]}**`);
@@ -743,7 +744,6 @@ if(command === `${prefix}emoji`){
   }
 
 
-
   if(command === `${prefix}botinfo`){
     let embed = {
       "title": "My info x3",
@@ -815,8 +815,8 @@ if(command === `${prefix}emoji`){
     else if(args[0] == "pick") return message.channel.send(`Usage: !?pick <options> <options> | There is a bug for pick; All spaces used **will split choices** ${redx} | To avoid this, use an underscore _ to bind words in a single option`);
     else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*");   
     else if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
-    else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely dangerous command if used improperly or maliciously.**");
-    else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immeidately terminated upon execution.");
+    else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
+    else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
     else if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
        
     let embed = {
