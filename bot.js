@@ -226,8 +226,8 @@ if(command === `rolldice`){
 if(command === `gaymeter`){
   let metre = Math.floor(Math.random() * 99 + 1);
   let thing = args.join(" ");
-  if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay indeed.`)
-  message.channel.send(`${thing}? I'd say about **${metre}%** gay indeed.`)
+  if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay.`)
+  message.channel.send(`${thing}? I'd say about **${metre}%** gay.`)
 }
 
 if(command === `urban`){
