@@ -482,7 +482,7 @@ if(command === `${prefix}pick`){
 let dwsembed = new Discord.RichEmbed()
   .setTitle("Dog with Sins")
   .setColor("000001")
-  .setFooter("!?dws selection", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
+  .setFooter("!?dws <selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
   .setThumbnail("https://i.imgur.com/yztZj9k.png")
   .addField("Intro", "Just some random shit to view any of my characters, lore n' shit", true)
   .addField("Characters", "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, Yannis Seifer, Roxuhn", true)
@@ -494,37 +494,38 @@ let dwsembed = new Discord.RichEmbed()
 {
 
 }
-  let zanembed = {
-    "title": "Zanneker0",
-    //"url": "https://discordapp.com",
-    "color": 8069462,
-    //"timestamp": "2011-04-21",
-    "footer": {
-      "icon_url": "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg",
-      "text": "Highly addictive"
-    },
-    "thumbnail": {
-      "url": `https://i.imgur.com/p99ZnBd.jpg` 
-    },
-    // "image": {
-    //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
-    // },
-    // "author": {
-    //   "name": "Called for help...",
-    //   //"url": "https://discordapp.com",
-    //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
-    // },
-    "fields": [
-      {
-        "name": "Overview",
-        "value": "*placeholder; need to revise*", 
-      },
-      {
-        "name": "Physical Appearance",
-        "value": "*The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but never no more than 3lbs [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 emit an appealing, strong sweet odor which can prove difficult to hide.*",
-     }
-    ]
-  };
+let spaceembed = new Discord.RichEmbed()
+  .setTitle("SpaceBar")
+  .setColor("690351")
+  .setFooter("Safe House", "http://www.yourcts.org/wp-content/uploads/2018/02/icon-residential.png")
+  .setThumbnail("https://i.imgur.com/6XlvXmY.jpg")
+  .addField("Overview", "*A medium-sized bar in literal space, on the Moon. Somehow built mysteriously and is currently owned by Jesse Green and Travis Rilynar (Co-Owner). It is only accessible by these two as they carry the proper key and GT-GalaxyTruck for entry. There are multiple rooms throughout the entire perimeter, some of them being concealed such as Jesse's 'Doggo' cabinet and Travis's secured locker.*", true)
+  .addField("Appearance", "*The SpaceBar is no ordinary bar; the building itself is less than 45 x 15ft. Because it is on the Moon and in outer space, all windows and doors are air-locked. A 35+ Soundtrack playlist of EDM available for playing, the bar contains a surrounding counter in the centre. Behind the counter lies wine racks, signature displays, shelves of ingredients and the control panel to the lighting system. The decor of the SpaceBar is meant to be set to give off a nightclub atmosphere; a strip dance pole which is located near the centre to provide a 'good show'. The maximum occupancy of the bar is estimated to be about 150 people. A large game room is also included within the bar and is located northeast of the entryway. Includes, but not limited to: Air hockey tables, pool game tables, classic darts, and the arcade game machines from the 90s.*", true);
+let galeembed = new Discord.RichEmbed()
+  .setTitle("GT-GalaxyTruck")
+  .setColor("431330")
+  .setFooter("Vehicle", "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png")
+  .setThumbnail("https://i.imgur.com/qp9f9tn.jpg?1")
+  .addField("Top Speed", "*Mach 1/767 mph/1234 kph*", true)
+  .addField("0-60", "*1.7 seconds*", true)
+  .addField("MPG", "*3*", true)
+  .addField("Engine", "*9.7L V8 Duramax*", true)
+  .addField("Curb Weight", "*3300 lbs/1497 kg*", true)
+  .addField("Layout", "*AWD, Front Engine*", true)
+  .addField("Overview", "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon." + 
+  " Though it is registered under the names of Travis Rilynar and Jesse Green, it is unknown when exactly the Galaxy Truck was manufactured. The five-seater truck has been modified to sustain the extreme atmospheric pressure, speed, and temperature*", true)
+  .addField("Appearance", "*Equipped with military-grade, high-end materials: Bullet-resistant glass, reinforced carbon fiber plating, and a hardened drivetrain." + 
+  " This off-road, five-seater also has an elegant wrap that glows. The interior is custom built: Motorsport racetrack seats with harnesses and steering wheel, UV-resistant tinted windows, 8ball gear shifter, and a fuzzy dashboard with a Hawaiian girl bobble-head.*", true)
+  .addField("Performance", "*Offers extremely poor power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1." + 
+  " With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*", true);
+
+let zanembed = new Discord.RichEmbed()
+  .setTitle("Zanneker0")
+  .setColor("8069462")
+  .setFooter("Highly addictive", "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg")
+  .setThumbnail("https://i.imgur.com/p99ZnBd.jpg")
+  .addField("Overview", "*placeholder; need to revise*", true)
+  .addField("Physical Appearance", "*The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but never no more than 3lbs [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 emit an appealing, strong sweet odor which can prove difficult to hide.*", true);
   let spaceembed = {
     "title": "SpaceBar",
     //"url": "https://discordapp.com",
@@ -724,10 +725,10 @@ let rembed = new Discord.RichEmbed()
 if(command === `${prefix}dws`){
     if(args[0] == "zanneker0") return message.channel.send(zanembed);
     else if(args[0] == "spacebar") return message.channel.send(spaceembed);
-    else if(args[1] == "gt galaxytruck") return message.channel.send(galembed);
-    else if(args[1] == "nauti buoy") return message.channel.send(nbembed);
+    else if(args[0] == "gtgalaxytruck") return message.channel.send(galeembed);
+    else if(args[0] == "nautibuoy") return message.channel.send(nbembed);
     else if(args[0] == "graveyardgrumble") return message.channel.send(ggembed);
-    else if(args[0] == "decomissioned" && args[1] == "bunker") return message.channel.send(dbembed);
+    else if(args[0] == "decomissionedbunker") return message.channel.send(dbembed);
     else if(args[0] == "jejus") return message.channel.send(jembed);
     else if(args[0] == "aeztia") return message.channel.send(aembed);
     else if(args[0] == "travis") return message.channel.send(tembed);
