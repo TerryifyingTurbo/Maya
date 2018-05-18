@@ -815,8 +815,12 @@ if(command === `${prefix}emoji`){
   }
   
   if(command === `${prefix}help`){
-      let embed = {
-        "title": "Here x3",
+    if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
+    else if(args[0] == "pick") return message.channel.send(`Usage: !?pick <options> <options> | There is a bug for pick; All spaces used **will split choices** ${redx} | To avoid this, use an underscore _ to bind words in a single option`);
+        
+    
+       let embed = {
+         "title": "Here x3",
         //"url": "https://discordapp.com",
         "color": 12121300,
         //"timestamp": "2018-04-21T01:28:06.959Z",
