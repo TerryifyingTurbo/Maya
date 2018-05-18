@@ -722,12 +722,12 @@ let rembed = new Discord.RichEmbed()
 }
 
 if(command === `${prefix}dws`){
-    if(args[0] == "zanneker0") return message.channel.send({zanembed});
-    else if(args[0] == "spacebar") return message.channel.send({spaceembed});
-    else if(args[1] == "gt galaxytruck") return message.channel.send({galembed});
-    else if(args[1] == "nauti buoy") return message.channel.send({nbembed});
+    if(args[0] == "zanneker0") return message.channel.send(zanembed);
+    else if(args[0] == "spacebar") return message.channel.send(spaceembed);
+    else if(args[1] == "gt galaxytruck") return message.channel.send(galembed);
+    else if(args[1] == "nauti buoy") return message.channel.send(nbembed);
     else if(args[0] == "graveyardgrumble") return message.channel.send(ggembed);
-    else if(args[1] == "decomissioned bunker") return message.channel.send(dbembed);
+    else if(args[0] == "decomissioned" && args[1] == "bunker") return message.channel.send(dbembed);
     else if(args[0] == "jejus") return message.channel.send(jembed);
     else if(args[0] == "aeztia") return message.channel.send(aembed);
     else if(args[0] == "travis") return message.channel.send(tembed);
