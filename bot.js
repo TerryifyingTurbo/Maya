@@ -479,53 +479,21 @@ if(command === `${prefix}pick`){
     // yes
 }
 
-  let dwsembed = {
-    "title": "Dog with Sins",
-    //"url": "https://discordapp.com",
-    "color": 1156136,
-    //"timestamp": "2018-04-21T01:28:06.959Z",
-    "footer": {
-      "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-      "text": "!?dws <selection>"
-    },
-    "thumbnail": {
-      "url": `https://i.imgur.com/yztZj9k.png` 
-    },
-    // "image": {
-    //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
-    // },
-    // "author": {
-    //   "name": "Called for help...",
-    //   //"url": "https://discordapp.com",
-    //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
-    // },
-    "fields": [
-      {
-        "name": "Intro",
-        "value": "Just some random shit to view any of my characters, lore n' shit"
-      },
-      {
-        "name": "Characters",
-        "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, Yannis Seifer, Roxuhn"
-      },
-      {
-        "name": "Vehicles",
-        "value": "GT-GalaxyTruck, Gargoyle, Wildcat, CK, Nauti Buoy"
-      },
-      {
-        "name": "Items",
-        "value": "Zanneker0, Bizid, Left Hand of Jejus, Graveyard Grumble"
-      },
-       {
-         "name": "Journal n' Documentation",
-         "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer', Note #4, 'Termination Order'"
-      },
-      {
-        "name": "Misc n' Shit",
-        "value": "Entity#, Dark Areas, SpaceBar, Decommissioned Bunker"
-      },
-    ]
-  };
+let dwsembed = new Discord.RichEmbed()
+  .setTitle("Dog with Sins")
+  .setColor("000001")
+  .setFooter("!?dws selection", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
+  .setThumbnail("https://i.imgur.com/yztZj9k.png")
+  .addField("Intro", "Just some random shit to view any of my characters, lore n' shit", true)
+  .addField("Characters", "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, Yannis Seifer, Roxuhn", true)
+  .addField("Vehicles", "GT-GalaxyTruck, Gargoyle, Wildcat, CK, Nauti Buoy", true)
+  .addField("Items", "Zanneker0, Left Hand of Jejus, Graveyard Grumble", true)
+  .addField("Journal n' Documentation", "\"Tyrexia?\" (#1), \"That kid, Vortex?\", \"The Axe Murderer\", Note #4, 'Termination Order'", true)
+  .addField("Misc n' Shit", "Entity#, Dark Areas, SpaceBar, Decommissioned Bunker", true);
+
+{
+
+}
   let zanembed = {
     "title": "Zanneker0",
     //"url": "https://discordapp.com",
@@ -764,7 +732,7 @@ if(command === `${prefix}dws`){
     else if(args[0] == "aeztia") return message.channel.send(`${aembed}`);
     else if(args[0] == "travis") return message.channel.send(`${tembed}`);
     else if(args[0] == "roxuhn") return message.channel.send(`${rembed}`);
-    message.channel.send(`${{dwsembed}}`);
+    message.channel.send(`${dwsembed}`);
 }
  
 if(command === `${prefix}emoji`){
