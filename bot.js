@@ -176,8 +176,6 @@ if(command === `${prefix}reload`){
   }
 
 if(command === `${prefix}ping`){
-  if(args[0] == "help")
-  return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*")
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
@@ -187,8 +185,6 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `${prefix}leave`){
-    if(args[0] == "help")
-    return message.channel.send("I'll leave this server if necessary.")
     if(message.author.id !== "297931837400023041")
     return message.channel.send("**NO.** Only my creator can do that");
     
@@ -817,9 +813,13 @@ if(command === `${prefix}emoji`){
   if(command === `${prefix}help`){
     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
     else if(args[0] == "pick") return message.channel.send(`Usage: !?pick <options> <options> | There is a bug for pick; All spaces used **will split choices** ${redx} | To avoid this, use an underscore _ to bind words in a single option`);
-        
-    
-       let embed = {
+    else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*");   
+    else if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
+    else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely dangerous command if used improperly or maliciously.**");
+    else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immeidately terminated upon execution.");
+    else if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
+       
+    let embed = {
          "title": "Here x3",
         //"url": "https://discordapp.com",
         "color": 12121300,
