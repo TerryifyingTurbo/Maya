@@ -84,7 +84,7 @@ const bweary = bot.emojis.get("444751259308916756");
   // let command = messageArray[0];
   // let args = messageArray.slice(1);
 
-  const args = message.content.slice(prefix)
+  const args = message.content.slice(prefix);
   const command = args.shift().toLowerCase();
 
   // setTimeout(() => {
