@@ -84,9 +84,9 @@ const bweary = bot.emojis.get("444751259308916756");
   let command = messageArray[0];
   let args = messageArray.slice(1);
 
-  setTimeout(() => {
-    cooldown.delete(message.author.id)
-  }, cdseconds * 1000)
+  // setTimeout(() => {
+  //   cooldown.delete(message.author.id)
+  // }, cdseconds * 1000)
 
 if(command === `${prefix}shutoff`){
   if(message.author.id !== "297931837400023041")
@@ -475,60 +475,58 @@ if(command === `${prefix}pick`){
     message.channel.send(`I pick **${opt[result]}**`);
   }
 
-
-if(command === `${prefix}dws`){
-    let embed = {
-      "title": "Dog with Sins",
-      //"url": "https://discordapp.com",
-      "color": 1156136,
-      //"timestamp": "2018-04-21T01:28:06.959Z",
-      "footer": {
-        "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": "!?dws<selection>"
-      },
-      "thumbnail": {
-        "url": `https://i.imgur.com/yztZj9k.png` 
-      },
-      // "image": {
-      //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
-      // },
-      // "author": {
-      //   "name": "Called for help...",
-      //   //"url": "https://discordapp.com",
-      //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
-      // },
-      "fields": [
-        {
-          "name": "Intro",
-          "value": "Just some random shit to view any of my characters, lore n' shit"
-        },
-        {
-          "name": "Characters",
-          "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, Yannis Seifer, Roxuhn"
-        },
-        {
-          "name": "Vehicles",
-          "value": "GT-GalaxyTruck, Gargoyle, Wildcat, CK, Nauti Buoy"
-        },
-        {
-          "name": "Items",
-          "value": "Zanneker0, Bizid, Left Hand of Jejus, Graveyard Grumble"
-        },
-         {
-           "name": "Journal n' Documentation",
-           "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer', Note #4, 'Termination Order'"
-        },
-        {
-          "name": "Misc n' Shit",
-          "value": "Entity#, Dark Areas, SpaceBar, Decommissioned Bunker"
-        },
-      ]
-    };
-    message.channel.send({ embed });
+{
+    // yes
 }
 
-if(command === `${prefix}dwszanneker0`){
-  let embed = {
+  let dwsembed = {
+    "title": "Dog with Sins",
+    //"url": "https://discordapp.com",
+    "color": 1156136,
+    //"timestamp": "2018-04-21T01:28:06.959Z",
+    "footer": {
+      "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
+      "text": "!?dws <selection>"
+    },
+    "thumbnail": {
+      "url": `https://i.imgur.com/yztZj9k.png` 
+    },
+    // "image": {
+    //   "url": "http://icecream.me/uploads/aadb1b46d8bc42d40a4a4f77a9fec4ac.png"
+    // },
+    // "author": {
+    //   "name": "Called for help...",
+    //   //"url": "https://discordapp.com",
+    //   //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    // },
+    "fields": [
+      {
+        "name": "Intro",
+        "value": "Just some random shit to view any of my characters, lore n' shit"
+      },
+      {
+        "name": "Characters",
+        "value": "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, Yannis Seifer, Roxuhn"
+      },
+      {
+        "name": "Vehicles",
+        "value": "GT-GalaxyTruck, Gargoyle, Wildcat, CK, Nauti Buoy"
+      },
+      {
+        "name": "Items",
+        "value": "Zanneker0, Bizid, Left Hand of Jejus, Graveyard Grumble"
+      },
+       {
+         "name": "Journal n' Documentation",
+         "value": "'Tyrexia?' (#1), 'That kid, Vortex?', 'Axe Murderer', Note #4, 'Termination Order'"
+      },
+      {
+        "name": "Misc n' Shit",
+        "value": "Entity#, Dark Areas, SpaceBar, Decommissioned Bunker"
+      },
+    ]
+  };
+  let zanembed = {
     "title": "Zanneker0",
     //"url": "https://discordapp.com",
     "color": 8069462,
@@ -559,13 +557,7 @@ if(command === `${prefix}dwszanneker0`){
      }
     ]
   };
-  message.channel.send({ embed });
-}
-
-
-
-if(command === `${prefix}dwsspacebar`){
-  let embed = {
+  let spaceembed = {
     "title": "SpaceBar",
     //"url": "https://discordapp.com",
     "color": 690351,
@@ -596,11 +588,7 @@ if(command === `${prefix}dwsspacebar`){
      }
     ]
   };
-  message.channel.send({ embed });
-}
-
-if(command === `${prefix}dwsgtgalaxytruck`){
-  let embed = {
+  let galembed = {
     "title": "GT-GalaxyTruck",
     //"url": "https://discordapp.com",
     "color": 431330,
@@ -668,12 +656,8 @@ if(command === `${prefix}dwsgtgalaxytruck`){
       }
     ]
   };
-  message.channel.send({ embed });
-}
-// .addField(" ","* *", true)
 
-if(command === `${prefix}dwsnautibuoy`){
-  let nbembed = new Discord.RichEmbed()
+let nbembed = new Discord.RichEmbed()
   .setTitle("Nauti Buoy")
   .setColor("#4270dd")
   .setFooter("Vehicle", "http://aukavinna.is/wp-content/uploads/2017/02/iconcar_2398746577.png")
@@ -685,13 +669,9 @@ if(command === `${prefix}dwsnautibuoy`){
   .addField("Overall Length","*414 ft/126 m*", true)
   .addField("Accomodations","*41 Cabins*", true)
   .addField("Overview", "*An enormous $24,000,000 luxury super yacht owned by the 2nd most notorious gang: Reyes de La Calle.*", true)
-  .addField("Appearance","*placeholder test; huge ass boat with bright accent purple*", true);
+  .addField("Appearance","*placeholder test; huge ass boat with bright accent purple*", true)
 
-  message.channel.send(nbembed);
-}
-
-if(command === `${prefix}dwsgraveyardgrumble`){
-  let ggembed = new Discord.RichEmbed()
+let ggembed = new Discord.RichEmbed()
   .setTitle("Graveyard Grumble")
   .setColor("#7d2e3e")
   .setFooter("Signature Beverage")
@@ -699,11 +679,8 @@ if(command === `${prefix}dwsgraveyardgrumble`){
   .addField("Overview", 
   "*This coffin-shaped bottle is made of translucent bloodshot red glass. The taste is almost described as strong and sour with a foul aftertaste." + 
   " It has a long neck, stands about nine inches tall, and it has no label other than it displaying a warning: 'So strong it's something to DIE FOR'.*", true);
-  message.channel.send(ggembed);
-}
 
-if(command === `${prefix}dwsdecommissionedbunker`){
-  let dbembed = new Discord.RichEmbed()
+let dbembed = new Discord.RichEmbed()
   .setTitle("Decommisssioned Bunker")
   .setColor("#d3b385")
   .setFooter("Safe House", "http://www.yourcts.org/wp-content/uploads/2018/02/icon-residential.png")
@@ -712,30 +689,21 @@ if(command === `${prefix}dwsdecommissionedbunker`){
   .addField("Bunker Size", "155,000sq ft²", true)
   .addField("Overview", "*A condemned bunker now used as the headquarters/hideout of the organization: Yo Ouila*", true)
   .addField("Description", "*Includes a corridor that leads to the armory roomn, garage, control room, and conference room.*", true);
-  
-  message.channel.send(dbembed);
-}
-
-if(command === `${prefix}dwsjejus`){
-  let jembed = new Discord.RichEmbed()
-  .setTitle("Jejus")
-  .setColor("#87c285")
-  .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
-  .setThumbnail("https://i.imgur.com/8cHcPvv.jpg?1")
+let tembed = new Discord.RichEmbed()
+  .setTitle("Travis \"Vortex\" Rilynar")
+  .setColor("#07a56c")
+  .setFooter("Story Character", "https://i.imgur.com/uOFLi1A.png")
+  .setThumbnail("https://i.imgur.com/jVM8fdc.jpg")
   .addField("Status", "*Alive*", true)
-  .addField("Height", "*6'7/204 cm/2 m*", true)
-  .addField("Weight", "*219 lbs./99 kg*", true)
+  .addField("Height", "*5'9/175 cm/1.7 m*", true)
+  .addField("Weight", "*130 lbs./59 kg*", true)
   .addField("Gender", "*Male*", true)
-  .addField("Age", "*42.1 million*", true)
-  .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." + 
-  " Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
-  .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." + 
-  " He strongly believes in the morals of justice and is willing to serve if necessary*", true);
-  message.channel.send(jembed);
-}
-
-if(command === `${prefix}dwsaeztia`){
-  let aembed = new Discord.RichEmbed()
+  .addField("Age", "*22*", true)
+  .addField("Zodiac Sign", "*Scorpio*", true)
+  .addField("Physical Appearance", "*Travis is a Hispanic male who is at the age of 22 with very dark brown hair and brown eyes. He has a medium build, standing 5’9 [175cm] and weighs at 130lbs. [59kg]. His skin tone is a III medium white (Fitzpatrick Scale). Travis's physique is slightly thinner compared to most of the others such as Riley, Connor, Carlos, and even his own brother, Marlowe." +  
+  "This most certainly comes from his time as a catcher and his stint in prison. Taking from his father's side, Travis and Relonimar both take their father's personality but is not as severe. The two brothers also inherit their father's dominant hand, which is the left hand—often frowned upon when doing tasks that were made for the right dominant hand." + 
+  "Travis is the person who wears casual clothing that usually consists of dark jeans, black two-tone converses, unique shirts with psychedelic logos covered by his galaxy hoodie.*", true);
+let aembed = new Discord.RichEmbed()
   .setTitle("Aeztia Lavender")
   .setColor("#46437b")
   .setFooter("OP Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
@@ -749,31 +717,21 @@ if(command === `${prefix}dwsaeztia`){
   .addField("Description", "*Mischievous demon who uses her powers to manipulate others for personal gain and advantages.*", true)
   .addField(".", "Powers and Special Abilities", true)
   .addField("Hypnosis", "*Gain control of a person, animal, and other entities and fully manipulate the victim to any extent or desire.*");
-  message.channel.send(aembed);
-
-}
-
-// ▬▬▬▬▬▬▬▬▬▬▬▬
-if(command === `${prefix}dwstravis`){
-  let tembed = new Discord.RichEmbed()
-  .setTitle("Travis \"Vortex\" Rilynar")
-  .setColor("#07a56c")
-  .setFooter("Story Character", "https://i.imgur.com/uOFLi1A.png")
-  .setThumbnail("https://i.imgur.com/jVM8fdc.jpg")
+let jembed = new Discord.RichEmbed()
+  .setTitle("Jejus")
+  .setColor("#87c285")
+  .setFooter("Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
+  .setThumbnail("https://i.imgur.com/8cHcPvv.jpg?1")
   .addField("Status", "*Alive*", true)
-  .addField("Height", "*5'9/175 cm/1.7 m*", true)
-  .addField("Weight", "*130 lbs./59 kg*", true)
+  .addField("Height", "*6'7/204 cm/2 m*", true)
+  .addField("Weight", "*219 lbs./99 kg*", true)
   .addField("Gender", "*Male*", true)
-  .addField("Age", "*22*", true)
-  .addField("Zodiac Sign", "*Scorpio*", true)
-  .addField("Physical Appearance", "*Travis is a Hispanic male who is at the age of 22 with very dark brown hair and brown eyes. He has a medium build, standing 5’9 [175cm] and weighs at 130lbs. [59kg]. His skin tone is a III medium white (Fitzpatrick Scale). Travis's physique is slightly thinner compared to most of the others such as Riley, Connor, Carlos, and even his own brother, Marlowe." +  
-  "This most certainly comes from his time as a catcher and his stint in prison. Taking from his father's side, Travis and Relonimar both take their father's personality but is not as severe. The two brothers also inherit their father's dominant hand, which is the left hand—often frowned upon when doing tasks that were made for the right dominant hand." + 
-  "Travis is the person who wears casual clothing that usually consists of dark jeans, black two-tone converses, unique shirts with psychedelic logos covered by his galaxy hoodie.*", true)
-  message.channel.send(tembed);
-}
-
-if(command === `${prefix}dwsroxuhn`){
-  let rembed = new Discord.RichEmbed()
+  .addField("Age", "*42.1 million*", true)
+  .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." + 
+  " Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
+  .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." + 
+  " He strongly believes in the morals of justice and is willing to serve if necessary*", true);
+let rembed = new Discord.RichEmbed()
   .setTitle("Roxuhn")
   .setColor("#000001")
   .setThumbnail("https://i.imgur.com/XbIae1y.png?1")
@@ -790,7 +748,23 @@ if(command === `${prefix}dwsroxuhn`){
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly used on all forms of life***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
-  message.channel.send(rembed);
+
+{
+// ▬▬▬▬▬▬▬▬▬▬▬▬
+}
+
+if(command === `${prefix}dws`){
+    if(args[0] == "zanneker0") return message.channel.send({ zanembed });
+    else if(args[0] == "spacebar") return message.channel.send({ spaceembed });
+    else if(args[1] == "gt galaxytruck") return message.channel.send(galembed);
+    else if(args[1] == "nauti buoy") return message.channel.send(nbembed);
+    else if(args[0] == "graveyardgrumble") return message.channel.send(ggembed);
+    else if(args[1] == "decomissioned bunker") return message.channel.send(dbembed);
+    else if(args[0] == "jejus") return message.channel.send(jembed);
+    else if(args[0] == "aeztia") return message.channel.send(aembed);
+    else if(args[0] == "travis") return message.channel.send(tembed);
+    else if(args[0] == "roxuhn") return message.channel.send(rembed);
+    message.channel.send({ dwsembed });
 }
  
 if(command === `${prefix}emoji`){
