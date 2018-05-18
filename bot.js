@@ -82,8 +82,7 @@ const bweary = bot.emojis.get("444751259308916756");
 //   }
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
-  //let args = messageArray.slice(1);
-  let args = message.content.split(" ").slice(1);
+  let args = messageArray.slice(1);
 
   // setTimeout(() => {
   //   cooldown.delete(message.author.id)
@@ -466,9 +465,9 @@ if(command === `${prefix}8ball`){
   }
 
 if(command === `${prefix}pick`){
-    let opt = message.content.split(",").slice(1);
+    let opt = message.content.split(',').slice(bot.settings.prefix);
     let result = Math.floor((Math.random() * opt.length));
-    if(opt.length < 1) return message.channel.send("I need two options to decide.");
+    if(!opt[2]) return message.channel.send("I need two options to decide.");
     message.channel.send(`I pick **${opt[result]}**`);
   }
 
