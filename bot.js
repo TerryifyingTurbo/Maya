@@ -72,7 +72,7 @@ const bweary = bot.emojis.get("444751259308916756");
 }
   
   let prefix = botsettings.prefix;
-//   if(!message.content.startsWith(`${prefix}`)) return;
+   if(!message.content.startsWith(`${prefix}`)) return;
 //   if(cooldown.has(message.author.id)){
 //     message.delete();
 //     return message.reply("Aye! Chill. Take it easy, yeah?")
@@ -115,7 +115,7 @@ if(command === `reload`){
   message.channel.send(`***Reloading.*** ${reload}`).then(message => {
     setTimeout(() => {
     message.edit(`*Reloaded.* ${greencheck}`)
-  }, cdseconds * 3000)
+  }, cdseconds * 3500)
 });
   }
 
@@ -511,7 +511,7 @@ if(command === `8ball`){
     .setAuthor(message.member.displayName + " asked—")
     .setThumbnail("https://findicons.com/files/icons/1700/2d/512/8_ball.png")
     .setColor("RANDOM")
-    .addField("Question :8ball:", question)
+    .addField("Question :question:", question)
     .addField("Answer", replies[result]);
 
     message.channel.send(ballembed);
@@ -770,11 +770,10 @@ if(command === `emoji`){
     .setThumbnail(sicon)
     .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
     .addField("Made on", message.guild.createdAt, true)
-    .addField("Total Channels", bot.channels.size, true)
     .addField("You joined", message.member.joinedAt, true)
     .addField("Total Members", message.guild.memberCount, true);
-
-    return message.channel.send(serverembed);
+    
+    message.channel.send(serverembed);
   }
 
   if(command === `purge`){
