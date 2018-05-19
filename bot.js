@@ -490,6 +490,8 @@ giphy.random(args[0]).then(
       .setColor("RANDOM")
       .setImage(giphyUrl)
   message.channel.send(embed);
+});
+}
   
 if(command === `8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
