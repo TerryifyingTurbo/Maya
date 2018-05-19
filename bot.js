@@ -154,7 +154,7 @@ if(command === `reload`){
     message.channel.send(`${greencheck} Now listening to: **${status}**`);
   }
   
-  if(command === `}kick`){
+  if(command === `kick`){
     let User = message.mentions.users.first()
     if(!User) return message.reply("You think this is soccer? ***Who do I kick***");
     let Reason = args.slice(1).join(" ");
@@ -177,6 +177,22 @@ if(command === `reload`){
     User.kick(Reason);
     message.channel.send(kickEmbed);
   }
+
+  if(command === `giverole`){
+    if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("You do not have permissions.")
+    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+    if (!rMember) return message.reply("Please provide a user name")
+    let role = args.join(" ").slice(22);
+
+    if (!role) return message.reply("Please provide a role name.");
+    let aRole = message.guild.roles.find(`name`, role);
+    if (!aRole) return message.reply(`I can't find the role.`);
+
+    if (rMember.roles.has(aRole.id)) return message.reply("The user already have this role!");
+    await (rMember.addRole(aRole.id))
+    message.channel.send("A'ight, give them the role.");
+
+}
 
 if(command === `ping`){
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
@@ -268,11 +284,24 @@ if(command === `avatar`){
   message.channel.send({embed})
 }
 
+if(command === `fliptext`){
+  const mapping = '¡"#$%⅋,)(*+\'-˙/0ƖᄅƐㄣϛ9ㄥ86:;<=>¿@∀qƆpƎℲפHIſʞ˥WNOԀQɹS┴∩ΛMX⅄Z[/]^_`ɐqɔpǝɟƃɥᴉɾʞlɯuodbɹsʇnʌʍxʎz{|}~';
+  const OFFSET = '!'.charCodeAt(0);
+
+  if(args.length < 1) return message.channel.send("I can't flip text that isn't even there");
+  message.channel.send(
+    args.join(' ').split('')
+        .map(c => c.charCodeAt(0) - OFFSET)
+        .map(c => mapping[c] || ' ')
+        .reverse().join('')
+  );
+}
 
 
 if(command === `listemotes`){
+  if(message.guild.emojis.size === 0) return message.channel.send("There aren't any emojis here.");
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-  message.channel.send('***Fetching...***').then(message => {
+  message.channel.send(`***Fetching emojis for ${message.guild.name}...***`).then(message => {
     setTimeout(() => {
     message.edit(`${emojiList}`)
   }, cdseconds * 1500)
@@ -720,6 +749,7 @@ if(command === `emoji`){
     .setThumbnail(sicon)
     .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
     .addField("Made on", message.guild.createdAt, true)
+    .addField("Total Channels", bot.channels.size, true)
     .addField("You joined", message.member.joinedAt, true)
     .addField("Total Members", message.guild.memberCount, true);
 
