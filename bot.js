@@ -814,12 +814,17 @@ if(command === `emoji`){
   
   if(command === `help`){
     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
-    else if(args[0] == "pick") return message.channel.send(`Usage: !?pick <options> <options> | All commas used **will split choices**.`);
+    else if(args[0] == "pick") return message.channel.send(`Out of the choices you supply me, I will pick only **one.** | Usage: !?pick <options> <options> | All commas used **will split choices**.`);
     else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*");   
     else if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
     else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
     else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
     else if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
+    else if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <option>");
+    else if(args[0] == "neko") return message.channel.send("*Nya~* I'll bring up lewd and NSFW images of nekos.");
+    else if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
+    else if(args[0] == "dirtyquote") return message.channel.send("I'll say something lewd, sexual, and ultimately, erotic");
+    //else if(args[0] == "") return message.channel.send("");
        
     let embed = {
          "title": "Here x3",
