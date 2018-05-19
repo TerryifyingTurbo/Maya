@@ -17,6 +17,7 @@
     "ffmpeg-binaries": "^3.2.2-3",
     "fs": "0.0.1-security",
     "get-youtube-id": "^1.0.0",
+    "gif-search": "^2.0.1",
     "leetspeak": "0.0.1",
     "moment": "^2.22.0",
     "moment-duration-format": "^2.2.2",
