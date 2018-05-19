@@ -9,6 +9,7 @@ const urban = require("urban");
 const snekfetch = require("snekfetch");
 const bot = new Discord.Client({disableEveryone: true})
 const cleverbot = require("cleverbot", "cleverbot.io");
+const gifSearch = require("gif-search");
 let cooldown = new Set();
 let cdseconds = 2;
 
@@ -479,6 +480,18 @@ if(command === `dirtyquote`){
   let result = Math.floor((Math.random() * replies.length))
   message.channel.send(`*${replies[result]}*`);
 }
+
+if(command === `gif`){
+  if(args.length < 1) return message.channel.send("Enter something!");
+  gifSearch.random(args[0]).then(
+    gifUrl => {
+
+    let randomcolor = ((1 << 24) * Math.random() | 0).toString(16)
+    let embed = new Discord.RichEmbed()
+        .setColor(`#${randomcolor}`)
+        .setImage(gifUrl)
+    message.channel.send(embed);
+})}; 
   
 if(command === `8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
