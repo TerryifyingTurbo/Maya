@@ -680,6 +680,8 @@ let rembed = new Discord.RichEmbed()
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
 
+
+
 {
 // ▬▬▬▬▬▬▬▬▬▬▬▬
 }
@@ -886,6 +888,7 @@ if(command === `emoji`){
     else if(args[0] == "neko") return message.channel.send("*Nya~* I'll bring up lewd and NSFW images of nekos.");
     else if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
     else if(args[0] == "dirtyquote") return message.channel.send("I'll say something lewd, sexual, and ultimately, erotic");
+    else if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
     //else if(args[0] == "") return message.channel.send("");
        
     let embed = {
@@ -898,7 +901,7 @@ if(command === `emoji`){
           "text": "You can type help on certain commands."
         },
         "thumbnail": {
-          "url": `http://www.clker.com/cliparts/a/a/5/9/1194994445711658913ark_help.svg.med.png` 
+          "url": `https://i.imgur.com/mJeWupe.png` 
         },
         //"image": {
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
@@ -924,7 +927,7 @@ if(command === `emoji`){
           },
           {
             "name": "Fun",
-            "value": "say, cat, catfact, dog, fox, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify, gaymeter"
+            "value": "say, cat, catfact, dog, fox, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext"
           },
           {
             "name": " :warning: NSFW",
