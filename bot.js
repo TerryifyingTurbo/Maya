@@ -85,25 +85,25 @@ const pepedab = bot.emojis.get("447856207928098847");
 }
 
 const pikagroove = bot.emojis.get("447856282049708053");
-if(message.content === "pikagroove"){
+  if(message.content === "pikagroove"){
   const pika = bot.emojis.find("name", "pikagroove");
   message.channel.send(`${pikagroove}`);
 }
 
 const heckingfastthink = bot.emojis.get("447856347493433374");
-if(message.content === "quickthink"){
+  if(message.content === "quickthink"){
   const think = bot.emojis.find("name", "heckingfastthink");
   message.channel.send(`${heckingfastthink}`);
 }
 
 const rainbowyeet = bot.emojis.get("447856449855553536");
-if(message.content === "yeet"){
+  if(message.content === "yeet"){
   const yeet = bot.emojis.find("name", "rainbowyeet");
   message.channel.send(`${rainbowyeet}`);
 }
 
 const animeahhhhh = bot.emojis.get("447856637525491712");
-if(message.content === "ahh"){
+  if(message.content === "ahh"){
   const ah = bot.emojis.find("name", "animeahhhhh");
   message.channel.send(`${animeahhhhh}`);
 }
@@ -331,7 +331,7 @@ if(command === `avatar`){
   let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 
   let embed = new Discord.RichEmbed() 
-  .setTitle(member + '\' avatar')
+  .setTitle(`${member}'s avatar`)
   .setColor("RANDOM")
 	.setImage(member.avatarURL);
   message.channel.send({embed})
