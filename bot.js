@@ -60,6 +60,54 @@ const redx = bot.emojis.get("444736917217476608");
   message.channel.send(`${redx}`);
 }
 
+const partyblob = bot.emojis.get("447855822811430912");
+  if(message.content === "partyblob"){
+  const blob = bot.emojis.find("name", "partyblob");
+  message.channel.send(`${partyblob}`);
+}
+
+const bmo = bot.emojis.get("447855890062770179");
+  if(message.content === "beemo"){
+  const beemo = bot.emojis.find("name", "bmo");
+  message.channel.send(`${bmo}`);
+}
+
+const snoop = bot.emojis.get("447855918827175936");
+  if(message.content === "snoop"){
+  const dogg = bot.emojis.find("name", "snoop");
+  message.channel.send(`${snoop}`);
+}
+
+const pepedab = bot.emojis.get("447856207928098847");
+  if(message.content === "pepedab"){
+  const dab = bot.emojis.find("name", "pepedab");
+  message.channel.send(`${pepedab}`);
+}
+
+const pikagroove = bot.emojis.get("447856282049708053");
+if(message.content === "pikagroove"){
+  const pika = bot.emojis.find("name", "pikagroove");
+  message.channel.send(`${pikagroove}`);
+}
+
+const heckingfastthink = bot.emojis.get("447856347493433374");
+if(message.content === "quickthink"){
+  const think = bot.emojis.find("name", "heckingfastthink");
+  message.channel.send(`${heckingfastthink}`);
+}
+
+const rainbowyeet = bot.emojis.get("447856449855553536");
+if(message.content === "yeet"){
+  const yeet = bot.emojis.find("name", "rainbowyeet");
+  message.channel.send(`${rainbowyeet}`);
+}
+
+const animeahhhhh = bot.emojis.get("447856637525491712");
+if(message.content === "ahh"){
+  const ah = bot.emojis.find("name", "animeahhhhh");
+  message.channel.send(`${animeahhhhh}`);
+}
+
 const reload = bot.emojis.get("444751183505260575");
   if(message.content === "aeztiareload"){
   const reload = bot.emojis.find("name", "reload");
@@ -70,6 +118,10 @@ const bweary = bot.emojis.get("444751259308916756");
   if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
   const reload = bot.emojis.find("name", "reload")
   message.reply(` ;;T`);
+}
+
+if(message.content === "420"){
+  message.channel.send(`${partyblob} ${bmo} ${partyblob} ${pepedab} ${snoop} ${pikagroove} ${heckingfastthink} ${rainbowyeet} ${rainbowyeet} ${animeahhhhh}`);
 }
   
   let prefix = botsettings.prefix;
@@ -305,7 +357,7 @@ if(command === `listemotes`){
   message.channel.send(`***Fetching emojis for ${message.guild.name}...***`).then(message => {
     setTimeout(() => {
     message.edit(`${emojiList}`)
-  }, cdseconds * 1500)
+  }, cdseconds * 2500)
 })}
 
 if(command === `cat`){
@@ -533,7 +585,7 @@ let zanembed = new Discord.RichEmbed()
   .setColor("#ac5846")
   .setFooter("Highly addictive", "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg")
   .setThumbnail("https://i.imgur.com/p99ZnBd.jpg")
-  .addField("Overview", "*placeholder; need to revise*", true)
+  .addField("Description", "*placeholder; need to revise*", true)
   .addField("Physical Appearance", "*The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but never no more than 3lbs [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 emit an appealing, strong sweet odor which can prove difficult to hide.*", true);
 
 let nbembed = new Discord.RichEmbed()
