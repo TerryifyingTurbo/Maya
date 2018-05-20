@@ -439,14 +439,7 @@ if(command === `neko`){
     .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
-if(command === `numberfacts`){
-  let facts = snekfetch.get("http://numbersapi.com/random/year" || "http://numbersapi.com/random/trivia" || "http://numbersapi.com/random/math" || "http://numbersapi.com/random/date");
-  let embed = new Discord.RichEmbed()
-  .setTitle("Big facts")
-  .addField(facts);
-  message.channel.send(embed);
 
-}
 if(command === `8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
     let replies = ["It is decidedly so",
