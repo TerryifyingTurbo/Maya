@@ -586,7 +586,7 @@ let zanembed = new Discord.RichEmbed()
   .setFooter("FICTIONAL DRUG", "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg")
   .setThumbnail("https://i.imgur.com/p99ZnBd.jpg")
   .addField("Generic Name", "*Zanizolam*", true)
-  .addField("**Route of Administration**", "*Consumption, Direct Inhalation*", true)
+  .addField("Route of Administration", "*Consumption, Direct Inhalation*", true)
   .addField("Chemical Formula", "*C19 H27 N20*", true)
   .addField("Drug Class", "*NMDA Receptor Antagonist | Dissociative Hallucinogen | Antidepressant | Arylcyclohexylamine*", true)
   .addField("Description", "*Bizid—most commonly known as Z-bar, Pure Ivory, and Clarity—is a synthetic drug made as an alternative to well-known hallucinogens such as Phencyclidine (PCP). The high demand and rising popularity of drug has not only made a peak of hospitalized emergency room cases and arrests, it has also reached headline news, leading to an immediate widespread of law enforcement action. Bizid is first produced and processed in solid form which can then be crushed into a powdery substance; however, there are other alternatives such as—in liquid form—being molded into one kilogram bars, taking the shape of stored containers or, if done properly, even stored into sweet goods; in fact, sweet goods have been noted to be a popular method of concealing and/or administering Bizid. Even so, the drug can emit ‘sweet’ odors similar to gummy candies which many may find appealing.*", true);
@@ -692,7 +692,7 @@ let rembed = new Discord.RichEmbed()
 }
 
 if(command === `dws`){
-    if(args[0] == "zanneker0") return message.channel.send(zanembed);
+    if(args[0] == "bizid") return message.channel.send(zanembed);
     else if(args[0] == "spacebar") return message.channel.send(spaceembed);
     else if(args[0] == "gtgalaxytruck") return message.channel.send(galeembed);
     else if(args[0] == "nautibuoy") return message.channel.send(nbembed);
@@ -704,6 +704,46 @@ if(command === `dws`){
     else if(args[0] == "roxuhn") return message.channel.send(rembed);
     message.channel.send(dwsembed);
 }
+
+if(command === `pagetest`){
+  let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages', 'All you need to do is add another item in the array']; 
+  let page = 1; 
+ 
+  const embed = new Discord.MessageEmbed() 
+    .setColor(0xffffff)
+    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setDescription(pages[page-1])
+ 
+  message.channel.send(embed).then(message => { 
+   
+    message.react('⏪').then( r => { 
+      message.react('⏩') 
+     
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id; 
+     
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 60000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 60000 }); 
+     
+      
+      backwards.on('collect', r => { 
+        if (page === 1) return; 
+        page--; 
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`); 
+        message.edit(embed) 
+      })
+     
+      forwards.on('collect', r => { 
+        if (page === pages.length) return; 
+        page++; 
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`); 
+        message.edit(embed) 
+      })
+   
+    })
+})};
  
 if(command === `emoji`){
   let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
