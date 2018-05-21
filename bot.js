@@ -581,12 +581,16 @@ let galeembed = new Discord.RichEmbed()
   " With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*", true);
 
 let zanembed = new Discord.RichEmbed()
-  .setTitle("Zanneker0")
+  .setTitle("Bizid")
   .setColor("#ac5846")
-  .setFooter("Highly addictive", "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg")
+  .setFooter("FICTIONAL DRUG", "http://drawi.ru/pic/fd17e6c702f7b2bb.jpeg")
   .setThumbnail("https://i.imgur.com/p99ZnBd.jpg")
-  .addField("Description", "*placeholder; need to revise*", true)
-  .addField("Physical Appearance", "*The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but never no more than 3lbs [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 emit an appealing, strong sweet odor which can prove difficult to hide.*", true);
+  .addField("Generic Name", "Zanizolam", true)
+  .addField("Route of Administration", "Consumption, Direct Inhalation", true)
+  .addField("Chemical Formula", "C19 H27 N20", true)
+  .addField("Drug Class", "*NMDA Receptor Antagonist | Dissociative Hallucinogen | Antidepressant | Arylcyclohexylamine*", true)
+  .addField("Description", "*Bizid—most commonly known as Z-bar, Pure Ivory, and Clarity—is a synthetic drug made as an alternative to well-known hallucinogens such as Phencyclidine (PCP). The high demand and rising popularity of drug has not only made a peak of hospitalized emergency room cases and arrests, it has also reached headline news, leading to an immediate widespread of law enforcement action. Bizid is first produced and processed in solid form which can then be crushed into a powdery substance; however, there are other alternatives such as—in liquid form—being molded into one kilogram bars, taking the shape of stored containers or, if done properly, even stored into sweet goods; in fact, sweet goods have been noted to be a popular method of concealing and/or administering Bizid. Even so, the drug can emit ‘sweet’ odors similar to gummy candies which many may find appealing.*", true);
+  //.addField("Physical Appearance", "*The appearance of Zanneker0 can vary as it’s usually found from being processed into 1kg bars to even being disguised as a sweet good. (Most popular: Candy) It can be applied in beverages or in food products, however, it is often found in gummy candies. The weight of Zanneker0 can vary but never no more than 3lbs [1.4kg]. Due to its relatively small mass, it is easily concealable, but even the smallest amount of heat can make Zanneker0 emit an appealing, strong sweet odor which can prove difficult to hide.*", true);
 
 let nbembed = new Discord.RichEmbed()
   .setTitle("Nauti Buoy")
@@ -679,6 +683,7 @@ let rembed = new Discord.RichEmbed()
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly used on all forms of life***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
+
 
 
 
