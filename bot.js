@@ -714,6 +714,7 @@ if(command === `pagetest`){
     .setColor(0xffffff)
     .setFooter(`Page ${page} of ${pages.length}`) 
     .setDescription(pages[page-1])
+    .addField(content[page-1, "."])
  
   message.channel.send(embed).then(message => { 
    
@@ -733,6 +734,7 @@ if(command === `pagetest`){
         content--; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
+        embed.addField(content[page-1, "."])
         message.edit(embed) 
       })
      
@@ -742,6 +744,7 @@ if(command === `pagetest`){
         content++; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
+        embed.addField(content[page-1, "."])
         message.edit(embed) 
       })
    
