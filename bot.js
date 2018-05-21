@@ -706,15 +706,13 @@ if(command === `dws`){
 }
 
 if(command === `pagetest`){
-  let pages = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5', 'pg6'];
-  let content = ['One upon a time...', 'In the land of Yes.', 'There was this man...', 'Who was named Travis', 'He was a legend, whose legacy is still followed...', 'Yeet lol you thought'];
+  let pages = ['One upon a time...', 'In the land of Yes.', 'There was this man...', 'Who was named Travis', 'He was a legend, whose legacy is still followed...', 'Yeet lol you thought'];
   let page = 1; 
  
   const embed = new Discord.RichEmbed() 
     .setColor(0xffffff)
     .setFooter(`Page ${page} of ${pages.length}`) 
     .setDescription(pages[page-1])
-    .addField(content[page-1, "."])
  
   message.channel.send(embed).then(message => { 
    
@@ -734,7 +732,6 @@ if(command === `pagetest`){
         content--; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        embed.addField(content[page-1, "."])
         message.edit(embed) 
       })
      
@@ -744,7 +741,6 @@ if(command === `pagetest`){
         content++; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        embed.addField(content[page-1, "."])
         message.edit(embed) 
       })
    
