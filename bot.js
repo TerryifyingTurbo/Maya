@@ -714,7 +714,7 @@ if(command === `pagetest`){
     .setColor(0xffffff)
     .setFooter(`Page ${page} of ${pages.length}`) 
     .setDescription(pages[page-1])
-    .addField(".", content[pages-1])
+    .addField(`${content[pages-1]}`)
  
   message.channel.send(embed).then(message => { 
    
