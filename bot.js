@@ -734,7 +734,7 @@ if(command === `pagetest`){
         content--; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        embed.addField(`${content[pages-1]}`);
+        embed.addField(`${content[page-1]}`);
         message.edit(embed) 
       })
      
@@ -744,7 +744,7 @@ if(command === `pagetest`){
         content++; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        embed.addField(`${content[pages-1]}`);
+        embed.addField(`${content[page-1]}`);
         message.edit(embed) 
       })
    
