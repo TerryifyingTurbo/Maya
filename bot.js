@@ -981,7 +981,7 @@ if(command === `emoji`){
     let embed = {
          "title": "Here x3",
         //"url": "https://discordapp.com",
-        "color": 12121300,
+        "color": 16673080,
         //"timestamp": "2018-04-21T01:28:06.959Z",
         "footer": {
           "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
