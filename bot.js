@@ -706,7 +706,7 @@ if(command === `dws`){
 }
 
 if(command === `pagetest`){
-  let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages', 'All you need to do is add another item in the array']; 
+  let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages', 'All you need to do is add another item in the array', 'Page test']; 
   let page = 1; 
  
   const embed = new Discord.RichEmbed() 
