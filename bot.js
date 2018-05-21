@@ -729,7 +729,6 @@ if(command === `pagetest`){
       backwards.on('collect', r => { 
         if (page === 1) return; 
         page--;
-        content--; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
         message.edit(embed) 
@@ -738,7 +737,6 @@ if(command === `pagetest`){
       forwards.on('collect', r => { 
         if (page === pages.length) return; 
         page++;
-        content++; 
         embed.setDescription(pages[page-1]); 
         embed.setFooter(`Page ${page} of ${pages.length}`)
         message.edit(embed) 
