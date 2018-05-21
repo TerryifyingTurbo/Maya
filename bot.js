@@ -719,8 +719,8 @@ if(command === `pagetest`){
     message.react('⏪').then( r => { 
       message.react('⏩') 
      
-      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
-      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id; 
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
      
       const backwards = message.createReactionCollector(backwardsFilter, { time: 60000 }); 
       const forwards = message.createReactionCollector(forwardsFilter, { time: 60000 }); 
