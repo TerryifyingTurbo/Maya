@@ -877,13 +877,11 @@ if(command === `emoji`){
   }
 
 if(command === `purge`){
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Looks like you first need the following: ADMINISTRATOR");
-  if(isNaN(args[0])) return message.channel.send('**I need valid amount of messages**');
-  if(!args) return message.channel.send("This ain't the movie kind of purge. This is to remove a certain amount of messages.");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${redx} Looks like you first need the following: ADMINISTRATOR`);
+  if(isNaN(args[0])) return message.channel.send('**This ain\'t the movie purge. This is to remove 0-100 messages**');
   if(args[0] > 100) return message.channel.send('**You can only remove a maximum of 100 messages**');
- await message.channel.bulkDelete(args[0])
-  message.channel.send(`**Removed \`${messages.size}/${args[0]}\` messages**`)
-      .catch(error => message.reply(`I couldn't delete the specified messages because of ***${error}***`));
+ await message.channel.bulkDelete(args[0]).then(messages => message.channel.send(`${greencheck} **Removed \`${messages.size}/${args[0]}\` messages**`))
+  .catch(error => message.reply(`${redx} ***${error}***`));
 }
 
 
