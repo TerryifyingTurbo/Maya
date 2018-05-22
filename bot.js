@@ -799,41 +799,40 @@ if(command === `emoji`){
 }
 
   if(command === `fortunecookie`){
-    let replies = ["Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.",
-    "Before you ask why someone hates you, ask yourself why you should care deeply.",
-    "The fears we don't face **become our limits**.",
-    "Obsessed is a word the lazy will use to describe the dedicated.",
-    "If it's still on your mind, it is **worth** taking the risk.",
-    "Apparently, when you treat people like they treat you, they get upset.",
-    "Don't ruin a good today by thinking about a bad yesterday. It may not be easy, but it is best to let it go.",
-    "Having a soft heart in a cruel world is absolute courage, not weakness.",
-    "We all have ability. The difference is **how** we use it.",
-    "Stop wait for the 'right time'. Time and tide wait for no one.",
-    "It's far more better to be completely exhausted from the hard times which breed success than being well-rested from achieving nothing.",
-    "They watch. They hate. Then they eventually copy.",
-    "Courage doesn't mean you don't get afraid. Courage means you **don't let fear stop you**.",
-    "If you really want it, you simply **don't just give up**.",
-    "People say 'I never see you at the club', I reply 'I never see you at the bank.'",
-    "'He who buys what he does not need steals from himself'",
-    "Keep your cool. Don't let little stupid things break your happiness.",
-    "The more informed you are, the less arrogant and aggressive you are —Nelson Mandela",
-    "If you try something, you risk failure. If you don't try it at all, **you ensure it**.",
-    "You can work hard, but if you don't work smart, you'll work for the rest of your life.",
-    "The best teachers are those who show you where to look, but don't tell you what to see.",
-    "Don't pray for an easy life. Pray for the strength to endure a difficult one. —Bruce Lee",
-    "Refuse to lower your standards to accommodate those who refuse to raise theirs.",
-    "If the plan doesn't work, change the plan **but never the goal**.",
-    "If you can't get somebody off your mind, they're probably supposed to be there.",
-    "Hurting someone can be as easy as throwing a stone in the sea. Do you have any idea how deep that stone can go?",
-    "If you hate a person, then you're defeated by them.",
-    "When anger rises, think of the consequences.",
-    "As long as you're making progress, it does not matter how fast or how slow it is.",
-    "Happiness is a choice. Life isn't about pleasing everybody.",
-    "Weakness is a choice. It's up to **you**.",
-    "Silence is definitely better than uncessary drama.",];
+    let replies = ["\"Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.\"",
+    "\"Before you ask why someone hates you, ask yourself why you should care deeply.\"",
+    "\"The fears we don't face become our limits.\"",
+    "\"Obsessed is a word the lazy will use to describe the dedicated.\"",
+    "\"If it's still on your mind, it is worth taking the risk.\"",
+    "\"Apparently, when you treat people like they treat you, they get upset.\"",
+    "\"Don't ruin a good today by thinking about a bad yesterday. It may not be easy, but it is best to let it go.\"",
+    "\"Having a soft heart in a cruel world is absolute courage, not weakness.\"",
+    "\"We all have ability. The difference is how we use it.\"",
+    "\"Stop wait for the 'right time'. Time and tide wait for no one.\"",
+    "\"It's far more better to be completely exhausted from the hard times which breed success than being well-rested from achieving nothing.\"",
+    "\"They watch. They hate. Then they eventually copy.\"",
+    "\"Courage doesn't mean you don't get afraid. Courage means you don't let fear stop you.\"",
+    "\"If you really want it, you simply don't just give up.\"",
+    "\"People say 'I never see you at the club', I reply 'I never see you at the bank.'\"",
+    "\"He who buys what he does not need steals from himself\"",
+    "\"Keep your cool. Don't let the little things break your happiness.\"",
+    "\"The more informed you are, the less arrogant and aggressive you are\" —Nelson Mandela",
+    "\"If you try something, you risk failure. If you don't try it at all, you ensure it.\"",
+    "\"You can work hard, but if you don't work smart, you'll work for the rest of your life.\"",
+    "\"The best teachers are those who show you where to look, but don't tell you what to see.\"",
+    "\"Don't pray for an easy life. Pray for the strength to endure a difficult one.\" —Bruce Lee",
+    "\"Refuse to lower your standards to accommodate those who refuse to raise theirs.\"",
+    "\"If the plan doesn't work, change the plan but never the goal.\"",
+    "\"If you can't get somebody off your mind, they're probably supposed to be there.\"",
+    "\"Hurting someone can be as easy as throwing a stone in the sea. Do you have any idea how deep that stone can go?\"",
+    "\"If you hate a person, then you're defeated by them.\"",
+    "\"When anger rises, think of the consequences.\"",
+    "\"As long as you're making progress, it does not matter how fast or how slow it is.\"",
+    "\"Happiness is a choice. Life isn't about pleasing everybody.\"",
+    "\"Weakness is a choice. It's up to you.\""];
 
     let result = Math.floor((Math.random() * replies.length))
-    message.channel.send(replies[result]);
+    message.channel.send(`*${replies[result]}*`);
   }
   if(command === `ban`){
 
@@ -877,24 +876,15 @@ if(command === `emoji`){
     message.channel.send(serverembed);
   }
 
-  if(command === `purge`){
-    // This command removes all messages from all users in the channel, up to 100.
-    
-    // get the delete count, as an actual number.
-    const deleteCount = parseInt(args[0], 10);
-    
-    // Ooooh nice, combined conditions. <3
-    if(!message.member.hasPermission("ADMINISTRATOR"))
-    return message.channel.send("**No.** You need the following: ADMINISTRATOR");
-    
-    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("What do you think this is, the movie? No, purge 2 or more messages.");
-    
-    // So we get our messages, and delete them. Simple enough, right?
-    const fetched = await message.channel.fetchMessages({count: deleteCount});
-    message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of ***${error}***`));
-  }
+if(command === `purge`){
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Looks like you first need the following: ADMINISTRATOR");
+  if(isNaN(args[0])) return message.channel.send('**I need valid amount of messages**');
+  if(!args) return message.channel.send("This ain't the movie kind of purge. This is to remove a certain amount of messages.");
+  if(args[0] > 100) return message.channel.send('**You can only remove a maximum of 100 messages**');
+ await message.channel.bulkDelete(args[0])
+  message.channel.send(`**Removed \`${messages.size}/${args[0]}\` messages**`)
+      .catch(error => message.reply(`I couldn't delete the specified messages because of ***${error}***`));
+}
 
 
   if(command === `botinfo`){
