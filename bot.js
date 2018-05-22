@@ -590,7 +590,7 @@ let dwsembed = new Discord.RichEmbed()
   .addField("Intro", "Just some random shit to view any of my characters, lore n' shit", true)
   .addField("Characters", "Travis Rilynar, Marlowe Rilynar, Aeztia, Pamaer, Ruben Ferrant, Jejus, Lyian Sato, Yannis Seifer, Roxuhn", true)
   .addField("Vehicles", "GT-GalaxyTruck, Gargoyle, Wildcat, CK, Nauti Buoy", true)
-  .addField("Items", "Zanneker0, Left Hand of Jejus, Graveyard Grumble", true)
+  .addField("Items", "Bizid, Left Hand of Jejus, Graveyard Grumble", true)
   .addField("Journal n' Documentation", "\"Tyrexia?\" (#1), \"That kid, Vortex?\", \"The Axe Murderer\", Note #4, 'Termination Order'", true)
   .addField("Misc n' Shit", "Entity#, Dark Areas, SpaceBar, Decommissioned Bunker", true);
 
