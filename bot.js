@@ -422,48 +422,48 @@ if(command === `clapify`){
   message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
 
-if(command === `succ`){
-  if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+// if(command === `succ`){
+//   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
 
-  const sayMessage = args.join(" ");
-  let Ureplies = ["loved it", "enjoyed it", "hate it", "want more", "want it from someone else instead", "liked it", "secretly like it", "want a break from it"];
-  let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
-  let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
-  let Posreplies = ["gets on their knees", "moves a strand of hair aside", "licks their own lips", "huffs", "gives a sly smile", "pouts", "makes a low groan"];
-  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
-  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
-  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
-  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
-  if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
-  message.channel.send(`***${message.member.displayName}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
+//   const sayMessage = args.join(" ");
+//   let Ureplies = ["loved it", "enjoyed it", "hate it", "want more", "want it from someone else instead", "liked it", "secretly like it", "want a break from it"];
+//   let Treplies = ["an hour later", "a couple of minutes later", "after a really long time", "for about half an hour", "after a while", "a moment after"];
+//   let Preplies = ["the best", "the sloppiest", "the mad", "a decent", "an aight'", "the shittiest", "the vacuum seal", "one helluva", "the most painful", "the 'gawk-gawk' combo", "the no-hand", "the double-hand twist"];
+//   let Posreplies = ["gets on their knees", "moves a strand of hair aside", "licks their own lips", "huffs", "gives a sly smile", "pouts", "makes a low groan"];
+//   let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+//   let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+//   let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+//   let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options
+//   if(!sayMessage) return message.channel.send("You sucking the air? Go give something *or someone*  the succ")
+//   message.channel.send(`***${message.member.displayName}***` + ` *${Posreplies[Posresult]} and puts that mouth of theirs to better use by giving* `+ `*${sayMessage}*` + ` ***${Preplies[Presult]} succ***` + ` *${Treplies[Tresult]}.*` + " *They seem to have*" + ` ***${Ureplies[Uresult]}***`);
 
-}
+// }
 
-if(command === `fucc`){
-  if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  const sayMessage = args.join(" ");
-  let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
-  let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
-  let Preplies = [`stifled moans could be heard from ${sayMessage}`, 
-                  `lusty panting escaped from ${sayMessage}'s mouth`, 
-                  `${sayMessage} grits their teeth and their hands knotted into fists as they got ruthlessly pounded`, 
-                  `${sayMessage} teared of pleasuring pain`, `shameless moans were forced out of ${sayMessage}`, 
-                  `${sayMessage} couldn't even pretend that they didn't like it`, ];
-  let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.member.displayName}***`, 
-                    `***${sayMessage}*** *goes on all fours for* ***${message.member.displayName}***`,
-                    `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.member.displayName}***`,
-                    ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.member.displayName}***`,
-                    `***${message.member.displayName}*** *gets aggressive and pins down* ***${sayMessage},*** *taking complete control over them*`,
-                    `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`,
-                    `***${sayMessage}*** *agrees to join in on some Monopoly with* ***${message.member.displayName}***—`,
-                    `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}***`];
- let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
- let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
- let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
- let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options                
- if(!sayMessage) return message.channel.send(`${message.member.displayName} must've went to go fuck themselves or something since they didn't say who otherwise`);
-  message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
-}
+// if(command === `fucc`){
+//   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+//   const sayMessage = args.join(" ");
+//   let Ureplies = ["loved it", "enjoyed it", "hate it", "didn't like it" ,"wanted more", "needed more" ,"liked it", "secretly liked it", "want a break from it for now", "are exhausted and relieved"];
+//   let Treplies = ["an exhausting hour later", "a really long time", "half an hour later", "a while", "a moment later", "quite a while"];
+//   let Preplies = [`stifled moans could be heard from ${sayMessage}`, 
+//                   `lusty panting escaped from ${sayMessage}'s mouth`, 
+//                   `${sayMessage} grits their teeth and their hands knotted into fists as they got ruthlessly pounded`, 
+//                   `${sayMessage} teared of pleasuring pain`, `shameless moans were forced out of ${sayMessage}`, 
+//                   `${sayMessage} couldn't even pretend that they didn't like it`, ];
+//   let Posreplies = [`***${sayMessage}*** *bends over for* ***${message.member.displayName}***`, 
+//                     `***${sayMessage}*** *goes on all fours for* ***${message.member.displayName}***`,
+//                     `***${sayMessage}*** *angles those hips of theirs up and spreads their legs far and wide for* ***${message.member.displayName}***`,
+//                     ` *Face down, ass up!* ***${sayMessage}'s behind*** *is claimed by* ***${message.member.displayName}***`,
+//                     `***${message.member.displayName}*** *gets aggressive and pins down* ***${sayMessage},*** *taking complete control over them*`,
+//                     `***${message.member.displayName}*** *is quite kinky and teases* ***${sayMessage}*** *with foreplay*`,
+//                     `***${sayMessage}*** *agrees to join in on some Monopoly with* ***${message.member.displayName}***—`,
+//                     `*Seemingly eager to do it,* ***${sayMessage}*** *offers themselves to ***${message.member.displayName}***`];
+//  let Uresult = Math.floor((Math.random() * Ureplies.length)); //for the reply options
+//  let Tresult = Math.floor((Math.random() * Treplies.length)); //for the time options
+//  let Presult = Math.floor((Math.random() * Preplies.length)); //for the power options
+//  let Posresult = Math.floor((Math.random() * Posreplies.length)); //for the position options                
+//  if(!sayMessage) return message.channel.send(`${message.member.displayName} must've went to go fuck themselves or something since they didn't say who otherwise`);
+//   message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
+// }
 
 if(command === `smut`){
   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
