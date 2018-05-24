@@ -905,7 +905,7 @@ if(command === `purge`){
       "author": {
         "name": "Made by Bwapstustu Turbo#5600",
         //"url": "https://discordapp.com",
-        //"icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+        "icon_url": "https://cdn.discordapp.com/avatars/297931837400023041/6fc9d991ec25a82ca4633aaaba38073e.png?size=2048"
       },
       "fields": [
         {
