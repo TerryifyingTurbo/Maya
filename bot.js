@@ -119,10 +119,6 @@ const bweary = bot.emojis.get("444751259308916756");
   const reload = bot.emojis.find("name", "reload")
   message.reply(` ;;T`);
 }
-
-if(message.content === "420"){
-  message.channel.send(`${partyblob} ${bmo} ${partyblob} ${pepedab} ${snoop} ${pikagroove} ${heckingfastthink} ${rainbowyeet} ${rainbowyeet} ${animeahhhhh}`);
-}
   
   let prefix = botsettings.prefix;
    if(!message.content.startsWith(`${prefix}`)) return;
@@ -288,15 +284,24 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 }
 
 if(command === `rolldice`){
-  let dice = Math.floor(Math.random() * 5 + 1);
+  let dice = Math.floor(Math.random() * 6 + 1);
   message.channel.send("You rolled a :game_die:" + ` ${dice}`);
 }
 
 if(command === `gaymeter`){
-  let metre = Math.floor(Math.random() * 99 + 1);
+  let metre = Math.floor(Math.random() * 100 + 1);
   let thing = args.join(" ");
-  if(!thing) return message.channel.send(`Since you didn't choose anything or anyone, I'd say you're about **${metre}%** gay.`)
+  if(!thing) return message.channel.send(`I'd say you're about **${metre}%** gay.`)
   message.channel.send(`${thing}? I'd say about **${metre}%** gay.`)
+  if(metre <= 10) return message.channel.send("Eh, not really gay to begin with.");
+  if(metre <= 20) return message.channel.send("Still not *that* gay");
+  if(metre <= 30) return message.channel.send("The gay is *barely* showing up");
+  if(metre <= 40) return message.channel.send("You could almost see the gay within them");
+  if(metre <= 50) return message.channel.send("Only half gay. Sounds about right.");
+  if(metre <= 60) return message.channel.send("Concerned gay level");
+  if(metre <= 70) return message.channel.send("Heck, no doubt about being gay for sure");
+  if(metre <= 80) return message.channel.send("Gawddamn, definitely gay");
+  if(metre >= 90) return message.channel.send("Now that's pretty fucking gay");
 }
 
 if(command === `urban`){
@@ -574,7 +579,7 @@ if(command === `8ball`){
 if(command === `pick`){
     let opt = message.content.slice(7).trim().split(',');
     let result = Math.floor((Math.random() * opt.length));
-    if(opt.length < 2) return message.channel.send("I need two options to decide. Commas split choices.");
+    if(opt.length < 2) return message.channel.send("I need two options to decide. Commas used will split choices.");
     message.channel.send(`I pick... **${opt[result]}**`);
   }
 
@@ -799,7 +804,7 @@ if(command === `emoji`){
     message.channel.send(replies[result]);
 }
 
-  if(command === `fortunecookie`){
+  if(command === `fortune`){
     let replies = ["\"Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.\"",
     "\"Before you ask why someone hates you, ask yourself why you should care deeply.\"",
     "\"The fears we don't face become our limits.\"",
@@ -943,7 +948,7 @@ if(command === `purge`){
   if(command === `help`){
     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
     else if(args[0] == "pick") return message.channel.send(`Out of the choices you supply me, I will pick only **one.** | Usage: !?pick <options> <options> | All commas used **will split choices**.`);
-    else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is. *Response is the time taken to send \"pong\". API Response is the time taken for the Discord websocket to connect to the bot.*");   
+    else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");   
     else if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
     else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
     else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
@@ -951,8 +956,9 @@ if(command === `purge`){
     else if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <option>");
     else if(args[0] == "neko") return message.channel.send("*Nya~* I'll bring up lewd and NSFW images of nekos.");
     else if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
-    else if(args[0] == "dirtyquote") return message.channel.send("I'll say something lewd, sexual, and ultimately, erotic");
+    else if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
     else if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
+    else if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
     //else if(args[0] == "") return message.channel.send("");
        
     let embed = {
@@ -983,7 +989,7 @@ if(command === `purge`){
           },
           {
             "name": " :question: Random",
-            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar, urban, pick"
+            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar, urban, pick, fortune"
           },
           {
             "name": " :wrench: Moderation",
@@ -991,7 +997,7 @@ if(command === `purge`){
           },
           {
             "name": `Fun ${pikagroove}`,
-            "value": "say, cat, catfact, dog, fox, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext"
+            "value": "say, cat, catfact, dog, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext"
           },
           {
             "name": " :warning: NSFW",
