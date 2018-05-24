@@ -989,20 +989,20 @@ if(command === `purge`){
         },
         "fields": [
           {
-            "name": "Developer",
+            "name": `Developer ${beemo}`,
             "value": "shutoff, reload, eval, listenp, watchp, gamep, setavat, leave, invite, status, ram",
             "inline": true
           },
           {
-            "name": "Random",
+            "name": " :question: Random",
             "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar, urban, pick"
           },
           {
-            "name": "Moderation",
+            "name": " :wrench: Moderation",
             "value": "purge, kick, ban, giverole, removerole"
           },
           {
-            "name": "Fun",
+            "name": `Fun ${pikagroove}`,
             "value": "say, cat, catfact, dog, fox, 8ball, fortunecookie, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext"
           },
           {
