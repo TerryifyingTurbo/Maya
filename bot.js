@@ -252,8 +252,8 @@ if(command === `ping`){
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
     m.edit(`:ping_pong: ***Pong!***  x3 
-Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}ms.** 
-API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
+Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}ms.**`); 
+// API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `leave`){
@@ -266,9 +266,9 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
     message.guild.leave();
   }
 
-  if(command === `ramcheck`){
+  if(command === `ram`){
     if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
-    message.channel.send(`*I am running with...* ***${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB***`);
+    message.channel.send(`NODE JS v11.30 ${bot.user.username}#${bot.user.discriminator} RAM Current Usage | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**`);
   }
 
   if(command === `flipcoin`){
