@@ -989,7 +989,7 @@ if(command === `purge`){
         },
         "fields": [
           {
-            "name": `Developer ${beemo}`,
+            "name": `Developer ${bmo}`,
             "value": "shutoff, reload, eval, listenp, watchp, gamep, setavat, leave, invite, status, ram",
             "inline": true
           },
