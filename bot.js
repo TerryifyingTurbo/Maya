@@ -867,9 +867,10 @@ if(command === `emoji`){
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription(message.guild.name)
+    .setAuthor(`Owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, message.guild.owner.user.displayAvatarURL)
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+    //.addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
     .addField("Made on", message.guild.createdAt, true)
     .addField("You joined", message.member.joinedAt, true)
     .addField("Total Members", message.guild.memberCount, true);
@@ -937,19 +938,6 @@ if(command === `purge`){
       ]
     };
     message.channel.send({ embed });
-  
-    // let bicon = bot.user.displayAvatarURL;
-    // let botembed = new Discord.RichEmbed()
-
-    // .setDescription("My info x3")
-    // .setColor("#15f153")
-    // .setThumbnail(bicon)
-    // .setAuthor("Made by", "Bwapstustu Turbo#5600")
-    // .addField("I am", bot.user.username, bot.user.discriminator)
-    // .addField("Made on", bot.user.createdAt)
-    // .addField("Total Commands", "24");
-
-    //return message.channel.send(botembed);
   }
   
   if(command === `help`){
