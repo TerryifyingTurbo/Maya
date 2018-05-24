@@ -294,13 +294,13 @@ if(command === `gaymeter`){
   if(!thing) return message.channel.send(`I'd say you're about **${metre}%** gay.`)
   message.channel.send(`${thing}? I'd say about **${metre}%** gay.`)
   if(metre <= 10) return message.channel.send("Eh, not really gay to begin with.");
-  if(metre >= 20) return message.channel.send("Still not *that* gay");
-  if(metre >= 30) return message.channel.send("The gay is *barely* showing up");
-  if(metre >= 40) return message.channel.send("You could almost see the gay within them");
-  if(metre >= 50) return message.channel.send("Only half gay. Sounds about right.");
-  if(metre >= 60) return message.channel.send("Concerned gay level");
-  if(metre >= 70) return message.channel.send("Heck, no doubt about being gay for sure");
-  if(metre >= 80) return message.channel.send("Gawddamn, definitely gay");
+  if(metre <= 20) return message.channel.send("Still not *that* gay");
+  if(metre <= 30) return message.channel.send("The gay is *barely* showing up");
+  if(metre <= 40) return message.channel.send("You could almost see the gay within them");
+  if(metre <= 50) return message.channel.send("Only half gay. Sounds about right.");
+  if(metre <= 60) return message.channel.send("Concerned gay level");
+  if(metre <= 70) return message.channel.send("Heck, no doubt about being gay for sure");
+  if(metre <= 80) return message.channel.send("Gawddamn, definitely gay");
   if(metre >= 90) return message.channel.send("Now that's pretty fucking gay");
 }
 
