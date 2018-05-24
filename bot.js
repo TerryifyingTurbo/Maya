@@ -268,9 +268,7 @@ API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
 
   if(command === `ram`){
     if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
-    message.channel.send(
-      `:floppy_disk: Node JS RAM: **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**
-       with :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
+    message.channel.send(`Node JS v11.30 ${bot.user.username}#${bot.user.discriminator}'s RAM: **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**`);
   }
 
   if(command === `flipcoin`){
