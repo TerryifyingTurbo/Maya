@@ -355,6 +355,64 @@ if(command === `fliptext`){
   );
 }
 
+if(command === `rps`){
+var choice = args[0];
+  if (choice == "paper" || choice == "p") {
+    var numb = Math.floor(Math.random() * 100);
+    if (numb <= 50) {
+      var choice2 = "paper";
+    } else if (numb > 50) {
+      var choice2 = "rock";
+    } else {
+      var choice2 = "scissors";
+    }
+    if (choice2 == "scissors") {
+      var response = "**Scissors**! :v: Haha, I win!"
+    } else if (choice2 == "paper") {
+      var response = "**Paper**! :hand_splayed: It's a tie :o"
+    } else {
+      var response = "**Rock**. :punch: You win."
+    }
+    message.channel.send(response);
+  } else if (choice == "rock" || choice == "r") {
+    var numb = Math.floor(Math.random() * 100);
+    if (numb <= 50) {
+      var choice2 = "paper";
+    } else if (numb > 50) {
+      var choice2 = "rock";
+    } else {
+      var choice2 = "scissors";
+    }
+    if (choice2 == "paper") {
+      var response = "**Paper**! :hand_splayed: Haha, I win!"
+    } else if (choice2 == "rock") {
+      var response = "**Rock**! :punch: It's a tie :o"
+    } else {
+      var response = "**Scissors**. :v: You win."
+    }
+    message.channel.send(response);
+  } else if (choice == "scissors" || choice == "s") {
+    var numb = Math.floor(Math.random() * 100);
+    if (numb <= 50) {
+      var choice2 = "paper";
+    } else if (numb > 50) {
+      var choice2 = "rock";
+    } else {
+      var choice2 = "scissors";
+    }
+    if (choice2 == "rock") {
+      var response = "**Paper**. :hand_splayed: You win."
+    } else if (choice2 == "scissors") {
+      var response = "**Scissors**! :v: It's a tie :o"
+    } else {
+      var response = "**Rock**! :punch: Haha, I win!"
+    }
+    message.channel.send(response);
+  } else {
+    message.channel.send(`\`${prefix}rps\` <rock|paper|scissors>`);
+  }
+}
+
 
 if(command === `listemotes`){
   if(message.guild.emojis.size === 0) return message.channel.send("There aren't any emojis here.");
@@ -959,6 +1017,7 @@ if(command === `purge`){
     else if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
     else if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
     else if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
+    else if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>")
     //else if(args[0] == "") return message.channel.send("");
        
     let embed = {
@@ -997,7 +1056,7 @@ if(command === `purge`){
           },
           {
             "name": `Fun ${pikagroove}`,
-            "value": "say, cat, catfact, dog, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext"
+            "value": "say, cat, catfact, dog, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext, rps"
           },
           {
             "name": " :warning: NSFW",
