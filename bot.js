@@ -409,7 +409,7 @@ var choice = args[0];
     }
     message.channel.send(response);
   } else {
-    message.channel.send(`\`${prefix}rps\` <rock|paper|scissors>`);
+    message.channel.send(`Can't play rps if you don't even say what you declare first`);
   }
 }
 
