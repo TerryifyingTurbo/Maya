@@ -168,6 +168,21 @@ if(command === `reload`){
 });
   }
 
+if(command === `eval`){
+  if(message.author.id !== "297931837400023041") return message.channel.send("You ain't the creator!");
+  try {
+    const code = args.join(" ");
+    let evaled = eval(code);
+
+    // if (typeof evaled !== "string")
+    //   evaled = require("util").inspect(evaled);
+
+    message.channel.send(clean(evaled), {code:"xl"});
+  } catch (err) {
+    message.channel.send(`\`${redx} ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+  }
+}
+
   if(command === `invite`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
@@ -207,24 +222,25 @@ if(command === `reload`){
     let User = message.mentions.users.first()
     if(!User) return message.reply("You think this is soccer? ***Who do I kick***");
     let Reason = args.slice(1).join(" ");
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**NO.** You don't have the ability to delete messages");
-    //if(User.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Not allowed to kick the ones who have the ability to delete messages");
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("**NO.** You don't have the ability to kick members");
+    if(User.hasPermission("KICK_MEMBERS")) return message.channel.send("I can't kick members who have the ability to kick as well.");
+    if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return message.channel.send("I need the following to perform this command: KICK_MEMBERS");
 
-    let kickEmbed = new Discord.RichEmbed()
-    .setTitle("Yeet! Out you go...")
-    .setDescription("Kick")
-    .setColor("#e56b00")
-    .addField("Kicked User", `${User} with ID ${User.id}`)
-    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", `${Reason}`);
+    // let kickEmbed = new Discord.RichEmbed()
+    // .setTitle("Yeet! Out you go...")
+    // .setDescription("Kick")
+    // .setColor("#e56b00")
+    // .addField("Kicked User", `${User} with ID ${User.id}`)
+    // .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+    // .addField("Kicked In", message.channel)
+    // .addField("Time", message.createdAt)
+    // .addField("Reason", `${Reason}`);
 
     //let kickChannel = message.guild.channels.find(`name`, "incidents");
     //if(!kickChannel) return message.channel.send("Can't find incidents channel.");
 
-    User.kick(Reason);
-    message.channel.send(kickEmbed);
+    await User.kick(Reason);
+    message.channel.send(`Alright, ${member.user.username} is outta' here.`).catch(console.error);
   }
 
   if(command === `giverole`){
@@ -528,7 +544,7 @@ if(command === `clapify`){
 // }
 
 if(command === `smut` && args[0] == "tradechristmasspecial"){
-if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+ if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let pages = [
   //one
   `*Written by an awesome person:* <@362472426258300928>`,
@@ -539,7 +555,7 @@ if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only
   "Hurry for what?" he asked himself as he climbed out of bed. After pulling on his boxers he went downstairs and walked into the kitchen to brew some coffee.
   "uh-uh, living room, now." Jade demanded.
   Travis rolled his eyes, "For what damnit." He headed into the living room only to see jade naked with red ribbons wrapped around her body covering her body.*`,
-//three
+  //three
   `*Travis' jaw dropped, "holy..."
   "what are you going to do, sit there and gawk or come open your present?" she sat on her knees in front of the Christmas tree.
   "Wh- Jade- I..." he smiled and slowly walked over. "but uh, I like to open my presents sitting."
@@ -549,7 +565,7 @@ if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only
   "Well, I love it.' he said putting the tips of his fingers onto her leg, messing with one of the ribbons.
   "how can you love it if you haven't used it yet?" she teased. He smiled.
   "Okay, let me open it then" he replied in a seducing matter. He reached one of his hands up to the ribbon bow that held Jade's breast. He loosened it and pulled the ribbon apart.*`, 
-//four
+  //four
   `*He watched her breast bounce as they were released from the ribbons, " Don't drool too much" Jade laughed.
   He reached over and began groping her left tit, " no matter how many times I see them I still love them."
   She smiled, "I know you do," she smirks, "But I know what you love more". She rocked her hips around in his lap.
@@ -565,7 +581,7 @@ if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only
   //six
   `*After a bit of this, he put his hand on the center of her back, pushing her down into a bent position. He stood himself up, forcing himself in and out of her. Her small cove barely able to take it. He gave her ass a few smacks, making her pussy tense around his cock, the pleasure overtook her as she let out a huge moan, letting her orgasm shake her, but Travis wasn't finished. He kept pounding into her, soon he would cum. Now they had done this enough to know he shouldn't come in her, so before he got to his last straw he pulled out, cumming all over her ass. Then he sat back down.
   "Alright, go get cleaned up before everyone shows up." he let out a deep breath and leaned his head back, Jade still leaned over breathing heavily.*`,
-//seven
+  //seven
   `*The End*
   !?smut <story> for other lemon stuff :lemon: *you nasty*`];
   let page = 1; 
@@ -608,7 +624,7 @@ if(command === `smut`){
   .setTitle("Lemon-Scented Smut")
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
-  .setFooter("!?smut<specifc selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
+  .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
   .addField("The Holy List of Story Sins", "*Trade Christmas Special, placeholder story (yes await until added)*", true);
   message.channel.send(smutembed);
 }
