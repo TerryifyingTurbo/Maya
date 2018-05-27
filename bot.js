@@ -552,7 +552,8 @@ if(command === `hentai`){
   .setTitle("Hentai is an art.")
   .setColor("RANDOM")
   .setImage(url);
-  message.channel.send(hentaiemd);
+  message.channel.send(hentaiemd)
+  .catch(error => message.reply(`${redx} ***${error}***`));
 }
 
 if(command === `dirtyquote`){
