@@ -547,7 +547,7 @@ if(command === `hentai`){
     .setImage(body.neko);
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   if(args[0] == "neko") return message.channel.send(nekoEmbed);
-  snekfetch.get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
+  let url = snekfetch.get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
   console.log(url)
   let hentaiemd = new Discord.RichEmbed()
   .setTitle("Hentai is an art.")
