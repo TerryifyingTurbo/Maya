@@ -188,7 +188,6 @@ if(command === "jsdocs"){
   .setAuthor("Discord.js Documentation", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png", "https://discord.js.org/#/")
   .setColor("#de1b24")
   .setDescription("Be aware of API updates, some methods may be deprecated in future updates.")
-  .setTimestamp(`${message.createdTimestamp}ms`)
   .addField(".", "https://discord.js.org/#/", true);
   message.channel.send(docembed);
 }
