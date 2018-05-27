@@ -539,9 +539,8 @@ if(command === `smut`){
 }
 
 if(command === `hentai`){
-  let nsfw = [`https://nekos.life/api/lewd/neko`, `https://nekos.life/api/v2/img/Random_hentai_gif`]
   let {body} = await superagent
-  .get(nsfw);
+  .get(`https://nekos.life/api/lewd/neko` || `https://nekos.life/api/v2/img/Random_hentai_gif`);
   let nekoEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle("Nya~")
