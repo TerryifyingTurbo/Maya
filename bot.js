@@ -533,29 +533,29 @@ if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only
   //one
   `*Written by an awesome person:* <@362472426258300928>`,
   //two
-  `*"TRAAAAVIIIIIIIIS" Jade called from downstairs, it has been several months since the incident at the bar. Jade moved in with Travis since that night and they've had some fun, but this morning was special, it was Christmas. 
-  "Wh-Huh?" Travis questioned, waking up from his slumber, he reached over to hug jade and cuddle close but all he could feel was a warm space where her body should be and the covers. He sighed, " JAAAADDE, come back here it's too early, anyway, The squad will be over soon for dinner and gifts.
-   "Then we better hurry" Jade called to him. 
-  "Hurry for what?" he asked himself as he climbed out of bed. After pulling on his boxers he went downstairs and walked into the kitchen to brew some coffee.  
-  "uh-uh, living room, now." Jade demanded. 
-  Travis rolled his eyes, " For what damnit." He headed into the living room only to see jade naked with red ribbons wrapped around her body covering her body.*`,
+  `*"TRAAAAVIIIIIIIIS" Jade called from downstairs, it has been several months since the incident at the bar. Jade moved in with Travis since that night and they've had some fun, but this morning was special, it was Christmas.
+  "Wh-Huh?" Travis questioned, waking up from his slumber, he reached over to hug jade and cuddle close but all he could feel was a warm space where her body should be and the covers. He sighed, "JAAAADDE, come back here it's too early, anyway, The squad will be over soon for dinner and gifts.
+  "Then we better hurry" Jade called to him.
+  "Hurry for what?" he asked himself as he climbed out of bed. After pulling on his boxers he went downstairs and walked into the kitchen to brew some coffee.
+  "uh-uh, living room, now." Jade demanded.
+  Travis rolled his eyes, "For what damnit." He headed into the living room only to see jade naked with red ribbons wrapped around her body covering her body.*`,
 //three
-  `*Travis' jaw dropped, "holy..." 
-  "what are you going to do, sit there and gawk or come open your present?" she sat on her knees in front of the Christmas tree. 
-  "Wh- Jade- I..." he smiled and slowly walked over. " but uh, I like to open my presents sitting."
-  jade smirked and stood, walking over to a recliner, " then come sit" 
+  `*Travis' jaw dropped, "holy..."
+  "what are you going to do, sit there and gawk or come open your present?" she sat on her knees in front of the Christmas tree.
+  "Wh- Jade- I..." he smiled and slowly walked over. "but uh, I like to open my presents sitting."
+  jade smirked and stood, walking over to a recliner, " then come sit"
   Travis wasted no time, he walked over and sat down.
   "This one is from me" she sat on his lap sideways.
-  "Well, I love it.' he said putting the tips of his fingers onto her leg, messing with one of the ribbons. 
+  "Well, I love it.' he said putting the tips of his fingers onto her leg, messing with one of the ribbons.
   "how can you love it if you haven't used it yet?" she teased. He smiled.
   "Okay, let me open it then" he replied in a seducing matter. He reached one of his hands up to the ribbon bow that held Jade's breast. He loosened it and pulled the ribbon apart.*`, 
 //four
-  `*He watched her breast bounce as they were released from the ribbons, " Don't drool too much" Jade laughed. 
-  He reached over and began groping her left tit, " no matter how many times I see them I still love them." 
-  She smiled, "I know you do," she smirks, "But I know what you love more". She rocked her hips around in his lap. 
-  "mhm.." he agreed. 
+  `*He watched her breast bounce as they were released from the ribbons, " Don't drool too much" Jade laughed.
+  He reached over and began groping her left tit, " no matter how many times I see them I still love them."
+  She smiled, "I know you do," she smirks, "But I know what you love more". She rocked her hips around in his lap.
+  "mhm.." he agreed.
   She turned to face away from him, swaying her hips and grinding her butt against his growing cock, "I think it wants to come out to play~" she teased, then she turned around and played with the waistband of his boxers.
-  "Then we better let him out, " he slid off his boxers, releasing his six-inch. 
+  "Then we better let him out, " he slid off his boxers, releasing his six-inch.
   she turned back around, grinding her ass against his cock some more, Travis grabbing her hips. He took more control as time passed.*`,
   //five 
   `*"I'm going in" he spoke with dominance, something Jade loved. She nodded.
