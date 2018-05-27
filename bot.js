@@ -539,20 +539,20 @@ if(command === `smut`){
 }
 
 if(command === `hentai`){
-  let {body} = await superagent
-  .get(`https://nekos.life/api/lewd/neko` || `https://nekos.life/api/v2/img/Random_hentai_gif`);
+  let {body} = await superagent.get(`https://nekos.life/api/lewd/neko` || `https://nekos.life/api/v2/img/Random_hentai_gif`);
   let nekoEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle("Nya~")
     .setImage(body.neko);
+
+  let hentaiemd = new Discord.RichEmbed()
+    .setColor("#ff9900")
+    .setTitle("Hentai is an art, after all.")
+    .setImage(body.url);
   
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   if(args[0] == "neko") return message.channel.send(nekoEmbed);
   
-  let hentaiemd = new Discord.RichEmbed()
-  .setTitle("Hentai is an art.")
-  .setColor("RANDOM")
-  .setImage(body.url);
   message.channel.send(hentaiemd)
   .catch(error => message.reply(`${redx} ${error}`));
 }
