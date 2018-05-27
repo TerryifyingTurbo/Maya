@@ -538,7 +538,7 @@ if(command === `smut`){
   message.channel.send(smutembed);
 }
 
-if(command === `hentai`){{
+if(command === `hentai`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
   if(args[0] == "neko")
