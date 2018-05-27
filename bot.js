@@ -531,7 +531,7 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
 if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let pages = [
   //one
-  `*Written by an awesome person:* <@362472426258300928>`
+  `*Written by an awesome person:* <@362472426258300928>`,
   //two
   `*"TRAAAAVIIIIIIIIS" Jade called from downstairs, it has been several months since the incident at the bar. Jade moved in with Travis since that night and they've had some fun, but this morning was special, it was Christmas. 
   "Wh-Huh?" Travis questioned, waking up from his slumber, he reached over to hug jade and cuddle close but all he could feel was a warm space where her body should be and the covers. He sighed, " JAAAADDE, come back here it's too early, anyway, The squad will be over soon for dinner and gifts.
