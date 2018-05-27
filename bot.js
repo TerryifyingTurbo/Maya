@@ -183,6 +183,16 @@ if(command === `eval`){
   }
 }
 
+if(command === "jsdocs"){
+  let docembed = new Discord.RichEmbed()
+  .setAuthor("Discord.js Documentation", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png", "https://discord.js.org/#/")
+  .setColor("#de1b24")
+  .setDescription("Be aware of API updates, some methods may be deprecated in future updates.")
+  .setTimestamp(`${message.createdTimestamp}ms`)
+  .addField(".", "https://discord.js.org/#/", true);
+  message.channel.send(docembed);
+}
+
   if(command === `invite`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
@@ -1147,7 +1157,7 @@ if(command === `help`){
           },
           {
             "name": " :question: Random",
-            "value": "serverinfo, botinfo, ping, devhelp, dws, listemotes, avatar, urban, pick, fortune"
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune"
           },
           {
             "name": " :wrench: Moderation",
