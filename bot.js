@@ -169,7 +169,7 @@ if(command === `reload`){
   }
 
 if(command === `eval`){
-  if(message.author.id !== "297931837400023041") return message.channel.send("You ain't the creator!");
+  if(message.author.id !== "297931837400023041") return message.channel.send("No wtf lol you are absolutely not allowed to use this command");
   try {
     const code = args.join(" ");
     let evaled = eval(code);
@@ -179,7 +179,7 @@ if(command === `eval`){
 
     message.channel.send(clean(evaled), {code:"xl"});
   } catch (err) {
-    message.channel.send(`\`${redx} ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    message.channel.send(`\`${redx} WARN ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
   }
 }
 
