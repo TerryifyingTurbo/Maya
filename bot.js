@@ -177,10 +177,17 @@ if(command === `eval`){
     // if (typeof evaled !== "string")
     //   evaled = require("util").inspect(evaled);
 
-    message.channel.send(clean(evaled), {code:"js"});
+    message.channel.send(clean(evaled), {code:"xl"});
   } catch (err) {
     message.channel.send(`\`${redx} ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
   }
+}
+
+if(command === `status`){
+  let status = args[0];
+  if(status !== "online" || "idle" || "dnd" || "invisible") return message.channel.send(`${redx} That's not gonna work. Status must be either \`online\` \`idle\` \`dnd\` or \`invisible\``);
+  await bot.user.setStatus(status);
+  message.channel.send(`${greencheck} I am now __**${status}**__`);
 }
 
 if(command === "jsdocs"){
