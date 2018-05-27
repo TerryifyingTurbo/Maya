@@ -529,6 +529,7 @@ if(command === `clapify`){
 
 if(command === `smut`){
   if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  if(args[0] == "tradechristmasspecial") return;
   let smutembed = new Discord.RichEmbed()
   .setTitle("Lemon-Scented Smut")
   .setColor("#d68998")
