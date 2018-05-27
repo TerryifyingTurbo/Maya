@@ -549,9 +549,7 @@ if(command === `hentai`){{
     .setTitle("Nya~")
     .setImage(body.neko);
     return message.channel.send(nekoEmbed);
-}
-  let {body} = await superagent
-    .get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
+    snekfetch.get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
   let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle("Hentai is art ( ͡° ͜ʖ ͡°)")
