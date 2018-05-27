@@ -539,23 +539,19 @@ if(command === `smut`){
 }
 
 if(command === `hentai`){
-  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  
-  if(args[0] == "neko")
   let {body} = await superagent
   .get(`https://nekos.life/api/lewd/neko`);
   let nekoEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle("Nya~")
     .setImage(body.neko);
-    return message.channel.send(nekoEmbed);
-    snekfetch.get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
-  let hentaiEmbed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setTitle("Hentai is art ( ͡° ͜ʖ ͡°)")
-    .setImage(body.url)
-    .setColor("RANDOM");
-  message.channel.send(hentaiEmbed);
+  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  if(args[0] == "neko") return message.channel.send(nekoEmbed);
+  snekfetch.get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
+  console.log(url)
+  let hentaiemd = new Discord.RichEmbed()
+  .setTitle("Hentai is an art.")
+  .setColor("RANDOM")
 }
 
 if(command === `dirtyquote`){
@@ -1064,7 +1060,7 @@ if(command === `purge`){
           },
           {
             "name": " :warning: NSFW",
-            "value": "dirtyquote, fucc, succ, smut, hentai",
+            "value": "dirtyquote, fucc, succ, smut, neko",
             "inline": true
           },
           // {
