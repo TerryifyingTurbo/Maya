@@ -356,7 +356,7 @@ if(command === `fliptext`){
 }
 
 if(command === `rps`){
-var choice = args[0];
+ var choice = args[0];
   if (choice == "paper" || choice == "p") {
     var numb = Math.floor(Math.random() * 100);
     if (numb <= 50) {
@@ -412,7 +412,6 @@ var choice = args[0];
     message.channel.send(`Can't play rps if you don't even say what you declare first`);
   }
 }
-
 
 if(command === `listemotes`){
   if(message.guild.emojis.size === 0) return message.channel.send("There aren't any emojis here.");
@@ -539,19 +538,26 @@ if(command === `smut`){
   message.channel.send(smutembed);
 }
 
-if(command === `neko`){
-  let {body} = await superagent
-    .get(`https://nekos.life/api/lewd/neko`);
-    
-    if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+if(command === `hentai`){
+  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
-    let hentaiEmbed = new Discord.RichEmbed()
+  if(args[0] == "neko")
+  let {body} = await superagent
+  .get(`https://nekos.life/api/lewd/neko`);
+  let nekoEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle("Nya~")
     .setImage(body.neko);
+    return message.channel.send(nekoEmbed);
 
-    message.channel.send(hentaiEmbed)
-    .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
+  let {body} = await superagent
+    .get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
+  let hentaiEmbed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("Hentai is art ( ͡° ͜ʖ ͡°)")
+    .setImage(body.url)
+    .setColor("RANDOM");
+  message.channel.send(hentaiEmbed);
 }
 
 if(command === `dirtyquote`){
@@ -1060,7 +1066,7 @@ if(command === `purge`){
           },
           {
             "name": " :warning: NSFW",
-            "value": "dirtyquote, fucc, succ, smut, neko",
+            "value": "dirtyquote, fucc, succ, smut, hentai",
             "inline": true
           },
           // {
