@@ -534,9 +534,49 @@ if(command === `smut`){
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut<specifc selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField("The Holy List of Story Sins", "*placeholder story, placeholder story (yes await until added)*", true);
+  .addField("The Holy List of Story Sins", "*Trade Christmas Special, placeholder story (yes await until added)*", true);
   message.channel.send(smutembed);
 }
+
+if(command === `smut` && args[0] == "tradechristmasspecial"){
+  let pages = ['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5', 'Section 6'];
+  let page = 1; 
+ 
+  const embed = new Discord.RichEmbed() 
+    .setColor("RANDOM")
+    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setDescription(pages[page-1])
+ 
+  message.channel.send(embed).then(message => { 
+   
+    message.react('⏪').then( r => { 
+      message.react('⏩') 
+     
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
+     
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 240000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 240000 }); 
+     
+      
+      backwards.on('collect', r => { 
+        if (page === 1) return; 
+        page--;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+     
+      forwards.on('collect', r => { 
+        if (page === pages.length) return; 
+        page++;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+   
+    })
+})};
 
 if(command === `hentai`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
@@ -814,6 +854,10 @@ if(command === `dws`){
     message.channel.send(dwsembed);
 }
 
+{
+// ▬▬▬▬▬▬▬▬▬▬▬▬
+}
+
 if(command === `pagetest`){
   let pages = ['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5', 'Section 6'];
   let page = 1; 
@@ -831,8 +875,8 @@ if(command === `pagetest`){
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
      
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 60000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 60000 }); 
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 240000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 240000 }); 
      
       
       backwards.on('collect', r => { 
@@ -1006,7 +1050,7 @@ if(command === `purge`){
     message.channel.send({ embed });
   }
   
-  if(command === `help`){
+if(command === `help`){
     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
     else if(args[0] == "pick") return message.channel.send(`Out of the choices you supply me, I will pick only **one.** | Usage: !?pick <options> <options> | All commas used **will split choices**.`);
     else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");   
@@ -1064,7 +1108,7 @@ if(command === `purge`){
           },
           {
             "name": " :eggplant: NSFW",
-            "value": "dirtyquote, fucc, succ, smut, neko",
+            "value": "dirtyquote, fucc, succ, smut, hentai",
             "inline": true
           },
           // {
