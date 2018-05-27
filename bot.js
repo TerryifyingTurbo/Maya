@@ -538,13 +538,12 @@ if(command === `smut`){
   message.channel.send(smutembed);
 }
 
-let {body} = await superagent.get(`https://nekos.life/api/lewd/neko`);
-
 if(command === `hentai`){
+  let {nekobody} = await superagent.get(`https://nekos.life/api/lewd/neko`);
   let nekoEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle("Nya~")
-    .setImage(body.neko);
+    .setImage(nekobody.neko);
 
   let {body} = await superagent.get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
   let hentaiemd = new Discord.RichEmbed()
