@@ -527,19 +527,8 @@ if(command === `clapify`){
 //   message.channel.send(`${Posreplies[Posresult]}` + " *and then the two have some 'fun' for* " + `***${Treplies[Tresult]}.*** *'-' ${Preplies[Presult]}.*`);
 // }
 
-if(command === `smut`){
-  if (!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  if(args[0] == "tradechristmasspecial") return;
-  let smutembed = new Discord.RichEmbed()
-  .setTitle("Lemon-Scented Smut")
-  .setColor("#d68998")
-  .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
-  .setFooter("!?smut<specifc selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField("The Holy List of Story Sins", "*Trade Christmas Special, placeholder story (yes await until added)*", true);
-  message.channel.send(smutembed);
-}
-
 if(command === `smut` && args[0] == "tradechristmasspecial"){
+if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let pages = ['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5', 'Section 6'];
   let page = 1; 
  
@@ -578,6 +567,18 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
    
     })
 })};
+
+if(command === `smut`){
+  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  if(args[0] == "tradechristmasspecial") return;
+  let smutembed = new Discord.RichEmbed()
+  .setTitle("Lemon-Scented Smut")
+  .setColor("#d68998")
+  .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
+  .setFooter("!?smut<specifc selection>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
+  .addField("The Holy List of Story Sins", "*Trade Christmas Special, placeholder story (yes await until added)*", true);
+  message.channel.send(smutembed);
+}
 
 if(command === `hentai`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
