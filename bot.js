@@ -1093,7 +1093,7 @@ if(command === `help`){
     else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
     else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
     else if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
-    else if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <option>");
+    else if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <story> | *Stories cannot be spaced out; will not work ex. `!?smut tradechristmasspecial`");
     else if(args[0] == "hentai") return message.channel.send(`I'll bring up some anime titties :o
  **Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. \`!?hentai neko\``);
     else if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
