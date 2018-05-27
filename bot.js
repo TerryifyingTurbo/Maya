@@ -1015,8 +1015,8 @@ if(command === `purge`){
     else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
     else if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
     else if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <option>");
-    else if(args[0] == "hentai") return message.channel.send("I'll bring up some anime titties :o \
-     **Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. `!?hentai neko`");
+    else if(args[0] == "hentai") return message.channel.send(`I'll bring up some anime titties :o
+    **Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. \`!?hentai neko\`");
     else if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
     else if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
     else if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
