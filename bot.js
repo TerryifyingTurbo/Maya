@@ -538,7 +538,7 @@ if(command === `smut`){
   message.channel.send(smutembed);
 }
 
-if(command === `hentai`){
+if(command === `hentai`){{
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
   if(args[0] == "neko")
@@ -549,7 +549,7 @@ if(command === `hentai`){
     .setTitle("Nya~")
     .setImage(body.neko);
     return message.channel.send(nekoEmbed);
-
+}
   let {body} = await superagent
     .get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
   let hentaiEmbed = new Discord.RichEmbed()
