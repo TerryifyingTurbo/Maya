@@ -531,13 +531,15 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
 if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let pages = [
   //one
+  `*Written by an awesome person:* <@362472426258300928>`
+  //two
   `*"TRAAAAVIIIIIIIIS" Jade called from downstairs, it has been several months since the incident at the bar. Jade moved in with Travis since that night and they've had some fun, but this morning was special, it was Christmas. 
   "Wh-Huh?" Travis questioned, waking up from his slumber, he reached over to hug jade and cuddle close but all he could feel was a warm space where her body should be and the covers. He sighed, " JAAAADDE, come back here it's too early, anyway, The squad will be over soon for dinner and gifts.
    "Then we better hurry" Jade called to him. 
   "Hurry for what?" he asked himself as he climbed out of bed. After pulling on his boxers he went downstairs and walked into the kitchen to brew some coffee.  
   "uh-uh, living room, now." Jade demanded. 
   Travis rolled his eyes, " For what damnit." He headed into the living room only to see jade naked with red ribbons wrapped around her body covering her body.*`,
-//two
+//three
   `*Travis' jaw dropped, "holy..." 
   "what are you going to do, sit there and gawk or come open your present?" she sat on her knees in front of the Christmas tree. 
   "Wh- Jade- I..." he smiled and slowly walked over. " but uh, I like to open my presents sitting."
@@ -547,7 +549,7 @@ if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only
   "Well, I love it.' he said putting the tips of his fingers onto her leg, messing with one of the ribbons. 
   "how can you love it if you haven't used it yet?" she teased. He smiled.
   "Okay, let me open it then" he replied in a seducing matter. He reached one of his hands up to the ribbon bow that held Jade's breast. He loosened it and pulled the ribbon apart.*`, 
-//three
+//four
   `*He watched her breast bounce as they were released from the ribbons, " Don't drool too much" Jade laughed. 
   He reached over and began groping her left tit, " no matter how many times I see them I still love them." 
   She smiled, "I know you do," she smirks, "But I know what you love more". She rocked her hips around in his lap. 
@@ -555,16 +557,17 @@ if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only
   She turned to face away from him, swaying her hips and grinding her butt against his growing cock, "I think it wants to come out to play~" she teased, then she turned around and played with the waistband of his boxers.
   "Then we better let him out, " he slid off his boxers, releasing his six-inch. 
   she turned back around, grinding her ass against his cock some more, Travis grabbing her hips. He took more control as time passed.*`,
-  //four 
+  //five 
   `*"I'm going in" he spoke with dominance, something Jade loved. She nodded.
   He pushed her legs apart and forced his tip into her wet self. "M-more" Jade demanded, she had been waiting a couple of hours for him to wake and wanted him to be in her.
   He gave her what she wanted, he pushed himself as deep as he could. Her moans filled the house, once he was in they sat there, breathing heavily. Once Travis gained his breath again he began to force her body to move up and down, using both his hands on her hips and his hips, pushing up and down.
   He knew he was doing something right because of her groans and moans, he loved it just as much as she did.*`,
-  //five
+  //six
   `*After a bit of this, he put his hand on the center of her back, pushing her down into a bent position. He stood himself up, forcing himself in and out of her. Her small cove barely able to take it. He gave her ass a few smacks, making her pussy tense around his cock, the pleasure overtook her as she let out a huge moan, letting her orgasm shake her, but Travis wasn't finished. He kept pounding into her, soon he would cum. Now they had done this enough to know he shouldn't come in her, so before he got to his last straw he pulled out, cumming all over her ass. Then he sat back down.
   "Alright, go get cleaned up before everyone shows up." he let out a deep breath and leaned his head back, Jade still leaned over breathing heavily.*`,
-//six
-  '*The End*'];
+//seven
+  `*The End*
+  !?smut <story> for other lemon stuff :lemon: *you nasty*`];
   let page = 1; 
  
   const embed = new Discord.RichEmbed() 
