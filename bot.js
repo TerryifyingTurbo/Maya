@@ -553,7 +553,7 @@ if(command === `hentai`){
   .setColor("RANDOM")
   .setImage(url);
   message.channel.send(hentaiemd)
-  .catch(error => message.reply(`${redx} ***${error}***`));
+  .catch(error => message.reply(`${redx} ${error}`));
 }
 
 if(command === `dirtyquote`){
