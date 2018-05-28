@@ -505,6 +505,7 @@ if(command === `dogfact`){
   .addField("It's true that...", body.facts, true);
   message.channel.send(doggyfacts).catch(err)
     message.channel.send(`${redx} ${err}`);
+}
 
 if(command === `dadjoke`){
   let {body} = await superagent
