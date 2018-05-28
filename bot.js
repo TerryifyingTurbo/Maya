@@ -366,9 +366,9 @@ if(command === `say`) {
   }
 
 if(command === `leet`){
-  if(args.length < 1) return message.channel.send("I need something to convert to leet, and the air does not coun't as that.");
+  if(args.length < 1) return message.channel.send("I need something to convert to leet, and the air does not count as that.");
   let code = leetspeak(args)
-  message.channel.send(thing);
+  message.channel.send(code);
 }
 
 if(command === `avatar`){
@@ -508,7 +508,6 @@ if(command === `dogfact`){
   let {body} = await snekfetch.get(`https://dog-api.kinduff.com/api/facts`);
   let doggyfacts = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setFooter(`${Math.round(bot.ping)}ms.`)
   .addField("It's true that...", body.facts, true);
   message.channel.send(doggyfacts).catch(err);
   if(err) message.channel.send(`${redx} ${clean(err)}`);
