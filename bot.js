@@ -1034,6 +1034,7 @@ if(command === `yourmom`){
 
   if(command === `advice`){
   let {body} = await snekfetch.get(`http://api.adviceslip.com/advice`);
+  }
 
   
   if(command === `ban`){
