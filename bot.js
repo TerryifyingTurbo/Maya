@@ -6,6 +6,7 @@ const ytdl = require("ytdl-core");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 const urban = require("urban");
+const leetspeak = require("leetspeak");
 const snekfetch = require("snekfetch");
 const bot = new Discord.Client({disableEveryone: true})
 const cleverbot = require("cleverbot", "cleverbot.io");
@@ -364,6 +365,12 @@ if(command === `say`) {
     // And we get the bot to say the thing: 
   }
 
+if(command === `leet`){
+  if(args.length < 1) return message.channel.send("I need something to convert to leet, and the air does not coun't as that.");
+  let code = leetspeak(args)
+  message.channel.send(thing);
+}
+
 if(command === `avatar`){
   let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 
@@ -461,13 +468,12 @@ if(command === `cat`){
   .setColor("RANDOM")
   .setTitle("Kitty :0")
   .setImage(body.file);
-  message.channel.send(catembed)
-  .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
+  message.channel.send(catembed).catch(err);
+  if(err) message.channel.send(`${redx} ${clean(err)}`);
 }
 
 if(command === `fox`){
-  let {body} = await superagent
-  .get(`https://randomfox.ca/floof/`);
+  let {body} = await snekfetch.get(`https://randomfox.ca/floof/`);
   let foxembed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle("Foxy :0")
@@ -489,14 +495,23 @@ if(command === `dog`){
 }
 
 if(command === `catfact`){
- let {body} = await superagent
- .get(`https://catfact.ninja/fact`);
+ let {body} = await superagent.get(`https://catfact.ninja/fact`);
  let factembed = new Discord.RichEmbed()
  .setColor("RANDOM")
  //.setTitle("It's true that...")
  .addField("It's true that...", body.fact);
  //.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
  message.channel.send(factembed);
+}
+
+if(command === `dogfact`){
+  let {body} = await snekfetch.get(`https://dog-api.kinduff.com/api/facts`);
+  let doggyfacts = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setFooter(`${Math.round(bot.ping)}ms.`)
+  .addField("It's true that...", body.facts, true);
+  message.channel.send(doggyfacts).catch(err);
+  if(err) message.channel.send(`${redx} ${clean(err)}`);
 }
 
 if(command === `dadjoke`){
@@ -613,8 +628,8 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
       message.react('⏩') 
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 240000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 240000 }); 
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 320000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 320000 }); 
       backwards.on('collect', r => { 
         if (page === 1) return; 
         page--;
@@ -1115,7 +1130,7 @@ if(command === `purge`){
       ]
     };
     message.channel.send({ embed });
-  }
+   }
   
 if(command === `help`){
     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
@@ -1132,7 +1147,9 @@ if(command === `help`){
     else if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
     else if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
     else if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
-    else if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>")
+    else if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>");
+    else if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
+    else if(args[0] == "leet") return message.channel.send("Lic3n53 p1473 73x7 101");
     //else if(args[0] == "") return message.channel.send("");
        
     let embed = {
@@ -1162,8 +1179,8 @@ if(command === `help`){
             "inline": true
           },
           {
-            "name": " :question: Random",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune"
+            "name": " :card_box: Random and Util",
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, leet"
           },
           {
             "name": " :wrench: Moderation",
@@ -1171,7 +1188,7 @@ if(command === `help`){
           },
           {
             "name": `Fun ${pikagroove}`,
-            "value": "say, cat, catfact, dog, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext, rps"
+            "value": "say, cat, catfact, dog, dogfact, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext, rps"
           },
           {
             "name": " :eggplant: NSFW",
