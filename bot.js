@@ -365,12 +365,6 @@ if(command === `say`) {
     // And we get the bot to say the thing: 
   }
 
-if(command === `leet`){
-  if(args.length < 1) return message.channel.send("I need something to convert to leet, and the air does not count as that.");
-  let code = leetspeak(args)
-  message.channel.send(code);
-}
-
 if(command === `avatar`){
   let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 
@@ -1026,6 +1020,19 @@ if(command === `emoji`){
     let result = Math.floor((Math.random() * replies.length))
     message.channel.send(`*${replies[result]}*`);
   }
+
+if(command === `advice`){
+  let {body} = await snekfetch.get(`http://api.adviceslip.com/advice`);
+  try {
+    JSON.parse(res.text)
+  } catch (e) {
+    message.channel.send(`Uh... Couldn\'t think of one... *yet* ${redx} ${err}`);
+    return
+  }
+  var advice = JSON.parse(res.text)
+  message.channel.send(`Ha! ${advice.slip.advice}`);
+}
+  
   if(command === `ban`){
 
     let bUser = message.mentions.users.first()
@@ -1179,7 +1186,7 @@ if(command === `help`){
           },
           {
             "name": " :card_box: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, leet"
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, advice"
           },
           {
             "name": " :wrench: Moderation",
