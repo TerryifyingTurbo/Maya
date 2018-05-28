@@ -1025,7 +1025,7 @@ if(command === `yourmom`){
   let {body} = await snekfetch.get(`http://api.yomomma.info/`);
   try {
     JSON.parse(res.text)
-  } catch (e) {
+  } catch (err) {
     message.channel.send(`Uh... I couldn't think of one... *yet* ${redx} ${err}`)
     return
   }
