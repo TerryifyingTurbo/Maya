@@ -462,8 +462,8 @@ if(command === `cat`){
   .setColor("RANDOM")
   .setTitle("Kitty :0")
   .setImage(body.file);
-  message.channel.send(catembed).catch(err);
-  if(err) message.channel.send(`${redx} ${clean(err)}`);
+  message.channel.send(catembed).catch(err)
+  message.channel.send(`${redx} ${err}`);
 }
 
 if(command === `fox`){
@@ -503,9 +503,8 @@ if(command === `dogfact`){
   let doggyfacts = new Discord.RichEmbed()
   .setColor("RANDOM")
   .addField("It's true that...", body.facts, true);
-  message.channel.send(doggyfacts).catch(err);
-  if(err) message.channel.send(`${redx} ${clean(err)}`);
-}
+  message.channel.send(doggyfacts).catch(err)
+    message.channel.send(`${redx} ${err}`);
 
 if(command === `dadjoke`){
   let {body} = await superagent
@@ -1023,14 +1022,8 @@ if(command === `emoji`){
 
 if(command === `yourmom`){
   let {body} = await snekfetch.get(`http://api.yomomma.info/`);
-  try {
-    JSON.parse(res.text)
-  } catch (err) {
-    message.channel.send(`Uh... I couldn't think of one... *yet* ${redx} ${err}`)
-    return
-  }
-  var joke = JSON.parse(res.text)
-  message.channel.send(joke.joke)
+  message.channel.send(body.joke).catch(err)
+  message.channel.send(`${redx} ${err}`);
 }
 
   if(command === `advice`){
