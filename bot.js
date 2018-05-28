@@ -1021,17 +1021,20 @@ if(command === `emoji`){
     message.channel.send(`*${replies[result]}*`);
   }
 
-if(command === `advice`){
-  let {body} = await snekfetch.get(`http://api.adviceslip.com/advice`);
+if(command === `yourmom`){
+  let {body} = await snekfetch.get(`http://api.yomomma.info/`);
   try {
     JSON.parse(res.text)
   } catch (e) {
-    message.channel.send(`Uh... Couldn\'t think of one... *yet* ${redx} ${err}`);
+    message.channel.send(`Uh... I couldn't think of one... *yet* ${redx} ${err}`)
     return
   }
-  var advice = JSON.parse(res.text)
-  message.channel.send(`Ha! ${advice.slip.advice}`);
-}
+  var joke = JSON.parse(res.text)
+  message.channel.send(joke.joke)
+
+  if(command === `advice`){
+  let {body} = await snekfetch.get(`http://api.adviceslip.com/advice`);
+
   
   if(command === `ban`){
 
