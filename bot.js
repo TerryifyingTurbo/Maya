@@ -1031,6 +1031,7 @@ if(command === `yourmom`){
   }
   var joke = JSON.parse(res.text)
   message.channel.send(joke.joke)
+}
 
   if(command === `advice`){
   let {body} = await snekfetch.get(`http://api.adviceslip.com/advice`);
