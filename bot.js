@@ -462,8 +462,7 @@ if(command === `cat`){
   .setColor("RANDOM")
   .setTitle("Kitty :0")
   .setImage(body.file);
-  message.channel.send(catembed).catch(e)
-  message.channel.send(`${redx} ${e}`);
+  message.channel.send(catembed)
 }
 
 if(command === `fox`){
@@ -503,8 +502,7 @@ if(command === `dogfact`){
   let doggyfacts = new Discord.RichEmbed()
   .setColor("RANDOM")
   .addField("It's true that...", body.facts, true);
-  message.channel.send(doggyfacts).catch(e)
-    message.channel.send(`${redx} ${e}`);
+  message.channel.send(doggyfacts)
 }
 
 if(command === `dadjoke`){
@@ -1021,16 +1019,6 @@ if(command === `emoji`){
     message.channel.send(`*${replies[result]}*`);
   }
 
-if(command === `yourmom`){
-  let {body} = await snekfetch.get(`http://api.yomomma.info/`);
-  message.channel.send(`Ha! ${body.joke}`).catch(err)
-  message.channel.send(`${redx} ${err}`);
-}
-
-  if(command === `advice`){
-  let {body} = await snekfetch.get(`http://api.adviceslip.com/advice`);
-  }
-
   
   if(command === `ban`){
 
@@ -1077,7 +1065,7 @@ if(command === `yourmom`){
 
 if(command === `purge`){
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${redx} Looks like you first need the following: ADMINISTRATOR`);
-  if(isNaN(args[0])) return message.channel.send('**This ain\'t the movie purge. This is to remove 0-100 messages**');
+  if(isNaN(args[0])) return message.channel.send('**This ain\'t the movie purge. This is to remove 1-100 messages**');
   if(args[0] > 100) return message.channel.send('**You can only remove a maximum of 100 messages**');
  await message.channel.bulkDelete(args[0]).then(messages => message.channel.send(`${greencheck} **Removed \`${messages.size}/${args[0]}\` messages**`))
   .catch(error => message.reply(`${redx} ***${error}***`));
@@ -1184,8 +1172,8 @@ if(command === `help`){
             "inline": true
           },
           {
-            "name": " :card_box: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, advice"
+            "name": " :package: Random and Util",
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune"
           },
           {
             "name": " :wrench: Moderation",
