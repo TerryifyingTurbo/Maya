@@ -1123,7 +1123,8 @@ if(command === `purge`){
       ]
     };
     message.channel.send({ embed });
-   }
+  }
+  
   
 if(command === `help`){
     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
@@ -1144,7 +1145,6 @@ if(command === `help`){
     else if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
     else if(args[0] == "leet") return message.channel.send("Lic3n53 p1473 73x7 101");
     //else if(args[0] == "") return message.channel.send("");
-       
     let embed = {
          "title": "Here x3",
         //"url": "https://discordapp.com",
@@ -1155,7 +1155,7 @@ if(command === `help`){
           "text": "You can type help on certain commands."
         },
         "thumbnail": {
-          "url": `https://gifimage.net/wp-content/uploads/2017/11/gif-question-mark-12.gif` 
+          "url": `https://cdn4.iconfinder.com/data/icons/miu/24/circle-help-question-mark-glyph-128.png` 
         },
         //"image": {
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
