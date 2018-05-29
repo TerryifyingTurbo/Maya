@@ -1155,7 +1155,7 @@ if(command === `help`){
           "text": "You can type help on certain commands."
         },
         "thumbnail": {
-          "url": `https://i.imgur.com/mJeWupe.png` 
+          "url": `https://gifimage.net/wp-content/uploads/2017/11/gif-question-mark-12.gif` 
         },
         //"image": {
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
