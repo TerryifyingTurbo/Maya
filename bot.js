@@ -1048,7 +1048,10 @@ if(command === `emoji`){
    }
 
   if(command === `serverinfo`){
-
+    let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
+    let day = message.guild.createdAt.getDate()
+    let month = 1 + message.guild.createdAt.getMonth()
+    let year = message.guild.createdAt.getFullYear()
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription(message.guild.name)
@@ -1056,9 +1059,14 @@ if(command === `emoji`){
     .setColor("#15f153")
     .setThumbnail(sicon)
     //.addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
-    .addField("Made on", message.guild.createdAt, true)
-    .addField("You joined", message.member.joinedAt, true)
-    .addField("Total Members", message.guild.memberCount, true);
+    .addField("Server established @", `${month}/${day}/${year}`, true)
+    .addField("Server Region", message.guild.region, true)
+    .addField("Server ID", message.guild.id, true)
+    .addField("You joined @", message.member.joinedAt, true)
+    .addField("Total Members", message.guild.memberCount, true)
+    .addField("Human Users", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
+    .addField("Bot Users", message.guild.members.filter(m => m.user.bot).size, true)
+    .addField("Total Roles", message.guild.roles.size, true);
     
     message.channel.send(serverembed);
   }
@@ -1101,6 +1109,10 @@ if(command === `purge`){
         {
           "name": "Made at",
           "value": `${bot.user.createdAt}`
+        },
+        {
+          "name": "Guild Count",
+          "value": `${bot.guilds.size}`
         },
         {
           "name": "I have...",
