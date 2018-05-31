@@ -356,8 +356,8 @@ if(command === `urban`){
 });
 };
 // Weed Key qLZXyPT
-const api = "https://jsonplaceholder.typicode.com/posts";
 if(command === `jsontest`){
+  let api = "https://jsonplaceholder.typicode.com/posts";
   snekfetch.get(api).then(r => {
     let body = r.body
     let id = Number(args[0]);
@@ -375,6 +375,7 @@ if(command === `jsontest`){
     message.channel.send(embed);
   });
 }
+
 
 if(command === `say`) {
 
