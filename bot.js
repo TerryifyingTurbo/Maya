@@ -1093,9 +1093,9 @@ if(command === `purge`){
 
 
   if(command === `botinfo`){
-    let day = message.guild.createdAt.getDate()
-    let month = 1 + message.guild.createdAt.getMonth()
-    let year = message.guild.createdAt.getFullYear()
+    let day = bot.user.createdAt.getDate()
+    let month = 1 + bot.user.createdAt.getMonth()
+    let year = bot.user.createdAt.getFullYear()
     let embed = {
       //"title": "My info x3",
       //"url": "https://discordapp.com",
