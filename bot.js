@@ -342,7 +342,6 @@ if(command === `urban`){
   if(!str) return message.channel.send("Urban what? Enter something to look up.");
   
   urban(str).first(json => {
-    console.log(json);
     if(!json) return message.channel.send(`Nothing was found for __${str}__.`);
     
     let urembed = new Discord.RichEmbed()
