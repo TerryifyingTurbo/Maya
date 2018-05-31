@@ -520,7 +520,7 @@ if(command === `meme`){
   let{body} = await superagent
   .get(`https://api-to.get-a.life/meme`);
 
-  let me = new MessageEmbed()
+  let me = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle(`${ayy} lmao`)
   .setImage(body.url);
@@ -1208,7 +1208,7 @@ if(command === `help`){
           },
           {
             "name": `Fun ${pikagroove}`,
-            "value": "say, cat, catfact, dog, dogfact, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext, rps"
+            "value": "say, cat, catfact, dog, dogfact, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext, rps, meme"
           },
           {
             "name": " :eggplant: NSFW",
