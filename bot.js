@@ -349,6 +349,7 @@ if(command === `urban`){
     .setTitle(json.word)
     .setColor("RANDOM")
     .setDescription(json.definition)
+    .addField("Example", json.example)
     .addField("Upvotes", json.thumbs_up + ` ${greencheck}`, true)
     .addField("Downvotes", json.thumbs_down + ` ${redx}`, true);
     message.channel.send(urembed);
@@ -357,7 +358,22 @@ if(command === `urban`){
 // Weed Key qLZXyPT
 const api = "https://jsonplaceholder.typicode.com/posts";
 if(command === `jsontest`){
-  snekfetch.get(api).then(console.log);
+  snekfetch.get(api).then(r => {
+    let body = r.body
+    let id = Number(args[0]);
+    if(!id) return message.channel.send("An ID number is required.");
+    if(isNaN(id)) return message.channel.send("It must be a valid number.");
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(` ${redx} This entry does NOT exist`)
+    let embed = new Discord.RichEmbed()
+    .setAuthor(entry.title)
+    .setDescription(entry.body)
+    .addField("Author ID", entry.userId)
+    .setFooter("Post ID: " + entry.id)
+    
+    message.channel.send(embed);
+  });
 }
 
 if(command === `say`) {
