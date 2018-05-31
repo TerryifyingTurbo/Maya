@@ -516,6 +516,18 @@ if(command === `dadjoke`){
   message.channel.send(o);
 }
 
+if(command === `meme`){
+  let{body} = await superagent
+  .get(`https://api-to.get-a.life/meme`);
+
+  let me = new MessageEmbed()
+  .setColor("RANDOM")
+  .setTitle(`${ayy} lmao`)
+  .setImage(body.url);
+
+  message.channel.send(me);
+}
+
 if(command === `clapify`){
   let randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
   if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:clap:clap:on:clap:***");
@@ -1081,14 +1093,17 @@ if(command === `purge`){
 
 
   if(command === `botinfo`){
+    let day = message.guild.createdAt.getDate()
+    let month = 1 + message.guild.createdAt.getMonth()
+    let year = message.guild.createdAt.getFullYear()
     let embed = {
-      "title": "My info x3",
+      //"title": "My info x3",
       //"url": "https://discordapp.com",
       "color": 15721660,
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": "Running on Discord.js v11.30"
+        "text": "Running on Node JS and Discord.js v11.30"
       },
       "thumbnail": {
         "url": `${bot.user.displayAvatarURL}` 
@@ -1103,19 +1118,19 @@ if(command === `purge`){
       },
       "fields": [
         {
-          "name": "I am",
+          "name": "Full Username",
           "value": `${bot.user.username}#${bot.user.discriminator} with ID of (${bot.user.id})`
         },
         {
           "name": "Made at",
-          "value": `${bot.user.createdAt}`
+          "value": `${month}/${day}/${year}`
         },
         {
           "name": "Guild Count",
           "value": `${bot.guilds.size}`
         },
         {
-          "name": "I have...",
+          "name": "Command Count",
           "value": "34 Commands (total)"
         },
         {
