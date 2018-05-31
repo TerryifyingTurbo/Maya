@@ -376,6 +376,7 @@ if(command === `jsontest`){
 }
 
 
+
 if(command === `say`) {
 
     const sayMessage = args.join(" ");
