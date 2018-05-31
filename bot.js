@@ -355,6 +355,10 @@ if(command === `urban`){
 });
 };
 // Weed Key qLZXyPT
+const api = "https://jsonplaceholder.typicode.com/posts";
+if(command === `jsontest`){
+  snekfetch.get(api).then(console.log);
+}
 
 if(command === `say`) {
 
@@ -1200,12 +1204,12 @@ if(command === `help`){
         "fields": [
           {
             "name": `Developer ${bmo}`,
-            "value": "shutoff, reload, eval, listenp, watchp, gamep, setavat, leave, invite, status, ram",
+            "value": "shutoff, reload, eval, listenp, watchp, gamep, setavat, leave, invite, status, ram, jsontest",
             "inline": true
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune"
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, alcohol"
           },
           {
             "name": " :wrench: Moderation",
