@@ -300,6 +300,29 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
     message.channel.send(`NODE JS v11.30 ${bot.user.username}#${bot.user.discriminator} RAM Current Usage | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**`);
   }
 
+if(command === `poll`){
+  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channels.send('Sorry, you don\'t have permission to create poll!').then(message => message.delete({timeout: 10000}));
+  if (!args.join(' ')) return message.channel.send('Usage: poll <title>').then(message => message.delete({timeout: 10000}));
+  
+  const embed = new Discord.RichEmbed()
+    .setTitle(args.join(' '))
+    .setFooter('React to vote on Poll!')
+    .setColor('#7289DA')
+    const pollTitle = await message.channel.send({ embed });
+      await pollTitle.react(`ðŸ‘`);
+      await pollTitle.react(`ðŸ‘Ž`);
+  
+    const filter = (reaction) => reaction.emoji.name === 'ðŸ‘';
+    const collector = pollTitle.createReactionCollector(filter, { time: 15000 });
+      collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
+      collector.on('end', collected => console.log(`Collected ${collected.size} items`));
+  
+    const filter1 = (reaction) => reaction.emoji.name === 'ðŸ‘Ž';
+    const collector1 = pollTitle.createReactionCollector(filter1, { time: 15000 });
+      collector1.on('collect', r => console.log(`Collected ${r.emoji.name}`));
+      collector1.on('end', collected => console.log(`Collected ${collected.size} items`));
+}
+
   if(command === `flipcoin`){
     
     let replies = ["Heads.", "Tails."];
@@ -1156,27 +1179,37 @@ if(command === `purge`){
     };
     message.channel.send({ embed });
   }
+
+if(command === `time`){
+  let today = new Date()
+  let Day = today.toString().split(" ")[0].concat("day");
+  let Month = today.toString().split(" ")[1]
+  let Year = today.toString().split(" ")[3]
+  message.channel.send(`\`${Day}\` \`${Month}\` \`${Year}\`\n\`Time of day:\` \`${today.toString().split(" ")[4]}\``)
+}
   
   
 if(command === `help`){
-    if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
-    else if(args[0] == "pick") return message.channel.send(`Out of the choices you supply me, I will pick only **one.** | Usage: !?pick <options> <options> | All commas used **will split choices**.`);
-    else if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");   
-    else if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
-    else if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
-    else if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
-    else if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
-    else if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <story> | *Stories cannot be spaced out; will not work* `ex. !?smut tradechristmasspecial`");
-    else if(args[0] == "hentai") return message.channel.send(`I'll bring up some anime titties :o
+     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
+     if(args[0] == "pick") return message.channel.send(`Out of the choices you supply me, I will pick only **one.** | Usage: !?pick <options> <options> | All commas used **will split choices**.`);
+     if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");   
+     if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
+     if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
+     if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
+     if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
+     if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <story> | *Stories cannot be spaced out; will not work* `ex. !?smut tradechristmasspecial`");
+     if(args[0] == "hentai") return message.channel.send(`I'll bring up some anime titties :o
  **Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. \`!?hentai neko\``);
-    else if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
-    else if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
-    else if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
-    else if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
-    else if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>");
-    else if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
-    else if(args[0] == "leet") return message.channel.send("Lic3n53 p1473 73x7 101");
-    //else if(args[0] == "") return message.channel.send("");
+     if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
+     if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
+     if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
+     if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
+     if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>");
+     if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
+     if(args[0] == "leet") return message.channel.send("Lic3n53 p1473 73x7 101");
+     if(args[0] == "meme") return message.channel.send("I'll literally bring up some memes that either are stupid funny, funny, none, Mexico, whatever it may be.");
+     if(args[0] == "time") return message.channel.send("I will send the current time.");
+    // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
         //"url": "https://discordapp.com",
@@ -1205,7 +1238,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune"
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, time, poll"
           },
           {
             "name": " :wrench: Moderation",
