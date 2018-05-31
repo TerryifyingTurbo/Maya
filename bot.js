@@ -300,29 +300,6 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
     message.channel.send(`NODE JS v11.30 ${bot.user.username}#${bot.user.discriminator} RAM Current Usage | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**`);
   }
 
-if(command === `poll`){
-  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channels.send('Sorry, you don\'t have permission to create poll!').then(message => message.delete({timeout: 10000}));
-  if (!args.join(' ')) return message.channel.send('Usage: poll <title>').then(message => message.delete({timeout: 10000}));
-  
-  const embed = new Discord.RichEmbed()
-    .setTitle(args.join(' '))
-    .setFooter('React to vote on Poll!')
-    .setColor('#7289DA')
-    const pollTitle = await message.channel.send({ embed });
-      await pollTitle.react(`⬆️`);
-      await pollTitle.react(`⬇️`);
-  
-    const filter = (reaction) => reaction.emoji.name === '⬆️';
-    const collector = pollTitle.createReactionCollector(filter, { time: 15000 });
-      collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-      collector.on('end', collected => console.log(`Collected ${collected.size} items`));
-  
-    const filter1 = (reaction) => reaction.emoji.name === '⬇️';
-    const collector1 = pollTitle.createReactionCollector(filter1, { time: 15000 });
-      collector1.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-      collector1.on('end', collected => console.log(`Collected ${collected.size} items`));
-}
-
   if(command === `flipcoin`){
     
     let replies = ["Heads.", "Tails."];
@@ -365,6 +342,7 @@ if(command === `urban`){
   if(!str) return message.channel.send("Urban what? Enter something to look up.");
   
   urban(str).first(json => {
+    console.log(json);
     if(!json) return message.channel.send(`Nothing was found for __${str}__.`);
     
     let urembed = new Discord.RichEmbed()
@@ -1179,14 +1157,6 @@ if(command === `purge`){
     };
     message.channel.send({ embed });
   }
-
-if(command === `time`){
-  let today = new Date()
-  let Day = today.toString().split(" ")[0].concat("day");
-  let Month = today.toString().split(" ")[1]
-  let Year = today.toString().split(" ")[3]
-  message.channel.send(`\`${Day}\` \`${Month}\` \`${Year}\`\n\`Time of day:\` \`${today.toString().split(" ")[4]}\``)
-}
   
   
 if(command === `help`){
@@ -1206,9 +1176,6 @@ if(command === `help`){
      if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
      if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>");
      if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
-     if(args[0] == "leet") return message.channel.send("Lic3n53 p1473 73x7 101");
-     if(args[0] == "meme") return message.channel.send("I'll literally bring up some memes that either are stupid funny, funny, none, Mexico, whatever it may be.");
-     if(args[0] == "time") return message.channel.send("I will send the current time.");
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
@@ -1238,7 +1205,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, time, poll"
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune"
           },
           {
             "name": " :wrench: Moderation",
