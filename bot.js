@@ -1071,7 +1071,7 @@ if(command === `emoji`){
     .setColor("#15f153")
     .setThumbnail(sicon)
     //.addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
-    .addField("Server established @", `${month}/${day}/${year}`, true)
+    .addField("Server Established @", `${month}/${day}/${year}`, true)
     .addField("Server Region", message.guild.region, true)
     .addField("Server ID", message.guild.id, true)
     .addField("You joined @", message.member.joinedAt, true)
@@ -1119,23 +1119,28 @@ if(command === `purge`){
       "fields": [
         {
           "name": "Full Username",
-          "value": `${bot.user.username}#${bot.user.discriminator} with ID of (${bot.user.id})`
+          "value": `${bot.user.username}#${bot.user.discriminator} with ID of (${bot.user.id})`,
+          "inline": true
         },
         {
-          "name": "Made at",
-          "value": `${month}/${day}/${year}`
+          "name": "Made @",
+          "value": `${month}/${day}/${year}`,
+          "inline": true
         },
         {
           "name": "Guild Count",
-          "value": `${bot.guilds.size}`
+          "value": `${bot.guilds.size}`,
+          "inline": true
         },
         {
           "name": "Command Count",
-          "value": "34 Commands (total)"
+          "value": "34 Commands (total)",
+          "inline": true
         },
         {
           "name": "RAM Usage",
-          "value": `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`
+          "value": `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,
+          "inline": true
         },
         {
           "name": "WIP",
