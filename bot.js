@@ -6,7 +6,8 @@ const ytdl = require("ytdl-core");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 const urban = require("urban");
-const leetspeak = require("leetspeak");
+const cheerio = require("cheerio");
+const querystring = require("querystring");
 const snekfetch = require("snekfetch");
 const bot = new Discord.Client({disableEveryone: true})
 const cleverbot = require("cleverbot", "cleverbot.io");
@@ -353,6 +354,25 @@ if(command === `urban`){
     message.channel.send(urembed);
 });
 };
+if(command === `google`){
+  let searchMessage = await < Message > .reply('Searching...');
+	let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(args)}`;
+	return snekfetch.get(searchUrl)
+		.then((result) => {
+			let $ = cheerio.load(result.text);
+			let googleData = $('.r')
+				.first()
+				.find('a')
+				.first()
+				.attr('href');
+			googleData = querystring.parse(googleData.replace('/url?', ''));
+			searchMessage.edit(`Found\n${googleData.q}`);
+		});
+  
+		.catch((err) => {
+			searchMessage.edit('No results found!');
+		});
+}
 // Weed Key qLZXyPT
 // strainapi.evanbusse.com/qLZXyPT/searchdata/effects (lists all effects)
 // strainapi.evanbusse.com/qLZXyPT/strains/search/effect/EFFECT (searches strains with supplied effect)
@@ -391,11 +411,6 @@ if(command ===`mstrains` && (args[0] == "ind")){
 
     let entry = body.find(post => post.id === id);
     if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Sativa__ or __Hybrid__.`);
-    // let sativaembed = new Discord.RichEmbed()
-    // .setAuthor(entry.name)
-    // .setFooter("ID: " + entry.id)
-    // .setDescription("Species: " + entry.race)
-    // .setColor("#90ee90");
     
     message.channel.send(`
     :herb: __${entry.name}__ (${entry.race})
@@ -414,12 +429,7 @@ if(command ===`mstrains` && (args[0] == "hyb")){
 
     let entry = body.find(post => post.id === id);
     if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Sativa__.`);
-    // let sativaembed = new Discord.RichEmbed()
-    // .setAuthor(entry.name)
-    // .setFooter("ID: " + entry.id)
-    // .setDescription("Species: " + entry.race)
-    // .setColor("#90ee90");
-    
+
     message.channel.send(`
     :herb: __${entry.name}__ (${entry.race})
  • ID: ${entry.id} `);
@@ -428,7 +438,7 @@ if(command ===`mstrains` && (args[0] == "hyb")){
 }
 
 if(command === `mstrains` && (args[0] == "flavors")){
-  let pages = ["🌿","***List of Flavors.***","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
+  let pages = ["🌿*Mmm, yummy*","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
   "Pepper","Flowery","Citrus","Orange","Sweet",
   "Skunk","Grape","Minty","Woody","Cheese",
   "Diesel","Tropical","Grapefruit","Nutty","Lemon",
@@ -441,7 +451,8 @@ if(command === `mstrains` && (args[0] == "flavors")){
 
   let page = 1; 
  
-  const embed = new Discord.RichEmbed() 
+  const embed = new Discord.RichEmbed()
+    .setTitle("***List of possible flavors***")
     .setColor("RANDOM")
     .setFooter(`Page ${page} of ${pages.length}`) 
     .setDescription(pages[page-1])
