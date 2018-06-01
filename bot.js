@@ -358,7 +358,7 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/strains/search/effect/EFFECT (searches strains with supplied effect)
 // strainapi.evanbusse.com/qLZXyPT/searchdata/flavors (lists all flavors)
 
-if(command ===`mstrains` || `maryjanes` && (args[0] == `sat`)){
+if(command ===`mstrains` && (args[0] == "sat")){
   let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`;
   snekfetch.get(sativa).then(r => {
     let body = r.body
@@ -367,21 +367,21 @@ if(command ===`mstrains` || `maryjanes` && (args[0] == `sat`)){
     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
 
     let entry = body.find(post => post.id === id);
-    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Hybrid__.`);
-    let sativaembed = new Discord.RichEmbed()
-    .setAuthor(entry.name)
-    .setFooter("ID: " + entry.id)
-    .setDescription("Species: " + entry.race)
-    .setColor("#90ee90");
+    // if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Hybrid__.`);
+    // let sativaembed = new Discord.RichEmbed()
+    // .setAuthor(entry.name)
+    // .setFooter("ID: " + entry.id)
+    // .setDescription("Species: " + entry.race)
+    // .setColor("#90ee90");
     
     message.channel.send(`
     :herb: __${entry.name}__ (${entry.race})
  • ID: ${entry.id} `);
-    return;
+ return;
   });
 }
 
-if(command ===`mstrains` || `maryjanes` && (args[0]) == `flavors`){
+if(command === `mstrains` && (args[0] == "flavors")){
   let pages = ["🌿","***List of Flavors.***","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
   "Pepper","Flowery","Citrus","Orange","Sweet",
   "Skunk","Grape","Minty","Woody","Cheese",
@@ -1304,11 +1304,11 @@ if(command === `help`){
      
      if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
      
-     if(args[0] == "mstrains" || "maryjanes") return message.channel.send(`
+     if(args[0] == "mstrains") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
- | Strain Branches: sat \`sativa\`, ind \`indica\`, hyb \`hybrid\`
+ | Strain Branches: Sativa \`sat\`, Indica \`ind\`, Hybrid \`hyb\`
  | *Can only search strains with ID*
- | Usage: !?mstrains or \`!?maryjanes\` <strain branch> <id>`);
+ | Usage: !?mstrains <strain branch> <id>`);
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
