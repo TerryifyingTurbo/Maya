@@ -355,11 +355,11 @@ if(command === `urban`){
 };
 // Weed Key qLZXyPT
 
-if(command ===`marijuanastrains` || `maryjanes` && (args[0] == `sat`)){
+if(command ===`mstrains` || `maryjanes` && (args[0] == `sat`)){
   let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`;
   snekfetch.get(sativa).then(r => {
     let body = r.body
-    let id = Number(args[0]);
+    let id = Number(args[1]);
     if(!id) return message.channel.send(`${redx} Enter an ID number to search for a Sativa strain.`);
     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
 
@@ -1217,6 +1217,7 @@ if(command === `help`){
      if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
      if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>");
      if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
+     if(args[0] == "mstrains") return message.channel.send("I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid.");
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
@@ -1246,7 +1247,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, alcohol"
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, mstrains"
           },
           {
             "name": " :wrench: Moderation",
