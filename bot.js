@@ -355,22 +355,25 @@ if(command === `urban`){
 });
 };
 if(command === `google`){
-  let searchMessage = await message.channel.send('Searching...');
-  let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(message.content)}`;
-	return snekfetch.get(searchUrl)
-		.then((result) => {
-			let $ = cheerio.load(result.text);
-			let googleData = $('.r')
-				.first()
-				.find('a')
-				.first()
-				.attr('href');
-			googleData = querystring.parse(googleData.replace('/url?', ''));
-			searchMessage.edit(`Found\n${googleData.q}`).catch((err) => {
-        searchMessage.edit(`${redx} Result not found.`);
-    });
-  });
-}
+  async function googleCommand(message, args) {
+
+    let searchMessage = await message.reply('Searching... Sec.');
+    let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(message.content)}`;
+    return snekfetch.get(searchUrl)
+      .then((result) => {
+        let $ = cheerio.load(result.text);
+        let googleData = $('.r')
+          .first()
+          .find('a')
+          .first()
+          .attr('href');
+        googleData = querystring.parse(googleData.replace('/url?', ''));
+        searchMessage.edit(`Result found!\n${googleData.q}`).catch((err) => {
+          searchMessage.edit('No results found!');
+        });
+      }
+    )}
+  };
 // Weed Key qLZXyPT
 // strainapi.evanbusse.com/qLZXyPT/searchdata/effects (lists all effects)
 // strainapi.evanbusse.com/qLZXyPT/strains/search/effect/EFFECT (searches strains with supplied effect)
