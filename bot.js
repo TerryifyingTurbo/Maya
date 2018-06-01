@@ -355,7 +355,6 @@ if(command === `urban`){
 });
 };
 if(command === `google`){
-  async function googleCommand(message, args) {
 
     let searchMessage = await message.reply('Searching... Sec.');
     let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(message.content)}`;
@@ -372,7 +371,7 @@ if(command === `google`){
           searchMessage.edit('No results found!');
         });
       }
-    )}
+    )
   };
 // Weed Key qLZXyPT
 // strainapi.evanbusse.com/qLZXyPT/searchdata/effects (lists all effects)
