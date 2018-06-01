@@ -381,6 +381,52 @@ if(command ===`mstrains` && (args[0] == "sat")){
   });
 }
 
+if(command ===`mstrains` && (args[0] == "ind")){
+  let indica = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica`;
+  snekfetch.get(indica).then(r => {
+    let body = r.body
+    let id = Number(args[1]);
+    if(!id) return message.channel.send(`${redx} Enter an ID number to search for an Indica strain.`);
+    if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Sativa__ or __Hybrid__.`);
+    // let sativaembed = new Discord.RichEmbed()
+    // .setAuthor(entry.name)
+    // .setFooter("ID: " + entry.id)
+    // .setDescription("Species: " + entry.race)
+    // .setColor("#90ee90");
+    
+    message.channel.send(`
+    :herb: __${entry.name}__ (${entry.race})
+ • ID: ${entry.id} `);
+ return;
+  });
+}
+
+if(command ===`mstrains` && (args[0] == "hyb")){
+  let hybrid = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
+  snekfetch.get(hybrid).then(r => {
+    let body = r.body
+    let id = Number(args[1]);
+    if(!id) return message.channel.send(`${redx} Enter an ID number to search for a Hybrid strain.`);
+    if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Sativa__.`);
+    // let sativaembed = new Discord.RichEmbed()
+    // .setAuthor(entry.name)
+    // .setFooter("ID: " + entry.id)
+    // .setDescription("Species: " + entry.race)
+    // .setColor("#90ee90");
+    
+    message.channel.send(`
+    :herb: __${entry.name}__ (${entry.race})
+ • ID: ${entry.id} `);
+ return;
+  });
+}
+
 if(command === `mstrains` && (args[0] == "flavors")){
   let pages = ["🌿","***List of Flavors.***","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
   "Pepper","Flowery","Citrus","Orange","Sweet",
