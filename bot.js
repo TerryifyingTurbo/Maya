@@ -356,7 +356,7 @@ if(command === `urban`){
 // Weed Key qLZXyPT
 // strainapi.evanbusse.com/qLZXyPT/searchdata/effects (lists all effects)
 // strainapi.evanbusse.com/qLZXyPT/strains/search/effect/EFFECT (searches strains with supplied effect)
-// strainapi.evanbusse.com/qLZXyPT/searchdata/flavors
+// strainapi.evanbusse.com/qLZXyPT/searchdata/flavors (lists all flavors)
 
 if(command ===`mstrains` || `maryjanes` && (args[0]) == `flavors`){
   let pages = ["🌿","***List of Flavors.***","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
@@ -425,8 +425,8 @@ if(command ===`mstrains` || `maryjanes` && (args[0] == `sat`)){
     .setColor("#90ee90");
     
     message.channel.send(`
-    __${entry.name}__ (${entry.race})
-    • ID: ${entry.id} `);
+    :herb: __${entry.name}__ (${entry.race})
+ • ID: ${entry.id} `);
     return;
   }); 
 }
@@ -1258,13 +1258,13 @@ if(command === `purge`){
 if(command === `help`){
      if(args[0] == "dws") return message.channel.send(`
      Usage: !?dws <any> 
-     | *Character commands only use the first name.* \`ex. !?dws travis\` \`!?dws ruben\` 
-     | *All commands are lowercased and should not be spaced* \`ex. !?dws gtgalaxytruck\` \`!?dws nautibuoy\`.`);
+ | *Character commands only use the first name.* \`ex. !?dws travis\` \`!?dws ruben\` 
+ | *All commands are lowercased and should not be spaced* \`ex. !?dws gtgalaxytruck\` \`!?dws nautibuoy\`.`);
      
      if(args[0] == "pick") return message.channel.send(`
      Out of the choices you supply me, I will pick only **one.** 
-     | Usage: !?pick <any> <any> 
-     | All commas used **will split choices**.`);
+ | Usage: !?pick <any> <any> 
+ | All commas used **will split choices**.`);
      
      if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");   
      
@@ -1278,8 +1278,8 @@ if(command === `help`){
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
-     | Usage: !?smut <story> 
-     | *Stories cannot be spaced out; will not work* \`ex. !?smut tradechristmasspecial\``);
+ | Usage: !?smut <story> 
+ | *Stories cannot be spaced out; will not work* \`ex. !?smut tradechristmasspecial\``);
      
      if(args[0] == "hentai") return message.channel.send(`
      I'll bring up some of those anime titties or whatever :o
@@ -1287,27 +1287,27 @@ if(command === `help`){
      
  if(args[0] == "succ") return message.channel.send(`
      Give something *or someone* the oral relief. 
-     | Usage: !?succ <any>`);
+ | Usage: !?succ <any>`);
      
      if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
      
      if(args[0] == "fliptext") return message.channel.send(`
      It's like repeating what you say but upside down :o 
-     | Usage: !?fliptext <text`);
+ | Usage: !?fliptext <text`);
      
      if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
      
      if(args[0] == "rps") return message.channel.send(`
      We shall duel in a match of Rock, Paper, Scissors. 
-     | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>`);
+ | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>`);
      
      if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
      
      if(args[0] == "mstrains" || "maryjanes") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
-     | Strain Branches: sat \`sativa\`, ind \`indica\`, hyb \`hybrid\`
-     | *Can only search strains with ID*
-     | Usage: !?mstrains or \`!?maryjanes\` <strain branch> <id>`);
+ | Strain Branches: sat \`sativa\`, ind \`indica\`, hyb \`hybrid\`
+ | *Can only search strains with ID*
+ | Usage: !?mstrains or \`!?maryjanes\` <strain branch> <id>`);
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
