@@ -378,7 +378,8 @@ if(command ===`mstrains` || `maryjanes` && (args[0] == `sat`)){
     :herb: __${entry.name}__ (${entry.race})
  • ID: ${entry.id} `);
     return;
-  }); 
+  });
+}
 
 if(command ===`mstrains` || `maryjanes` && (args[0]) == `flavors`){
   let pages = ["🌿","***List of Flavors.***","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
