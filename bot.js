@@ -348,13 +348,33 @@ if(command === `urban`){
     .setTitle(json.word)
     .setColor("RANDOM")
     .setDescription(json.definition)
-    .addField("Example", json.example)
     .addField("Upvotes", json.thumbs_up + ` ${greencheck}`, true)
     .addField("Downvotes", json.thumbs_down + ` ${redx}`, true);
     message.channel.send(urembed);
 });
 };
 // Weed Key qLZXyPT
+
+if(command ===`marijuanastrains` || `maryjanes` && (args[0] == `sat`)){
+  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`;
+  snekfetch.get(sativa).then(r => {
+    let body = r.body
+    let id = Number(args[0]);
+    if(!id) return message.channel.send(`${redx} Enter an ID number to search for a Sativa strain.`);
+    if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Hybrid__.`);
+    let sativaembed = new Discord.RichEmbed()
+    .setAuthor(entry.name)
+    .setFooter("ID: " + entry.id)
+    .setDescription("Species " + entry.race)
+    .setColor("#90ee90");
+    
+    message.channel.send(sativaembed);
+    return;
+  }); 
+}
 if(command === `jsontest`){
   let api = "https://jsonplaceholder.typicode.com/posts";
   snekfetch.get(api).then(r => {
