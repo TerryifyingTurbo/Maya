@@ -367,7 +367,7 @@ if(command ===`mstrains` && (args[0] == "sat")){
     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
 
     let entry = body.find(post => post.id === id);
-    // if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Hybrid__.`);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Hybrid__.`);
     // let sativaembed = new Discord.RichEmbed()
     // .setAuthor(entry.name)
     // .setFooter("ID: " + entry.id)
