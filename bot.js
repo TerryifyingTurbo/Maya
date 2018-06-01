@@ -354,6 +354,59 @@ if(command === `urban`){
 });
 };
 // Weed Key qLZXyPT
+// strainapi.evanbusse.com/qLZXyPT/searchdata/effects (lists all effects)
+// strainapi.evanbusse.com/qLZXyPT/strains/search/effect/EFFECT (searches strains with supplied effect)
+// strainapi.evanbusse.com/qLZXyPT/searchdata/flavors
+
+if(command ===`mstrains` || `maryjanes` && (args[0]) == `flavors`){
+  let pages = ["🌿","***List of Flavors.***","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
+  "Pepper","Flowery","Citrus","Orange","Sweet",
+  "Skunk","Grape","Minty","Woody","Cheese",
+  "Diesel","Tropical","Grapefruit","Nutty","Lemon",
+  "Berry","Blueberry","Ammonia","Apple","Rose",
+  "Butter","Honey","Tea","Lime","Lavender",
+  "Strawberry","Mint","Chestnut","Tree Fruit","Pear",
+  "Apricot","Peach","Blue Cheese","Menthol","Coffee",
+  "Tar","Mango","Pineapple","Sage","Vanilla",
+  "Plum","Tobacco","Violet"];
+
+  let page = 1; 
+ 
+  const embed = new Discord.RichEmbed() 
+    .setColor("RANDOM")
+    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setDescription(pages[page-1])
+ 
+  message.channel.send(embed).then(message => { 
+   
+    message.react('⏪').then( r => { 
+      message.react('⏩') 
+     
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
+     
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 320000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 320000 }); 
+     
+      
+      backwards.on('collect', r => { 
+        if (page === 1) return; 
+        page--;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+     
+      forwards.on('collect', r => { 
+        if (page === pages.length) return; 
+        page++;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed)
+      })
+   
+    })
+})};
 
 if(command ===`mstrains` || `maryjanes` && (args[0] == `sat`)){
   let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`;
@@ -368,10 +421,12 @@ if(command ===`mstrains` || `maryjanes` && (args[0] == `sat`)){
     let sativaembed = new Discord.RichEmbed()
     .setAuthor(entry.name)
     .setFooter("ID: " + entry.id)
-    .setDescription("Species " + entry.race)
+    .setDescription("Species: " + entry.race)
     .setColor("#90ee90");
     
-    message.channel.send(sativaembed);
+    message.channel.send(`
+    __${entry.name}__ (${entry.race})
+    • ID: ${entry.id} `);
     return;
   }); 
 }
@@ -1201,23 +1256,58 @@ if(command === `purge`){
   
   
 if(command === `help`){
-     if(args[0] == "dws") return message.channel.send("Usage: !?dws <option> | *Character commands only use the first name.* `ex. !?dws travis` `!?dws ruben` | *All commands are lowercased and should not be spaced* `ex. !?dws gtgalaxytruck` `!?dws nautibuoy`.");
-     if(args[0] == "pick") return message.channel.send(`Out of the choices you supply me, I will pick only **one.** | Usage: !?pick <options> <options> | All commas used **will split choices**.`);
+     if(args[0] == "dws") return message.channel.send(`
+     Usage: !?dws <any> 
+     | *Character commands only use the first name.* \`ex. !?dws travis\` \`!?dws ruben\` 
+     | *All commands are lowercased and should not be spaced* \`ex. !?dws gtgalaxytruck\` \`!?dws nautibuoy\`.`);
+     
+     if(args[0] == "pick") return message.channel.send(`
+     Out of the choices you supply me, I will pick only **one.** 
+     | Usage: !?pick <any> <any> 
+     | All commas used **will split choices**.`);
+     
      if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");   
+     
      if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
+     
      if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
+     
      if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
+     
      if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
-     if(args[0] == "smut") return message.channel.send("A collection of stories that are most definitely NSFW. | Usage: !?smut <story> | *Stories cannot be spaced out; will not work* `ex. !?smut tradechristmasspecial`");
-     if(args[0] == "hentai") return message.channel.send(`I'll bring up some anime titties :o
+     
+     if(args[0] == "smut") return message.channel.send(`
+     A collection of stories that are most definitely NSFW. 
+     | Usage: !?smut <story> 
+     | *Stories cannot be spaced out; will not work* \`ex. !?smut tradechristmasspecial\``);
+     
+     if(args[0] == "hentai") return message.channel.send(`
+     I'll bring up some of those anime titties or whatever :o
  **Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. \`!?hentai neko\``);
-     if(args[0] == "succ") return message.channel.send("Give something *or someone* the oral relief. | Usage: !?succ <user or other args>");
+     
+ if(args[0] == "succ") return message.channel.send(`
+     Give something *or someone* the oral relief. 
+     | Usage: !?succ <any>`);
+     
      if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
-     if(args[0] == "fliptext") return message.channel.send("It's like repeating what you say but upside down :o | Usage: !?fliptext <text");
+     
+     if(args[0] == "fliptext") return message.channel.send(`
+     It's like repeating what you say but upside down :o 
+     | Usage: !?fliptext <text`);
+     
      if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
-     if(args[0] == "rps") return message.channel.send("We shall duel in a match of Rock, Paper, Scissors. | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>");
+     
+     if(args[0] == "rps") return message.channel.send(`
+     We shall duel in a match of Rock, Paper, Scissors. 
+     | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>`);
+     
      if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
-     if(args[0] == "mstrains") return message.channel.send("I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid.");
+     
+     if(args[0] == "mstrains" || "maryjanes") return message.channel.send(`
+     I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
+     | Strain Branches: sat \`sativa\`, ind \`indica\`, hyb \`hybrid\`
+     | *Can only search strains with ID*
+     | Usage: !?mstrains or \`!?maryjanes\` <strain branch> <id>`);
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
