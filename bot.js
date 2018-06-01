@@ -408,7 +408,7 @@ if(command === `urban`){
 // }
 
 if(command ===`mstrains`){
-  let id = args[0];
+  let id = Number(args[0]);
   let descApi = `strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(id)}`;
   snekfetch.get(descApi).then(r => {
     let body = r.body
