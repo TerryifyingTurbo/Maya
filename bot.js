@@ -366,12 +366,10 @@ if(command === `google`){
 				.first()
 				.attr('href');
 			googleData = querystring.parse(googleData.replace('/url?', ''));
-			searchMessage.edit(`Found\n${googleData.q}`);
-		});
-  
-		.catch((err) => {
-			searchMessage.edit('No results found!');
-		});
+			searchMessage.edit(`Found\n${googleData.q}`).catch((err) => {
+        searchMessage.edit(`${redx} Result not found.`);
+    });
+  });
 }
 // Weed Key qLZXyPT
 // strainapi.evanbusse.com/qLZXyPT/searchdata/effects (lists all effects)
