@@ -384,7 +384,7 @@ if(command === `urban`){
 
 if(command ===`mstrains` && (args[0] == "sat")){
   let id = Number(args[1]);
-  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/desc/${id}`;
+  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/desc/${encodeURIComponent(id)}`;
   snekfetch.get(sativa).then(r => {
     let body = r.body
     if(!id) return message.channel.send(`${redx} Enter an ID number to search for a Sativa strain.`);
