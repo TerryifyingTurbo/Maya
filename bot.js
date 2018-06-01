@@ -355,7 +355,7 @@ if(command === `urban`){
 });
 };
 if(command === `google`){
-  let searchMessage = await < Message > .reply('Searching...');
+  let searchMessage = await message.channel.send('Searching...');
 	let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(args)}`;
 	return snekfetch.get(searchUrl)
 		.then((result) => {
