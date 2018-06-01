@@ -355,10 +355,8 @@ if(command === `urban`){
 });
 };
 if(command === `google`){
-  let gSearch = args.join(" ");
   let searchMessage = await message.channel.send('Searching...');
-  let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(gSearch)}`;
-  if(!gSearch) return message.channel.send("Enter something to search.");
+  let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(message.content)}`;
 	return snekfetch.get(searchUrl)
 		.then((result) => {
 			let $ = cheerio.load(result.text);
