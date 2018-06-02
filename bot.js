@@ -384,7 +384,7 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/strains/data/effects/STRAIN_ID
 
 if(command ===`mstrains` && (args[0] == "search")){
-  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa` + `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica` + `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
+  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/2061`
   
   snekfetch.get(sativa).then(r => {
     let body = r.body
@@ -404,7 +404,8 @@ if(command ===`mstrains` && (args[0] == "search")){
     
     message.channel.send(`
     :herb: __${entry.name}__ (${entry.race})
- • ID: ${entry.id} `);
+ • ID: ${entry.id} 
+ • Overview: ${entry.desc}`);
  return;
   });
 }
