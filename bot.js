@@ -382,28 +382,29 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/searchdata/flavors (lists all flavors)
 // strainapi.evanbusse.com/qLZXyPT/strains/data/desc/STRAIN_ID
 // strainapi.evanbusse.com/qLZXyPT/strains/data/effects/STRAIN_ID
-// strainapi.evanbusse.com/qLZXyPT/strains/search/race/RACE
 
 if(command ===`mstrains`){
-  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa` && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica` && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
-  let id = Number(args[0]);
+  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa` 
+  && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica` 
+  && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
+  
   snekfetch.get(sativa).then(r => {
     let body = r.body
+    let id = Number(args[0]);
     if(!id) return message.channel.send(`${redx} Enter an ID number to search for a strain.`);
     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
-    let entry = body.find(post => post.id === id);
-    if(!entry)return message.channel.send(`${redx} The ID provided does not exist`);
-    let sativaembed = new Discord.RichEmbed()
-    .setAuthor(entry.name)
-    .setFooter("ID: " + entry.id)
-    .setDescription("Species: " + entry.race)
-    .setColor("#90ee90");
 
-    message.channel.send(sativaembed);
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist`);
+    // let sativaembed = new Discord.RichEmbed()
+    // .setAuthor(entry.name)
+    // .setFooter("ID: " + entry.id)
+    // .setDescription("Species: " + entry.race)
+    // .setColor("#90ee90");
     
-//     message.channel.send(`
-//     :herb: __${entry.name}__ (${entry.race})
-//  • ID: ${entry.id} `);
+    message.channel.send(`
+    :herb: __${entry.name}__ (${entry.race})
+ • ID: ${entry.id} `);
  return;
   });
 }
