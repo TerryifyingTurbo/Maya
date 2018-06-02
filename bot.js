@@ -384,7 +384,7 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/strains/data/effects/STRAIN_ID
 
 if(command ===`mstrains` && (args[0] == "search")){
-  let sativa = [`http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`, `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica`, `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`];
+  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa` || `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica` || `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
   
   snekfetch.get(sativa).then(r => {
     let body = r.body
