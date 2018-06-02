@@ -399,7 +399,7 @@ if(command ===`mstrains`){
     .setAuthor(entry.name)
     .setFooter("ID: " + entry.id)
     .setDescription("Species: " + entry.race)
-    .addField("Overview", entry.desc, true)
+    .addField("Overview", body.desc, true)
     .setColor("#90ee90");
     
 //     message.channel.send(`
