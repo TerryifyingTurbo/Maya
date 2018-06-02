@@ -386,10 +386,7 @@ if(command === `urban`){
 
 if(command ===`mstrains`){
   let id = Number(args[0]);
-  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa` 
-  && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica` 
-  && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`
-  && `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(id)}/`;
+  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa` && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica` && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid` && `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(id)}/`;
   
   snekfetch.get(sativa).then(r => {
     let body = r.body
