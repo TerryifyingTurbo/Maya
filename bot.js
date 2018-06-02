@@ -382,45 +382,65 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/searchdata/flavors (lists all flavors)
 // strainapi.evanbusse.com/qLZXyPT/strains/data/desc/STRAIN_ID
 // strainapi.evanbusse.com/qLZXyPT/strains/data/effects/STRAIN_ID
-// strainapi.evanbusse.com/qLZXyPT/strains/data/flavors/STRAIN_ID
 
-// if(command ===`mstrains` && (args[0] == "sat")){
-//   let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`;
-//   snekfetch.get(sativa).then(r => {
-//     let body = r.body
-//     let id = Number(args[1]);
-//     if(!id) return message.channel.send(`${redx} Enter an ID number to search for a Sativa strain.`);
-//     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
-
-//     let entry = body.find(post => post.id === id);
-//     if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Hybrid__.`);
-//     // let sativaembed = new Discord.RichEmbed()
-//     // .setAuthor(entry.name)
-//     // .setFooter("ID: " + entry.id)
-//     // .setDescription("Species: " + entry.race)
-//     // .setColor("#90ee90");
-    
-//     message.channel.send(`
-//     :herb: __${entry.name}__ (${entry.race})
-//  • ID: ${entry.id} `);
-//  return;
-//   });
-// }
-
-if(command ===`mstrains`){
-  let id = Number(args[0]);
-  let descApi = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(id)}`;
-  snekfetch.get(descApi).then(r => {
+if(command ===`mstrains` && (args[0] == "sat")){
+  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`;
+  snekfetch.get(sativa).then(r => {
     let body = r.body
-    if(!id) return message.channel.send(`${redx} Enter an ID number`);
+    let id = Number(args[1]);
+    if(!id) return message.channel.send(`${redx} Enter an ID number to search for a Sativa strain.`);
     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
 
-    let entry = body.get(post => post.id === id);
-    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist`);
-    console.log(entry);
-  })
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Hybrid__.`);
+    // let sativaembed = new Discord.RichEmbed()
+    // .setAuthor(entry.name)
+    // .setFooter("ID: " + entry.id)
+    // .setDescription("Species: " + entry.race)
+    // .setColor("#90ee90");
+    
+    message.channel.send(`
+    :herb: __${entry.name}__ (${entry.race})
+ • ID: ${entry.id} `);
+ return;
+  });
 }
 
+if(command ===`mstrains` && (args[0] == "ind")){
+  let indica = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica`;
+  snekfetch.get(indica).then(r => {
+    let body = r.body
+    let id = Number(args[1]);
+    if(!id) return message.channel.send(`${redx} Enter an ID number to search for an Indica strain.`);
+    if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Sativa__ or __Hybrid__.`);
+    
+    message.channel.send(`
+    :herb: __${entry.name}__ (${entry.race})
+ • ID: ${entry.id} `);
+ return;
+  });
+}
+
+if(command ===`mstrains` && (args[0] == "hyb")){
+  let hybrid = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
+  snekfetch.get(hybrid).then(r => {
+    let body = r.body
+    let id = Number(args[1]);
+    if(!id) return message.channel.send(`${redx} Enter an ID number to search for a Hybrid strain.`);
+    if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist OR it already belongs to another strain from __Indica__ or __Sativa__.`);
+
+    message.channel.send(`
+    :herb: __${entry.name}__ (${entry.race})
+ • ID: ${entry.id} `);
+ return;
+  });
+}
 
 if(command === `mstrains` && (args[0] == "flavors")){
   let pages = ["🌿*Mmm, yummy*","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
