@@ -412,11 +412,11 @@ if(command ===`mstrains`){
   let descApi = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(id)}`;
   snekfetch.get(descApi).then(r => {
     let body = r.body
-    if(!id) return message.channel.send("Needs an ID.");
-    if(isNaN(id)) return message.channel.send("ID must ONLY be a number.");
-    
-    let entry = body.find(post => post.id === id)
-    if(!entry) return message.channel.send(`${redx}`);
+    if(!id) return message.channel.send(`${redx} Enter an ID number`);
+    if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist`);
     console.log(entry);
   })
 }
