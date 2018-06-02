@@ -384,11 +384,9 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/strains/data/effects/STRAIN_ID
 
 if(command ===`mstrains` && (args[0] == "search")){
-  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`;
-  let indica = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica`;
-  let hybrid = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
+  let sativa = [`http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`, `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica`, `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`];
   
-  snekfetch.get(sativa + indica + hybrid).then(r => {
+  snekfetch.get(sativa).then(r => {
     let body = r.body
     let id = Number(args[1]);
     if(!id) return message.channel.send(`${redx} Enter an ID number to search for a strain.`);
