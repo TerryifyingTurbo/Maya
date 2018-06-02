@@ -413,7 +413,7 @@ if(command ===`mstrains`){
   snekfetch.get(descApi).then(r => {
     let body = r.body
     if(!id) return message.channel.send("Needs an ID.");
-    if(isNaN(message.content)) return message.channel.send("ID must ONLY be a number.");
+    if(isNaN(id)) return message.channel.send("ID must ONLY be a number.");
     
     let entry = body.find(post => post.id === id)
     if(!entry) return message.channel.send(`${redx}`);
