@@ -415,7 +415,7 @@ if(command ===`mstrains`){
     if(!id) return message.channel.send(`${redx} Enter an ID number`);
     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
 
-    let entry = body.find(post => post.id === id);
+    let entry = body.get(post => post.id === id);
     if(!entry) return message.channel.send(`${redx} The ID provided either does not exist`);
     console.log(entry);
   })
