@@ -386,14 +386,13 @@ if(command === `urban`){
 
 if(command ===`mstrains`){
   let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa` && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica` && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
-  
+  let id = Number(args[0]);
   snekfetch.get(sativa).then(r => {
-    let id = Number(args[0]);
     let body = r.body
     if(!id) return message.channel.send(`${redx} Enter an ID number to search for a strain.`);
     if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
     let entry = body.find(post => post.id === id);
-    if(!entry) return message.channel.send(`${redx} The ID provided does not exist`);
+    if(!entry)return message.channel.send(`${redx} The ID provided does not exist`);
     let sativaembed = new Discord.RichEmbed()
     .setAuthor(entry.name)
     .setFooter("ID: " + entry.id)
