@@ -766,6 +766,20 @@ if(command === `hentai`){
   .catch(error => message.reply(`${redx} ${error}`));
 }}
 
+if(command === `boobs`){
+  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  let {body} = await snekfetch.get(`http://api.oboobs.ru/boobs/0/1/random`);
+  let model = body.model || "*Unknown*";
+  let bob = new Discord.RichEmbed()
+  .setTitle(":eyes: S318008")
+  .setColor("RANDOM")
+  .setImage(body.preview)
+  .setFooter("Who is that? " + model)
+  message.channel.send(bob).catch(error =>{
+    message.channel.send(`${redx}` + " No boobies today \n" + `\`\`\`js\n${error}\`\`\``);
+  });
+}
+
 if(command === `dirtyquote`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
@@ -998,7 +1012,7 @@ let rembed = new Discord.RichEmbed()
   .addField("Zodiac Sign", "*Unknown*", true)
   .addField("Description", "*An ōkami that has been also known as the \"Wanderer\". As with all other ōkami, Roxuhn preys and feeds on human victims.*", true)
   .addField(".", "Powers and Abilities", true)
-  .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly used on all forms of life***", true)
+  .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly towards biological material***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
 
