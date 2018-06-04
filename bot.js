@@ -774,6 +774,15 @@ if(command === `hentai`){
   .catch(error => message.reply(`${redx} ${error}`));
 }}
 
+if(command === `boobs`){
+  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  let {body} = await snekfetch.get(`http://api.oboobs.ru/boobs/0/1/random`);
+  let bob = new Discord.RichEmbed()
+  .setTitle(":eyes: S318008")
+  .setImage(body.preview);
+  message.channel.send(bob);
+}
+
 if(command === `dirtyquote`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
