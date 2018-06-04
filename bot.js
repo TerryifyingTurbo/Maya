@@ -483,11 +483,11 @@ if(command === `jsontest`){
 if(command === `namegen`){
   let {body} = await snekfetch.get(`https://uinames.com/api/`);
   let info = new Discord.RichEmbed()
-  .setTitle("Generated Name")
+  .setTitle(":card_index: Generated Name")
   .setFooter("Region: " + body.region)
   .addField("Full Name", body.name + ` ${body.surname}`)
   .addField("Sex", body.gender);
-message.channel.send(info);
+ message.channel.send(info);
 }
 
 if(command === `say`) {
@@ -1256,7 +1256,7 @@ if(command === `help`){
      if(args[0] == "dws") return message.channel.send(`
      Usage: !?dws <any> 
  | *Character commands only use the first name.* \`ex. !?dws travis\` \`!?dws ruben\` 
- | *All commands are lowercased and should not be spaced* \`ex. !?dws gtgalaxytruck\` \`!?dws nautibuoy\`.`);
+ | *All subcommands are lowercased and should not be spaced* \`ex. !?dws gtgalaxytruck\` \`!?dws nautibuoy\`.`);
      
      if(args[0] == "pick") return message.channel.send(`
      Out of the choices you supply me, I will pick only **one.** 
@@ -1272,6 +1272,8 @@ if(command === `help`){
      if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
      
      if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
+
+     if(args[0] == "namegen") return message.channel.send("I will get a randomly generated name that includes it's origin.");
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
@@ -1290,7 +1292,7 @@ if(command === `help`){
      
      if(args[0] == "fliptext") return message.channel.send(`
      It's like repeating what you say but upside down :o 
- | Usage: !?fliptext <text`);
+ | Usage: !?fliptext <any>`);
      
      if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
      
@@ -1303,7 +1305,8 @@ if(command === `help`){
      if(args[0] == "mstrains") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
  | *Can only search strains with ID*
- | Usage: !?mstrains <id>`);
+ | Usage: !?mstrains <id>
+ | Usage: !?mstrains flavors`);
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
@@ -1333,7 +1336,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, mstrains"
+            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, mstrains, namegen"
           },
           {
             "name": " :wrench: Moderation",
