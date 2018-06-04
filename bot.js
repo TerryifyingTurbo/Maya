@@ -1294,9 +1294,8 @@ if(command === `help`){
      
      if(args[0] == "mstrains") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
- | Strain Branches: Sativa \`sat\`, Indica \`ind\`, Hybrid \`hyb\`
  | *Can only search strains with ID*
- | Usage: !?mstrains <strain branch> <id>`);
+ | Usage: !?mstrains <id>`);
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
