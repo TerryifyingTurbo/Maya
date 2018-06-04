@@ -768,24 +768,13 @@ if(command === `hentai`){
 
 if(command === `boobs`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  const options = {
-    url: 'http://api.oboobs.ru/boobs/0/1/random',
-    json: true 
-}
-
-snekfetch.get(options).then(boobs => { 
-  message.channel.send({embed: {
-        title: `:eyes: S318008`,
-        image: {
-            url: boobs[0].preview
-        },
-    }})
-}).catch(error => {
-    message.edit({
-        title: `No boobies today`,
-        description: `\`\`\`js\n${error}\`\`\``,
-    })
-})
+  let api = `http://api.oboobs.ru/boobs/0/1/random`;
+  let {body} = await superagent.get(api);
+  let bob = new Discord.RichEmbed()
+  .setTitle(":eyes: S318008")
+  .setImage(body.preview)
+  .setFooter("Model: " + body.model || "Unknown");
+  message.channel.send(bob);
 }
 
 if(command === `dirtyquote`){
