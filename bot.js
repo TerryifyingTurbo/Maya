@@ -482,7 +482,12 @@ if(command === `jsontest`){
 
 if(command === `namegen`){
   let {body} = await snekfetch.get(`https://uinames.com/api/`);
-  console.log(body);
+  let info = new Discord.RichEmbed()
+  .setTitle("Generated Name")
+  .setFooter("Region " + body.region)
+  .addField("Full Name", body.name +  body.surname, true)
+  .addField("Sex", body.gender, true);
+message.channel.send(info);
 }
 
 if(command === `say`) {
