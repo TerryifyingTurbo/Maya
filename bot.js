@@ -480,7 +480,10 @@ if(command === `jsontest`){
   });
 }
 
-
+if(command === `namegen`){
+  let {body} = await snekfetch.get(`https://uinames.com/api/`);
+  console.log(body);
+}
 
 if(command === `say`) {
 
