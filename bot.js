@@ -771,9 +771,9 @@ if(command === `boobs`){
     title: `Boobs only in NSFW channels pls`
 }})
 
-const waitMessage = await message.channel.send({ 
+const waitMessage = await message.channel.send({embed: {
     title: `Ya boi ${message.author.displayName} is looking for some boobies...`,
-})
+}})
 
 snekfetch.get(`http://api.oboobs.ru/boobs/0/1/random`).then(boobs => { // Pass in the boobs objects fetched from the API 
     return waitMessage.edit({embed: {
