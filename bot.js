@@ -484,9 +484,9 @@ if(command === `namegen`){
   let {body} = await snekfetch.get(`https://uinames.com/api/`);
   let info = new Discord.RichEmbed()
   .setTitle("Generated Name")
-  .setFooter("Region " + body.region)
-  .addField("Full Name", body.name +  body.surname, true)
-  .addField("Sex", body.gender, true);
+  .setFooter("Region: " + body.region)
+  .addField("Full Name", body.name + ` ${body.surname}`)
+  .addField("Sex", body.gender);
 message.channel.send(info);
 }
 
