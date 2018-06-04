@@ -801,7 +801,9 @@ if(command === `dirtyquote`){
   "\"Let's misbehave~\"",
   "\"I know I'm a handful, but that's what you got two hands for.\"",
   "\"I licked it, it's mine now.\"",
-  "\"Sex is like math, add the bed, subtract the clothes, divide the legs and pray you don't multiply\""
+  "\"Sex is like math, add the bed, subtract the clothes, divide the legs and pray you don't multiply\"",
+  `"Ugh, it's so hot"
+  "If you don't stop going on about how hot it is, I'm going to give you a reason to feel hot."`
  ];
 
   let result = Math.floor((Math.random() * replies.length))
@@ -1011,15 +1013,15 @@ let rembed = new Discord.RichEmbed()
 
 if(command === `dws`){
     if(args[0] == "bizid") return message.channel.send(zanembed);
-    else if(args[0] == "spacebar") return message.channel.send(spaceembed);
-    else if(args[0] == "gtgalaxytruck") return message.channel.send(galeembed);
-    else if(args[0] == "nautibuoy") return message.channel.send(nbembed);
-    else if(args[0] == "graveyardgrumble") return message.channel.send(ggembed);
-    else if(args[0] == "decomissionedbunker") return message.channel.send(dbembed);
-    else if(args[0] == "jejus") return message.channel.send(jembed);
-    else if(args[0] == "aeztia") return message.channel.send(aembed);
-    else if(args[0] == "travis") return message.channel.send(tembed);
-    else if(args[0] == "roxuhn") return message.channel.send(rembed);
+    if(args[0] == "spacebar") return message.channel.send(spaceembed);
+    if(args[0] == "gtgalaxytruck") return message.channel.send(galeembed);
+    if(args[0] == "nautibuoy") return message.channel.send(nbembed);
+    if(args[0] == "graveyardgrumble") return message.channel.send(ggembed);
+    if(args[0] == "decomissionedbunker") return message.channel.send(dbembed);
+    if(args[0] == "jejus") return message.channel.send(jembed);
+    if(args[0] == "aeztia") return message.channel.send(aembed);
+    if(args[0] == "travis") return message.channel.send(tembed);
+    if(args[0] == "roxuhn") return message.channel.send(rembed);
     message.channel.send(dwsembed);
 }
 
