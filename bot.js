@@ -428,7 +428,7 @@ if(command === `mstrains` && (args[0] == "flavors")){
   let page = 1; 
  
   const embed = new Discord.RichEmbed()
-    .setTitle("***List of possible flavors***")
+    .setTitle("List of possible flavors")
     .setColor("RANDOM")
     .setFooter(`Page ${page} of ${pages.length}`) 
     .setDescription(pages[page-1])
