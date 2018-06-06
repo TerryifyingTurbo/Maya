@@ -192,12 +192,16 @@ if(command === `status`){
   message.channel.send(`${greencheck} I am now __**${status}**__`);
 }
 
-if(command === "jsdocs"){
+if(command === "docrefs"){
   let docembed = new Discord.RichEmbed()
-  .setAuthor("Discord.js Documentation", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png", "https://discord.js.org/#/")
+  .setAuthor("Unofficial Discord Libraries", "https://cdn.discordapp.com/embed/avatars/0.png", "https://discordapi.com/unofficial/libs.html")
   .setColor("#de1b24")
-  .setDescription("Be aware of API updates, some methods may be deprecated in future updates.")
-  .addField(".", "https://discord.js.org/#/", true);
+  .setDescription("Be aware of API updates, some methods may be deprecated/outdated")
+  .addField("discord.js", "https://discord.js.org/#/", true)
+  .addField("JDA", "https://github.com/DV8FromTheWorld/JDA/", true)
+  .addField("discord.py", "http://discordpy.readthedocs.io/en/latest/api.html", true)
+  .addField("Discord.NET", "https://github.com/RogueException/Discord.Net", true)
+  .addField("discordrb", "https://www.rubydoc.info/gems/discordrb", true);
   message.channel.send(docembed);
 }
 
@@ -483,7 +487,7 @@ if(command === `jsontest`){
 if(command === `namegen`){
   let {body} = await snekfetch.get(`https://uinames.com/api/`);
   let info = new Discord.RichEmbed()
-  .setTitle(":card_index: Generated Name")
+  .setTitle("Generated Name")
   .setFooter("Region: " + body.region)
   .addField("Full Name", body.name + ` ${body.surname}`)
   .addField("Sex", body.gender);
@@ -774,15 +778,6 @@ if(command === `hentai`){
   .catch(error => message.reply(`${redx} ${error}`));
 }}
 
-if(command === `boobs`){
-  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  let {body} = await snekfetch.get(`http://api.oboobs.ru/boobs/0/1/random`);
-  let bob = new Discord.RichEmbed()
-  .setTitle(":eyes: S318008")
-  .setImage(body.preview);
-  message.channel.send(bob);
-}
-
 if(command === `dirtyquote`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
@@ -820,13 +815,13 @@ if(command === `dirtyquote`){
   "\"I licked it, it's mine now.\"",
   "\"Sex is like math, add the bed, subtract the clothes, divide the legs and pray you don't multiply\"",
   `"Ugh, it's so hot"
-  "If you don't stop going on about how hot it is, I'm going to give you a reason to feel hot."`
+  "If you don't stop going on about how hot it is, I'm going to give you a reason to feel hot."`,
+  `"Anything can be a dildo if you're brave enough."`
  ];
 
   let result = Math.floor((Math.random() * replies.length))
   message.channel.send(`*${replies[result]}*`);
 }
-
 
 if(command === `8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
@@ -966,21 +961,20 @@ let tembed = new Discord.RichEmbed()
   .setColor("#07a56c")
   .setFooter("Story Character", "https://i.imgur.com/uOFLi1A.png")
   .setThumbnail("https://i.imgur.com/jVM8fdc.jpg")
-  .addField("Status", "*Alive*", true)
+  .addField("Status", "*Determinant*", true)
+  .addField("Species", "*Human*", true)
   .addField("Height", "*5'9/175 cm/1.7 m*", true)
   .addField("Weight", "*130 lbs./59 kg*", true)
   .addField("Gender", "*Male*", true)
   .addField("Age", "*22*", true)
-  .addField("Zodiac Sign", "*Scorpio*", true)
-  .addField("Physical Appearance", "*Travis is a Hispanic male who is at the age of 22 with very dark brown hair and brown eyes. He has a medium build, standing 5’9 [175cm] and weighs at 130lbs. [59kg]. His skin tone is a III medium white (Fitzpatrick Scale). Travis's physique is slightly thinner compared to most of the others such as Riley, Connor, Carlos, and even his own brother, Marlowe." +  
-  "This most certainly comes from his time as a catcher and his stint in prison. Taking from his father's side, Travis and Relonimar both take their father's personality but is not as severe. The two brothers also inherit their father's dominant hand, which is the left hand—often frowned upon when doing tasks that were made for the right dominant hand." + 
-  "Travis is the person who wears casual clothing that usually consists of dark jeans, black two-tone converses, unique shirts with psychedelic logos covered by his galaxy hoodie.*", true);
+  .addField("Zodiac Sign", "*Scorpio*", true);
 let aembed = new Discord.RichEmbed()
   .setTitle("Aeztia Lavender")
   .setColor("#46437b")
   .setFooter("OP Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   .setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
   .addField("Status", "*Alive*", true)
+  .addField("Species", "*Demon*", true)
   .addField("Height", "*5'5/165 cm/1.6 m*", true)
   .addField("Weight", "*120 lbs./54 kg*", true)
   .addField("Gender", "*Female*", true)
@@ -1010,6 +1004,7 @@ let rembed = new Discord.RichEmbed()
   .setFooter("OP Fantasy Character", "https://i.imgur.com/uOFLi1A.png")
   //.setThumbnail("https://i.imgur.com/lCgNS6v.jpg")
   .addField("Status", "*Alive*", true)
+  .addField("Species", "*Ōkami*", true)
   .addField("Height", "*6'2/188 cm/1.8 m*", true)
   .addField("Weight", "*160 lbs./73 kg*", true)
   .addField("Gender", "*Male*", true)
@@ -1020,6 +1015,8 @@ let rembed = new Discord.RichEmbed()
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly towards biological material***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
+
+
 
 
 
@@ -1287,7 +1284,9 @@ if(command === `help`){
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
  | Usage: !?smut <story> 
- | *Stories cannot be spaced out; will not work* \`ex. !?smut tradechristmasspecial\``);
+ | *Stories cannot be spaced out; will not work* ex. !?smut tradechristmasspecial
+ | :rewind: Previous Page
+ | :fast_foward: Next Page`);
      
      if(args[0] == "hentai") return message.channel.send(`
      I'll bring up some of those anime titties or whatever :o
@@ -1309,7 +1308,7 @@ if(command === `help`){
      We shall duel in a match of Rock, Paper, Scissors. 
  | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>`);
      
-     if(args[0] == "jsdocs") return message.channel.send("I send the link to the JS Discord API documentation");
+     if(args[0] == "docrefs") return message.channel.send("I send links that lead to unofficial, but documented, Discord API libraries.");
      
      if(args[0] == "mstrains") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
@@ -1345,7 +1344,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, jsdocs, dws, listemotes, avatar, urban, pick, fortune, mstrains, namegen"
+            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrains, namegen"
           },
           {
             "name": " :wrench: Moderation",
