@@ -197,7 +197,7 @@ if(command === "docrefs"){
   .setAuthor("Unofficial Discord Libraries", "https://cdn.discordapp.com/embed/avatars/0.png", "https://discordapi.com/unofficial/libs.html")
   .setColor("#de1b24")
   .setDescription("Be aware of API updates, some methods may be deprecated/outdated")
-  .addField("discord.js", "https://discord.js.org/#/", true)
+  .addField("discord.js", "https://discord.js.org/#/docs/main/stable/general/welcome", true)
   .addField("JDA", "https://github.com/DV8FromTheWorld/JDA/", true)
   .addField("discord.py", "http://discordpy.readthedocs.io/en/latest/api.html", true)
   .addField("Discord.NET", "https://github.com/RogueException/Discord.Net", true)
@@ -1308,7 +1308,7 @@ if(command === `help`){
      We shall duel in a match of Rock, Paper, Scissors. 
  | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>`);
      
-     if(args[0] == "docrefs") return message.channel.send("I send links that lead to unofficial, but documented, Discord API libraries.");
+     if(args[0] == "docrefs") return message.channel.send("I'll send links that lead to unofficial, but documented, Discord API libraries.");
      
      if(args[0] == "mstrains") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
