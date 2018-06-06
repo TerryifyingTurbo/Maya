@@ -1286,7 +1286,7 @@ if(command === `help`){
  | Usage: !?smut <story> 
  | *Stories cannot be spaced out; will not work* ex. !?smut tradechristmasspecial
  | :rewind: Previous Page
- | :fast_foward: Next Page`);
+ | :fast_forward: Next Page`);
      
      if(args[0] == "hentai") return message.channel.send(`
      I'll bring up some of those anime titties or whatever :o
@@ -1296,7 +1296,7 @@ if(command === `help`){
      Give something *or someone* the oral relief. 
  | Usage: !?succ <any>`);
      
-     if(args[0] == "dirtyquote") return message.channel.send("I'll say something either lewd, sexual, and probably erotic");
+     if(args[0] == "dirtyquote") return message.channel.send("I'll say something... dirty.");
      
      if(args[0] == "fliptext") return message.channel.send(`
      It's like repeating what you say but upside down :o 
