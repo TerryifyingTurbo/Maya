@@ -1369,7 +1369,7 @@ if(command === `help`){
             "value": "purge, kick, ban, giverole, removerole"
           },
           {
-            "name": `Fun ${beemo} ${pikagroove}`,
+            "name": `Fun ${bmo} ${pikagroove}`,
             "value": "say, cat, catfact, dog, dogfact, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext, rps, meme"
           },
           {
