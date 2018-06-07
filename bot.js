@@ -125,6 +125,9 @@ bot.on("message", async message => {
  }
 const engcheck = bot.emojis.get("454400961281261580");
 const checkeng = bot.emojis.find("name", "checkeng");
+
+const love = bot.emojis.get("454416240904110081");
+const loveydovey = bot.emojis.find("name", "loveydovey");
   
 let prefix = botsettings.prefix;
    if(!message.content.startsWith(`${prefix}`)) return;
@@ -766,13 +769,15 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
 
 if(command === `smut`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  
   if(args[0] == "tradechristmasspecial") return;
+  
   let smutembed = new Discord.RichEmbed()
-  .setTitle("Lemon-Scented Smut")
+  .setDescription(`Erotic stories ${loveydovey}`)
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField("The Holy List of Story Sins", "*Trade Christmas Special, placeholder story (yes await until added)*", true);
+  .addField(":lemon:", "*Trade Christmas Special, placeholder story (yes await until added)*", true);
   message.channel.send(smutembed);
 }
 
