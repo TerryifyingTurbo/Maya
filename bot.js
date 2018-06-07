@@ -1294,6 +1294,8 @@ if(command === `help`){
      if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
 
      if(args[0] == "namegen") return message.channel.send("I will get a randomly generated name that includes it's origin.");
+
+     if(args[0] == "calc") return message.channel.send(`I will solve a mathematic expression. \n | Usage: !?calc <valid expression>`);
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
@@ -1358,7 +1360,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrains, namegen"
+            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrains, namegen, calc"
           },
           {
             "name": " :wrench: Moderation",
