@@ -29,7 +29,7 @@ bot.on("ready", async () => {
 } catch(e) {
     console.log(e.stack);
 }
-bot.user.setPresence({ game: { name: `with Travis`, url: 'hhttps://www.twitch.tv/terrifyingturbo', type: 1 } });
+bot.user.setPresence({ game: { name: `with ya boi`, url: 'https://www.twitch.tv/terrifyingturbo', type: 1 } });
 });
 
 bot.on("message", async message => {
