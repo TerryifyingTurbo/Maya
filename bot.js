@@ -8,6 +8,7 @@ const fetchVideoInfo = require("youtube-info");
 const urban = require("urban");
 const cheerio = require("cheerio");
 const querystring = require("querystring");
+const mathjs = require("mathjs");
 const snekfetch = require("snekfetch");
 const bot = new Discord.Client({disableEveryone: true})
 const cleverbot = require("cleverbot", "cleverbot.io");
@@ -492,6 +493,19 @@ if(command === `namegen`){
   .addField("Full Name", body.name + ` ${body.surname}`)
   .addField("Sex", body.gender);
  message.channel.send(info);
+}
+
+if(command === `calc`){
+  let input = args.join(" ");
+  if(!input) return message.channel.send("I need an equation for this to work.")
+
+  let answer;
+  try{
+    answer = mathjs.eval(input);
+  } catch (error) {
+    return message.channel.send(`${redx} Could not solve: ${error}`);
+  }
+  message.channel.send(answer);
 }
 
 if(command === `say`) {
