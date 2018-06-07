@@ -503,9 +503,9 @@ if(command === `calc`){
   try{
     answer = mathjs.eval(input);
   } catch (error) {
-    return message.channel.send(`${redx} Could not solve: ${error}`);
+    return message.channel.send(`${redx} Could not solve: **${error}**`);
   }
-  message.channel.send(answer);
+  message.channel.send(`\`${answer}\``);
 }
 
 if(command === `say`) {
@@ -1295,7 +1295,7 @@ if(command === `help`){
 
      if(args[0] == "namegen") return message.channel.send("I will get a randomly generated name that includes it's origin.");
 
-     if(args[0] == "calc") return message.channel.send(`I will solve a mathematic expression. \n | Usage: !?calc <valid expression>`);
+     if(args[0] == "calc") return message.channel.send(`I will solve a mathematic expression. \n| Usage: !?calc <valid expression>`);
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
@@ -1305,8 +1305,7 @@ if(command === `help`){
  | :fast_forward: Next Page`);
      
      if(args[0] == "hentai") return message.channel.send(`
-     I'll bring up some of those anime titties or whatever :o
- **Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. \`!?hentai neko\``);
+     I'll bring up some of those anime titties or whatever :o \n**Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. \`!?hentai neko\``);
      
  if(args[0] == "succ") return message.channel.send(`
      Give something *or someone* the oral relief. 
