@@ -38,91 +38,96 @@ bot.on("message", async message => {
   if(message.channel.type === "dm"){
     return message.reply("Ew, not in my DMs. Go to a server that **I'm in**.");
   }
-  
-const ayy = bot.emojis.get("426999753830825995");
+
+
+{  
+ const ayy = bot.emojis.get("426999753830825995");
   if(message.content === "ayy" || (message.content === "ayyy")){
   const ayy = bot.emojis.find("name", "ayy");
   message.channel.send(`${ayy} Lmao`);
-}
+ }
 
-const intensefear = bot.emojis.get("406790609035329538");
+ const intensefear = bot.emojis.get("406790609035329538");
   if(message.content === "D:"){
   const instensefear = bot.emojis.find("name", "intensefear");
   message.channel.send(`${instensefear}`);
-}
+ }
 
-const greencheck = bot.emojis.get("444736840940126208");
+ const greencheck = bot.emojis.get("444736840940126208");
   if(message.content === "aeztiaconfirm"){
   const greencheck = bot.emojis.find("name", "greencheck");
   message.channel.send(`${greencheck}`);
-}
+ }
 
-const redx = bot.emojis.get("444736917217476608");
+ const redx = bot.emojis.get("444736917217476608");
   if(message.content === "aeztiadeny"){
   const greencheck = bot.emojis.find("name", "redx");
   message.channel.send(`${redx}`);
-}
+ }
 
-const partyblob = bot.emojis.get("447855822811430912");
+ const partyblob = bot.emojis.get("447855822811430912");
   if(message.content === "partyblob"){
   const blob = bot.emojis.find("name", "partyblob");
   message.channel.send(`${partyblob}`);
-}
+ }
 
-const bmo = bot.emojis.get("447855890062770179");
+ const bmo = bot.emojis.get("447855890062770179");
   if(message.content === "beemo"){
   const beemo = bot.emojis.find("name", "bmo");
   message.channel.send(`${bmo}`);
-}
+ }
 
-const snoop = bot.emojis.get("447855918827175936");
+ const snoop = bot.emojis.get("447855918827175936");
   if(message.content === "snoop"){
   const dogg = bot.emojis.find("name", "snoop");
   message.channel.send(`${snoop}`);
-}
+ }
 
-const pepedab = bot.emojis.get("447856207928098847");
+ const pepedab = bot.emojis.get("447856207928098847");
   if(message.content === "pepedab"){
   const dab = bot.emojis.find("name", "pepedab");
   message.channel.send(`${pepedab}`);
-}
+ }
 
-const pikagroove = bot.emojis.get("447856282049708053");
+ const pikagroove = bot.emojis.get("447856282049708053");
   if(message.content === "pikagroove"){
   const pika = bot.emojis.find("name", "pikagroove");
   message.channel.send(`${pikagroove}`);
-}
+ }
 
-const heckingfastthink = bot.emojis.get("447856347493433374");
+ const heckingfastthink = bot.emojis.get("447856347493433374");
   if(message.content === "quickthink"){
   const think = bot.emojis.find("name", "heckingfastthink");
   message.channel.send(`${heckingfastthink}`);
-}
+ }
 
-const rainbowyeet = bot.emojis.get("447856449855553536");
+ const rainbowyeet = bot.emojis.get("447856449855553536");
   if(message.content === "yeet"){
   const yeet = bot.emojis.find("name", "rainbowyeet");
   message.channel.send(`${rainbowyeet}`);
-}
+ }
 
-const animeahhhhh = bot.emojis.get("447856637525491712");
+ const animeahhhhh = bot.emojis.get("447856637525491712");
   if(message.content === "ahh"){
   const ah = bot.emojis.find("name", "animeahhhhh");
   message.channel.send(`${animeahhhhh}`);
-}
+ }
 
-const reload = bot.emojis.get("444751183505260575");
+ const reload = bot.emojis.get("444751183505260575");
   if(message.content === "aeztiareload"){
   const reload = bot.emojis.find("name", "reload");
   message.channel.send(`${reload}`);
-}
+ }
 
-const bweary = bot.emojis.get("444751259308916756");
+ const bweary = bot.emojis.get("444751259308916756");
   if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
   const reload = bot.emojis.find("name", "reload")
   message.reply(` ;;T`);
-}
-  
+ }
+
+ const engcheck = bot.emojis.get("454400961281261580");
+ const checkeng = bot.emojis.find("name", "checkeng");
+}  
   let prefix = botsettings.prefix;
    if(!message.content.startsWith(`${prefix}`)) return;
 //   if(cooldown.has(message.author.id)){
@@ -1353,7 +1358,7 @@ if(command === `help`){
         },
         "fields": [
           {
-            "name": `Developer ${bmo}`,
+            "name": `${checkeng} Developer`,
             "value": "shutoff, reload, eval, listenp, watchp, gamep, setavat, leave, invite, status, ram, jsontest",
             "inline": true
           },
@@ -1366,7 +1371,7 @@ if(command === `help`){
             "value": "purge, kick, ban, giverole, removerole"
           },
           {
-            "name": `Fun ${pikagroove}`,
+            "name": `Fun ${beemo} ${pikagroove}`,
             "value": "say, cat, catfact, dog, dogfact, fox, 8ball, flipcoin, rolldice, dadjoke, clapify, gaymeter, fliptext, rps, meme"
           },
           {
