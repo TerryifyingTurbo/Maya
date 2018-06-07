@@ -40,7 +40,6 @@ bot.on("message", async message => {
   }
 
 
-{  
  const ayy = bot.emojis.get("426999753830825995");
   if(message.content === "ayy" || (message.content === "ayyy")){
   const ayy = bot.emojis.find("name", "ayy");
@@ -124,11 +123,10 @@ bot.on("message", async message => {
   const reload = bot.emojis.find("name", "reload")
   message.reply(` ;;T`);
  }
-
- const engcheck = bot.emojis.get("454400961281261580");
- const checkeng = bot.emojis.find("name", "checkeng");
-}  
-  let prefix = botsettings.prefix;
+const engcheck = bot.emojis.get("454400961281261580");
+const checkeng = bot.emojis.find("name", "checkeng");
+  
+let prefix = botsettings.prefix;
    if(!message.content.startsWith(`${prefix}`)) return;
 //   if(cooldown.has(message.author.id)){
 //     message.delete();
