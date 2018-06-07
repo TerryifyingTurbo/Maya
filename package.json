@@ -20,6 +20,7 @@
     "get-youtube-id": "^1.0.0",
     "giphy-api": "^1.2.7",
     "leetspeak": "0.0.1",
+    "mathjs": "^4.4.2",
     "moment": "^2.22.0",
     "moment-duration-format": "^2.2.2",
     "opusscript": "0.0.6",
