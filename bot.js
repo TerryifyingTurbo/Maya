@@ -708,7 +708,7 @@ if(command === `smut`){
   if(args[0] == "tradechristmasspecial") return;
   
   let smutembed = new Discord.RichEmbed()
-  .setTitle(`Erotic stories ${loveydovey}`)
+  .setAuthor(`Erotic stories ${loveydovey}`)
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
