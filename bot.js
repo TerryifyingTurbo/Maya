@@ -708,11 +708,11 @@ if(command === `smut`){
   if(args[0] == "tradechristmasspecial") return;
   
   let smutembed = new Discord.RichEmbed()
-  .setAuthor(`Erotic stories ${loveydovey}`)
+  .setTitle(`Erotic stories`)
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField(":lemon:", "*Trade Christmas Special, placeholder story (yes await until added)*", true);
+  .addField(`:lemon: ${loveydovey}`, "*Trade Christmas Special, placeholder story (yes await until added)*", true);
   message.channel.send(smutembed);
 }
 
