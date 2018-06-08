@@ -712,7 +712,7 @@ if(command === `smut`){
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField(`${loveydovey}`, "*Trade Christmas Special, placeholder story (yes await until added)*", true);
+  .addField(`${loveydovey}`, "*Trade Christmas Special \n???\n???\n???*", true);
   message.channel.send(smutembed);
 }
 
@@ -1230,7 +1230,7 @@ if(command === `help`){
      
      if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
      
-     if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. **Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
+     if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. \n**Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
      
      if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
      
