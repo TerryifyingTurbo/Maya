@@ -1349,7 +1349,7 @@ if(command === `help`){
           "text": "You can type help on certain commands."
         },
         "thumbnail": {
-          "url": `https://cdn4.iconfinder.com/data/icons/miu/24/circle-help-question-mark-glyph-128.png` 
+          "url": `https://vignette.wikia.nocookie.net/whentheycry/images/a/af/Question_mark.png/revision/latest?cb=20120629163657` 
         },
         //"image": {
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
