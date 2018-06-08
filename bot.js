@@ -1342,14 +1342,14 @@ if(command === `help`){
     let embed = {
          "title": "Here x3",
         //"url": "https://discordapp.com",
-        "color": 16673080,
+        "color": 13112340,
         //"timestamp": "2018-04-21T01:28:06.959Z",
         "footer": {
           "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
           "text": "You can type help on certain commands."
         },
         "thumbnail": {
-          "url": `https://vignette.wikia.nocookie.net/whentheycry/images/a/af/Question_mark.png/revision/latest?cb=20120629163657` 
+          "url": `https://onlinevapour.com/wp-content/uploads/2017/08/orange-question-mark-icon-png-clip-art-30-copy.png` 
         },
         //"image": {
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
