@@ -712,7 +712,8 @@ if(command === `smut`){
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField(`:lemon: ${loveydovey}`, "*Trade Christmas Special, placeholder story (yes await until added)*", true);
+  .addField(`:lemon: ${loveydovey}`, "*Trade Christmas Special, placeholder story (yes await until added)*", true)
+  .addField(`:wilted_rose:`, "Nothing \nbut\na\ntest", true);
   message.channel.send(smutembed);
 }
 
