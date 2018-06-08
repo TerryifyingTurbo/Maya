@@ -40,94 +40,50 @@ bot.on("message", async message => {
   }
 
 
- const ayy = bot.emojis.get("426999753830825995");
-  if(message.content === "ayy" || (message.content === "ayyy")){
-  const ayy = bot.emojis.find("name", "ayy");
-  message.channel.send(`${ayy} Lmao`);
- }
+ const lmao = bot.emojis.get("426999753830825995");
+ const ayy = bot.emojis.find("name", "ayy");
 
  const intensefear = bot.emojis.get("406790609035329538");
-  if(message.content === "D:"){
-  const instensefear = bot.emojis.find("name", "intensefear");
-  message.channel.send(`${instensefear}`);
- }
+ const fear = bot.emojis.find("name", "intensefear");
 
- const greencheck = bot.emojis.get("444736840940126208");
-  if(message.content === "aeztiaconfirm"){
-  const greencheck = bot.emojis.find("name", "greencheck");
-  message.channel.send(`${greencheck}`);
- }
+ const green = bot.emojis.get("444736840940126208");
+ const greencheck = bot.emojis.find("name", "greencheck");
 
  const redx = bot.emojis.get("444736917217476608");
-  if(message.content === "aeztiadeny"){
-  const greencheck = bot.emojis.find("name", "redx");
-  message.channel.send(`${redx}`);
- }
-
+ const x = bot.emojis.find("name", "redx");
+ 
  const partyblob = bot.emojis.get("447855822811430912");
-  if(message.content === "partyblob"){
-  const blob = bot.emojis.find("name", "partyblob");
-  message.channel.send(`${partyblob}`);
- }
-
+ const blob = bot.emojis.find("name", "partyblob");
+ 
  const bmo = bot.emojis.get("447855890062770179");
-  if(message.content === "beemo"){
-  const beemo = bot.emojis.find("name", "bmo");
-  message.channel.send(`${bmo}`);
- }
+ const beemo = bot.emojis.find("name", "bmo");
 
  const snoop = bot.emojis.get("447855918827175936");
-  if(message.content === "snoop"){
-  const dogg = bot.emojis.find("name", "snoop");
-  message.channel.send(`${snoop}`);
- }
-
+ const dogg = bot.emojis.find("name", "snoop");
+ 
  const pepedab = bot.emojis.get("447856207928098847");
-  if(message.content === "pepedab"){
-  const dab = bot.emojis.find("name", "pepedab");
-  message.channel.send(`${pepedab}`);
- }
+ const dab = bot.emojis.find("name", "pepedab");
 
  const pikagroove = bot.emojis.get("447856282049708053");
-  if(message.content === "pikagroove"){
-  const pika = bot.emojis.find("name", "pikagroove");
-  message.channel.send(`${pikagroove}`);
- }
-
+ const pika = bot.emojis.find("name", "pikagroove");
+ 
  const heckingfastthink = bot.emojis.get("447856347493433374");
-  if(message.content === "quickthink"){
-  const think = bot.emojis.find("name", "heckingfastthink");
-  message.channel.send(`${heckingfastthink}`);
- }
+ const think = bot.emojis.find("name", "heckingfastthink");
 
  const rainbowyeet = bot.emojis.get("447856449855553536");
-  if(message.content === "yeet"){
-  const yeet = bot.emojis.find("name", "rainbowyeet");
-  message.channel.send(`${rainbowyeet}`);
- }
+ const yeet = bot.emojis.find("name", "rainbowyeet");
 
  const animeahhhhh = bot.emojis.get("447856637525491712");
-  if(message.content === "ahh"){
-  const ah = bot.emojis.find("name", "animeahhhhh");
-  message.channel.send(`${animeahhhhh}`);
- }
+ const ah = bot.emojis.find("name", "animeahhhhh");
 
- const reload = bot.emojis.get("444751183505260575");
-  if(message.content === "aeztiareload"){
-  const reload = bot.emojis.find("name", "reload");
-  message.channel.send(`${reload}`);
- }
+ const refresh = bot.emojis.get("444751183505260575");
+ const reload = bot.emojis.find("name", "reload");
 
- const bweary = bot.emojis.get("444751259308916756");
-  if(message.content === ";T" || (message.content === ";;T") || (message.content === ";;;T") || (message.content === ";;;;T") || (message.content === "kinky") || (message.content === "spicy")){
-  const reload = bot.emojis.find("name", "reload")
-  message.reply(` ;;T`);
- }
-const engcheck = bot.emojis.get("454400961281261580");
-const checkeng = bot.emojis.find("name", "checkeng");
+ const engcheck = bot.emojis.get("454400961281261580");
+ const checkeng = bot.emojis.find("name", "checkeng");
 
-const love = bot.emojis.get("454416240904110081");
-const loveydovey = bot.emojis.find("name", "loveydovey");
+ const love = bot.emojis.get("454416240904110081");
+ const loveydovey = bot.emojis.find("name", "loveydovey");
   
 let prefix = botsettings.prefix;
    if(!message.content.startsWith(`${prefix}`)) return;
@@ -365,27 +321,6 @@ if(command === `urban`){
     message.channel.send(urembed);
 });
 };
-// if(command === `google`){
-
-//     let searchMessage = await message.reply('Searching... Sec.');
-//     let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(message.content)}`;
-//     return snekfetch.get(searchUrl)
-//       .then((result) => {
-//         let $ = cheerio.load(result.text);
-//         let googleData = $('.r')
-//           .first()
-//           .find('a')
-//           .first()
-//           .attr('href');
-//         googleData = querystring.parse(googleData.replace('/url?', ''));
-//         searchMessage.edit(`Result found!\n${googleData.q}`).catch((err) => {
-//           searchMessage.edit('No results found!');
-//         });
-//       }
-//     )
-//   };
-
-
 
 // Weed Key qLZXyPT
 // strainapi.evanbusse.com/qLZXyPT/searchdata/effects (lists all effects)
@@ -773,7 +708,7 @@ if(command === `smut`){
   if(args[0] == "tradechristmasspecial") return;
   
   let smutembed = new Discord.RichEmbed()
-  .setDescription(`Erotic stories ${loveydovey}`)
+  .setTitle(`Erotic stories ${loveydovey}`)
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
