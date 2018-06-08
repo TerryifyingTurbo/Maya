@@ -265,7 +265,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 
   if(command === `ram`){
     if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
-    message.channel.send(`NODE JS v11.30 ${bot.user.username}#${bot.user.discriminator} RAM Current Usage | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**`);
+    message.channel.send(`NODE JS v11.30 ${bot.user.username}#${bot.user.discriminator}\nRAM Usage | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**`);
   }
 
   if(command === `flipcoin`){
@@ -967,7 +967,7 @@ let rembed = new Discord.RichEmbed()
   .addField("Gender", "*Male*", true)
   .addField("Age", "*400 Quintillion*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Description", "*An ōkami that has been also known as the \"Wanderer\". As with all other ōkami, Roxuhn preys and feeds on human victims.*", true)
+  .addField("Description", "`An ōkami that has been also known as the \"Wanderer\". As with all other ōkami, Roxuhn preys and feeds on human victims.`", true)
   .addField(".", "Powers and Abilities", true)
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly towards biological material***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
