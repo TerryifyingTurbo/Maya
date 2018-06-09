@@ -30,7 +30,6 @@ bot.on("ready", async () => {
 } catch(e) {
     console.log(e.stack);
 }
-bot.user.setPresence({ game: { name: `with ya boi`, url: 'https://www.twitch.tv/terrifyingturbo', type: 1 } });
 });
 
 bot.on("message", async message => {
@@ -338,11 +337,10 @@ if(command === `mstrains` && (args[0] == "search")){
 
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
-  await snekfetch.get(descAPI)
-  snekfetch.get(effectsAPI)
-  let {body} = descAPI && effectsAPI
+  let {body} = snekfetch.get(descAPI);
     if(!body) return message.channel.send("NOT FOUND");
-    console.log(body)
+    //console.log(body)
+    message.channel.send(`*${desc}*`);
 }
 
 if(command === `jsontest`){
