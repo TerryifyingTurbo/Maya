@@ -329,32 +329,6 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/strains/data/desc/STRAIN_ID
 // strainapi.evanbusse.com/qLZXyPT/strains/data/effects/STRAIN_ID
 
-if(command ===`mstrains` && (args[0] == "search")){
-  let sativa = `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/sativa`
-  && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/indica`
-  && `http://strainapi.evanbusse.com/qLZXyPT/strains/search/race/hybrid`;
-  
-  snekfetch.get(sativa).then(r => {
-    let body = r.body
-    let id = Number(args[1]);
-    if(!id) return message.channel.send(`${redx} Enter an ID number to search for a strain.`);
-    if(isNaN(id)) return message.channel.send(`${redx} It must be a valid number.`);
-
-    let entry = body.find(post => post.id === id);
-    if(!entry) return message.channel.send(`${redx} The ID provided either does not exist`);
-    // let sativaembed = new Discord.RichEmbed()
-    // .setAuthor(entry.name)
-    // .setFooter("ID: " + entry.id)
-    // .setDescription("Species: " + entry.race)
-    // .setColor("#90ee90");
-    
-    message.channel.send(`
-    :herb: __${entry.name}__ (${entry.race})
- • ID: ${entry.id} `);
- return;
-  });
-}
-
 if(command === `mstrains` && (args[0] == "flavors")){
   let pages = ["🌿*Mmm, yummy*","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
   "Pepper","Flowery","Citrus","Orange","Sweet",
@@ -405,6 +379,22 @@ if(command === `mstrains` && (args[0] == "flavors")){
    
     })
 })};
+
+if(command === `mstrains` && (args[0] == "search")){
+  let strainID = Number(args[1]);
+  if(!strainID) return message.channel.send(`${redx} Enter an ID number to search for a strain.`);
+  if(isNaN(strainID)) return message.channel.send(`${redx} It must be a valid number.`);
+
+  let api = `strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
+
+  snekfetch.get(api).then(r => {
+    let body = r.body
+
+    let entry = body.find(post => post.id === id);
+    if(!entry) return message.channel.send(` ${redx} This entry does NOT exist`)
+    console.log(body)
+  });
+}
 
 if(command === `jsontest`){
   let api = "https://jsonplaceholder.typicode.com/posts";
