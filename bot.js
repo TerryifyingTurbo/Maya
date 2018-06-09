@@ -341,7 +341,7 @@ if(command === `mstrains` && (args[0] == "search")){
   let body = await snekfetch.get(descAPI);
     if(!body) return message.channel.send("NOT FOUND");
     console.log(body)
-    message.channel.send(`*${desc}*`);
+    message.channel.send(`*${body.desc}*`);
 }
 
 if(command === `jsontest`){
