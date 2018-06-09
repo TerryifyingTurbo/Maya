@@ -29,6 +29,7 @@ bot.on("ready", async () => {
     console.log(link);
 } catch(e) {
     console.log(e.stack);
+    bot.user.setStatus("dnd");
 }
 });
 
@@ -337,9 +338,9 @@ if(command === `mstrains` && (args[0] == "search")){
 
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
-  let {body} = snekfetch.get(descAPI);
+  let body = await snekfetch.get(descAPI);
     if(!body) return message.channel.send("NOT FOUND");
-    //console.log(body)
+    console.log(body)
     message.channel.send(`*${desc}*`);
 }
 
