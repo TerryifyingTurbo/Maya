@@ -338,13 +338,11 @@ if(command === `mstrains` && (args[0] == "search")){
 
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
-
-  let {body} = await snekfetch.get(descAPI).then(() => {
-snekfetch.get(effectsAPI)
-
-if(!body) return message.channel.send("NOT FOUND");
+  await snekfetch.get(descAPI)
+  snekfetch.get(effectsAPI)
+  let {body} = descAPI && effectsAPI
+    if(!body) return message.channel.send("NOT FOUND");
     console.log(body)
-  });
 }
 
 if(command === `jsontest`){
