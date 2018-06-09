@@ -340,12 +340,13 @@ if(command === `mstrains` && (args[0] == "search")){
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
   
   let {body} = await snekfetch.get(descAPI);
+  let {rbody} = await snekfetch.get(effectsAPI);
     if(!body) return message.channel.send("NOT FOUND");
-    console.log(body)
+    console.log(rbody)
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setFooter(`ID: ${strainID}`)
-    .setDescription(body.desc)
+    .setDescription(body.desc);
     message.channel.send(embed);
 }
 
