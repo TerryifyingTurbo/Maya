@@ -329,56 +329,7 @@ if(command === `urban`){
 // strainapi.evanbusse.com/qLZXyPT/strains/data/desc/STRAIN_ID
 // strainapi.evanbusse.com/qLZXyPT/strains/data/effects/STRAIN_ID
 
-if(command === `mstrains` && (args[0] == "flavors")){
-  let pages = ["🌿*Mmm, yummy*","Earthy","Chemical","Pine","Spicy/Herbal","Pungent",
-  "Pepper","Flowery","Citrus","Orange","Sweet",
-  "Skunk","Grape","Minty","Woody","Cheese",
-  "Diesel","Tropical","Grapefruit","Nutty","Lemon",
-  "Berry","Blueberry","Ammonia","Apple","Rose",
-  "Butter","Honey","Tea","Lime","Lavender",
-  "Strawberry","Mint","Chestnut","Tree Fruit","Pear",
-  "Apricot","Peach","Blue Cheese","Menthol","Coffee",
-  "Tar","Mango","Pineapple","Sage","Vanilla",
-  "Plum","Tobacco","Violet"];
 
-  let page = 1; 
- 
-  const embed = new Discord.RichEmbed()
-    .setTitle("List of possible flavors")
-    .setColor("RANDOM")
-    .setFooter(`Page ${page} of ${pages.length}`) 
-    .setDescription(pages[page-1])
- 
-  message.channel.send(embed).then(message => { 
-   
-    message.react('⏪').then( r => { 
-      message.react('⏩') 
-     
-      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
-      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-     
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 320000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 320000 }); 
-     
-      
-      backwards.on('collect', r => { 
-        if (page === 1) return; 
-        page--;
-        embed.setDescription(pages[page-1]); 
-        embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
-      })
-     
-      forwards.on('collect', r => { 
-        if (page === pages.length) return; 
-        page++;
-        embed.setDescription(pages[page-1]); 
-        embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed)
-      })
-   
-    })
-})};
 
 if(command === `mstrains` && (args[0] == "search")){
   let strainID = Number(args[1]);
@@ -388,12 +339,12 @@ if(command === `mstrains` && (args[0] == "search")){
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
 
-  let {body} = await snekfetch.get(descAPI) && snekfetch.get(effectsAPI);
+  let {body} = await snekfetch.get(descAPI).then(() => {
+snekfetch.get(effectsAPI)
 
-    // let entry = body.get(post => post.id === id);
-    // if(!entry) return message.channel.send(` ${redx} This entry does NOT exist`)
-    if(!body) return message.channel.send("NOT FOUND");
+if(!body) return message.channel.send("NOT FOUND");
     console.log(body)
+  });
 }
 
 if(command === `jsontest`){
