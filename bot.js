@@ -996,8 +996,10 @@ let rembed = new Discord.RichEmbed()
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly towards biological material***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
-
-
+  
+let axemurder = new Discord.RichEmbed()
+  .setTitle("The Axe Murderer")
+  .setDescription("```[Shaky breathing] I don't know what the fuck is going on, man... \n Shit has been happening—I... I think Tr—Travis is out of his mind! \nWhat the fuck has gotten into him!? ...I think it's the damn... drug... B—bizid. It's almost like bath salts but far more worse. \n[Low voice]Travis! It's me! \n [Long pause]...Oh god... TRAVIS NO——```");
 
 
 
@@ -1017,6 +1019,7 @@ if(command === `dws`){
     if(args[0] == "aeztia") return message.channel.send(aembed);
     if(args[0] == "travis") return message.channel.send(tembed);
     if(args[0] == "roxuhn") return message.channel.send(rembed);
+    if(args[0] == "theaxemurder") return message.channel.send(axemurder);
     message.channel.send(dwsembed);
 }
 
