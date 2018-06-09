@@ -342,7 +342,11 @@ if(command === `mstrains` && (args[0] == "search")){
   let {body} = await snekfetch.get(descAPI);
     if(!body) return message.channel.send("NOT FOUND");
     console.log(body)
-    message.channel.send(`*${body.desc}*`);
+    let embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setFooter(`ID: ${strainID}`)
+    .setDescription(body.desc)
+    message.channel.send(embed);
 }
 
 if(command === `jsontest`){
