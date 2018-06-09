@@ -702,6 +702,30 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
     })
 })};
 
+if(command === `succ`){
+  let Reciever = args.join(" ");
+
+  let intro = [``];
+  let introOutcome = Math.floor((Math.random() * intro.length));
+  
+  let middle = [];
+  let middleOutcome = Math.floor((Math.random() * middle.length));
+  
+  let end = [];
+  let endOutcome = Math.floor((Math.random() * end.length));
+
+  message.channel.send(`${message.member.displayName}`)
+}
+
+// let intro = [];
+// let introOutcome = Math.floor((Math.random() * intro.length));
+
+// let middle = [];
+// let middleOutcome = Math.floor((Math.random() * middle.length));
+
+// let end = [];
+// let endOutcome = Math.floor((Math.random() * end.length));
+
 if(command === `smut`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
@@ -967,7 +991,7 @@ let rembed = new Discord.RichEmbed()
   .addField("Gender", "*Male*", true)
   .addField("Age", "*400 Quintillion*", true)
   .addField("Zodiac Sign", "*Unknown*", true)
-  .addField("Description", "```An ōkami that has been also known as the \"Wanderer\". As with all other ōkami, Roxuhn preys and feeds on human victims.```", true)
+  .addField("Description", "*An ōkami that has been also known as the \"Wanderer\". As with all other ōkami, Roxuhn preys and feeds on human victims.*", true)
   .addField(".", "Powers and Abilities", true)
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly towards biological material***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
@@ -1149,7 +1173,7 @@ if(command === `purge`){
 }
 
 
-  if(command === `botinfo`){
+if(command === `botinfo`){
     let day = bot.user.createdAt.getDate()
     let month = 1 + bot.user.createdAt.getMonth()
     let year = bot.user.createdAt.getFullYear()
