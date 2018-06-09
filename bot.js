@@ -391,8 +391,7 @@ if(command === `mstrains` && (args[0] == "search")){
 
     // let entry = body.get(post => post.id === id);
     // if(!entry) return message.channel.send(` ${redx} This entry does NOT exist`)
-    if(!body) console.log("NOT FOUND")
-    return;
+    if(!body) return message.channel.send("NOT FOUND");
     console.log(body)
 }
 
