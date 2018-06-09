@@ -1212,17 +1212,17 @@ if(command === `botinfo`){
           "inline": true
         },
         {
-          "name": "Guild Count",
+          "name": ":map: Guild Count",
           "value": `${bot.guilds.size}`,
           "inline": true
         },
         {
           "name": "Command Count",
-          "value": "34 Commands (total)",
+          "value": "36 Commands (total)",
           "inline": true
         },
         {
-          "name": "RAM Usage",
+          "name": ":floppy_disk: RAM Usage",
           "value": `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,
           "inline": true
         },
