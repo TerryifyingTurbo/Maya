@@ -388,9 +388,9 @@ if(command === `mstrains` && (args[0] == "search")){
   let api = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
 
   snekfetch.get(api).then(r => {
-    let {body} = r.body
+    let body = r.body
 
-    let entry = body.find(post => post.id === id);
+    let entry = body.get(post => post.id === id);
     if(!entry) return message.channel.send(` ${redx} This entry does NOT exist`)
     console.log(entry)
   });
