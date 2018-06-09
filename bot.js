@@ -385,7 +385,7 @@ if(command === `mstrains` && (args[0] == "search")){
   if(!strainID) return message.channel.send(`${redx} Enter an ID number to search for a strain.`);
   if(isNaN(strainID)) return message.channel.send(`${redx} It must be a valid number.`);
 
-  let api = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
+  let api = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
 
   let {body} = await snekfetch.get(api);
 
