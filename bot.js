@@ -388,7 +388,7 @@ if(command === `mstrains` && (args[0] == "search")){
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
 
-  let {body} = await snekfetch.get(descAPI).then(snekfetch.get(effectsAPI));
+  let {body} = await snekfetch.get(descAPI) && snekfetch.get(effectsAPI);
 
     // let entry = body.get(post => post.id === id);
     // if(!entry) return message.channel.send(` ${redx} This entry does NOT exist`)
