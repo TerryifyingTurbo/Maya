@@ -121,15 +121,11 @@ if(command === `shutoff`){
 if(command === `reload`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("You ain't the creator!");
-    else
-  
-    // Reload ALL commands listed.
-    
-  if(message.author.id == "297931837400023041")
-  message.channel.send(`***Reloading.*** ${reload}`).then(message => {
+
+  message.channel.send(`***Reloading*** ${reload}`).then(message => {
     setTimeout(() => {
     message.edit(`*Reloaded.* ${greencheck}`)
-  }, cdseconds * 3500)
+  }, cdseconds * 4500)
 });
   }
 
