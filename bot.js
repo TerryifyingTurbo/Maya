@@ -673,13 +673,14 @@ if(command === `smut`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
   if(args[0] == "tradechristmasspecial") return;
+  if(args[0] == "wehaveusanyway") return message.channel.send(`${redx} *403 Forbidden*`);
   
   let smutembed = new Discord.RichEmbed()
   .setTitle(`Lemon Scented.`)
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField(`${loveydovey}`, "*Trade Christmas Special \n???\n???\n???*", true);
+  .addField(`${loveydovey}`, "*Trade Christmas Special \n???\nWe Have Us Anyway\n???*", true);
   message.channel.send(smutembed);
 }
 
