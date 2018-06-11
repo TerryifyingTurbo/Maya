@@ -335,18 +335,19 @@ if(command === `mstrains` && (args[0] == "search")){
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
   
-  await snekfetch.get(descAPI)
-  snekfetch.get(effectsAPI).then(r => {
+  await snekfetch.get(descAPI);
+  
+  snekfetch.get(effectsAPI).then(r =>{
     let body = r.body
     if(!body) return message.channel.send("NOT FOUND");
     //console.log(body)
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setFooter(`ID: ${strainID}`)
-    .setDescription(body.desc || `???`)
-    .addField(`Medical Effects`, body.medical || `???`, true)
-    .addField(`Effects ${greencheck}`, body.positive || `???`, true)
-    .addField(`Effects ${redx}`, body.negative || `???`, true);
+    .setDescription(body.desc)
+    .addField(`Medical Effects`, body.medical, true)
+    .addField(`Effects ${greencheck}`, body.positive, true)
+    .addField(`Effects ${redx}`, body.negative, true);
     message.channel.send(embed);
   });
 }
