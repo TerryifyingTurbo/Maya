@@ -334,15 +334,20 @@ if(command === `mstrains` && (args[0] == "search")){
 
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
-  
-  let {body} = await snekfetch.get(descAPI);
+  await snekfetch.get(descAPI).then(r =>{
+    snekfetch.get(effectsAPI);
+    let body = r.body
     if(!body) return message.channel.send("NOT FOUND");
     //console.log(body)
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setFooter(`ID: ${strainID}`)
-    .setDescription(body.desc);
+    .setDescription(body.desc)
+    .addField(`Effects ℹ`, body.medical, true)
+    .addField(`Effects ${greencheck}`, body.postive, true)
+    .addField(`Effects ${redx}`, body.negative, true);
     message.channel.send(embed);
+  });
 }
 
 if(command === `jsontest`){
@@ -621,8 +626,8 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
       message.react('⏩') 
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 320000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 320000 }); 
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 600000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 600000 }); 
       backwards.on('collect', r => { 
         if (page === 1) return; 
         page--;
@@ -959,7 +964,7 @@ if(command === `dws`){
     if(args[0] == "aeztia") return message.channel.send(aembed);
     if(args[0] == "travis") return message.channel.send(tembed);
     if(args[0] == "roxuhn") return message.channel.send(rembed);
-    if(args[0] == "theaxemurder") return message.channel.send(axemurder);
+    if(args[0] == "theaxemurderer") return message.channel.send(axemurder);
     message.channel.send(dwsembed);
 }
 
@@ -1205,7 +1210,7 @@ if(command === `help`){
 
      if(args[0] == "namegen") return message.channel.send("I will get a randomly generated name that includes it's origin.");
 
-     if(args[0] == "calc") return message.channel.send(`I will solve a mathematic expression. \n| Usage: !?calc <valid expression>`);
+     if(args[0] == "calc") return message.channel.send('I will solve a mathematic expression. \nUsage: !?calc <valid expression>');
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
@@ -1238,7 +1243,7 @@ if(command === `help`){
      if(args[0] == "mstrains") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
  | *Can only search strains with ID*
- | Usage: !?mstrains <id>
+ | Usage: !?mstrains search <id>
  | Usage: !?mstrains flavors`);
     // if(args[0] == "") return message.channel.send("");
     let embed = {
