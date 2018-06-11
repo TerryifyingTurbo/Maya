@@ -344,7 +344,7 @@ if(command === `mstrains` && (args[0] == "search")){
     .setFooter(`ID: ${strainID}`)
     .setDescription(body.desc)
     .addField(`Effects ℹ`, body.medical, true)
-    .addField(`Effects ${greencheck}`, body.postive, true)
+    .addField(`Effects ${greencheck}`, body.positive, true)
     .addField(`Effects ${redx}`, body.negative, true);
     message.channel.send(embed);
   });
