@@ -335,8 +335,9 @@ if(command === `mstrains` && (args[0] == "search")){
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
   
-  await snekfetch.get(effectsAPI).then(r =>{
-  snekfetch.get(descAPI)
+  await snekfetch.get(effectsAPI);
+  
+  snekfetch.get(descAPI).then(r =>{
     let body = r.body
     if(!body) return message.channel.send("NOT FOUND");
     //console.log(body)
@@ -344,7 +345,7 @@ if(command === `mstrains` && (args[0] == "search")){
     .setColor("RANDOM")
     .setFooter(`ID: ${strainID}`)
     .setDescription(body.desc)
-    .addField(`Effects ℹ`, body.medical, true)
+    .addField(`Medical Effects`, body.medical, true)
     .addField(`Effects ${greencheck}`, body.positive, true)
     .addField(`Effects ${redx}`, body.negative, true);
     message.channel.send(embed);
