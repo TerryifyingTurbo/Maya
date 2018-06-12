@@ -281,7 +281,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 }
 
 if(command === `rolldice`){
-  let sides = Number(args[0]) || 6;
+  let sides = (args[0]) || 6;
   let dice = Math.floor(Math.random() * sides) + 1;
 
   if(isNaN(sides)) return message.channel.send(`You must roll a __number__ not... whatever that was.`);
