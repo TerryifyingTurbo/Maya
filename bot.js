@@ -281,7 +281,11 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 }
 
 if(command === `rolldice`){
-  let dice = Math.floor(Math.random() * 6 + 1);
+  let sides = Number(args[0]) || 6;
+  let dice = Math.floor(Math.random() * sides) + 1;
+
+  if(isNaN(sides)) return message.channel.send(`You must roll a __number__ not... whatever that was.`);
+  if(sides < 1) return message.channel.send(`You cannot roll a 0 or negative die :game_die:`);
   message.channel.send("You rolled a :game_die:" + ` ${dice}`);
 }
 
@@ -396,7 +400,7 @@ if(command === `calc`){
 
 if(command === `say`) {
 
-    const sayMessage = args.join(" ");
+    let sayMessage = args.join(" ");
     if(!sayMessage) return message.channel.send("Say what? x3")
     message.channel.send(sayMessage);
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
@@ -1212,6 +1216,8 @@ if(command === `help`){
      if(args[0] == "namegen") return message.channel.send("I will get a randomly generated name that includes it's origin.");
 
      if(args[0] == "calc") return message.channel.send('I will solve a mathematic expression. \nUsage: !?calc <valid expression>');
+
+     if(args[0] == "rolldice") return message.channel.send(`Roll a die with any amount of sides inputted or defaults to 6 if none. \nUsage: !?rolldice <number>`);
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
