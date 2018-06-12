@@ -284,7 +284,7 @@ if(command === `rolldice`){
   let sides = Number(args[0]) || 6;
   let dice = Math.floor(Math.random() * sides) + 1;
 
-  if(isNaN(sides)) return message.channel.send(`You must roll a __number__ not... whatever that was.`);
+  if(isNaN(args[0])) return message.channel.send(`You must roll a __number__ not... whatever that was.`);
   if(sides < 1) return message.channel.send(`You cannot roll a 0 or negative die :game_die:`);
   message.channel.send("You rolled a :game_die:" + ` ${dice}`);
 }
