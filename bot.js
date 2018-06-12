@@ -336,7 +336,7 @@ if(command === `mstrains` && (args[0] == "search")){
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
   
   snekfetch.get(effectsAPI).then(r =>{
-    await snekfetch.get(descAPI);
+  snekfetch.get(descAPI);
     let body = r.body
     if(!body) return message.channel.send("NOT FOUND");
     console.log(body)
