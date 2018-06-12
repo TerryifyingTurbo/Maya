@@ -340,14 +340,14 @@ if(command === `mstrains` && (args[0] == "search")){
   snekfetch.get(effectsAPI).then(r =>{
     let body = r.body
     if(!body) return message.channel.send("NOT FOUND");
-    //console.log(body)
+    console.log(body)
     let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setFooter(`ID: ${strainID}`)
-    .setDescription(body.desc)
-    .addField(`Medical Effects`, body.medical, true)
-    .addField(`Effects ${greencheck}`, body.positive, true)
-    .addField(`Effects ${redx}`, body.negative, true);
+    .setDescription(`${body.desc}`);
+    //.addField(`Medical Effects`, body.medical, true)
+    //.addField(`Effects ${greencheck}`, body.positive, true)
+    //.addField(`Effects ${redx}`, body.negative, true);
     message.channel.send(embed);
   });
 }
