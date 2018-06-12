@@ -327,8 +327,8 @@ if(command === `urban`){
 
 
 
-if(command === `mstrains` && (args[0] == "search")){
-  let strainID = Number(args[1]);
+if(command === `mstrain`){
+  let strainID = Number(args[0]);
   if(!strainID) return message.channel.send(`${redx} Enter an ID number to search for a strain.`);
   if(isNaN(strainID)) return message.channel.send(`${redx} It must be a valid number.`);
 
@@ -336,18 +336,18 @@ if(command === `mstrains` && (args[0] == "search")){
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
   
   snekfetch.get(descAPI).then(r =>{
-  snekfetch.get(effectsAPI);
+  //snekfetch.get(effectsAPI);
     let body = r.body
-    if(!body) return message.channel.send("NOT FOUND");
+    if(!body) return message.channel.send(`${redx} Provided ID does not exist.`);
     console.log(body)
-    let embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setFooter(`ID: ${strainID}`)
-    .setDescription(`${body.desc}`);
+    // let embed = new Discord.RichEmbed()
+    // .setColor("RANDOM")
+    // .setFooter(`ID: ${strainID}`)
+    // .setDescription(`${body.desc}`);
     //.addField(`Medical Effects`, body.medical, true)
     //.addField(`Effects ${greencheck}`, body.positive, true)
     //.addField(`Effects ${redx}`, body.negative, true);
-    message.channel.send(embed);
+    message.channel.send(`${body.desc}`);
   });
 }
 
@@ -1241,10 +1241,10 @@ if(command === `help`){
      
      if(args[0] == "docrefs") return message.channel.send("I'll send links that lead to unofficial, but documented, Discord API libraries.");
      
-     if(args[0] == "mstrains") return message.channel.send(`
+     if(args[0] == "mstrain") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
  | *Can only search strains with ID*
- | Usage: !?mstrains search <id>
+ | Usage: !?mstrain <id>
  | Usage: !?mstrains flavors`);
     // if(args[0] == "") return message.channel.send("");
     let embed = {
@@ -1275,7 +1275,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrains, namegen, calc"
+            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrain, namegen, calc"
           },
           {
             "name": " :wrench: Moderation",
