@@ -9,7 +9,6 @@ const mathjs = require("mathjs");
 const snekfetch = require("snekfetch");
 const osu = require("os-utils");
 const os = require("os");
-const cpu = require("windows-cpu");
 const platform = require("platform");
 const prettyMs = require("pretty-ms");
 const bot = new Discord.Client({disableEveryone: true})
