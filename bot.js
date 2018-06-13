@@ -423,7 +423,7 @@ if(command === `convert`){
   
   let answer;
   try{
-  answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`);
+  answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`).toFixed(2);
   } catch (error) {
     return message.channel.send(`That's not gonna work \n${error}`);
   }
