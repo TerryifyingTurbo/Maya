@@ -160,9 +160,9 @@ if(command === "docrefs"){
   if(command === `invite`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
-    let invlink = `https://discordapp.com/oauth2/authorize?client_id=417517654174334976&permissions=8&scope=bot`
-    message.channel.send(`Here you go, boss x3
-    ${invlink}`)
+    let invlink = `https://discordapp.com/api/oauth2/authorize?client_id=417517654174334976&permissions=1543892167&scope=bot`
+    message.author.send(`Here you go, boss x3
+    ${invlink}`);
   }
 
   if(command === `watchp`){
