@@ -305,17 +305,17 @@ if(command === `gaymeter`){
 }
 
 if(command === `giphy`){
-  let str = args.join(" ")
+  let str = args.split(',')
   if(!str) return message.channel.send("Enter something to gif search");
-console.log(str);
-giphy.search(str).then(function (res) {
+console.log(args);
+giphy.random(str).then(res => {
   console.log(res)
   let body = res.data
   let embed = new Discord.RichEmbed()
   .setAuthor(body.title, null, body.url)
   .setFooter("Giphy ID: " + body.id)
   .setColor("RANDOM")
-  .setImage(body.url);
+  .setImage(body.image_original_url);
   message.channel.send(embed);
 });
 }
