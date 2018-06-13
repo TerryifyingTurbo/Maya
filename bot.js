@@ -320,15 +320,6 @@ if(command === `gaymeter`){
 // });
 // }
 
-if(command === `giphy`){
-  let str = args.join(" ");
-  if(!str) return message.channel.send("Enter something to gif search");
-  
-  let giphyAPI = `http://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(str)}&api_key=l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg`
-  let body = await snekfetch.get(giphyAPI);
-  console.log(body)
-}
-
 if(command === `urban`){
   let str = args.join(" ");
   if(!str) return message.channel.send("Urban what? Enter something to look up.");
