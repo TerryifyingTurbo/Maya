@@ -305,7 +305,7 @@ if(command === `gaymeter`){
 }
 
 if(command === `giphy`){
-  let str = args.split(',')
+  let str = message.content.slice(prefix).trim().split(',');
   if(!str) return message.channel.send("Enter something to gif search");
 console.log(args);
 giphy.random(str).then(res => {
