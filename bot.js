@@ -315,7 +315,7 @@ giphy.random(str).then(res => {
   .setAuthor(body.title, null, body.source)
   .setFooter("GIPHY ID: " + body.id)
   .setColor("RANDOM")
-  .setImage(body.embed_url);
+  .setImage(body.image_url);
   message.channel.send(embed);
 });
 }
