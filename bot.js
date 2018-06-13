@@ -304,20 +304,32 @@ if(command === `gaymeter`){
   // if(metre >= 90) return message.channel.send("Now that's pretty fucking gay");
 }
 
+// if(command === `giphy`){
+//   let str = args.join(" ");
+//   if(!str) return message.channel.send("Enter something to gif search");
+
+// giphy.random(str).then(res => {
+//   console.log(res)
+//   let body = res.data
+//   let embed = new Discord.RichEmbed()
+//   .setAuthor(body.title, null, body.url)
+//   .setFooter("GIPHY ID: " + body.id)
+//   .setColor("RANDOM")
+//   .setImage(body.image_original_url);
+//   message.channel.send(embed);
+// });
+// }
+
 if(command === `giphy`){
   let str = args.join(" ");
   if(!str) return message.channel.send("Enter something to gif search");
-
-giphy.random(str).then(res => {
-  console.log(res)
-  let body = res.data
-  let embed = new Discord.RichEmbed()
-  .setAuthor(body.title, null, body.url)
-  .setFooter("GIPHY ID: " + body.id)
-  .setColor("RANDOM")
-  .setImage(body.image_original_url);
-  message.channel.send(embed);
-});
+  
+  let giphyAPI = `http://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(str)}&api_key=l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg`
+  
+  snekfetch.get(giphyAPI).then(res => {
+    let body = res.data
+    console.log(data);
+  });
 }
 
 if(command === `urban`){
