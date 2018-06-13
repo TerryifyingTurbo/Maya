@@ -305,10 +305,10 @@ if(command === `gaymeter`){
 }
 
 if(command === `giphy`){
-  let str = args;
+  let str = args.join(" ")
   if(!str) return message.channel.send("Enter something to gif search");
 console.log(args);
-giphy.random(str).then(res => {
+giphy.search(str).then(res => {
   console.log(res)
   let body = res.data
   let embed = new Discord.RichEmbed()
