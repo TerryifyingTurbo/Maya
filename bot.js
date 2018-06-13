@@ -313,9 +313,9 @@ giphy.random(str).then(res => {
   let body = res.data
   let embed = new Discord.RichEmbed()
   .setAuthor(body.title, null, body.url)
-  .setFooter("GIPHY ID: " + body.id)
+  .setFooter("Giphy ID: " + body.id)
   .setColor("RANDOM")
-  .setImage(body.image_url);
+  .setImage(body.image_original_url);
   message.channel.send(embed);
 });
 }
