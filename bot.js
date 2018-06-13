@@ -413,13 +413,21 @@ if(command === `calc`){
   message.channel.send(`${answer}`);
 }
 
+if(command === `unitlist`){
+  let list = convert().list(args[0])
+  console.log(list);
+}
 if(command === `convert`){
   let value = args[0];
   let unit1 = args[1];
   let unit2 = args[2];
 
+  let listEmbed = new Discord.RichEmbed()
+  .setTitle("List of Possible Measurments")
+
+  if(value == "LIST") return
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
-  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ if needed.`);
+  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ and __!?convert LIST__ if needed.`);
   
   let answer;
   try{
@@ -1331,7 +1339,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrain, namegen, calc"
+            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrain, namegen, calc, convert"
           },
           {
             "name": " :wrench: Moderation",
