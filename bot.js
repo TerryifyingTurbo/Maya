@@ -261,7 +261,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 
   if(command === `cpu`){
     if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
-    message.channel.send(`NODE JS v11.30 ${platform.os} \n${bot.user.username}#${bot.user.discriminator}\nCPU | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB of ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB**`);
+    message.channel.send(`NODE JS v11.30 ${platform.os} \nCPU | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB of ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB** \nUptime: ${prettyMs(bot.uptime)}`);
   }
 
   if(command === `flipcoin`){
@@ -1195,22 +1195,22 @@ if(command === `botinfo`){
           "inline": true
         },
         {
-          "name": "Made @",
+          "name": "Creation Date",
           "value": `${month}/${day}/${year}`,
           "inline": true
         },
         {
-          "name": ":map: Guild Count",
+          "name": "Guild Count",
           "value": `${bot.guilds.size}`,
           "inline": true
         },
         {
           "name": "Command Count",
-          "value": "36 Commands (total)",
+          "value": "39 Commands (total)",
           "inline": true
         },
         {
-          "name": ":floppy_disk: CPU Usage",
+          "name": "CPU Usage",
           "value": `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \nTotal: ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`,
           "inline": true
         },
@@ -1222,6 +1222,11 @@ if(command === `botinfo`){
         {
           "name": "Datacentre Server Time",
           "value": `${prettyMs(osu.sysUptime())}`,
+          "inline": true
+        },
+        {
+          "name": "VPS Socket Uptime",
+          "value": `${prettyMs(bot.uptime)}`,
           "inline": true
         },
         {
@@ -1304,7 +1309,7 @@ if(command === `help`){
  if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \n*Uses abbreviations for units (mi, yd, ft, lb, kg, t, etc...)* \nUsage: !?convert <value> <unit> <unit>");
     // if(args[0] == "") return message.channel.send("");
     let embed = {
-         "title": "Here x3",
+         //"title": "Here x3",
         //"url": "https://discordapp.com",
         "color": 13112340,
         //"timestamp": "2018-04-21T01:28:06.959Z",
