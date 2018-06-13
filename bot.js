@@ -310,6 +310,12 @@ if(command === `giphy`){
 
 giphy.random(str).then(res => {
   console.log(res)
+  let body = res.data
+  let embed = new Discord.RichEmbed()
+  .setAuthor(body.title, null, body.url)
+  .setFooter("GIPHY ID: " + body.id)
+  .setImage(body.url);
+  message.channel.send(embed);
 });
 }
 
