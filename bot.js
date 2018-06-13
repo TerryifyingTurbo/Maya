@@ -410,7 +410,7 @@ if(command === `calc`){
   } catch (error) {
     return message.channel.send(`${redx} Could not solve: **${error}**`);
   }
-  message.channel.send(`\`${answer}\``);
+  message.channel.send(`${answer}`);
 }
 
 if(command === `convert`){
@@ -419,16 +419,16 @@ if(command === `convert`){
   let unit2 = args[2];
 
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
-  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee !?help convert if needed.`);
+  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ if needed.`);
   
   let answer;
   try{
   answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`);
   } catch (error) {
-    return message.channel.send(`${error}`);
+    return message.channel.send(`That's not gonna work. \n${error}`);
   }
   
-  console.log(answer);
+  message.channel.send(answer);
 }
 
 if(command === `say`) {
