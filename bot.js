@@ -11,6 +11,7 @@ const osu = require("os-utils");
 const os = require("os");
 const platform = require("platform");
 const prettyMs = require("pretty-ms");
+const convert = require("convert-units");
 const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const bot = new Discord.Client({disableEveryone: true})
 let cooldown = new Set();
@@ -369,7 +370,6 @@ if(command === `mstrain`){
     message.channel.send(`${body.desc}`);
   });
 }
-
 if(command === `jsontest`){
   let api = "https://jsonplaceholder.typicode.com/posts";
   snekfetch.get(api).then(r => {
@@ -411,6 +411,22 @@ if(command === `calc`){
     return message.channel.send(`${redx} Could not solve: **${error}**`);
   }
   message.channel.send(`\`${answer}\``);
+}
+
+if(command === `convert`){
+  let value = args[0];
+  let unit1 = args[1];
+  let unit2 = args[2];
+
+  if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
+  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee !?help convert if needed.`);
+  
+  convert(`${value}`).from(`${unit1}`).to(`${unit2}`).then(result => {
+    console.log(result);
+  })
+  .catch(error =>{
+return message.channel.send(error);
+  });
 }
 
 if(command === `say`) {
@@ -1282,6 +1298,8 @@ if(command === `help`){
  | *Can only search strains with ID*
  | Usage: !?mstrain <id>
  | Usage: !?mstrains flavors`);
+
+ if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \nUsage: !?convert <value> <unit> <unit>");
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
