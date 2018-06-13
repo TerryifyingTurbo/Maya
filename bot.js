@@ -24,13 +24,6 @@ bot.commands = new Discord.Collection();
 
 bot.on("ready", async () => {
   console.log(`${bot.user.id} ${bot.user.username} online! Ready when you are Boss xd`);
-
-  try {
-    let link = await bot.generateInvite(["ADMINISTRATOR"]);
-    console.log(link);
-} catch(e) {
-    console.log(e.stack);
-}
 });
 
 bot.on("message", async message => {
