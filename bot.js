@@ -1371,4 +1371,4 @@ const clean = text => {
       return text;
 }
 
-bot.login(botsettings.token);
+bot.login(botsettings.mightykey);
