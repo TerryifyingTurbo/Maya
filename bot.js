@@ -402,7 +402,7 @@ if(command === `namegen`){
 
 if(command === `calc`){
   let input = args.join(" ");
-  if(!input) return message.channel.send("I need an equation for this to work.")
+  if(!input) return message.channel.send(`${message.member.displayName}, I need an expression for this to work.`)
 
   let answer;
   try{
@@ -413,27 +413,19 @@ if(command === `calc`){
   message.channel.send(`${answer}`);
 }
 
-if(command === `unitlist`){
-  let list = convert().list(args[0])
-  console.log(list);
-}
 if(command === `convert`){
   let value = args[0];
   let unit1 = args[1];
   let unit2 = args[2];
 
-  let listEmbed = new Discord.RichEmbed()
-  .setTitle("List of Possible Measurments")
-
-  if(value == "LIST") return
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
-  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ and __!?convert LIST__ if needed.`);
+  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ if needed.`);
   
   let answer;
   try{
   answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`);
   } catch (error) {
-    return message.channel.send(`That's not gonna work. \n${error}`);
+    return message.channel.send(`That's not gonna work \n${error}`);
   }
   
   message.channel.send(answer);
@@ -1309,7 +1301,7 @@ if(command === `help`){
  | Usage: !?mstrain <id>
  | Usage: !?mstrains flavors`);
 
- if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \nUsage: !?convert <value> <unit> <unit>");
+ if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \n*Uses abbreviations for units (mi, yd, ft, lb, kg, t, etc...)* \nUsage: !?convert <value> <unit> <unit>");
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          "title": "Here x3",
