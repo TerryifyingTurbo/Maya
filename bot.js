@@ -23,7 +23,7 @@ bot.commands = new Discord.Collection();
 
 
 bot.on("ready", async () => {
-  console.log(`${bot.user.id} ${bot.user.username} online! Ready when you are Boss xd`);
+  console.log(`Discord.js v11.30 ${platform.os} \nCPU | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \n${bot.user.username} \nwith (${bot.user.id}) online! Ready when you are, Boss xd`);
 });
 
 bot.on("message", async message => {
@@ -161,8 +161,8 @@ if(command === "docrefs"){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("I'm not allowed to give out my invite code to strangers");
     let invlink = `https://discordapp.com/api/oauth2/authorize?client_id=417517654174334976&permissions=1543892167&scope=bot`
-    message.author.send(`Here you go, boss x3
-    ${invlink}`);
+   await message.author.send(`Here you go, boss x3 \n${invlink}`);
+   message.channel.send("📥 Invite sent, check your PMs");
   }
 
   if(command === `watchp`){
@@ -254,7 +254,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 
   if(command === `cpu`){
     if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
-    message.channel.send(`NODE JS v11.30 ${platform.os} \nCPU | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB of ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB** \nUptime: ${prettyMs(bot.uptime)}`);
+    message.channel.send(`Discord.js v11.30 ${platform.os} \nCPU | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB of ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB** \nUptime: ${prettyMs(bot.uptime)}`);
   }
 
   if(command === `flipcoin`){
