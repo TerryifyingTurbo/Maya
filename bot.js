@@ -308,7 +308,7 @@ if(command === `giphy`){
   let str = args.join(" ");
   if(!str) return message.channel.send("Enter something to gif search");
 
-giphy.random(str, function (err, res) {
+giphy.random(str, function (err, res, data) {
 console.log(res);
 
 let gifemb = new Discord.RichEmbed()
