@@ -28,7 +28,6 @@ bot.on("ready", async () => {
     console.log(link);
 } catch(e) {
     console.log(e.stack);
-    bot.user.setStatus("dnd");
 }
 });
 
@@ -260,7 +259,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
 
   if(command === `ram`){
     if(message.author.id !== "297931837400023041") return message.channel.send("***You ain't my creator!***");
-    message.channel.send(`NODE JS v11.30 ${bot.user.username}#${bot.user.discriminator}\nRAM Usage | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB**`);
+    message.channel.send(`NODE JS v11.30 ${platform.os} \n${bot.user.username}#${bot.user.discriminator}\nRAM Usage | **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB of ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB**`);
   }
 
   if(command === `flipcoin`){
@@ -1152,7 +1151,7 @@ if(command === `botinfo`){
       "fields": [
         {
           "name": "Full Username",
-          "value": `${bot.user.username}#${bot.user.discriminator} with ID of (${bot.user.id})`,
+          "value": `${bot.user.username}#${bot.user.discriminator} \nwith ID of (${bot.user.id})`,
           "inline": true
         },
         {
@@ -1171,8 +1170,18 @@ if(command === `botinfo`){
           "inline": true
         },
         {
-          "name": ":floppy_disk: RAM Usage",
-          "value": `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,
+          "name": ":floppy_disk: CPU Usage",
+          "value": `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \nTotal: ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`,
+          "inline": true
+        },
+        {
+          "name": `${bot.user.username} System Time`,
+          "value": `${prettyMs(osu.processUptime())}`,
+          "inline": true
+        },
+        {
+          "name": "Datacentre Server Time",
+          "value": `${prettyMs(osu.sysUptime())}`,
           "inline": true
         },
         {
