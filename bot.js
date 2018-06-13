@@ -11,7 +11,7 @@ const osu = require("os-utils");
 const os = require("os");
 const platform = require("platform");
 const prettyMs = require("pretty-ms");
-const giphy = require("giphy-api", "l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
+const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const bot = new Discord.Client({disableEveryone: true})
 let cooldown = new Set();
 let cdseconds = 2;
@@ -308,11 +308,10 @@ if(command === `giphy`){
   let str = args.join(" ");
   if(!str) return message.channel.send("Enter something to gif search");
 
-  giphy.search(str).then(res =>{
-    
-  console.log(res)
-
-})};
+giphy.search(str, function (err, res) {
+console.log(res);
+});
+}
 
 if(command === `urban`){
   let str = args.join(" ");
