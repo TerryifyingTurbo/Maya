@@ -11,6 +11,7 @@ const osu = require("os-utils");
 const os = require("os");
 const platform = require("platform");
 const prettyMs = require("pretty-ms");
+const giphy = require("giphy-api", "l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const bot = new Discord.Client({disableEveryone: true})
 let cooldown = new Set();
 let cdseconds = 2;
@@ -302,6 +303,16 @@ if(command === `gaymeter`){
   // if(metre < 80) return message.channel.send("Gawddamn, definitely gay");
   // if(metre >= 90) return message.channel.send("Now that's pretty fucking gay");
 }
+
+if(command === `giphy`){
+  let str = args.join(" ");
+  if(!str) return message.channel.send("Enter something to gif search");
+
+  giphy.search(str).then(res =>{
+    
+  console.log(res)
+
+})};
 
 if(command === `urban`){
   let str = args.join(" ");
