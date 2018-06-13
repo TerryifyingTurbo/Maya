@@ -421,9 +421,8 @@ if(command === `convert`){
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
   if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee !?help convert if needed.`);
   
-  convert(`${value}`).from(`${unit1}`).to(`${unit2}`).then(result => {
-    console.log(result);
-  })
+  convert(`${value}`).from(`${unit1}`).to(`${unit2}`);
+  console.log(convert)
   .catch(error =>{
 return message.channel.send(error);
   });
