@@ -130,7 +130,7 @@ if(command === `reload`){
   }
 
 if(command === `eval`){
-  if(message.author.id !== "297931837400023041") return message.channel.send("No wtf lol you are not allowed to use this command");
+  if(message.author.id !== "297931837400023041") return message.channel.send("No");
   try {
     const code = args.join(" ");
     let evaled = eval(code);
@@ -140,7 +140,7 @@ if(command === `eval`){
 
     message.channel.send(clean(evaled), {code:"xl"});
   } catch (err) {
-    message.channel.send(`\`${redx} WARN ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    message.channel.send(`\`${redx} WARN ERROR REJECTION\` \`\`\`xl\n${clean(err)}\n\`\`\``);
   }
 }
 
@@ -423,9 +423,6 @@ if(command === `convert`){
   
   convert(`${value}`).from(`${unit1}`).to(`${unit2}`);
   console.log(convert)
-  .catch(error =>{
-return message.channel.send(error);
-  });
 }
 
 if(command === `say`) {
