@@ -421,8 +421,14 @@ if(command === `convert`){
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
   if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee !?help convert if needed.`);
   
-  convert(`${value}`).from(`${unit1}`).to(`${unit2}`);
-  console.log(convert)
+  let answer;
+  try{
+  answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`);
+  } catch (error) {
+    return message.channel.send(`${error}`);
+  }
+  
+  console.log(answer);
 }
 
 if(command === `say`) {
