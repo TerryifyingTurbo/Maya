@@ -406,11 +406,64 @@ if(command === `calc`){
   message.channel.send(`${answer}`);
 }
 
+if(command === `convert` && args[0] == "LIST"){
+  let pages = ['__Length__ \nmm \ncm \nm \nin \nft-us \nft \nmi', 
+  '__Area__ \nmm2 \ncm2 \nm2 \nha \nkm2 \nin2 \nin2 \nft2 \nac \nmi2', 
+  '__Mass__ \nmcg \nmg \ng \nkg \noz \nlb \nmt \nt', 
+  '__Volume__ \nmm3 \ncm3 \nml \nl \nkl \nm3 \nkm3 \ntsp \nTbs \nin3 \nfl-oz \ncup \npnt \nqt \nqt \ngal \nft3 \nyd3', 
+  '__Temperature__ \nC \nF \nK \nR', 
+  '__Time__ \nns \nmu \nms \ns \nmin \nh \nd \nweek \nmonth \nyear', 
+  '__Speed__ \nm/s \nkm/h \nm/h \nknot \nft/s', 
+  '__Pressure__ \nPa \nhPa \nkPa \nMPa \nbar \ntorr \npsi \nksi',
+  '__Digital__ \nB \nKB \nMB \nGB \nTB',
+  '__Voltage__ \nV \nmV \nkV',
+  '__Power__ \nW \nmW \nkW \nMW \nGW',
+  '__Energy__ \nWh \nmWh \nkWh \nMWh \nGWh \nJ \nkJ',
+  '__Angle__ \ndeg \nrad \ngrad \narcmin \narcsec'];
+  let page = 1; 
+ 
+  const embed = new Discord.RichEmbed()
+    .setTitle("Unit Reference")
+    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setDescription(pages[page-1])
+ 
+  message.channel.send(embed).then(message => { 
+   
+    message.react('⏪').then( r => { 
+      message.react('⏩') 
+     
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
+     
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 600000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 600000 }); 
+     
+      
+      backwards.on('collect', r => { 
+        if (page === 1) return; 
+        page--;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+     
+      forwards.on('collect', r => { 
+        if (page === pages.length) return; 
+        page++;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+   
+    })
+})};
+
 if(command === `convert`){
   let value = args[0];
-  let unit1 = args[1];
-  let unit2 = args[2];
+  let unit1 = args[1].toLowerCase();
+  let unit2 = args[2].toLowerCase();
 
+  if(value == "LIST") return;
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
   if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ if needed.`);
   
@@ -1299,7 +1352,7 @@ if(command === `help`){
  | Usage: !?mstrain <id>
  | Usage: !?mstrains flavors`);
 
- if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \n*Uses abbreviations for units (mi, yd, ft, lb, kg, t, etc...)* \nUsage: !?convert <value> <unit> <unit>");
+ if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \n*Uses abbreviations for units (mi, yd, ft, lb, kg, t, etc...)* \nUsage: !?convert <value> <unit> <unit> \nUsage: !?convert LIST");
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          //"title": "Here x3",
