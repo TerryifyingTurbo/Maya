@@ -421,7 +421,7 @@ if(command === `convert`){
     return message.channel.send(`That's not gonna work \n${error}`);
   }
   
-  message.channel.send(answer);
+  message.channel.send(answer +`${unit2}`);
 }
 
 if(command === `say`) {
