@@ -460,8 +460,8 @@ if(command === `convert` && args[0] == "LIST"){
 
 if(command === `convert`){
   let value = args[0];
-  let unit1 = args[1].toLowerCase();
-  let unit2 = args[2].toLowerCase();
+  let unit1 = (args[1].toLowerCase());
+  let unit2 = (args[2].toLowerCase());
 
   if(value == "LIST") return;
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
