@@ -460,8 +460,8 @@ if(command === `convert` && args[0] == "LIST"){
 
 if(command === `convert`){
   let value = args[0];
-  let unit1 = (args[1].toLowerCase());
-  let unit2 = (args[2].toLowerCase());
+  let unit1 = args[1];
+  let unit2 = args[2];
 
   if(value == "LIST") return;
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
@@ -471,7 +471,7 @@ if(command === `convert`){
   try{
   answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`).toFixed(2);
   } catch (error) {
-    return message.channel.send(`That's not gonna work \n${error}`);
+    return message.channel.send(`That's not gonna work. See __!?convert LIST__ if needed. \n${error}`);
   }
   
   message.channel.send(answer +`${unit2}`);
