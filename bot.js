@@ -471,7 +471,8 @@ if(command === `convert`){
   try{
   answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`).toFixed(2);
   } catch (error) {
-    return message.channel.send(`That's not gonna work. See __!?convert LIST__ if needed. \n${error}`);
+    console.log(error);
+    return message.channel.send('That\'s not gonna work. Check your spelling or see __!?convert LIST__ if needed. \n```You cannot make impossible conversions such as fl-oz (Volume) to oz (Mass)```');
   }
   
   message.channel.send(answer +`${unit2}`);
