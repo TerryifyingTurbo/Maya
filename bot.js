@@ -460,12 +460,12 @@ if(command === `convert` && args[0] == "LIST"){
 
 if(command === `convert`){
   let value = args[0];
-  let unit1 = (args.toLowerCase()[1]);
-  let unit2 = (args.toLowerCase()[2]);
+  let unit1 = (args[1].toLowerCase());
+  let unit2 = (args[2].toLowerCase());
 
   if(value == "LIST") return;
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
-  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ if needed.`);
+  if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ and __!?convert LIST__ if needed.`);
   
   let answer;
   try{
