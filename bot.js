@@ -1188,6 +1188,7 @@ if(command === `emoji`){
     .addField("Server Established @", `${month}/${day}/${year}`, true)
     .addField("Server Region", message.guild.region, true)
     .addField("Server ID", message.guild.id, true)
+    .addField("Server Verification", "Level " + message.guild.verificationLevel, true)
     .addField("You joined @", message.member.joinedAt, true)
     .addField("Total Members", message.guild.memberCount, true)
     .addField("Human Users", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
