@@ -158,8 +158,8 @@ if(command === "docrefs"){
 }
 
   if(command === `invite`){
-    if(message.author.id !== "297931837400023041")
-    return message.channel.send("I'm not allowed to give out my invite code to strangers");
+    if(message.author.id !== "297931837400023041") return message.channel.send("No");
+    
     let invlink = `https://discordapp.com/api/oauth2/authorize?client_id=417517654174334976&permissions=1543892167&scope=bot`
    await message.author.send(`Here you go, boss x3 \n${invlink}`);
    message.channel.send("📥 Invite sent, check your PMs");
@@ -1145,7 +1145,6 @@ if(command === `emoji`){
     message.channel.send(`*${replies[result]}*`);
   }
 
-  
   if(command === `ban`){
 
     let bUser = message.mentions.users.first()
