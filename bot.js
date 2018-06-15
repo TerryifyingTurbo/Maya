@@ -1217,7 +1217,7 @@ if(command === `botinfo`){
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": "Running on Node JS and Discord.js v11.30"
+        "text": `${platform.os} \nNode JS \nDiscord.js v11.30`
       },
       "thumbnail": {
         "url": `${bot.user.displayAvatarURL}` 
