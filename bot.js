@@ -1389,8 +1389,9 @@ if(command === `help`){
  | *Can only search strains with ID*
  | Usage: !?mstrain <id>
  | Usage: !?mstrains flavors`);
+ if(args[0] == "permcheck") return message.channel.send("I'll provide a list of the most core permissions and whether if I have them or not.");
 
- if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \n*Uses abbreviations for units (mi, yd, ft, lb, kg, t, etc...)* \nUsage: !?convert <value> <unit> <unit> \nUsage: !?convert LIST");
+ if(args[0] == "convert") return message.channel.send("Convert measurments from a unit to another. \n*Uses case sensitive abbreviations for units (mi, yd, ft, lb, kg, t, etc...)* \nUsage: !?convert <value> <unit> <unit> \nUsage: !?convert LIST");
     // if(args[0] == "") return message.channel.send("");
     let embed = {
          //"title": "Here x3",
@@ -1424,7 +1425,7 @@ if(command === `help`){
           },
           {
             "name": " :wrench: Moderation",
-            "value": "purge, kick, ban, giverole, removerole"
+            "value": "purge, kick, ban, giverole, removerole, permcheck"
           },
           {
             "name": `Fun ${bmo} ${pikagroove}`,
