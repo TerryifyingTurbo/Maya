@@ -160,7 +160,7 @@ if(command === "docrefs"){
   if(command === `invite`){
     if(message.author.id !== "297931837400023041") return message.channel.send("No");
     
-    let invlink = `https://discordapp.com/api/oauth2/authorize?client_id=417517654174334976&permissions=1543892167&scope=bot`
+    let invlink = `https://discordapp.com/api/oauth2/authorize?client_id=417517654174334976&permissions=201714886&scope=bot`
    await message.author.send(`Here you go, boss x3 \n${invlink}`);
    message.channel.send("📥 Invite sent, check your PMs");
   }
@@ -191,6 +191,27 @@ if(command === "docrefs"){
     .catch(error => message.reply(`${redx} I'm not listening to that because of __***${error}***__`));
     message.channel.send(`${greencheck} Now listening to: **${status}**`);
   }
+
+if(command === `permcheck`){
+  if(!message.member.hasPermission("VIEW_AUDIT_LOG") || ("MANAGE_ROLES")) return message.channel.send(`No \n__VIEW_AUDIT_LOG__ or __MANAGE_ROLES__ permission required.`);
+  let admin = (message.guild.member(bot.user).hasPermission("ADMINISTRATOR"));
+  let ALog = (message.guild.member(bot.user).hasPermission("VIEW_AUDIT_LOG"));
+  let Cmanage = (message.guild.member(bot.user).hasPermission("MANAGE_CHANNELS"));
+  let Rmanage = (message.guild.member(bot.user).hasPermission("MANAGE_ROLES"));
+  let Kick = (message.guild.member(bot.user).hasPermission("KICK_MEMBERS"));
+  let Ban = (message.guild.member(bot.user).hasPermission("BAN_MEMBERS"));
+  //let ALog = (message.guild.member(bot.user).hasPermission("VIEW_AUDIT_LOG"));
+
+  let Perms = new Discord.RichEmbed()
+  .setTitle("Permissions Check")
+  .addField("*Administrator*", admin, true)
+  .addField("*View Audit Log*", ALog, true)
+  //.addField("*Manage Channels*", Cmanage, true)
+  //.addField("*Role Manage*", Rmanage, true)
+  .addField("*Kick Members*", Kick, true)
+  .addField("*Ban Members*", Ban, true);
+
+}
   
   if(command === `kick`){
     let User = message.mentions.users.first()
