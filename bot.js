@@ -193,7 +193,7 @@ if(command === "docrefs"){
   }
 
 if(command === `permcheck`){
-  if(!message.member.hasPermission("VIEW_AUDIT_LOG") || ("MANAGE_ROLES")) return message.channel.send(`No \n__VIEW_AUDIT_LOG__ or __MANAGE_ROLES__ permission required.`);
+  if(!message.member.hasPermission("VIEW_AUDIT_LOG") || (!message.member.hasPermission("MANAGE_ROLES"))) return message.channel.send(`No \n__VIEW_AUDIT_LOG__ or __MANAGE_ROLES__ permission required.`);
   let admin = (message.guild.member(bot.user).hasPermission("ADMINISTRATOR"));
   let ALog = (message.guild.member(bot.user).hasPermission("VIEW_AUDIT_LOG"));
   let Cmanage = (message.guild.member(bot.user).hasPermission("MANAGE_CHANNELS"));
