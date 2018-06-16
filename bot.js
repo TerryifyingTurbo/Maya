@@ -193,13 +193,20 @@ if(command === "docrefs"){
   }
 
 if(command === `permcheck`){
-  if(!message.member.hasPermission("VIEW_AUDIT_LOG") || (!message.member.hasPermission("MANAGE_ROLES"))) return message.channel.send(`No \n__VIEW_AUDIT_LOG__ or __MANAGE_ROLES__ permission required.`);
+  if(!message.member.hasPermission("VIEW_AUDIT_LOG") || (!message.member.hasPermission("MANAGE_ROLES")) || (!message.member.hasPermission("MANAGE_MESSAGES"))) return message.channel.send(`No \n**VIEW_AUDIT_LOG*, **MANAGE_MESSAGES** or **MANAGE_ROLES** permission required.`);
   let admin = (message.guild.member(bot.user).hasPermission("ADMINISTRATOR"));
   let ALog = (message.guild.member(bot.user).hasPermission("VIEW_AUDIT_LOG"));
   let Cmanage = (message.guild.member(bot.user).hasPermission("MANAGE_CHANNELS"));
   let Rmanage = (message.guild.member(bot.user).hasPermission("MANAGE_ROLES"));
   let Kick = (message.guild.member(bot.user).hasPermission("KICK_MEMBERS"));
   let Ban = (message.guild.member(bot.user).hasPermission("BAN_MEMBERS"));
+  let Mmanage = (message.guild.member(bot.user).hasPermission("MANAGE_MESSAGES"));
+  let Everyone = (message.guild.member(bot.user).hasPermission("MENTION_EVERYONE"));
+  let Areactions = (message.guild.member(bot.user).hasPermission("ADD_REACTIONS"));
+  let Eemojis = (message.guild.member(bot.user).hasPermission("EXTERNAL_EMOJIS"));
+  let Elinks = (message.guild.member(bot.user).hasPermission("EMBED_LINKS"));
+  let Afiles = (message.guild.member(bot.user).hasPermission("ATTACH_FILES"));
+  let Mnicknames = (message.guild.member(bot.user).hasPermission("MANAGE_NICKNAMES"));
   //let ALog = (message.guild.member(bot.user).hasPermission("VIEW_AUDIT_LOG"));
 
   let Perms = new Discord.RichEmbed()
@@ -207,9 +214,17 @@ if(command === `permcheck`){
   .addField("*Administrator*", admin, true)
   .addField("*View Audit Log*", ALog, true)
   .addField("*Manage Channels*", Cmanage, true)
-  .addField("*Role Manage*", Rmanage, true)
+  .addField("*Manage Messages*", Mmanage, true)
+  .addField("*Manage Nicknames*", Mnicknames, true)
+  .addField("*Manage Roles*", Rmanage, true)
   .addField("*Kick Members*", Kick, true)
-  .addField("*Ban Members*", Ban, true);
+  .addField("*Ban Members*", Ban, true)
+  .addField("*Mention @everyone*", Everyone, true)
+  .addField("*Add Reactions*", Areactions, true)
+  .addField("*External Emojis*", Eemojis, true)
+  .addField("*Attach Files*", Afiles, true)
+  .addField("*Embed Links*", Elinks, true);
+
 
   message.channel.send(Perms);
 }
