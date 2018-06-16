@@ -203,14 +203,15 @@ if(command === `permcheck`){
   //let ALog = (message.guild.member(bot.user).hasPermission("VIEW_AUDIT_LOG"));
 
   let Perms = new Discord.RichEmbed()
-  .setTitle("Permissions Check")
+  .setDescription(`**Permissions Check** :wrench: ${checkeng}`)
   .addField("*Administrator*", admin, true)
   .addField("*View Audit Log*", ALog, true)
-  //.addField("*Manage Channels*", Cmanage, true)
-  //.addField("*Role Manage*", Rmanage, true)
+  .addField("*Manage Channels*", Cmanage, true)
+  .addField("*Role Manage*", Rmanage, true)
   .addField("*Kick Members*", Kick, true)
   .addField("*Ban Members*", Ban, true);
 
+  message.channel.send(Perms);
 }
   
   if(command === `kick`){
