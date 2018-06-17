@@ -1210,7 +1210,7 @@ if(command === `emoji`){
      if(isNaN(color)) return message.channel.send("The hex code **must** be a color.");
 
      await role.setColor(color).catch(error => message.channel.send(`Error: ${error}`));
-     message.channel.send(`All set 👌 \nChanged \`${role.name}\`'s color to ${role.color}`).catch(error => message.channel.send(`Error: ${error}`));
+     await message.channel.send(`All set 👌 \nChanged \`${role.name}\`'s color to ${role.color}`).catch(error => message.channel.send(`Error: ${error}`));
    }
 
   if(command === `serverinfo`){
