@@ -900,7 +900,8 @@ if(command === `8ball`){
   }
 
 if(command === `pick`){
-    let opt = message.content.slice(7).trim().split(',');
+    //let opt = message.content.slice(7).trim().split(',');
+    let opt = args.join(" ").split(',');
     let result = Math.floor((Math.random() * opt.length));
     if(opt.length < 2) return message.channel.send("I need two options to decide. Commas used will split choices.");
     message.channel.send(`I pick... **${opt[result]}**`);
@@ -1195,9 +1196,19 @@ if(command === `emoji`){
 
     message.guild.member(bUser).ban(bReason);
     incidentchannel.send(banEmbed);
+   }
 
+   if(command === `rolecolor`){
+     if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("No \nYou need the permission: MANAGE_ROLES");
+     let role = message.mentions.roles.first() || message.guild.roles.find('name', args[0]);
+     if(!role) return message.channel.send("Where's the role at? I couldn't find it");
+     
+     let color = args.slice(1).join(" ");
+     if(!color) return message.channel.send("Where's the color hex at?");
+     if(isNaN(color)) return message.channel.send("The hex code **must** be a color.");
 
-    return;
+     await role.setColor(color).catch(error => message.channel.send(`Error: ${error}`));
+     message.channel.send(`All set 👌 \nChanged \`${role.name}\`'s color to ${role.color}`).catch(error => message.channel.send(`Error: ${error}`));
    }
 
   if(command === `serverinfo`){
@@ -1416,7 +1427,7 @@ if(command === `help`){
           },
           {
             "name": " :wrench: Moderation",
-            "value": "purge, kick, ban, giverole, removerole, permcheck"
+            "value": "purge, kick, ban, giverole, removerole, permcheck, rolecolor"
           },
           {
             "name": `Fun ${bmo} ${pikagroove}`,
