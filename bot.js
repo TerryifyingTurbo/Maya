@@ -901,7 +901,7 @@ if(command === `8ball`){
 
 if(command === `pick`){
     //let opt = message.content.slice(7).trim().split(',');
-    let opt = args.join(" ").split(',');
+    let opt = args.join(" ").trim().split(',');
     let result = Math.floor((Math.random() * opt.length));
     if(opt.length < 2) return message.channel.send("I need two options to decide. Commas used will split choices.");
     message.channel.send(`I pick... **${opt[result]}**`);
@@ -1200,6 +1200,8 @@ if(command === `emoji`){
 
    if(command === `rolecolor`){
      if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("No \nYou need the permission: MANAGE_ROLES");
+     if(!message.guild.member(bot.user).hasPermission("MANAGE_ROLES")) return message.channel.send("I'm afraid that I don't have the MANAGE_ROLES permission.");
+     
      let role = message.mentions.roles.first() || message.guild.roles.find('name', args[0]);
      if(!role) return message.channel.send("Where's the role at? I couldn't find it");
      
