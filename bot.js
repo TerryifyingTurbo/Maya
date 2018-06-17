@@ -237,15 +237,6 @@ if(command === `permcheck`){
     if(User.hasPermission("KICK_MEMBERS")) return message.channel.send("I can't kick members who have the ability to kick as well.");
     if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return message.channel.send("I need the following to perform this command: KICK_MEMBERS");
 
-    // let kickEmbed = new Discord.RichEmbed()
-    // .setTitle("Yeet! Out you go...")
-    // .setDescription("Kick")
-    // .setColor("#e56b00")
-    // .addField("Kicked User", `${User} with ID ${User.id}`)
-    // .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    // .addField("Kicked In", message.channel)
-    // .addField("Time", message.createdAt)
-    // .addField("Reason", `${Reason}`);
 
     //let kickChannel = message.guild.channels.find(`name`, "incidents");
     //if(!kickChannel) return message.channel.send("Can't find incidents channel.");
