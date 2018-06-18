@@ -229,6 +229,8 @@ if(command === `permcheck`){
   message.channel.send(Perms);
 }
   
+
+
   if(command === `kick`){
     let User = message.mentions.users.first()
     if(!User) return message.reply("You think this is soccer? ***Who do I kick***");
@@ -236,7 +238,6 @@ if(command === `permcheck`){
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("**NO.** You don't have the ability to kick members");
     if(User.hasPermission("KICK_MEMBERS")) return message.channel.send("I can't kick members who have the ability to kick as well.");
     if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return message.channel.send("I need the following to perform this command: KICK_MEMBERS");
-
 
     //let kickChannel = message.guild.channels.find(`name`, "incidents");
     //if(!kickChannel) return message.channel.send("Can't find incidents channel.");
@@ -613,7 +614,9 @@ if(command === `cat`){
   .setColor("RANDOM")
   .setTitle("Kitty :0")
   .setImage(body.file);
-  message.channel.send(catembed)
+  message.channel.send(catembed).catch(error);{
+if(error.status == 403) return message.reply(`${redx} 403 Forbidden`)
+  }
 }
 
 if(command === `fox`){
@@ -623,7 +626,7 @@ if(command === `fox`){
   .setTitle("Foxy :0")
   .setImage(body.image);
   message.channel.send(foxembed)
-  .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
+  .catch(error => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `dog`){
@@ -667,6 +670,8 @@ if(command === `dadjoke`){
   message.channel.send(o);
 }
 
+
+
 if(command === `meme`){
   let{body} = await superagent
   .get(`https://api-to.get-a.life/meme`);
@@ -684,6 +689,92 @@ if(command === `clapify`){
   if (args.length < 1) return message.channel.send("***Give:clap:me:clap:something:clap:to:clap:clap:clap:on:clap:***");
   message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
+
+if(command === `smut` && args[0] == "keepthisbetweenus"){
+  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
+  let pages = [
+    //one
+  `*Written by an awesome person:* <@297931837400023041>`,
+  //two 
+  `*“I just… I don’t know what to do anymore, really.” Travis says disappointedly “What’s the point of still ‘being with’ Maya when she pretty much disappeared and never came back.” He rests his head, facing down at the floor, on his hands, sitting adjacent to Saeyoung on the edge of his bed “It’s weird… one day she was here, then the next day, not anymore..”
+  “It… sucks, honestly. I’m having the same situation too with… Taeyeon”
+ “Oh...?”
+  “She also disappeared and never really came back.” He muttered “I think we both honestly should just.. Y’know..”
+ Travis lifts his head up in response. “Huh?”
+  “I meant… to move on from them.” He takes off his jacket and tosses it aside “It’s probably the best thing, at least for me anyway.”*`,
+  //three
+  `*“Not sure what to really say about that.” Travis sighs and lays back on the bed, staring at the ceiling above. There wasn’t much else for him to say what was on his mind.  “...I mean They said they’ll be back and who knows if—” He exclaims and turns his attention to Saeyoung when he climbs over on top of him, confusion striking him “The hell? Aye, chill!” He’s ‘shushed’ by the redhead who leans in to kiss for a moment that felt almost more than a moment and then parts away. Saeyoung smirks, hinting his intentions. He could see the look in Travis; who was clearly flustered, but that would be something he’d deny. A very low ‘uh...’ was the most the dumbfounded boy, now blushing up a storm as he couldn’t make an answer from feeling slightly dizzy*`,
+  //four
+  `*Saeyoung’s eyes meet with Travis’s “We have us anyway, and besides… I’ve always had… thoughts about this” 
+  “If… y-you really thought that way…” Travis brings Saeyoung closer face to face and whispers “I’ve—actually thought of… that… too” and without hesitation, he seizes his lips in a returned kiss that becomes sloppy and rough in a matter of time. Their bodies not only radiating heat and rubbing against each other but were also linked close together as if being bear-hugged and unable to let go. The two aggressively exchange in saliva that seems more of a competition that prolonged but then Saeyoung forcibly breaks the kiss, allowing himself and Travis for a quick gasp of air. Actions speak louder than words, they say...*`,
+  //five
+  `*And they’d be right: Being ‘straight’ did not exist for the time being since the two decide to take their ‘curiosity’ up a notch when Saeyoung instinctively strips of his own clothing with Travis hesitating for a split second but promptly strips of his own afterwards, freeing their own stiffened and throbbing members that were of relatively equal length. Saeyoung couldn’t help but stare at the now-bare Travis who was just as obviously aroused as he was himself. “Turn around” He commands
+  ‘Okay’ Travis gives a slight nod and reluctantly shifts a little ways back up on the bed, hefting himself up to turn about and set out on his hands and knees. It seemed odd for himself about how he already knows what to do and how to do it, but at this point, there’s no objecting now. Saeyoung scoots in on his knees positioning himself right behind, literally ‘admiring the view’. He couldn’t help but make a soft snicker at his obedience.*`,
+  //six
+  `*It is safe to say that Travis has a decent firm booty clearly respected and Saeyoung certainly seems to agree from the way he’s greedily grabbing him from behind, making Travis find himself shuddering and reddening from those soft pale hands that now grip at his hips “Ah, uhm, we’re gonna keep this between us, right?”
+  “Oh yeah, definitely.”
+ “Uhm, I… I’ve never done this before either…” He adds
+  “Err... Neither have I.” 
+ “Then, could you go a little easy and not so hard—Ahgh~!!!” A thick, throaty cry bursts from the virgin half a beat later—he must’ve choked on his own breath an instant when Saeyoung thrusted and practically slammed in with sudden force, his head thrown back as he grinded in.*`,
+ //seven
+  `*“Ah! I—I said not so ha—hard!” Travis winced, groaning out a thick, wandering, wordless speech on the pain of such a sudden stuffing. Saeyoung apologizes pathetically and while he makes effort to letup, he succumbs to his temptation to drive in again and again, punctuating every thrust with a small flare of intense sensation that slowly stretch open that tight entrance.  Sharp sighs escape from Travis as he attempts to stifle them with a spare hand only to fail to do as intended.
+  “Mmm, sounds like you’re liking this, much?” The redhead murmured, his hands dig deep into that pale skin at the hips
+ “Sh—Shut it, you” Travis stammers, out of embarrassment and humiliation.*`,
+  //eight
+  `*His hands knot up into fists that cling to the bedsheets as he drags his head up, panting and groaning luxuriously with painful pleasure blooming from his back end. How could something feel painful yet pleasuring at the same time? It was true that he couldn’t deny that he’s liking it, if not, thoroughly enjoying it. Saeyoung’s lengthy dick slicks all over the boy’s insides, providing more than enough lubrication of aggressively working in and out of that claimed firm ass that deliciously strains around him. Every muscle up his legs and belly burn with raw effort, shoving Travis forward with resounding slam, forcing shameless perverted moans from him. Must’ve been too much since then he bursts out screaming every curse word in the book, even including the lord’s name in vain.*`,
+  `*Enough just isn’t enough. In desperation to fulfill his need for even more, he goes reaching for his own twitching, hanging and pre-soaked rod that ached intensely but finds impossible to do when an uncontrollable redhead behind him shows no sign of slowing down—or so it was believed. Saeyoung is getting close faster than he’d but that doesn’t stop him just yet. Panting out and pressing forward, he forces himself to ease a little as he hugs down around Travis. The thin sweat rising on both the two seals with his belly to Travis’s back in a strange, hot bond, making him feel all the more intensely even as he throbs inside him, chest tight to his ribcage. Ecstasy and raw stimulation intoxicates Travis’s mind as he glances back at the soon-to-blow redhead “D—does it feel... good? To be deep inside me?” His face turns the same radiant red from earlier*`,
+  `*“Do I… have to answer that?” He utters, as if the answer wasn’t obvious enough already. Swallowing tightly, gradually panting out uncontrollably, he hugs the boy tight as his hips work feverishly against those cheeks, the two of them collapse to the bed, Travis’s ass bends back high in offering and back arching tight, being driven at balls deep, when Saeyoung spends himself with effort as his own fingernails dig into that hot, slick skin. The redhead feels himself swelling into hypersensitive steel, inner walls being pulled taut around him so painfully good that it’d be a pain to stop now. However, all good things eventually come to an end.*`,
+  //nine
+  `*“I’m… I’m gonna—” Saeyoung unknowingly leaves his impending  warning incomplete and and with all of his strength to continue more, his hips make sudden jerk and high, frantic moan bursting from his throat, pinning Travis in the bed and firing his surging load of hot warm seed deep into those walls before slumping over, hands loosening of grip. He lies down atop just short of collapsing entirely, sprawling over Travis’s back with a thick sigh as he spends himself to the last drop within him. Feeling woozy and the world may be… turning a little… It takes Travis a moment to realize that Saeyoung is saying something 
+  “You… Alright?” His breathing enthusiasm slowly breaks when the exhausted boy clears his throat barely collecting himself, finally managing something a little more coherent than frantic moans afterwards*`,
+  //ten
+  `* “Can’t believe you asked that. First you—You cummed inside me,” He rebuked, disgusted by the thought of it and then pushes Saeyoung off his back to sit up “and second, you did the complete opposite of going easy. My ass literally hurts!”
+  “Well… you liked it either way so—” He shrugs, knowing that it is true
+ “I did not.”
+  “Did too.”
+ “No, I didn’t” Still continuing in denial, and for some reason now admitting “Okay fine… Maybe” He looks away, pouting with Saeyoung making a faint chuckle. “Whatever, this is still only between just us.”
+ He scoffs “Yeah, obviously.”
+ Two almost strikingly similar voices instantly turn both the boys attention toward the locked door, demanding to be let in “Oppa? Travvy? Ya’ both in there?” Quickly panicking and with no time to waste, the two hop off the bed, scrambling for their clothing.
+ “Uhm, yeah, just give us a second!” Travis assures, buying them both some time.* 
+  ***Talk about a close call...***`,
+  `*The End* \n!?smut <story> for other lemon stuff 🍋 *you nasty* \nIf it was... in a non-weird sense... perfect, well-done and awesome, then react with a ⭐! \n*Really though, it's not that easy making these. Appreciate*`];
+  let page = 1; 
+ 
+  const embed = new Discord.RichEmbed() 
+    .setColor("RANDOM")
+    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setDescription(pages[page-1])
+ 
+  message.channel.send(embed).then(message => { 
+   
+    message.react('⏪').then( r => { 
+      message.react('⏩') 
+     
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
+     
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 600000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 600000 }); 
+     
+      
+      backwards.on('collect', r => { 
+        if (page === 1) return; 
+        page--;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+     
+      forwards.on('collect', r => { 
+        if (page === pages.length) return; 
+        page++;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+   
+    })
+})};
 
 if(command === `smut` && args[0] == "tradechristmasspecial"){
  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
@@ -787,14 +878,14 @@ if(command === `smut`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   
   if(args[0] == "tradechristmasspecial") return;
-  if(args[0] == "wehaveusanyway") return message.channel.send(`${redx} *403 Forbidden*`);
+  if(args[0] == "keepthisbetweenus") return;
   
   let smutembed = new Discord.RichEmbed()
   .setTitle(`Lemon Scented.`)
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField(`${loveydovey}`, "*Trade Christmas Special \n???\nWe Have Us Anyway\n???*", true);
+  .addField(`${loveydovey}`, "*Trade Christmas Special \n???\nKeep This Between Us\n???*", true);
   message.channel.send(smutembed);
 }
 
@@ -900,8 +991,7 @@ if(command === `8ball`){
   }
 
 if(command === `pick`){
-    //let opt = message.content.slice(7).trim().split(',');
-    let opt = args.join(" ").trim().split(',');
+    let opt = args.join(" ").split(',');
     let result = Math.floor((Math.random() * opt.length));
     if(opt.length < 2) return message.channel.send("I need two options to decide. Commas used will split choices.");
     message.channel.send(`I pick... **${opt[result]}**`);
@@ -1196,21 +1286,9 @@ if(command === `emoji`){
 
     message.guild.member(bUser).ban(bReason);
     incidentchannel.send(banEmbed);
-   }
 
-   if(command === `rolecolor`){
-     if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("No \nYou need the permission: MANAGE_ROLES");
-     if(!message.guild.member(bot.user).hasPermission("MANAGE_ROLES")) return message.channel.send("I'm afraid that I don't have the MANAGE_ROLES permission.");
-     
-     let role = message.mentions.roles.first() || message.guild.roles.find('name', args[0]);
-     if(!role) return message.channel.send("Where's the role at? I couldn't find it");
-     
-     let color = args.slice(1).join(" ");
-     if(!color) return message.channel.send("Where's the color hex at?");
-     if(isNaN(color)) return message.channel.send("The hex code **must** be a color.");
 
-     await role.setColor(color).catch(error => message.channel.send(`Error: ${error}`));
-     await message.channel.send(`All set 👌 \nChanged \`${role.name}\`'s color to ${role.color}`).catch(error => message.channel.send(`Error: ${error}`));
+    return;
    }
 
   if(command === `serverinfo`){
@@ -1352,7 +1430,7 @@ if(command === `help`){
      
      if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
      
-     if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directory: ./botsettings.json and ./bot.js");
+     if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directories");
 
      if(args[0] == "namegen") return message.channel.send("I will get a randomly generated name that includes it's origin.");
 
@@ -1429,7 +1507,7 @@ if(command === `help`){
           },
           {
             "name": " :wrench: Moderation",
-            "value": "purge, kick, ban, giverole, removerole, permcheck, rolecolor"
+            "value": "purge, kick, ban, giverole, removerole, permcheck"
           },
           {
             "name": `Fun ${bmo} ${pikagroove}`,
