@@ -728,7 +728,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   `*“I’m… I’m gonna—” Saeyoung unknowingly leaves his impending  warning incomplete and and with all of his strength to continue more, his hips make sudden jerk and high, frantic moan bursting from his throat, pinning Travis in the bed and firing his surging load of hot warm seed deep into those walls before slumping over, hands loosening of grip. He lies down atop just short of collapsing entirely, sprawling over Travis’s back with a thick sigh as he spends himself to the last drop within him. Feeling woozy and the world may be… turning a little… It takes Travis a moment to realize that Saeyoung is saying something 
   “You… Alright?” His breathing enthusiasm slowly breaks when the exhausted boy clears his throat barely collecting himself, finally managing something a little more coherent than frantic moans afterwards*`,
   //ten
-  `* “Can’t believe you asked that. First you—You cummed inside me,” He rebuked, disgusted by the thought of it and then pushes Saeyoung off his back to sit up “and second, you did the complete opposite of going easy. My ass literally hurts!”
+  `*“Can’t believe you asked that. First you—You cummed inside me,” He rebuked, disgusted by the thought of it and then pushes Saeyoung off his back to sit up “and second, you did the complete opposite of going easy. My ass literally hurts!”
   “Well… you liked it either way so—” He shrugs, knowing that it is true
  “I did not.”
   “Did too.”
@@ -740,8 +740,9 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   `*The End* \n!?smut <story> for other lemon stuff 🍋 *you nasty* \nIf it was... in a non-weird sense... perfect, well-done and awesome, then react with a ⭐! \n*Really though, it's not that easy making these. Appreciate*`];
   let page = 1; 
  
-  const embed = new Discord.RichEmbed() 
-    .setColor("RANDOM")
+  const embed = new Discord.RichEmbed()
+    .setTitle("Keep This Between Us")
+    .setColor("#44eae7")
     .setFooter(`Page ${page} of ${pages.length}`) 
     .setDescription(pages[page-1])
  
