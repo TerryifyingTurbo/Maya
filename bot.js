@@ -758,8 +758,8 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
      
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 600000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 600000 }); 
+      const backwards = message.createReactionCollector(backwardsFilter); 
+      const forwards = message.createReactionCollector(forwardsFilter); 
      
       
       backwards.on('collect', r => { 
