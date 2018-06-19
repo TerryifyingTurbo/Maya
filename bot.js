@@ -691,6 +691,8 @@ if(command === `clapify`){
 }
 
 if(command === `smut` && args[0] == "keepthisbetweenus"){
+  return message.channel.send("No");
+  
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let pages = [
     //one
@@ -705,8 +707,8 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   //three
   `*“Not sure what to really say about that.” Travis sighs and lays back on the bed, staring at the ceiling above. There wasn’t much else for him to say what was on his mind.  “...I mean They said they’ll be back and who knows if—” He exclaims and turns his attention to Saeyoung when he climbs over on top of him, confusion striking him “The hell? Aye, chill!” He’s ‘shushed’ by the redhead who leans in to kiss for a moment that felt almost more than a moment and then parts away. Saeyoung smirks, hinting his intentions. He could see the look in Travis; who was clearly flustered, but that would be something he’d deny. A very low ‘uh...’ was the most the dumbfounded boy could make at the moment, now blushing up a storm as he couldn’t make an answer from feeling slightly dizzy*`,
   //four
-  `*Saeyoung’s eyes meet with Travis’s “We have us anyway, and besides… I’ve always had… thoughts about this” 
-  “If… y-you really thought that way…” Travis brings Saeyoung closer face to face and whispers “I’ve—actually thought of… that… too” and without hesitation, he seizes his lips in a returned kiss that becomes sloppy and rough in a matter of time. Their bodies not only radiating heat and rubbing against each other but were also linked close together as if being bear-hugged and unable to let go. The two aggressively exchange in saliva that seems more of a competition that prolonged but then Saeyoung forcibly breaks the kiss, allowing himself and Travis for a quick gasp of air. Actions speak louder than words, they say...*`,
+  `*Saeyoung’s eyes meet with Travis’s “I've always found you.. a little cute and then I always had these… thoughts about you” 
+  “If… y-you really thought that way…” Travis brings Saeyoung closer face to face and whispers “I’ve—actually uhm... thought of… that… too” Without hesitation, he seizes his lips in a returned kiss that becomes sloppy and rough in a matter of time—Who wouldn't for that porcelain skin and vermillion hair Korean that everyone seems to love?—Their bodies not only radiating heat and rubbing against each other but were also linked close together as if being bear-hugged and unable to let go. The two aggressively exchange in saliva that seems more of a competition that prolonged but then Saeyoung forcibly breaks the kiss, allowing himself and Travis for a quick gasp of air. Actions speak louder than words, they say...*`,
   //five
   `*And they’d be right: Being ‘straight’ did not exist for the time being since the two decide to take their ‘curiosity’ up a notch when Saeyoung instinctively strips of his own clothing with Travis hesitating for a split second but promptly strips of his own afterwards, freeing their own stiffened and throbbing members that were of relatively equal length. Saeyoung couldn’t help but stare at the now-bare Travis who was just as obviously aroused as he was himself. “Turn around” He commands
   ‘Okay’ Travis gives a slight nod and reluctantly shifts a little ways back up on the bed, hefting himself up to turn about and set out on his hands and knees. It seemed odd for himself about how he already knows what to do and how to do it, but at this point, there’s no objecting now. Saeyoung scoots in on his knees positioning himself right behind, literally ‘admiring the view’. He couldn’t help but make a soft snicker at his obedience.*`,
@@ -737,7 +739,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
  “No, I didn’t” Still continuing in denial, and for some reason now admitting “Okay fine… Maybe” He looks away, pouting with Saeyoung making a faint chuckle. “Whatever, this is still only between just us.”
  He scoffs “Yeah, obviously.”
  Two almost strikingly similar voices instantly turn both the boys attention toward the locked door, demanding to be let in “Oppa? Travvy? Ya’ both in there?” Quickly panicking and with no time to waste, the two hop off the bed, scrambling for their clothing.
- “Uhm, yeah, just give us a second!” Travis assures, buying them both some time.* 
+ “Uhm, yeah, just give us a second!” Travis assures* 
   ***Talk about a close call...***`,
   //thirteen
   `*The End* \n!?smut <story> for other lemon stuff 🍋 *you nasty* \nIf it was... in a non-weird sense... perfect, well-done and awesome, then react with a ⭐! \n*Really though, it's not that easy making these. Appreciate*`];
