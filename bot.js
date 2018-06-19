@@ -693,7 +693,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let pages = [
     //one
-  `*Written by an awesome person:* <@297931837400023041>`,
+  `*Written by yours truly,* <@297931837400023041>`,
   //two 
   `*“I just… I don’t know what to do anymore, really.” Travis says disappointedly “What’s the point of still ‘being with’ Maya when she pretty much disappeared and never came back.” He rests his head, facing down at the floor, on his hands, sitting adjacent to Saeyoung on the edge of his bed “It’s weird… one day she was here, then the next day, not anymore..”
   “It… sucks, honestly. I’m having the same situation too with… Taeyeon”
@@ -751,7 +751,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   message.channel.send(embed).then(message => { 
    
     message.react('⏪').then( r => { 
-      message.react('⏩') 
+      message.react('⏩')
      
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
