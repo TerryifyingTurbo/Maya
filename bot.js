@@ -464,8 +464,8 @@ if(command === `convert` && args[0] == "LIST"){
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
      
-      const backwards = message.createReactionCollector(backwardsFilter); 
-      const forwards = message.createReactionCollector(forwardsFilter); 
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
      
       
       backwards.on('collect', r => { 
@@ -756,8 +756,8 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
      
-      const backwards = message.createReactionCollector(backwardsFilter); 
-      const forwards = message.createReactionCollector(forwardsFilter); 
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
      
       
       backwards.on('collect', r => { 
@@ -833,8 +833,8 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
       message.react('⏩') 
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-      const backwards = message.createReactionCollector(backwardsFilter); 
-      const forwards = message.createReactionCollector(forwardsFilter); 
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
       backwards.on('collect', r => { 
         if (page === 1) return; 
         page--;
