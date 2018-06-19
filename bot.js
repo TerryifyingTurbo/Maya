@@ -691,8 +691,7 @@ if(command === `clapify`){
 }
 
 if(command === `smut` && args[0] == "keepthisbetweenus"){
-  return message.channel.send("No");
-  
+
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   let pages = [
     //one
@@ -891,7 +890,7 @@ if(command === `smut`){
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField(`${loveydovey}`, "*Trade Christmas Special \n???\nKeep This Between Us\n???*", true);
+  .addField(`${loveydovey}`, "*Trade Christmas Special \n??? \nKeep This Between Us \n??? \n??? \n???*", true);
   message.channel.send(smutembed);
 }
 
