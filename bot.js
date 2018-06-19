@@ -464,8 +464,8 @@ if(command === `convert` && args[0] == "LIST"){
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
      
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 600000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 600000 }); 
+      const backwards = message.createReactionCollector(backwardsFilter); 
+      const forwards = message.createReactionCollector(forwardsFilter); 
      
       
       backwards.on('collect', r => { 
@@ -670,8 +670,6 @@ if(command === `dadjoke`){
   message.channel.send(o);
 }
 
-
-
 if(command === `meme`){
   let{body} = await superagent
   .get(`https://api-to.get-a.life/meme`);
@@ -835,8 +833,8 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
       message.react('⏩') 
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 600000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 600000 }); 
+      const backwards = message.createReactionCollector(backwardsFilter); 
+      const forwards = message.createReactionCollector(forwardsFilter); 
       backwards.on('collect', r => { 
         if (page === 1) return; 
         page--;
