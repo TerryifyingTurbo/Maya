@@ -902,11 +902,12 @@ if(command === `succ`){
     message.channel.startTyping();
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
-    }, cdseconds * 1700)
+    }, cdseconds * 1700);
+    
     setTimeout(() => {
       message.channel.stopTyping(true);
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
-    }, cdseconds * 1700)
+    }, cdseconds * 2000)
 });
 
 }
