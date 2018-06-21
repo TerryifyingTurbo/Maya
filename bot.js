@@ -875,14 +875,41 @@ if(command === `succ`){
   let Reciever = args.join(" ");
 
   let intro = [`Giving a sly smile, ${giver} puts that bad mouth to good use ( ͡° ͜ʖ ͡°)`,
-  `Groaning faintly in response, ${giver}`];
+  `Looks like ${giver} is giving ${Reciever} some of that oral relief.`,
+  `Without a moment to waste, ${giver} gets a little busy by giving ${Reciever} some of that neck.`,
+  `Momma didn't raise no bitch. ${giver} cajoles ${Reciever} to let'em get a sample of some of that mouth seal succ.`,
+  `Biting their lip, ${giver} gets to work and gives ${Reciever} some of that nice ol' relaxation.`];
   let introOutcome = Math.floor((Math.random() * intro.length));
   
-  let middle = [];
+  let middle = [`${giver} is making great progress working their way on ${Reciever} with those lovely lips.`,
+  `${giver}, taking in all of ${Reciever}, making them periodically thrust upwards, moaning small O's.`,
+  `${Reciever}, greedily trapping ${giver} into their crotch with their thighs, aching intensely.`,
+  `Oh, those slick lubricated noises that ${giver} makes... It's almost an art.`,
+  `${Reciever}, shoving ${giver}'s face down to their crotch, pratically face grinding.`,
+  `${giver} seemingly aggressive with what they're doing. You could say that it's definitely 'too much teeth'`];
   let middleOutcome = Math.floor((Math.random() * middle.length));
   
-  let end = [];
+  let end = [`You could easily tell that ${Reciever} is satisfied with their little session with ${giver}. Perhaps they might ask for more some other time.`,
+  `${Reciever} may deny it, but they know that they secretly loved the service.`,
+  `Despite ${giver} putting all their effort, it seems that ${Reciever} hated the entire session.`,
+  `Though ${Reciever} enjoyed the service, it seems like it wasn't exactly what they were looking for... or who they were looking for.`
+  `${Reciever} thoroughly enjoyed it, ${giver} thoroughly enjoyed it; Happy ending. `];
   let endOutcome = Math.floor((Math.random() * end.length));
+
+  if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them.");
+
+  message.channel.send(`*${introOutcome}*`).then(message =>{
+    message.channel.startTyping();
+    setTimeout(() => {
+      message.edit(`*${introOutcome} ${middleOutcome}*`)
+    }, cdseconds * 1300).then(message =>{
+      
+      setTimeout(() => {
+        message.edit(`*${introOutcome} ${middleOutcome} ${endOutcome}*`)
+      }, cdseconds * 1300)
+      message.channel.stopTyping(true);
+    });
+});
 
 }
 
@@ -1357,7 +1384,7 @@ if(command === `botinfo`){
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
-        "text": `${platform.os} \nNode JS \nDiscord.js v11.30`
+        "text": `${platform.os} \nNode JS ${process.version} \nDiscord.js v11.30`
       },
       "thumbnail": {
         "url": `${bot.user.displayAvatarURL}` 
