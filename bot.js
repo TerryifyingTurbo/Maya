@@ -902,11 +902,12 @@ if(command === `succ`){
 
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them.");
-
-  message.channel.startTyping().then(message =>{
+  
+  await message.channel.startTyping()
+  message.channel.send(".").then(message =>{
     setTimeout(() => {
-      message.channel.send(`*${intro[introOutcome]}*`)
-    }, cdseconds * 900);
+      message.edit(`*${intro[introOutcome]}*`)
+    }, cdseconds * 700);
 
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
