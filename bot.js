@@ -913,7 +913,7 @@ if(command === `succ`){
     
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
-    }, cdseconds * 5700);
+    }, cdseconds * 5000);
   });
 }
 
