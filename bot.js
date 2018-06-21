@@ -902,13 +902,9 @@ if(command === `succ`){
 
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them.");
-  
-  message.channel.startTyping()
-  message.channel.send(".").then(message =>{
-    setTimeout(() => {
-      message.edit(`*${intro[introOutcome]}*`)
-    }, cdseconds * 100);
 
+  message.channel.send(`*${intro[introOutcome]}*`).then(message =>{
+    message.channel.startTyping();
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
     }, cdseconds * 2000);
@@ -917,8 +913,7 @@ if(command === `succ`){
     
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
-    }, cdseconds * 5900);
-  
+    }, cdseconds * 5800);
   });
 }
 
