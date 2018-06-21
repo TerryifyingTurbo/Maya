@@ -879,25 +879,30 @@ if(command === `succ`){
   `Without a moment to waste, ${giver} gets busy by giving ${Reciever} some of that neck.`,
   `Momma didn't raise no bitch. ${giver} cajoles ${Reciever} to let'em get a sample of some of that mouth seal succ.`,
   `Biting their lip, ${giver} gets to work and gives ${Reciever} some of that nice ol' relaxation.`,
-  `Maybe a quick one wouldn't hurt, says ${Reciever}. ${giver}, more than happy to do so.`];
+  `Maybe a quick one wouldn't hurt, says ${Reciever}. ${giver} agrees, more than happy to do so.`];
   let introOutcome = Math.floor((Math.random() * intro.length));
   
   let middle = [`${giver} is making great progress working their way on ${Reciever} with those lovely lips.`,
   `${giver}, taking in all of ${Reciever}, making them periodically thrust upwards, moaning small O's.`,
-  `Poor ${giver}, being greedily trapped by ${Reciever} into their crotch with their thighs, them aching intensely.`,
+  `Poor ${giver}, being greedily trapped by ${Reciever}'s thighs, forcing them into their crotch.`,
   `Oh, those slick lubricated noises that ${giver} makes... It's almost an art.`,
-  `Slurp... slurp-slurp much like sipping all of the juice from a bowl; The sound as ${giver} is slobbering all over it. What else is there to say?`,
+  `Slurp... slurp-slurp much like sipping all of the juice from a soup bowl; The sound as ${giver} is slobbering all over it. What else is there to say?`,
   `${Reciever}, shoving ${giver}'s face down to their crotch and pratically face grinding.`,
-  `${giver} seemingly aggressive with what they're doing as it's definitely 'too much teeth'`,
-  `Not going easy, it is assumed. Judging by the way ${Reciever} is rarely letting ${giver} stop for some breathing.`];
+  `${giver} is definitely putting in work! Their tongue-lathering skills is making ${Reciever} scream the lord's name in vain.`,
+  `${giver} seemingly aggressive with what they're doing. It's definitely 'too much teeth'`,
+  `Not going easy, it is assumed. Judging by the way ${Reciever} is rarely letting ${giver} stop for some breathing.`,
+  `...What is exactly ${giver} doing? It looks as if they don't even know what giving the succ is. It's an insult to thots!`,
+  `${giver} may not be exactly doing such a perfect job, at least they're making good effort. Definitely something than nothing.`];
   let middleOutcome = Math.floor((Math.random() * middle.length));
   
   let end = [`You could easily tell that ${Reciever} is satisfied with their little session with ${giver}. Perhaps they might ask for more some other time.`,
-  `${Reciever} may deny it, but they know that they secretly loved the service.`,
-  `Despite ${giver} putting all their effort, it seems that ${Reciever} hated the entire session.`,
-  `Though ${Reciever} enjoyed the service, it seems like it wasn't exactly what they were looking for... or who they were looking for.`,
+  `${Reciever} may deny it, but they know that they secretly loved it.`,
+  `Despite ${giver} putting all their effort, ${Reciever} hated it`,
+  `Though ${Reciever} enjoyed it, it wasn't exactly what they were looking for... or who they were looking for.`,
   `${Reciever} thoroughly enjoyed it, ${giver} thoroughly enjoyed it; Happy ending.`,
-  `Perhaps round two would begin some time soon, as ${giver} hints torwards ${Reciever}.`];
+  `Perhaps round two would begin some time soon, as ${giver} hints torwards ${Reciever}.`,
+  `It looks like ${Reciever} isn't too excited as ${giver} is.`,
+  `It doesn't look like ${Reciever} wants anymore.`];
   let endOutcome = Math.floor((Math.random() * end.length));
 
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
