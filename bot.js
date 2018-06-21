@@ -905,9 +905,9 @@ if(command === `succ`){
     }, cdseconds * 1700);
     
     setTimeout(() => {
-      message.channel.stopTyping(true);
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
-    }, cdseconds * 2000)
+    }, cdseconds * 3000)
+    message.channel.stopTyping(true);
 });
 
 }
