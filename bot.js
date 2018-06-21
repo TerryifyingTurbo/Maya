@@ -228,6 +228,22 @@ if(command === `permcheck`){
 
   message.channel.send(Perms);
 }
+
+if(command === `stats`){
+  const arch = os.arch()
+    const used = process.memoryUsage().heapUsed / 1024 / 1024;
+
+    let totalSeconds = process.uptime();
+    let realTotalSecs = Math.floor(totalSeconds % 60);
+    let days = Math.floor((totalSeconds % 31536000) / 86400);
+    let hours = Math.floor((totalSeconds / 3600) % 24);
+    let mins = Math.floor((totalSeconds / 60) % 60);
+
+    let ping = bot.ping
+    message.channel.send(`\n= Memory usage: ${Math.round(used * 100) / 100}MB\n= Ping: ${ping}\n= Uptime: Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}\n= Node: ${process.version}\n= Library: discord.js\n= ARCH: ${arch}\n= Plataform: ${os.platform}`, {
+        code: 'AsciiDoc'
+    });
+}
   
 
 
@@ -301,6 +317,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
     
     //message.channel.send(replies[result]);
 }
+
 
 if(command === `rolldice`){
   let sides = (args[0]) || 6;
@@ -854,9 +871,11 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
 })};
 
 if(command === `succ`){
+  let giver = `${message.member.displayName}`;
   let Reciever = args.join(" ");
 
-  let intro = [``];
+  let intro = [`Giving a sly smile, ${giver} puts that bad mouth to good use ( ͡° ͜ʖ ͡°)`,
+  `Groaning faintly in response, ${giver}`];
   let introOutcome = Math.floor((Math.random() * intro.length));
   
   let middle = [];
@@ -865,7 +884,6 @@ if(command === `succ`){
   let end = [];
   let endOutcome = Math.floor((Math.random() * end.length));
 
-  message.channel.send(`${message.member.displayName}`)
 }
 
 // let intro = [];
