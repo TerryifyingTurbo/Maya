@@ -876,7 +876,7 @@ if(command === `succ`){
 
   let intro = [`Giving a sly smile, ${giver} puts that bad mouth to good use.`,
   `Looks like ${giver} is giving ${Reciever} some of that oral relief.`,
-  `Without a moment to waste, ${giver} gets a busy by giving ${Reciever} some of that neck.`,
+  `Without a moment to waste, ${giver} gets busy by giving ${Reciever} some of that neck.`,
   `Momma didn't raise no bitch. ${giver} cajoles ${Reciever} to let'em get a sample of some of that mouth seal succ.`,
   `Biting their lip, ${giver} gets to work and gives ${Reciever} some of that nice ol' relaxation.`,
   `Maybe a quick one wouldn't hurt, says ${Reciever}. ${giver}, more than happy to do so.`];
@@ -903,18 +903,22 @@ if(command === `succ`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them.");
 
-  message.channel.send(`*${intro[introOutcome]}*`).then(message =>{
-    message.channel.startTyping();
+  message.channel.startTyping().then(message =>{
+    setTimeout(() => {
+      message.channel.send(`*${intro[introOutcome]}*`)
+    }, cdseconds * 900);
+
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
-    }, cdseconds * 1900);
+    }, cdseconds * 2000);
+    
+    message.channel.stopTyping(true);
     
     setTimeout(() => {
-      message.channel.stopTyping(true);
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
-    }, cdseconds * 5000);
-});
-
+    }, cdseconds * 5900);
+  
+  });
 }
 
 // let intro = [];
