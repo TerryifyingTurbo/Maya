@@ -907,13 +907,13 @@ if(command === `succ`){
     message.channel.startTyping();
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
-    }, cdseconds * 2000);
+    }, cdseconds * 2500);
     
     message.channel.stopTyping(true);
     
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
-    }, cdseconds * 5900);
+    }, cdseconds * 5700);
   });
 }
 
