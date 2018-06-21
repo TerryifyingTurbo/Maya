@@ -898,15 +898,15 @@ if(command === `succ`){
 
   if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them.");
 
-  message.channel.send(`*${introOutcome}*`).then(message =>{
+  message.channel.send(`*${intro[introOutcome]}*`).then(message =>{
     message.channel.startTyping();
     setTimeout(() => {
-      message.edit(`*${introOutcome} ${middleOutcome}*`)
-    }, cdseconds * 1300)
+      message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
+    }, cdseconds * 1700)
     setTimeout(() => {
-      message.edit(`*${introOutcome} ${middleOutcome} ${endOutcome}*`)
-    }, cdseconds * 1300)
-    message.channel.stopTyping(true);
+      message.channel.stopTyping(true);
+      message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
+    }, cdseconds * 1700)
 });
 
 }
