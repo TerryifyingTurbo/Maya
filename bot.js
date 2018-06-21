@@ -892,7 +892,7 @@ if(command === `succ`){
   let end = [`You could easily tell that ${Reciever} is satisfied with their little session with ${giver}. Perhaps they might ask for more some other time.`,
   `${Reciever} may deny it, but they know that they secretly loved the service.`,
   `Despite ${giver} putting all their effort, it seems that ${Reciever} hated the entire session.`,
-  `Though ${Reciever} enjoyed the service, it seems like it wasn't exactly what they were looking for... or who they were looking for.`
+  `Though ${Reciever} enjoyed the service, it seems like it wasn't exactly what they were looking for... or who they were looking for.`,
   `${Reciever} thoroughly enjoyed it, ${giver} thoroughly enjoyed it; Happy ending. `];
   let endOutcome = Math.floor((Math.random() * end.length));
 
