@@ -896,18 +896,19 @@ if(command === `succ`){
   `${Reciever} thoroughly enjoyed it, ${giver} thoroughly enjoyed it; Happy ending. `];
   let endOutcome = Math.floor((Math.random() * end.length));
 
+  if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
   if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them.");
 
   message.channel.send(`*${intro[introOutcome]}*`).then(message =>{
     message.channel.startTyping();
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
-    }, cdseconds * 1700);
+    }, cdseconds * 1900);
     
     setTimeout(() => {
+      message.channel.stopTyping(true);
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
-    }, cdseconds * 3000)
-    message.channel.stopTyping(true);
+    }, cdseconds * 5000);
 });
 
 }
