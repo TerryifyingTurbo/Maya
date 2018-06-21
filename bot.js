@@ -115,7 +115,7 @@ if(command === `reload`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("You ain't the creator!");
 
-  message.channel.send(`***Reloading*** ${reload}`).then(message => {
+  message.channel.send(`***Reloading***` + ` ${refresh}`).then(message => {
     setTimeout(() => {
     message.edit(`*Reloaded.* ${greencheck}`)
   }, cdseconds * 4500)
