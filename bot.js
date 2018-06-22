@@ -681,15 +681,11 @@ if(command === `dadjoke`){
   let {body} = await superagent
   .get(`https://icanhazdadjoke.com/slack`);
 
-  let o = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setDescription("**" + body.attachments.map(a => a.text) + "**");
-
-  message.channel.send(o);
+  message.channel.send("**" + body.attachments.map(a => a.text) + "**");
 }
 
 if(command === `meme`){
-  let{body} = await superagent
+  let {body} = await superagent
   .get(`https://api-to.get-a.life/meme`);
 
   let me = new Discord.RichEmbed()
