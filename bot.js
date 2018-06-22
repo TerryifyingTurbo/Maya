@@ -535,12 +535,13 @@ if(command === `say`) {
   }
 
 if(command === `avatar`){
-  let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
+  let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
 
   let embed = new Discord.RichEmbed() 
-  .setTitle(`${member}'s avatar`)
-  .setColor("RANDOM")
-	.setImage(member.avatarURL);
+  .setAuthor(`${user.displayName}'s Avatar`)
+  .setImage(user.displayAvatarURL)
+  .setTimestamp();
+
   message.channel.send({embed})
 }
 
@@ -875,35 +876,35 @@ if(command === `succ`){
   let Reciever = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args.join(" "));
 
   let intro = [`Giving a sly smile, ${giver} puts that bad mouth to good use.`,
-  `Looks like ${giver} is giving ${Reciever} some of that oral relief.`,
-  `Without a moment to waste, ${giver} gets busy by giving ${Reciever} some of that tongue.`,
-  `Momma didn't raise no bitch. ${giver} cajoles ${Reciever} to let'em get a sample of some of that mouth seal succ.`,
-  `Biting their lip, ${giver} gets to work and gives ${Reciever} some of that nice ol' relaxation.`,
-  `Maybe a quick one wouldn't hurt, says ${Reciever}. ${giver} agrees, more than happy to do so.`,
+  `Looks like ${giver} is giving ${Reciever.displayName} some of that oral relief.`,
+  `Without a moment to waste, ${giver} gets busy by giving ${Reciever.displayName} some of that tongue.`,
+  `Momma didn't raise no bitch. ${giver} cajoles ${Reciever.displayName} to let'em get a sample of some of that mouth seal succ.`,
+  `Biting their lip, ${giver} gets to work and gives ${Reciever.displayName} some of that nice ol' relaxation.`,
+  `Maybe a quick one wouldn't hurt, says ${Reciever.displayName}. ${giver} agrees, more than happy to do so.`,
   `${giver} believes that they're really good at giving oral relief. Only one way to find out.`];
   let introOutcome = Math.floor((Math.random() * intro.length));
   
-  let middle = [`${giver} is making great progress working their way on ${Reciever} with those lovely lips.`,
-  `${giver}, taking in all of ${Reciever}, making them periodically thrust upwards, moaning small O's.`,
-  `Poor ${giver}, being greedily trapped by ${Reciever}'s thighs, forcing them into their crotch.`,
+  let middle = [`${giver} is making great progress working their way on ${Reciever.displayName} with those lovely lips.`,
+  `${giver}, taking in all of ${Reciever.displayName}, making them periodically thrust upwards, moaning small O's.`,
+  `Poor ${giver}, being greedily trapped by ${Reciever.displayName}'s thighs, forcing them into their crotch.`,
   `Oh, those slick lubricated noises that ${giver} makes... It's almost an art.`,
   `Slurp... slurp-slurp much like sipping all of the juice from a soup bowl; The sound as ${giver} is slobbering all over it. What else is there to say?`,
-  `${Reciever}, shoving ${giver}'s face down to their crotch and pratically face grinding.`,
-  `${giver} is definitely putting in work! Their tongue-lathering skills is making ${Reciever} scream the lord's name in vain.`,
+  `${Reciever.displayName}, shoving ${giver}'s face down to their crotch and pratically face grinding.`,
+  `${giver} is definitely putting in work! Their tongue-lathering skills is making ${Reciever.displayName} scream the lord's name in vain.`,
   `${giver} seemingly aggressive with what they're doing. It's definitely 'too much teeth'`,
-  `Not going easy, it is assumed. Judging by the way ${Reciever} is rarely letting ${giver} stop for some breathing.`,
+  `Not going easy, it is assumed. Judging by the way ${Reciever.displayName} is rarely letting ${giver} stop for some breathing.`,
   `...But what exactly is ${giver} doing? It looks as if they don't even know what giving the succ is.`,
   `${giver} may not be exactly doing such a perfect job, at least they're making good effort. Definitely something than nothing.`];
   let middleOutcome = Math.floor((Math.random() * middle.length));
   
-  let end = [`${Reciever} is satisfied with their little session with ${giver}. Perhaps they might ask for more some other time.`,
-  `${Reciever} may deny it, but they know that they secretly loved it.`,
-  `Despite ${giver} putting all their effort, ${Reciever} hated it`,
-  `Though ${Reciever} enjoyed it, it wasn't exactly what they were looking for... or who they were looking for.`,
-  `${Reciever} thoroughly enjoyed it just as much as ${giver} thoroughly enjoyed it; Happy ending.`,
-  `Perhaps round two would begin some time soon, as ${giver} hints torwards ${Reciever}.`,
-  `In the end, it looks like ${Reciever} isn't too excited as ${giver} is.`,
-  `It doesn't look like ${Reciever} wants anymore... at least for now.`];
+  let end = [`${Reciever.displayName} is satisfied with their little session with ${giver}. Perhaps they might ask for more some other time.`,
+  `${Reciever.displayName} may deny it, but they know that they secretly loved it.`,
+  `Despite ${giver} putting all their effort, ${Reciever.displayName} hated it`,
+  `Though ${Reciever.displayName} enjoyed it, it wasn't exactly what they were looking for... or who they were looking for.`,
+  `${Reciever.displayName} thoroughly enjoyed it just as much as ${giver} thoroughly enjoyed it; Happy ending.`,
+  `Perhaps round two would begin some time soon, as ${giver} hints torwards ${Reciever.displayName}.`,
+  `In the end, it looks like ${Reciever.displayName} isn't too excited as ${giver} is.`,
+  `It doesn't look like ${Reciever.displayName} wants anymore... at least for now.`];
   let endOutcome = Math.floor((Math.random() * end.length));
 
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
@@ -943,7 +944,7 @@ if(command === `smut`){
   .setColor("#d68998")
   .setThumbnail("https://i.imgur.com/dCJlKkG.jpg")
   .setFooter("!?smut <story>", "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png")
-  .addField(`${loveydovey}`, "*Trade Christmas Special \n??? \nKeep This Between Us \n??? \n??? \n???*", true);
+  .addField(`${loveydovey}`, "*Trade Christmas Special (m×f) \n??? \nKeep This Between Us (m×m) \n??? \n??? \n???*", true);
   message.channel.send(smutembed);
 }
 
@@ -1010,6 +1011,7 @@ if(command === `dirtyquote`){
   let result = Math.floor((Math.random() * replies.length))
   message.channel.send(`*${replies[result]}*`);
 }
+
 
 if(command === `8ball`){
     if(!args[2]) return message.channel.send("Actually ask a question?");
@@ -1356,10 +1358,11 @@ if(command === `emoji`){
     let year = message.guild.createdAt.getFullYear()
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
-    .setDescription(message.guild.name)
+    .setTitle(message.guild.name)
     .setAuthor(`Owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, message.guild.owner.user.displayAvatarURL)
     .setColor("#15f153")
     .setThumbnail(sicon)
+    .setTimestamp()
     //.addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
     .addField("Server Established @", `${month}/${day}/${year}`, true)
     .addField("Server Region", message.guild.region, true)
