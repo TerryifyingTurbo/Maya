@@ -139,8 +139,8 @@ if(command === `eval`){
 
 if(command === `status`){
   let status = args[0];
-  if(status !== "online" || status !== "idle" || status !== "dnd" || status !== "invisible") return message.channel.send(`${redx} That's not gonna work. Status must be either \`online\` \`idle\` \`dnd\` or \`invisible\``);
-  await bot.user.setStatus(status);
+  if(args[0] !== "online" || args[0] !== "idle" || args[0] !== "dnd" || args[0] !== "invisible") return message.channel.send(`${redx} That's not gonna work. \nStatus must be either \`online\` \`idle\` \`dnd\` or \`invisible\``);
+  await bot.user.setStatus(`${args[0]}`);
   message.channel.send(`${greencheck} I am now __**${status}**__`);
 }
 
