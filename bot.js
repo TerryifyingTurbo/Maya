@@ -661,20 +661,12 @@ if(command === `dog`){
 
 if(command === `catfact`){
  let {body} = await superagent.get(`https://catfact.ninja/fact`);
- let factembed = new Discord.RichEmbed()
- .setColor("RANDOM")
- //.setTitle("It's true that...")
- .addField("It's true that...", body.fact);
- //.addField("Response Time:", `${Math.round(bot.ping)}ms.`);
- message.channel.send(factembed);
+ message.channel.send(body.fact);
 }
 
 if(command === `dogfact`){
   let {body} = await snekfetch.get(`https://dog-api.kinduff.com/api/facts`);
-  let doggyfacts = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .addField("It's true that...", body.facts, true);
-  message.channel.send(doggyfacts)
+  message.channel.send(body.facts)
 }
 
 if(command === `dadjoke`){
