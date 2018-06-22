@@ -872,7 +872,7 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
 
 if(command === `succ`){
   let giver = `${message.member.displayName}`;
-  let Reciever = args.join(" ");
+  let Reciever = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args.join(" "));
 
   let intro = [`Giving a sly smile, ${giver} puts that bad mouth to good use.`,
   `Looks like ${giver} is giving ${Reciever} some of that oral relief.`,
@@ -907,7 +907,7 @@ if(command === `succ`){
   let endOutcome = Math.floor((Math.random() * end.length));
 
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them.");
+  if(!Reciever) return message.channel.send("People may be able to suck themselves but you certainly aren't one of them. \nThat, or you just didn't specify a valid person. \n*or maybe didn't even spell their name right*");
 
   message.channel.send(`*${intro[introOutcome]}*`).then(message =>{
     message.channel.startTyping();
