@@ -694,7 +694,7 @@ if(command === `meme`){
 
   let me = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setTitle(`${ayy} lmao`)
+  .setTitle(body.text)
   .setImage(body.url);
 
   message.channel.send(me);
@@ -1407,7 +1407,7 @@ if(command === `botinfo`){
       "author": {
         "name": "Made by Bwapstustu Turbo#5600",
         //"url": "https://discordapp.com",
-        "icon_url": "https://cdn.discordapp.com/avatars/297931837400023041/6fc9d991ec25a82ca4633aaaba38073e.png?size=2048"
+        "icon_url": "https://cdn.discordapp.com/avatars/297931837400023041/96f61c42442da90a057042729a26d30b.png?size=2048"
       },
       "fields": [
         {
