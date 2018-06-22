@@ -1359,7 +1359,7 @@ if(command === `emoji`){
     let serverembed = new Discord.RichEmbed()
     .setTitle(message.guild.name)
     .setAuthor(`Owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, message.guild.owner.user.displayAvatarURL)
-    .setColor("#15f153")
+    .setColor(message.guild.owner.highestRole.color)
     .setThumbnail(sicon)
     .setTimestamp()
     //.addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
@@ -1392,7 +1392,7 @@ if(command === `botinfo`){
     let embed = {
       //"title": "My info x3",
       //"url": "https://discordapp.com",
-      "color": 15721660,
+      "color": 10181046,
       //"timestamp": "2018-04-21T01:28:06.959Z",
       "footer": {
         "icon_url": "https://cdn2.iconfinder.com/data/icons/nodejs-1/256/nodejs-256.png",
