@@ -138,8 +138,8 @@ if(command === `eval`){
 }
 
 if(command === `status`){
-  let status = args;
-  if(status !== "online" || "idle" || "dnd" || "invisible") return message.channel.send(`${redx} That's not gonna work. Status must be either \`online\` \`idle\` \`dnd\` or \`invisible\``);
+  let status = args[0];
+  if(status !== "online" || status !== "idle" || status !== "dnd" || status !== "invisible") return message.channel.send(`${redx} That's not gonna work. Status must be either \`online\` \`idle\` \`dnd\` or \`invisible\``);
   await bot.user.setStatus(status);
   message.channel.send(`${greencheck} I am now __**${status}**__`);
 }
@@ -534,16 +534,16 @@ if(command === `say`) {
     // And we get the bot to say the thing: 
   }
 
-if(command === `avatar`){
-  let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
+// if(command === `avatar`){
+//   let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
 
-  let embed = new Discord.RichEmbed() 
-  .setAuthor(`${user.displayName}'s Avatar`)
-  .setImage(user.displayAvatarURL)
-  .setTimestamp();
+//   let embed = new Discord.RichEmbed() 
+//   .setAuthor(`${user.displayName}'s Avatar`)
+//   .setImage(user.displayAvatarURL)
+//   .setTimestamp();
 
-  message.channel.send({embed})
-}
+//   message.channel.send({embed})
+// }
 
 if(command === `fliptext`){
   const mapping = '¡"#$%⅋,)(*+\'-˙/0ƖᄅƐㄣϛ9ㄥ86:;<=>¿@∀qƆpƎℲפHIſʞ˥WNOԀQɹS┴∩ΛMX⅄Z[/]^_`ɐqɔpǝɟƃɥᴉɾʞlɯuodbɹsʇnʌʍxʎz{|}~';
@@ -890,7 +890,7 @@ if(command === `succ`){
   `Oh, those slick lubricated noises that ${giver} makes... It's almost an art.`,
   `Slurp... slurp-slurp much like sipping all of the juice from a soup bowl; The sound as ${giver} is slobbering all over it. What else is there to say?`,
   `${Reciever.displayName}, shoving ${giver}'s face down to their crotch and pratically face grinding.`,
-  `${giver} is definitely putting in work! Their tongue-lathering skills is making ${Reciever.displayName} scream the lord's name in vain.`,
+  `${giver} is definitely putting in work. Their tongue-lathering skills is making ${Reciever.displayName} scream the lord's name in vain.`,
   `${giver} seemingly aggressive with what they're doing. It's definitely 'too much teeth'`,
   `Not going easy, it is assumed. Judging by the way ${Reciever.displayName} is rarely letting ${giver} stop for some breathing.`,
   `...But what exactly is ${giver} doing? It looks as if they don't even know what giving the succ is.`,
@@ -899,12 +899,11 @@ if(command === `succ`){
   
   let end = [`${Reciever.displayName} is satisfied with their little session with ${giver}. Perhaps they might ask for more some other time.`,
   `${Reciever.displayName} may deny it, but they know that they secretly loved it.`,
-  `Despite ${giver} putting all their effort, ${Reciever.displayName} hated it`,
+  `${Reciever.displayName} hated it, despite ${giver} putting all their effort.`,
   `Though ${Reciever.displayName} enjoyed it, it wasn't exactly what they were looking for... or who they were looking for.`,
   `${Reciever.displayName} thoroughly enjoyed it just as much as ${giver} thoroughly enjoyed it; Happy ending.`,
-  `Perhaps round two would begin some time soon, as ${giver} hints torwards ${Reciever.displayName}.`,
-  `In the end, it looks like ${Reciever.displayName} isn't too excited as ${giver} is.`,
-  `It doesn't look like ${Reciever.displayName} wants anymore... at least for now.`];
+  `In the end, ${Reciever.displayName} isn't too excited as ${giver} is.`,
+  `${Reciever.displayName} doesn't want anymore... at least for now.`];
   let endOutcome = Math.floor((Math.random() * end.length));
 
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
