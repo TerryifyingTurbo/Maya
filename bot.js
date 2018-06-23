@@ -435,13 +435,16 @@ if(command === `jsontest`){
 if(command === `gen`){
 let category = args[0];
 let subcategory = args[1];
+let amount = args[2] || 1;
 
 if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory!");
+if(isNaN(amount)) return message.channel.send("The amount MUST be a number. \nBe mindful when using amounts that are more than one request, especially with descriptions");
+if(amount < 1 || amount > 25) return message.channel.send("Oh, that ain't gonna work. That's either below or above the limit (Min: 1, Max: 25)");
 
-console.log(fantasyNames(`${category}`, `${subcategory}`, 5));
-let suggestions = (fantasyNames(`${category}`, `${subcategory}`, 5));
+//console.log(fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
+let suggestions = (fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
 
-message.channel.send(suggestions.join("\n"));
+message.channel.send("*" + suggestions.join("\n" + "*"));
 }
 
 if(command === `calc`){
