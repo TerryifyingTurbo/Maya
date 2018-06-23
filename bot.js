@@ -1232,7 +1232,9 @@ let User = message.guild.member(message.mentions.users.first()) || message.guild
 if(!User) return message.channel.send("A valid person/member or you yourself is required.");
 
 economy.fetchBalance(User.displayName).then((i) => {
-  message.channel.send(`${User.displayName} has ${Platinum} __${i.money}__ Platinum`);
+  message.channel.send(`${User.displayName} has ${Platinum} __${i}__ Platinum`);
+  console.log(i);
+  console.log(i.money);
 });
 
 }
@@ -1248,7 +1250,9 @@ if(command === `loan`){
   if(isNaN(value)) return message.reply(`Unless you were planning on sending ${value}, that ain't gonna work.`);
   
   economy.updateBalance(User, value).then((i) => {
-    message.channel.send(`${message.member.displayName} has given ${User.displayName} a small loan of ${Platinum} __${i.money}__ Platinum`);
+    message.channel.send(`${message.member.displayName} has given ${User.displayName} a small loan of ${Platinum} __${i}__ Platinum`);
+    console.log(i);
+    console.log(i.money);
   });
 }
 
