@@ -14,6 +14,7 @@ const prettyMs = require("pretty-ms");
 const convert = require("convert-units");
 const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const bot = new Discord.Client({disableEveryone: true})
+const economy = require("discord-eco");
 let cooldown = new Set();
 let cdseconds = 2;
 
@@ -35,6 +36,8 @@ bot.on("message", async message => {
 
  const lmao = bot.emojis.get("426999753830825995");
  const ayy = bot.emojis.find("name", "ayy");
+
+ const Platinum = bot.emojis.get("459887545103155221");
 
  const intensefear = bot.emojis.get("406790609035329538");
  const fear = bot.emojis.find("name", "intensefear");
@@ -861,7 +864,7 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
 
 if(command === `succ`){
   let giver = `${message.member.displayName}`;
-  let Reciever = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args.join(" "));
+  let Reciever = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 
   let intro = [`Giving a sly smile, ${giver} puts that bad mouth to good use.`,
   `Looks like ${giver} is giving ${Reciever.displayName} some of that oral relief.`,
@@ -1223,6 +1226,31 @@ if(command === `dws`){
 // ▬▬▬▬▬▬▬▬▬▬▬▬
 }
 
+if(command === `balance` || command === `bal`){
+let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author;
+
+if(!User) return message.channel.send("A valid person/member or you yourself is required.");
+
+economy.fetchBalance(User.displayName).then((i) => {
+  message.channel.send(`${User.displayName} has ${Platinum} __${i.money}__ Platinum`);
+});
+
+}
+
+if(command === `loan`){
+  let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  let value = args[1];
+  
+  if(message.author.id !== "297931837400023041") return message.channel.send("No");
+  
+  if(!User) return message.channel.send("A valid person/member or you yourself is required.");
+  if(!value) return message.reply(`are you trying to give ${User.displayName} the air or something?`);
+  if(isNaN(value)) return message.reply(`Unless you were planning on sending ${value}, that ain't gonna work.`);
+  
+  economy.updateBalance(User, value).then((i) => {
+    message.channel.send(`${message.member.displayName} has given ${User.displayName} a small loan of ${Platinum} __${i.money}__ Platinum`);
+  });
+
 if(command === `pagetest`){
   let pages = ['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5', 'Section 6'];
   let page = 1; 
@@ -1458,7 +1486,7 @@ if(command === `botinfo`){
     message.channel.send({ embed });
   }
   
-  
+
 if(command === `help`){
      if(args[0] == "dws") return message.channel.send(`
      Usage: !?dws <any> 
@@ -1485,6 +1513,10 @@ if(command === `help`){
      if(args[0] == "calc") return message.channel.send('I will solve a mathematic expression. \nUsage: !?calc <valid expression>');
 
      if(args[0] == "rolldice") return message.channel.send(`Roll a die with any amount of sides inputted or defaults to 6 if none. \nUsage: !?rolldice <number>`);
+
+     if(args[0] == "balance") return message.channel.send("I will provide the account balance of another user or you yourself. \nUsage: !?balance <user or keep blank to see yourself>");
+
+     if(args[0] == "loan") return message.channel.send("This is a big one, Boss. You can send someone a small loan of any amount of Platinum to someone, or yourself. \nUsage: !?loan <user or keep blank for self> <value>");
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
