@@ -1250,6 +1250,7 @@ if(command === `loan`){
   economy.updateBalance(User, value).then((i) => {
     message.channel.send(`${message.member.displayName} has given ${User.displayName} a small loan of ${Platinum} __${i.money}__ Platinum`);
   });
+}
 
 if(command === `pagetest`){
   let pages = ['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5', 'Section 6'];
