@@ -14,7 +14,7 @@ const prettyMs = require("pretty-ms");
 const convert = require("convert-units");
 const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const bot = new Discord.Client({disableEveryone: true})
-const economy = require("discord-eco");
+const economy = require('discord-eco');
 let cooldown = new Set();
 let cdseconds = 2;
 
@@ -1231,28 +1231,26 @@ let User = message.guild.member(message.mentions.users.first()) || message.guild
 
 if(!User) return message.channel.send("A valid person/member or you yourself is required.");
 
-economy.fetchBalance(User.displayName).then((i) => {
-  message.channel.send(`${User.displayName} has ${Platinum} __${i}__ Platinum`);
-  console.log(i);
-  console.log(i.money);
-});
+economy.fetchObject(User.id).then((i) => { // economy.fetchBalance grabs the userID, finds it, and puts it into 'i'.
+message.channel.send(`**Balance:** ${i.value} ${Platinum}`);
+})
 
 }
 
 if(command === `loan`){
   let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  let value = args[1];
+  let Pt = args[1];
   
   if(message.author.id !== "297931837400023041") return message.channel.send("No");
   
   if(!User) return message.channel.send("A valid person/member or you yourself is required.");
-  if(!value) return message.reply(`are you trying to give ${User.displayName} the air or something?`);
-  if(isNaN(value)) return message.reply(`Unless you were planning on sending ${value}, that ain't gonna work.`);
+  if(!Pt) return message.reply(`are you trying to give ${User.displayName} the air or something?`);
+  if(isNaN(Pt)) return message.reply(`Unless you were planning on sending ${Pt}, that ain't gonna work.`);
   
-  economy.updateBalance(User, value).then((i) => {
-    message.channel.send(`${message.member.displayName} has given ${User.displayName} a small loan of ${Platinum} __${i}__ Platinum`);
+  economy.updateValue(User, Pt).then((i) => {
+    message.channel.send(`${message.member.displayName} has given ${User.displayName} a small loan of ${Platinum} __${Pt}__ Platinum`);
     console.log(i);
-    console.log(i.money);
+    console.log(i.value);
   });
 }
 
