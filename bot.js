@@ -13,6 +13,7 @@ const platform = require("platform");
 const prettyMs = require("pretty-ms");
 const convert = require("convert-units");
 const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
+const fantasyNames = require("fantasy-names");
 const bot = new Discord.Client({disableEveryone: true})
 let cooldown = new Set();
 let cdseconds = 2;
@@ -1488,10 +1489,6 @@ if(command === `help`){
      if(args[0] == "calc") return message.channel.send('I will solve a mathematic expression. \nUsage: !?calc <valid expression>');
 
      if(args[0] == "rolldice") return message.channel.send(`Roll a die with any amount of sides inputted or defaults to 6 if none. \nUsage: !?rolldice <number>`);
-
-     if(args[0] == "balance") return message.channel.send("I will provide the account balance of another user or you yourself. \nUsage: !?balance <user or keep blank to see yourself>");
-
-     if(args[0] == "loan") return message.channel.send("This is a big one, Boss. You can send someone a small loan of any amount of Platinum to someone, or yourself. \nUsage: !?loan <user or keep blank for self> <value>");
      
      if(args[0] == "smut") return message.channel.send(`
      A collection of stories that are most definitely NSFW. 
