@@ -432,14 +432,13 @@ if(command === `jsontest`){
   });
 }
 
-if(command === `namegen`){
-  let {body} = await snekfetch.get(`https://uinames.com/api/`);
-  let info = new Discord.RichEmbed()
-  .setTitle("Generated Name")
-  .setFooter("Region: " + body.region)
-  .addField("Full Name", body.name + ` ${body.surname}`)
-  .addField("Sex", body.gender);
- message.channel.send(info);
+if(command === `gen`){
+let category = args[0].toLowerCase().join(" ").split('|');
+let subcategory = args[1].toLowerCase().join(" ").split('|');
+
+if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory!");
+
+console.log(fantasyNames(category, subcategory));
 }
 
 if(command === `calc`){
