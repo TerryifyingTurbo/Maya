@@ -439,6 +439,9 @@ let subcategory = args[1];
 if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory!");
 
 console.log(fantasyNames(`${category}`, `${subcategory}`, 5));
+let suggestions = (fantasyNames(`${category}`, `${subcategory}`, 5));
+
+message.channel.send(suggestions.join("\n"));
 }
 
 if(command === `calc`){
