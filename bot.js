@@ -448,7 +448,7 @@ if(command === `gen` && args[0] == `LIST`){
  
   const embed = new Discord.RichEmbed()
     .setTitle("Generator Reference") 
-    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setFooter(`Page ${page} of ${pages.length} \n!?gen <category> <subcategory> <amount>`) 
     .setDescription(pages[page-1])
  
   message.channel.send(embed).then(message => { 
@@ -493,9 +493,14 @@ if(isNaN(amount)) return message.channel.send("The amount MUST be a number. \nBe
 if(amount < 1 || amount > 25) return message.channel.send("Oh, that ain't gonna work. That's either below or above the limit (Min: 1, Max: 25) \nSee __!?gen LIST__ if needed");
 
 //console.log(fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
-let suggestions = (fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
-
-message.channel.send(suggestions.join("\n")).catch(error => message.channel.send(`${redx} ***${error}***`));
+let suggestions;
+try{
+  suggestions = (fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
+} catch (error) {
+  console.log(error);
+  return message.channel.send(`${redx} Not a valid category or subcategory. \nCheck your spelling or see __!?gen LIST__ if needed`)
+}
+message.channel.send(suggestions.join("\n"));
 }
 
 if(command === `calc`){
@@ -1532,7 +1537,7 @@ if(command === `help`){
      
      if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");
 
-     if(args[0] == "gen") return message.channel.send("I will randomly generate lists of names and descriptions. \nUsage: !?gen <category> <subcategory> <amount (or defaults to 1)> \nUsage: !?gen LIST");
+     if(args[0] == "gen") return message.channel.send("I will randomly generate lists of names and descriptions. \nUsage: !?gen <category> <subcategory> <amount (1 or 1-25)> \nUsage: !?gen LIST \nExample: !?gen fantasy werewolfs 5 `//Returns 5 names from this category`");
      
      if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
      
@@ -1541,8 +1546,6 @@ if(command === `help`){
      if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
      
      if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directories");
-
-     if(args[0] == "namegen") return message.channel.send("I will get a randomly generated name that includes it's origin.");
 
      if(args[0] == "calc") return message.channel.send('I will solve a mathematic expression. \nUsage: !?calc <valid expression>');
 
