@@ -432,19 +432,70 @@ if(command === `jsontest`){
   });
 }
 
+if(command === `gen` && args[0] == `LIST`){
+  let pages = [
+  '**Armour** \nBelts, Boots, Chests, Cloaks, Gauntlets, Helmets, Legs, Pauldrons, Shields, Vambraces.', 
+  '**Descriptions** \nAliens, Animals, Armys, Backstorys, Battlefields, Bows, Castles, Characters, Citys, Constellations, Countrys, Diseases, Dragons, Dungeons, Dyings, Flags, Gems, Ghost Towns, Gods, Holidays, Houses, Humanoids, Laws, Monuments, Pains, Personalitys, Pistols, Planets, Plants, Plots, Pokemons, Potions, Prophecys, Quests, Rifles, Shields, Shotguns, Societys, Spells, Staffs, Taverns, Towns, Traditions, Wands, Weapons', 
+  '**Destiny** \nAwokens, Cabals, Exos, Fallens, Hives, Humans, Vexs', 
+  '**Diablo** \nAngels, Demons, Khazras, Nephalems', 
+  '**Fantasy** \nAliens, Amazons, Angels, Animatronics, Bandits, Barbarians, Cavemens, Centaurs, Codes, Cowboys, Creatures, Deaths, Demons, Detectives, Dragons, Dryads, Dwarfs, Elementals, Elfs, Ents, Evils, Fairys, Fursonas, Futuristics, Ghosts, Giants, Gnolls, Gnomes, Goblins, Gods, Gorgons, Griffins, Harpys, Heros, Hobbits, Horses, Imps, Kaijus, Killers, Knights, Kobolds, Lamias, Lichs, Mechas, Medievals, Mermaids, Minotaurs, Mobsters, Monsters, Nagas, Necromancers, Nephilims, Ninjas, Nymphs, Ogres, Orcs, Pegasus, Phoenixs, Pirates, Robots, Servants, Shapeshifters, Sirens, Slaves, Species, Steampunks, Succubus, Sylphs, Taurens, Trolls, Twins, Unicorns, Valkyries, Vampires, Villains, Werewolfs, Witchs, Wizards', 
+  '**Miscellaneous** \nAfterlifes, Airplanes, Airships, Alliances, Apocalypses, Armys, Artifacts, Awards, Bands, Battles, Birds, Bouquets, Brands, Candys, Cars, Class, Colors, Constellations, Creepypastas, Crops, Currencys, Dances, Dates, Dinosaurs, Diseases, Drinks, Drugs, Enchantments, Epithets, Foods, Fungis, Galaxys, Gangs, Guilds, Hackers, Heists, Helicopters, Herbs, Holidays, Instruments, Inventions, Jewelrys, Languages, Magazines, Mascots, Medicines, Metals, Molecules, Newspapers, Nicknames, Plagues, Plants, Poisons, Potions, Professions, Racers, Railways, Ranks, Religions, Ships, Softwares, Spaceships, Spells, Sports, Squads, Superpowers, Teleportations, Thrones, Titles, Treatys, Trees, Tribals, Tribes, Usernames, Vehicles, Wines, Wrestlers',
+  '**Pets** \nAliens, Amphibians, Bats, Bears, Birds, Cats, Cows, Crabs, Deers, Dogs, Elephants, Fishs, Horses, Insects, Lions, Monkeys, Mouses, Owls, Parrots, Pigs, Rabbits, Reptiles, Rodents, Sheeps, Turtles, Wolfs',
+  '**Places** \nAsylums, Bakerys, Banks, Beachs, Blacksmiths, Brewerys, Bridges, Business, Cafes, Camps, Casinos, Castles, Caves, Circus, Civilizations, Cliffs, Companys, Continents, Countrys, Dimensions, Dungeons, Farms, Forests, Grasslands, Graveyards, Harbors, Headquarters, Hospitals, Hotels, Inns, Islands, Jungles, Kingdoms, Laboratorys, Lakes, Lands, Librarys, Mansions, Mountains, Museums, Nightclubs, Oasis, Orphanages, Outposts, Parks, Planets, Plantations, Plazas, Prisons, Realms, Restaurants, Rivers, Roads, Ruins, Schools, Shops, Snowlands, Stadiums, Stars, Streets, Swamps, Temples, Theaters, Towers, Volcanos, Waterfalls, Waters',
+  '**Real** \nAboriginals, Akans, Albanians, Algerians, Amazighs, Argentinians, Armenians, Assyrians, Azerbaijanis, Aztecs, Babylonians, Basothos, Basques, Belgians, Bengalis, Biblicals, Bosnians, Brazilians, Bulgarians, Cajuns, Catalans, Celtics, Chineses, Circassians, Croatians, Czechs, Danishs, Dutchs, Edwardians, Egyptians, Englishs, Enochians, Estonians, Ethiopians, Faroeses, Filipinos, Finnishs, Frankishs, Frenchs, Frisians, Georgians, Germans, Gothics, Greeks, Hausas, Hawaiians, Hebrews, Hillbillys, Hindus, Hippies, Hispanics, Hungarians, Icelandics, Indonesians, Inuits, Irishs, Italians, Jamaicans, Japaneses, Jewishs, Kazakhs, Khmers, Koreans, Kurdishs, Laotians, Latins, Latvians, Lithuanians, Malaysians, Malteses, Maoris, Mayans, Mongolians, Moroccans, Muslims, Natures, Nepaleses, Normans, Norwegians, Pashtuns, Persians, Polishs, Portugueses, Poshs, Punjabis, Puritans, Quebecois, Romanians, Romans, Russians, Serbians, Shakespeareans, Shonas, Sikhs, Sinhaleses, Slavics, Slovenians, Somalis, Stages, Suebis, Sumerians, Swahilis, Swedishs, Swiss, Tajiks, Tamils, Telugus, Thais, Tibetans, Turkishs, Twins, Ukrainians, Victorians, Vietnameses, Vikings, Yorubas, Zulus',
+  ];
+  let page = 1; 
+ 
+  const embed = new Discord.RichEmbed()
+    .setTitle("Generator Reference") 
+    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setDescription(pages[page-1])
+ 
+  message.channel.send(embed).then(message => { 
+   
+    message.react('⏪').then( r => { 
+      message.react('⏩') 
+     
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
+     
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
+     
+      
+      backwards.on('collect', r => { 
+        if (page === 1) return; 
+        page--;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+     
+      forwards.on('collect', r => { 
+        if (page === pages.length) return; 
+        page++;
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`)
+        message.edit(embed) 
+      })
+   
+    })
+})};
+
 if(command === `gen`){
 let category = args[0];
 let subcategory = args[1];
 let amount = args[2] || 1;
 
-if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory!");
-if(isNaN(amount)) return message.channel.send("The amount MUST be a number. \nBe mindful when using amounts that are more than one request, especially with descriptions");
-if(amount < 1 || amount > 25) return message.channel.send("Oh, that ain't gonna work. That's either below or above the limit (Min: 1, Max: 25)");
+if(category === "LIST") return;
+if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory! \nSee __!?gen LIST__ if needed");
+if(isNaN(amount)) return message.channel.send("The amount MUST be a number. \nBe mindful when using amounts that are more than one request, especially with descriptions \nSee __!?gen LIST__ if needed");
+if(amount < 1 || amount > 25) return message.channel.send("Oh, that ain't gonna work. That's either below or above the limit (Min: 1, Max: 25) \nSee __!?gen LIST__ if needed");
 
 //console.log(fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
 let suggestions = (fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
 
-message.channel.send("*" + suggestions.join("\n" + "*"));
+message.channel.send(suggestions.join("\n")).catch(error => message.channel.send(`${redx} ***${error}***`));
 }
 
 if(command === `calc`){
@@ -1479,7 +1530,9 @@ if(command === `help`){
  | Usage: !?pick <any> <any> 
  | All commas used **will split choices**.`);
      
-     if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");   
+     if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");
+
+     if(args[0] == "gen") return message.channel.send("I will randomly generate lists of names and descriptions. \nUsage: !?gen <category> <subcategory> <amount (or defaults to 1)> \nUsage: !?gen LIST");
      
      if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
      
@@ -1560,7 +1613,7 @@ if(command === `help`){
           },
           {
             "name": " :package: Random and Util",
-            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrain, namegen, calc, convert"
+            "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrain, gen, calc, convert"
           },
           {
             "name": " :wrench: Moderation",
