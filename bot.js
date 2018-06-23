@@ -433,8 +433,8 @@ if(command === `jsontest`){
 }
 
 if(command === `gen`){
-let category = args[0].split('|');
-let subcategory = args.join(" ");
+let category = args.join(" ");
+let subcategory = args.join(" ").slice(category.length);
 
 if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory!");
 
