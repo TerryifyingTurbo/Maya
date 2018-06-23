@@ -433,12 +433,12 @@ if(command === `jsontest`){
 }
 
 if(command === `gen`){
-let category = args[0];
+let category = args.join(" ")[0].split('|');
 let subcategory = args.join(" ").slice(category.length);
 
 if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory!");
 
-console.log(fantasyNames(category, subcategory, 5));
+console.log(fantasyNames(`${category}`, `${subcategory}`, 5));
 }
 
 if(command === `calc`){
