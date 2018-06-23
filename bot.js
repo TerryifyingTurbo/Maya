@@ -1226,34 +1226,6 @@ if(command === `dws`){
 // ▬▬▬▬▬▬▬▬▬▬▬▬
 }
 
-if(command === `balance` || command === `bal`){
-let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author;
-
-if(!User) return message.channel.send("A valid person/member or you yourself is required.");
-
-economy.fetchObject(User.id).then((i) => { // economy.fetchBalance grabs the userID, finds it, and puts it into 'i'.
-message.channel.send(`**Balance:** ${i.value} ${Platinum}`);
-})
-
-}
-
-if(command === `loan`){
-  let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  let Pt = args[1];
-  
-  if(message.author.id !== "297931837400023041") return message.channel.send("No");
-  
-  if(!User) return message.channel.send("A valid person/member or you yourself is required.");
-  if(!Pt) return message.reply(`are you trying to give ${User.displayName} the air or something?`);
-  if(isNaN(Pt)) return message.reply(`Unless you were planning on sending ${Pt}, that ain't gonna work.`);
-  
-  economy.updateValue(User, Pt).then((i) => {
-    message.channel.send(`${message.member.displayName} has given ${User.displayName} a small loan of ${Platinum} __${Pt}__ Platinum`);
-    console.log(i);
-    console.log(i.value);
-  });
-}
-
 if(command === `pagetest`){
   let pages = ['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5', 'Section 6'];
   let page = 1; 
@@ -1402,6 +1374,7 @@ if(command === `purge`){
  await message.channel.bulkDelete(args[0]).then(messages => message.channel.send(`${greencheck} **Removed \`${messages.size}/${args[0]}\` messages**`))
   .catch(error => message.reply(`${redx} ***${error}***`));
 }
+
 
 
 if(command === `botinfo`){
