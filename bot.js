@@ -14,7 +14,6 @@ const prettyMs = require("pretty-ms");
 const convert = require("convert-units");
 const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const bot = new Discord.Client({disableEveryone: true})
-const economy = require('discord-eco');
 let cooldown = new Set();
 let cdseconds = 2;
 
