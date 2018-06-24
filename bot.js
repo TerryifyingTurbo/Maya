@@ -604,7 +604,7 @@ if(command === `pay`){
 
   if(!recipient) return message.channel.send(`${message.member.displayName}, you can't magically give the air some Platinum!`);
   if(isNaN(value)) return message.channel.send(`Uhm hello, that must be a number. \nNot... whatever ${value} is`);
-  if(recipient === message.author || message.author.id) return message.channel.send("Silly, you can't loan yourself money!");
+  if(recipient === message.author) return message.channel.send("Silly, you can't loan yourself money!");
 
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
