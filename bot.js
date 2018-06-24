@@ -591,9 +591,9 @@ if(command === `convert`){
 if(command === `balance` || command === `bal`){
   let accountant = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author;
   
-  let balance = await db.fetch(`userBalance_${accountant.id}`);
+  let balance = await db.fetch(`userBalance_${accountant.id}`)
 
-  if(balance === null) balance = 0;
+  if(balance === null) db.set(`userBalance_${accountant.id}`, 0);
 
   message.channel.send(`${accountant.username} has \`${balance}\` ${Platinum} Platinum`);
 }
@@ -609,12 +609,12 @@ if(command === `pay`){
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null) recipientBalance = 0;
-  if(senderBalance === null) senderBalance = 0;
+  if(recipientBalance === null) db.set(`userBalance_${recipient.id}`, 0);
+  if(senderBalance === null) db.set(`userBalance_${message.author.id}`, 0);
 
   if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
-  db.add(`userBalance_${recipient.id}`, value);
-  db.subtract(`userBalance_${message.author.id}`, value);
+  db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
+  db.subtract(`userBalance_${message.author.id}`, value).then(i => console.log(i, typeof i));
 
   message.channel.send(`All set ${greencheck} \nGave ${recipient.displayName} ***${value}*** ${Platinum}`);
   
@@ -631,21 +631,20 @@ if(command === `loan`){
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null) recipientBalance = 0;
-  if(senderBalance === null) senderBalance = 999;
+  if(recipientBalance === null) db.set(`userBalance_${recipient.id}`, 0);
+  if(senderBalance === null) db.set(`userBalance_${message.author.id}`, 0);
 
   if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
-  db.add(`userBalance_${recipient.id}`, value);
-  db.subtract(`userBalance_${message.author.id}`, value);
+  db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
+  db.subtract(`userBalance_${message.author.id}`, value).then(i => console.log(i, typeof i));
 
   message.channel.send(`All set, Boss x3 \nGave ${recipient.displayName} ***${value}*** ${Platinum}`);
   
 }
 
 if(command === `ttget`){
- let amount = 250;
-  db.add(`userBalance_${message.author.id}`, amount);
-  message.channel.send("250 Added");
+  db.add(`userBalance_${message.author.id}`, 250);
+  message.channel.send("250 Added").then(i => console.log(i, typeof i));
 }
 
 if(command === `say`) {
