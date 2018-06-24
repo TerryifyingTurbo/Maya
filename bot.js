@@ -589,17 +589,17 @@ if(command === `convert`){
 }
 
 if(command === `balance` || command === `bal`){
-  let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
-        
-  let balance = await db.fetch(`userBalance_${user.id}`)
+  //let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
+    let user = message.author;    
+  let balance = await db.fetch(`userBalance_${user.id}`);
   
-  if (balance === null) balance = 50;
+  if (balance === null) db.set(`userBalance_${user.id}`, 50);
 
   message.channel.send(`${user.username} has ***${balance}*** ${Platinum} Platinum`);
 }
 
 if(command === `pay`){
-  let recipient = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  let recipient = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   let value = parseInt(args[1]);
 
   if(!recipient) return message.channel.send(`${message.member.displayName}, you can't magically give the air some Platinum!`);
@@ -609,8 +609,8 @@ if(command === `pay`){
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null) recipientBalance = 50;
-  if(senderBalance === null) senderBalance = 50;
+  if(recipientBalance === null) db.set(`userBalance_${recipient.id}`, 50);
+  if(senderBalance === null) db.set(`userBalance_${message.author.id}`, 50);
 
   if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
@@ -622,7 +622,7 @@ if(command === `pay`){
 
 if(command === `loan`){
   if(message.author.id !== "297931837400023041") return message.channel.send(`${message.member.displayName}, you're not Boss so I ain't going to let you`);
-  let recipient = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  let recipient = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   let value = parseInt(args[1]);
 
   if(!recipient) return message.channel.send(`Hey Boss, you can't magically give the air some Platinum!`);
@@ -631,7 +631,7 @@ if(command === `loan`){
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null) recipientBalance = 50;
+  if(recipientBalance === null) db.set(`userBalance_${recipient.id}`, 50)
 
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
   db.subtract(`userBalance_${message.author.id}`, value).then(i => console.log(i, typeof i));
