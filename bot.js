@@ -642,6 +642,12 @@ if(command === `loan`){
   
 }
 
+if(command === `ttget`){
+ let amount = 250;
+  db.add(`userBalance_${message.author.id}`, amount);
+  message.channel.send("250 Added");
+}
+
 if(command === `say`) {
 let sayMessage = args.join(" ");
 
