@@ -589,13 +589,13 @@ if(command === `convert`){
 }
 
 if(command === `balance` || command === `bal`){
-  let accountant = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author;
+  let user = message.mentions.users.first() || message.author;
+        
+  let balance = await db.fetch(`userBalance_${user.id}`)
   
-  let balance = await db.fetch(`userBalance_${accountant.id}`)
+  if (balance === null) balance = 50;
 
-  if(balance === null) db.set(`userBalance_${accountant.id}`, 0);
-
-  message.channel.send(`${accountant.username} has \`${balance}\` ${Platinum} Platinum`);
+  message.channel.send(`${user.username} has \`${balance}\` ${Platinum} Platinum`);
 }
 
 if(command === `pay`){
