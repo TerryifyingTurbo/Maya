@@ -591,7 +591,7 @@ if(command === `convert`){
 if(command === `balance` || command === `bal`){
   let accountant = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author;
   
-  const balance = await db.fetch(`userBalance_${accountant.id}`)
+  let balance = await db.fetch(`userBalance_${accountant.id}`);
 
   if(balance === null) balance = 0;
 
