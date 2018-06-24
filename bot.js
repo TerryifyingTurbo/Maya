@@ -14,6 +14,7 @@ const prettyMs = require("pretty-ms");
 const convert = require("convert-units");
 const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const fantasyNames = require("fantasy-names");
+const db = require("quick.db");
 const bot = new Discord.Client({disableEveryone: true})
 let cooldown = new Set();
 let cdseconds = 2;
@@ -973,6 +974,7 @@ if(command === `succ`){
     }, cdseconds * 5000);
   });
 }
+
 
 // let intro = [];
 // let introOutcome = Math.floor((Math.random() * intro.length));
