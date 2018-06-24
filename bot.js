@@ -588,11 +588,65 @@ if(command === `convert`){
   message.channel.send(answer +`${unit2}`);
 }
 
-if(command === `say`) {
+if(command === `balance` || command === `bal`){
+  let accountant = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]) || message.author;
+  
+  const balance = await db.fetch(`userBalance_${accountant.id}`)
 
-    let sayMessage = args.join(" ");
-    if(!sayMessage) return message.channel.send("Say what? x3")
-    message.channel.send(sayMessage);
+  if(balance === null) balance = 0;
+
+  message.channel.send(`${accountant.username} has \`${balance}\` ${Platinum} Platinum`);
+}
+
+if(command === `pay`){
+  let recipient = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  let value = parseInt(args[1]);
+
+  if(!recipient) return message.channel.send(`${message.member.displayName}, you can't magically give the air some Platinum!`);
+  if(isNaN(value)) return message.channel.send(`Uhm hello, that must be a number. \nNot... whatever ${value} is`);
+  if(recipient === message.author || message.author.id) return message.channel.send("Silly, you can't loan yourself money!");
+
+  let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
+  senderBalance = await db.fetch(`userBalance_${message.author.id}`);
+
+  if(recipientBalance === null) recipientBalance = 0;
+  if(senderBalance === null) senderBalance = 0;
+
+  if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
+  db.add(`userBalance_${recipient.id}`, value);
+  db.subtract(`userBalance_${message.author.id}`, value);
+
+  message.channel.send(`All set ${greencheck} \nGave ${recipient.displayName} ***${value}*** ${Platinum}`);
+  
+}
+
+if(command === `loan`){
+  if(message.author.id !== "297931837400023041") return message.channel.send(`${message.member.displayName}, you're not Boss so I ain't going to let you`);
+  let recipient = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  let value = parseInt(args[1]);
+
+  if(!recipient) return message.channel.send(`Hey Boss, you can't magically give the air some Platinum!`);
+  if(isNaN(value)) return message.channel.send(`Uhm, Boss. That isn't a number x3`);
+
+  let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
+  senderBalance = await db.fetch(`userBalance_${message.author.id}`);
+
+  if(recipientBalance === null) recipientBalance = 0;
+  if(senderBalance === null) senderBalance = 999;
+
+  if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
+  db.add(`userBalance_${recipient.id}`, value);
+  db.subtract(`userBalance_${message.author.id}`, value);
+
+  message.channel.send(`All set, Boss x3 \nGave ${recipient.displayName} ***${value}*** ${Platinum}`);
+  
+}
+
+if(command === `say`) {
+let sayMessage = args.join(" ");
+
+if(!sayMessage) return message.channel.send("Say what? x3")
+message.channel.send(sayMessage);
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
 //message.delete().catch(O_o=>{});
     // And we get the bot to say the thing:
@@ -676,7 +730,7 @@ if(command === `rps`){
     }
     message.channel.send(response);
   } else {
-    message.channel.send(`Can't play rps if you don't even say what you declare first`);
+    message.channel.send(`Rock, paper, scissors! \nNot... whatever ${choice} was`);
   }
 }
 
