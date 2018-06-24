@@ -24,7 +24,7 @@ bot.commands = new Discord.Collection();
 
 
 bot.on("ready", async () => {
-  console.log(`Discord.js v11.30 ${platform.os} \nCPU | ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \n${bot.user.username}#${bot.user.discriminator} with (${bot.user.id}) online! \nReady when you are, Boss xd`);
+  console.log(`Discord.js v11.30 ${platform.os} \nCPU | ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \n${bot.user.username}#${bot.user.discriminator} with (${bot.user.id}) online in ${bot.guilds.size} servers! \nReady when you are, Boss xd`);
 });
 
 bot.on("message", async message => {
