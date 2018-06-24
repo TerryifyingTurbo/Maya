@@ -47,22 +47,22 @@ bot.on("message", async message => {
 
  const redx = bot.emojis.get("444736917217476608");
  const x = bot.emojis.find("name", "redx");
- 
+
  const partyblob = bot.emojis.get("447855822811430912");
  const blob = bot.emojis.find("name", "partyblob");
- 
+
  const bmo = bot.emojis.get("447855890062770179");
  const beemo = bot.emojis.find("name", "bmo");
 
  const snoop = bot.emojis.get("447855918827175936");
  const dogg = bot.emojis.find("name", "snoop");
- 
+
  const pepedab = bot.emojis.get("447856207928098847");
  const dab = bot.emojis.find("name", "pepedab");
 
  const pikagroove = bot.emojis.get("447856282049708053");
  const pika = bot.emojis.find("name", "pikagroove");
- 
+
  const heckingfastthink = bot.emojis.get("447856347493433374");
  const think = bot.emojis.find("name", "heckingfastthink");
 
@@ -80,7 +80,7 @@ bot.on("message", async message => {
 
  const love = bot.emojis.get("454416240904110081");
  const loveydovey = bot.emojis.find("name", "loveydovey");
-  
+
 let prefix = botsettings.prefix;
    if(!message.content.startsWith(`${prefix}`)) return;
 //   if(cooldown.has(message.author.id)){
@@ -104,7 +104,7 @@ let prefix = botsettings.prefix;
 if(command === `shutoff`){
   if(message.author.id !== "297931837400023041")
   return message.channel.send(`${redx} You ain't the creator!`);
-  
+
   else
 
   if(message.author.id == "297931837400023041")
@@ -162,7 +162,7 @@ if(command === "docrefs"){
 
   if(command === `invite`){
     if(message.author.id !== "297931837400023041") return message.channel.send("No");
-    
+
     let invlink = `https://discordapp.com/api/oauth2/authorize?client_id=417517654174334976&permissions=201714886&scope=bot`
    await message.author.send(`Here you go, boss x3 \n${invlink}`);
    message.channel.send("📥 Invite sent, check your PMs");
@@ -247,8 +247,6 @@ if(command === `stats`){
         code: 'AsciiDoc'
     });
 }
-  
-
 
   if(command === `kick`){
     let User = message.mentions.users.first()
@@ -285,17 +283,17 @@ if(command === `ping`){
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
-    m.edit(`:ping_pong: ***Pong!***  x3 
-Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}ms.**`); 
+    m.edit(`:ping_pong: ***Pong!***  x3
+Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}ms.**`);
 // API Response :satellite_orbital: **${Math.round(bot.ping)}ms.**`);
   }
 
   if(command === `leave`){
     if(message.author.id !== "297931837400023041")
     return message.channel.send("**NO.** Only my creator can do that");
-    
+
     else
-    
+
     await message.channel.send("A'ight, later Boss!");
     message.guild.leave();
   }
@@ -306,9 +304,9 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
   }
 
   if(command === `flipcoin`){
-    
+
     let replies = ["Heads.", "Tails."];
-    
+
     let result = Math.floor((Math.random() * replies.length));
 
     let msTimeout = 1000;
@@ -317,7 +315,7 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
     message.edit(`*${replies[result]}*`)
   }, cdseconds * 1200)
 });
-    
+
     //message.channel.send(replies[result]);
 }
 
@@ -366,10 +364,10 @@ if(command === `gaymeter`){
 if(command === `urban`){
   let str = args.join(" ");
   if(!str) return message.channel.send("Urban what? Enter something to look up.");
-  
+
   urban(str).first(json => {
     if(!json) return message.channel.send(`Nothing was found for __${str}__.`);
-    
+
     let urembed = new Discord.RichEmbed()
     .setTitle(json.word)
     .setColor("RANDOM")
@@ -396,7 +394,7 @@ if(command === `mstrain`){
 
   let descAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/desc/${encodeURIComponent(strainID)}`;
   let effectsAPI = `http://strainapi.evanbusse.com/qLZXyPT/strains/data/effects/${encodeURIComponent(strainID)}`;
-  
+
   snekfetch.get(descAPI).then(r =>{
   //snekfetch.get(effectsAPI);
     let body = r.body
@@ -427,80 +425,81 @@ if(command === `jsontest`){
     .setDescription(entry.body)
     .addField("Author ID", entry.userId)
     .setFooter("Post ID: " + entry.id)
-    
+
     message.channel.send(embed);
   });
 }
 
 if(command === `gen` && args[0] == `LIST`){
   let pages = [
-  '**Armour** \nBelts, Boots, Chests, Cloaks, Gauntlets, Helmets, Legs, Pauldrons, Shields, Vambraces.', 
-  '**Descriptions** \nAliens, Animals, Armys, Backstorys, Battlefields, Bows, Castles, Characters, Citys, Constellations, Countrys, Diseases, Dragons, Dungeons, Dyings, Flags, Gems, Ghost Towns, Gods, Holidays, Houses, Humanoids, Laws, Monuments, Pains, Personalitys, Pistols, Planets, Plants, Plots, Pokemons, Potions, Prophecys, Quests, Rifles, Shields, Shotguns, Societys, Spells, Staffs, Taverns, Towns, Traditions, Wands, Weapons', 
-  '**Destiny** \nAwokens, Cabals, Exos, Fallens, Hives, Humans, Vexs', 
-  '**Diablo** \nAngels, Demons, Khazras, Nephalems', 
-  '**Fantasy** \nAliens, Amazons, Angels, Animatronics, Bandits, Barbarians, Cavemens, Centaurs, Codes, Cowboys, Creatures, Deaths, Demons, Detectives, Dragons, Dryads, Dwarfs, Elementals, Elfs, Ents, Evils, Fairys, Fursonas, Futuristics, Ghosts, Giants, Gnolls, Gnomes, Goblins, Gods, Gorgons, Griffins, Harpys, Heros, Hobbits, Horses, Imps, Kaijus, Killers, Knights, Kobolds, Lamias, Lichs, Mechas, Medievals, Mermaids, Minotaurs, Mobsters, Monsters, Nagas, Necromancers, Nephilims, Ninjas, Nymphs, Ogres, Orcs, Pegasus, Phoenixs, Pirates, Robots, Servants, Shapeshifters, Sirens, Slaves, Species, Steampunks, Succubus, Sylphs, Taurens, Trolls, Twins, Unicorns, Valkyries, Vampires, Villains, Werewolfs, Witchs, Wizards', 
+  '**Armour** \nBelts, Boots, Chests, Cloaks, Gauntlets, Helmets, Legs, Pauldrons, Shields, Vambraces.',
+  '**Descriptions** \nAliens, Animals, Armys, Backstorys, Battlefields, Bows, Castles, Characters, Citys, Constellations, Countrys, Diseases, Dragons, Dungeons, Dyings, Flags, Gems, Ghost Towns, Gods, Holidays, Houses, Humanoids, Laws, Monuments, Pains, Personalitys, Pistols, Planets, Plants, Plots, Pokemons, Potions, Prophecys, Quests, Rifles, Shields, Shotguns, Societys, Spells, Staffs, Taverns, Towns, Traditions, Wands, Weapons',
+  '**Destiny** \nAwokens, Cabals, Exos, Fallens, Hives, Humans, Vexs',
+  '**Diablo** \nAngels, Demons, Khazras, Nephalems',
+  '**Fantasy** \nAliens, Amazons, Angels, Animatronics, Bandits, Barbarians, Cavemens, Centaurs, Codes, Cowboys, Creatures, Deaths, Demons, Detectives, Dragons, Dryads, Dwarfs, Elementals, Elfs, Ents, Evils, Fairys, Fursonas, Futuristics, Ghosts, Giants, Gnolls, Gnomes, Goblins, Gods, Gorgons, Griffins, Harpys, Heros, Hobbits, Horses, Imps, Kaijus, Killers, Knights, Kobolds, Lamias, Lichs, Mechas, Medievals, Mermaids, Minotaurs, Mobsters, Monsters, Nagas, Necromancers, Nephilims, Ninjas, Nymphs, Ogres, Orcs, Pegasus, Phoenixs, Pirates, Robots, Servants, Shapeshifters, Sirens, Slaves, Species, Steampunks, Succubus, Sylphs, Taurens, Trolls, Twins, Unicorns, Valkyries, Vampires, Villains, Werewolfs, Witchs, Wizards',
   '**Miscellaneous** \nAfterlifes, Airplanes, Airships, Alliances, Apocalypses, Armys, Artifacts, Awards, Bands, Battles, Birds, Bouquets, Brands, Candys, Cars, Class, Colors, Constellations, Creepypastas, Crops, Currencys, Dances, Dates, Dinosaurs, Diseases, Drinks, Drugs, Enchantments, Epithets, Foods, Fungis, Galaxys, Gangs, Guilds, Hackers, Heists, Helicopters, Herbs, Holidays, Instruments, Inventions, Jewelrys, Languages, Magazines, Mascots, Medicines, Metals, Molecules, Newspapers, Nicknames, Plagues, Plants, Poisons, Potions, Professions, Racers, Railways, Ranks, Religions, Ships, Softwares, Spaceships, Spells, Sports, Squads, Superpowers, Teleportations, Thrones, Titles, Treatys, Trees, Tribals, Tribes, Usernames, Vehicles, Wines, Wrestlers',
   '**Pets** \nAliens, Amphibians, Bats, Bears, Birds, Cats, Cows, Crabs, Deers, Dogs, Elephants, Fishs, Horses, Insects, Lions, Monkeys, Mouses, Owls, Parrots, Pigs, Rabbits, Reptiles, Rodents, Sheeps, Turtles, Wolfs',
   '**Places** \nAsylums, Bakerys, Banks, Beachs, Blacksmiths, Brewerys, Bridges, Business, Cafes, Camps, Casinos, Castles, Caves, Circus, Civilizations, Cliffs, Companys, Continents, Countrys, Dimensions, Dungeons, Farms, Forests, Grasslands, Graveyards, Harbors, Headquarters, Hospitals, Hotels, Inns, Islands, Jungles, Kingdoms, Laboratorys, Lakes, Lands, Librarys, Mansions, Mountains, Museums, Nightclubs, Oasis, Orphanages, Outposts, Parks, Planets, Plantations, Plazas, Prisons, Realms, Restaurants, Rivers, Roads, Ruins, Schools, Shops, Snowlands, Stadiums, Stars, Streets, Swamps, Temples, Theaters, Towers, Volcanos, Waterfalls, Waters',
   '**Real** \nAboriginals, Akans, Albanians, Algerians, Amazighs, Argentinians, Armenians, Assyrians, Azerbaijanis, Aztecs, Babylonians, Basothos, Basques, Belgians, Bengalis, Biblicals, Bosnians, Brazilians, Bulgarians, Cajuns, Catalans, Celtics, Chineses, Circassians, Croatians, Czechs, Danishs, Dutchs, Edwardians, Egyptians, Englishs, Enochians, Estonians, Ethiopians, Faroeses, Filipinos, Finnishs, Frankishs, Frenchs, Frisians, Georgians, Germans, Gothics, Greeks, Hausas, Hawaiians, Hebrews, Hillbillys, Hindus, Hippies, Hispanics, Hungarians, Icelandics, Indonesians, Inuits, Irishs, Italians, Jamaicans, Japaneses, Jewishs, Kazakhs, Khmers, Koreans, Kurdishs, Laotians, Latins, Latvians, Lithuanians, Malaysians, Malteses, Maoris, Mayans, Mongolians, Moroccans, Muslims, Natures, Nepaleses, Normans, Norwegians, Pashtuns, Persians, Polishs, Portugueses, Poshs, Punjabis, Puritans, Quebecois, Romanians, Romans, Russians, Serbians, Shakespeareans, Shonas, Sikhs, Sinhaleses, Slavics, Slovenians, Somalis, Stages, Suebis, Sumerians, Swahilis, Swedishs, Swiss, Tajiks, Tamils, Telugus, Thais, Tibetans, Turkishs, Twins, Ukrainians, Victorians, Vietnameses, Vikings, Yorubas, Zulus',
   ];
-  let page = 1; 
- 
+  let page = 1;
+
   const embed = new Discord.RichEmbed()
-    .setTitle("Generator Reference") 
-    .setFooter(`Page ${page} of ${pages.length} \n!?gen <category> <subcategory> <amount>`) 
+    .setTitle("Generator Reference")
+    .setFooter(`[Page ${page} of ${pages.length}] \n!?gen <category> <subcategory> <amount>`)
     .setDescription(pages[page-1])
- 
-  message.channel.send(embed).then(message => { 
-   
-    message.react('⏪').then( r => { 
-      message.react('⏩') 
-     
+
+  message.channel.send(embed).then(message => {
+
+    message.react('⏪').then( r => {
+      message.react('⏩')
+
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-     
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
-     
-      
-      backwards.on('collect', r => { 
-        if (page === 1) return; 
+
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 });
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 });
+
+
+      backwards.on('collect', r => {
+        if (page === 1) return;
         page--;
-        embed.setDescription(pages[page-1]); 
-        embed.setFooter(`Page ${page} of ${pages.length} \n!?gen <category> <subcategory> <amount>`)
-        message.edit(embed) 
+        embed.setDescription(pages[page-1]);
+        embed.setFooter(`[Page ${page} of ${pages.length}] \n!?gen <category> <subcategory> <amount>`)
+        message.edit(embed)
       })
-     
-      forwards.on('collect', r => { 
-        if (page === pages.length) return; 
+
+      forwards.on('collect', r => {
+        if (page === pages.length) return;
         page++;
-        embed.setDescription(pages[page-1]); 
-        embed.setFooter(`Page ${page} of ${pages.length} \n!?gen <category> <subcategory> <amount>`)
-        message.edit(embed) 
+        embed.setDescription(pages[page-1]);
+        embed.setFooter(`[Page ${page} of ${pages.length}] \n!?gen <category> <subcategory> <amount>`)
+        message.edit(embed)
       })
-   
+
     })
 })};
 
+
 if(command === `gen`){
-let category = args[0];
-let subcategory = args[1];
-let amount = args[2] || 1;
+  let category = args[0];
+  let subcategory = args[1];
+  let amount = args[2] || 1;
 
-if(category === "LIST") return;
-if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory! \nSee __!?gen LIST__ if needed");
-if(isNaN(amount)) return message.channel.send("The amount MUST be a number. \nBe mindful when using amounts that are more than one request, especially with descriptions \nSee __!?gen LIST__ if needed");
-if(amount < 1 || amount > 25) return message.channel.send("Oh, that ain't gonna work. That's either below or above the limit (Min: 1, Max: 25) \nSee __!?gen LIST__ if needed");
+  if(category === "LIST") return;
+  if(!category || !subcategory) return message.channel.send("You must provide both a valid category and subcategory! \nSee __!?gen LIST__ if needed");
+  if(isNaN(amount)) return message.channel.send("The amount MUST be a number. \nBe mindful when using amounts that are more than one request, especially with descriptions \nSee __!?gen LIST__ if needed");
+  if(amount < 1 || amount > 25) return message.channel.send("Oh, that ain't gonna work. That's either below or above the limit (Min: 1, Max: 25) \nSee __!?gen LIST__ if needed");
 
-//console.log(fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
-let suggestions;
-try{
+  //console.log(fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
+  let suggestions;
+  try{
   suggestions = (fantasyNames(`${category}`, `${subcategory}`, `${amount}`));
-} catch (error) {
+  } catch (error) {
   console.log(error);
   return message.channel.send(`${redx} Not a valid category or subcategory. \nCheck your spelling or see __!?gen LIST__ if needed`)
-}
-message.channel.send(suggestions.join("\n"));
+  }
+  message.channel.send(suggestions.join("\n"));
 }
 
 if(command === `calc`){
@@ -517,54 +516,54 @@ if(command === `calc`){
 }
 
 if(command === `convert` && args[0] == "LIST"){
-  let pages = ['__Length__ \nmm \ncm \nm \nin \nft-us \nft \nmi', 
-  '__Area__ \nmm2 \ncm2 \nm2 \nha \nkm2 \nin2 \nin2 \nft2 \nac \nmi2', 
-  '__Mass__ \nmcg \nmg \ng \nkg \noz \nlb \nmt \nt', 
-  '__Volume__ \nmm3 \ncm3 \nml \nl \nkl \nm3 \nkm3 \ntsp \nTbs \nin3 \nfl-oz \ncup \npnt \nqt \nqt \ngal \nft3 \nyd3', 
-  '__Temperature__ \nC \nF \nK \nR', 
-  '__Time__ \nns \nmu \nms \ns \nmin \nh \nd \nweek \nmonth \nyear', 
-  '__Speed__ \nm/s \nkm/h \nm/h \nknot \nft/s', 
+  let pages = ['__Length__ \nmm \ncm \nm \nin \nft-us \nft \nmi',
+  '__Area__ \nmm2 \ncm2 \nm2 \nha \nkm2 \nin2 \nin2 \nft2 \nac \nmi2',
+  '__Mass__ \nmcg \nmg \ng \nkg \noz \nlb \nmt \nt',
+  '__Volume__ \nmm3 \ncm3 \nml \nl \nkl \nm3 \nkm3 \ntsp \nTbs \nin3 \nfl-oz \ncup \npnt \nqt \nqt \ngal \nft3 \nyd3',
+  '__Temperature__ \nC \nF \nK \nR',
+  '__Time__ \nns \nmu \nms \ns \nmin \nh \nd \nweek \nmonth \nyear',
+  '__Speed__ \nm/s \nkm/h \nm/h \nknot \nft/s',
   '__Pressure__ \nPa \nhPa \nkPa \nMPa \nbar \ntorr \npsi \nksi',
   '__Digital__ \nB \nKB \nMB \nGB \nTB',
   '__Voltage__ \nV \nmV \nkV',
   '__Power__ \nW \nmW \nkW \nMW \nGW',
   '__Energy__ \nWh \nmWh \nkWh \nMWh \nGWh \nJ \nkJ',
   '__Angle__ \ndeg \nrad \ngrad \narcmin \narcsec'];
-  let page = 1; 
- 
+  let page = 1;
+
   const embed = new Discord.RichEmbed()
     .setTitle("Unit Reference")
-    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setFooter(`Page ${page} of ${pages.length}`)
     .setDescription(pages[page-1])
- 
-  message.channel.send(embed).then(message => { 
-   
-    message.react('⏪').then( r => { 
-      message.react('⏩') 
-     
+
+  message.channel.send(embed).then(message => {
+
+    message.react('⏪').then( r => {
+      message.react('⏩')
+
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-     
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
-     
-      
-      backwards.on('collect', r => { 
-        if (page === 1) return; 
+
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 });
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 });
+
+
+      backwards.on('collect', r => {
+        if (page === 1) return;
         page--;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-     
-      forwards.on('collect', r => { 
-        if (page === pages.length) return; 
+
+      forwards.on('collect', r => {
+        if (page === pages.length) return;
         page++;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-   
+
     })
 })};
 
@@ -576,7 +575,7 @@ if(command === `convert`){
   if(value == "LIST") return;
   if(isNaN(value)) return message.channel.send(`${message.member.displayName}, provide a value to convert`)
   if(!unit1 || !unit2) return message.channel.send(`${message.member.displayName}, what are you trying to convert? \nSee __!?help convert__ and __!?convert LIST__ if needed.`);
-  
+
   let answer;
   try{
   answer = convert(`${value}`).from(`${unit1}`).to(`${unit2}`).toFixed(2);
@@ -584,7 +583,7 @@ if(command === `convert`){
     console.log(error);
     return message.channel.send('That\'s not gonna work. Check your spelling or see __!?convert LIST__ if needed. \n```You cannot make impossible conversions such as fl-oz (Volume) to oz (Mass)```');
   }
-  
+
   message.channel.send(answer +`${unit2}`);
 }
 
@@ -594,14 +593,14 @@ if(command === `say`) {
     if(!sayMessage) return message.channel.send("Say what? x3")
     message.channel.send(sayMessage);
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-//message.delete().catch(O_o=>{}); 
-    // And we get the bot to say the thing: 
+//message.delete().catch(O_o=>{});
+    // And we get the bot to say the thing:
   }
 
 // if(command === `avatar`){
 //   let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
 
-//   let embed = new Discord.RichEmbed() 
+//   let embed = new Discord.RichEmbed()
 //   .setAuthor(`${user.displayName}'s Avatar`)
 //   .setImage(user.displayAvatarURL)
 //   .setTimestamp();
@@ -697,7 +696,7 @@ if(command === `cat`){
   .setTitle("Kitty :0")
   .setImage(body.file);
   message.channel.send(catembed).catch(error);{
-if(error.status == 403) return message.reply(`${redx} 403 Forbidden`)
+    if(error.status == 403) return message.reply(`${redx} 403 Forbidden`)
   }
 }
 
@@ -714,7 +713,7 @@ if(command === `fox`){
 if(command === `dog`){
   let {body} = await superagent
   .get(`https://random.dog/woof.json`);
-  
+
   let dogembed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle("A dog :0")
@@ -764,7 +763,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   let pages = [
     //one
   `*Written by yours truly,* <@297931837400023041>`,
-  //two 
+  //two
   `*“I just… I don’t know what to do anymore, really.” Travis says disappointedly “What’s the point of still ‘being with’ Maya when she pretty much disappeared and never came back.” He rests his head, facing down at the floor, on his hands, sitting adjacent to Saeyoung on the edge of his bed “It’s weird… one day she was here, then the next day, not anymore..”
   “It… sucks, honestly. I’m having the same situation too with… Taeyeon”
  “Oh...?”
@@ -774,7 +773,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   //three
   `*“Not sure what to really say about that.” Travis sighs and lays back on the bed, staring at the ceiling above. There wasn’t much else for him to say what was on his mind.  “...I mean They said they’ll be back and who knows if—” He exclaims and turns his attention to Saeyoung when he climbs over on top of him, confusion striking him “The hell? Aye, chill!” He’s ‘shushed’ by the redhead who leans in to kiss for a moment that felt almost more than a moment and then parts away. Saeyoung smirks, hinting his intentions. He could see the look in Travis; who was clearly flustered, but that would be something he’d deny. A very low ‘uh...’ was the most the dumbfounded boy could make at the moment, now blushing up a storm as he couldn’t make an answer from feeling slightly dizzy*`,
   //four
-  `*Saeyoung’s eyes meet with Travis’s “I've always found you.. a little cute and then I always had these… thoughts about you” 
+  `*Saeyoung’s eyes meet with Travis’s “I've always found you.. a little cute and then I always had these… thoughts about you”
   “If… y-you really thought that way…” Travis brings Saeyoung closer face to face and whispers “I’ve—actually uhm... thought of… that… too” Without hesitation, he seizes his lips in a returned kiss that becomes sloppy and rough in a matter of time—Who wouldn't for that porcelain skin and vermillion hair Korean that everyone seems to love?—Their bodies not only radiating heat and rubbing against each other but were also linked close together as if being bear-hugged and unable to let go. The two aggressively exchange in saliva that seems more of a competition that prolonged but then Saeyoung forcibly breaks the kiss, allowing himself and Travis for a quick gasp of air. Actions speak louder than words, they say...*`,
   //five
   `*And they’d be right: Being ‘straight’ did not exist for the time being since the two decide to take their ‘curiosity’ up a notch when Saeyoung instinctively strips of his own clothing with Travis hesitating for a split second but promptly strips of his own afterwards, freeing their own stiffened and throbbing members that were of relatively equal length. Saeyoung couldn’t help but stare at the now-bare Travis who was just as obviously aroused as he was himself. “Turn around” He commands
@@ -783,7 +782,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   `*It is safe to say that Travis has a decent firm booty clearly respected and Saeyoung certainly seems to agree from the way he’s greedily grabbing him from behind, making Travis find himself shuddering and reddening from those soft pale hands that now grip at his hips “Ah, uhm, we’re gonna keep this between us, right?”
   “Oh yeah, definitely.”
  “Uhm, I… I’ve never done this before either…” He adds
-  “Err... Neither have I.” 
+  “Err... Neither have I.”
  “Then, could you go a little easy and not so hard—Ahgh~!!!” A thick, throaty cry bursts from the virgin half a beat later—he must’ve choked on his own breath an instant when Saeyoung thrusted and practically slammed in with sudden force, his head thrown back as he grinded in.*`,
  //seven
   `*“Ah! I—I said not so ha—hard!” Travis winced, groaning out a thick, wandering, wordless speech on the pain of such a sudden stuffing. Saeyoung apologizes pathetically and while he makes effort to letup, he succumbs to his temptation to drive in again and again, punctuating every thrust with a small flare of intense sensation that slowly stretch open that tight entrance.  Sharp sighs escape from Travis as he attempts to stifle them with a spare hand only to fail to do as intended.
@@ -796,7 +795,7 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
   //ten
   `*“Do I… have to answer that?” He utters, as if the answer wasn’t obvious enough already. Swallowing tightly, gradually panting out uncontrollably, he hugs the boy tight as his hips work feverishly against those cheeks, the two of them collapse to the bed, Travis’s ass bends back high in offering and back arching tight, being driven at balls deep, when Saeyoung spends himself with effort as his own fingernails dig into that hot, slick skin. The redhead feels himself swelling into hypersensitive steel, inner walls being pulled taut around him so painfully good that it’d be a pain to stop now. However, all good things eventually come to an end.*`,
   //eleven
-  `*“I’m… I’m gonna—” Saeyoung unknowingly leaves his impending warning incomplete and with all of his strength to continue more, his hips making a sudden jerk and high, frantic moan bursting from his throat, pinning Travis in the bed and firing his surging load of hot warm seed deep into those walls before slumping over, hands loosening of grip. He lies down atop just short of collapsing entirely, sprawling over Travis’s back with a thick sigh as he spends himself to the last drop within him. Feeling woozy and the world may be… turning a little… It takes Travis a moment to realize that Saeyoung is saying something 
+  `*“I’m… I’m gonna—” Saeyoung unknowingly leaves his impending warning incomplete and with all of his strength to continue more, his hips making a sudden jerk and high, frantic moan bursting from his throat, pinning Travis in the bed and firing his surging load of hot warm seed deep into those walls before slumping over, hands loosening of grip. He lies down atop just short of collapsing entirely, sprawling over Travis’s back with a thick sigh as he spends himself to the last drop within him. Feeling woozy and the world may be… turning a little… It takes Travis a moment to realize that Saeyoung is saying something
   “You… Alright?” His breathing enthusiasm slowly breaks when the exhausted boy clears his throat barely collecting himself, finally managing something a little more coherent than frantic moans afterwards*`,
   //twelve
   `*“Can’t believe you asked that. First you—You cummed inside me,” He rebuked, disgusted by the thought of it and then pushes Saeyoung off his back to sit up “and second, you did the complete opposite of going easy. My ass literally hurts!”
@@ -806,46 +805,46 @@ if(command === `smut` && args[0] == "keepthisbetweenus"){
  “No, I didn’t” Still continuing in denial, and for some reason now admitting “Okay fine… Maybe” He looks away, pouting with Saeyoung making a faint chuckle. “Whatever, this is still only between just us.”
  He scoffs “Yeah, obviously.”
  Two almost strikingly similar voices instantly turn both the boys attention toward the locked door, demanding to be let in “Oppa? Travvy? Ya’ both in there?” Quickly panicking and with no time to waste, the two hop off the bed, scrambling for their clothing.
- “Uhm, yeah, just give us a second!” Travis assures* 
+ “Uhm, yeah, just give us a second!” Travis assures*
   ***Talk about a close call...***`,
   //thirteen
   `*The End* \n!?smut <story> for other lemon stuff 🍋 *you nasty* \nIf it was... in a non-weird sense... perfect, well-done and awesome, then react with a ⭐! \n*Really though, it's not that easy making these. Appreciate*`];
-  let page = 1; 
- 
+  let page = 1;
+
   const embed = new Discord.RichEmbed()
     .setTitle("Keep This Between Us")
     .setColor("#44eae7")
-    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setFooter(`Page ${page} of ${pages.length}`)
     .setDescription(pages[page-1])
- 
-  message.channel.send(embed).then(message => { 
-   
-    message.react('⏪').then( r => { 
+
+  message.channel.send(embed).then(message => {
+
+    message.react('⏪').then( r => {
       message.react('⏩')
-     
+
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-     
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
-     
-      
-      backwards.on('collect', r => { 
-        if (page === 1) return; 
+
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 });
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 });
+
+
+      backwards.on('collect', r => {
+        if (page === 1) return;
         page--;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-     
-      forwards.on('collect', r => { 
-        if (page === pages.length) return; 
+
+      forwards.on('collect', r => {
+        if (page === pages.length) return;
         page++;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-   
+
     })
 })};
 
@@ -870,7 +869,7 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
   "This one is from me" she sat on his lap sideways.
   "Well, I love it.' he said putting the tips of his fingers onto her leg, messing with one of the ribbons.
   "how can you love it if you haven't used it yet?" she teased. He smiled.
-  "Okay, let me open it then" he replied in a seducing matter. He reached one of his hands up to the ribbon bow that held Jade's breast. He loosened it and pulled the ribbon apart.*`, 
+  "Okay, let me open it then" he replied in a seducing matter. He reached one of his hands up to the ribbon bow that held Jade's breast. He loosened it and pulled the ribbon apart.*`,
   //four
   `*He watched her breast bounce as they were released from the ribbons, " Don't drool too much" Jade laughed.
   He reached over and began groping her left tit, " no matter how many times I see them I still love them."
@@ -879,7 +878,7 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
   She turned to face away from him, swaying her hips and grinding her butt against his growing cock, "I think it wants to come out to play~" she teased, then she turned around and played with the waistband of his boxers.
   "Then we better let him out, " he slid off his boxers, releasing his six-inch.
   she turned back around, grinding her ass against his cock some more, Travis grabbing her hips. He took more control as time passed.*`,
-  //five 
+  //five
   `*"I'm going in" he spoke with dominance, something Jade loved. She nodded.
   He pushed her legs apart and forced his tip into her wet self. "M-more" Jade demanded, she had been waiting a couple of hours for him to wake and wanted him to be in her.
   He gave her what she wanted, he pushed himself as deep as he could. Her moans filled the house, once he was in they sat there, breathing heavily. Once Travis gained his breath again he began to force her body to move up and down, using both his hands on her hips and his hips, pushing up and down.
@@ -890,36 +889,36 @@ if(command === `smut` && args[0] == "tradechristmasspecial"){
   //seven
   `*The End*
   !?smut <story> for other lemon stuff :lemon: *you nasty*`];
-  let page = 1; 
- 
-  const embed = new Discord.RichEmbed() 
+  let page = 1;
+
+  const embed = new Discord.RichEmbed()
     .setTitle("Trade Christmas Special")
     .setColor("#d42426")
-    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setFooter(`Page ${page} of ${pages.length}`)
     .setDescription(pages[page-1])
- 
-  message.channel.send(embed).then(message => { 
-    message.react('⏪').then( r => { 
-      message.react('⏩') 
+
+  message.channel.send(embed).then(message => {
+    message.react('⏪').then( r => {
+      message.react('⏩')
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 }); 
-      backwards.on('collect', r => { 
-        if (page === 1) return; 
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 1800000 });
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 1800000 });
+      backwards.on('collect', r => {
+        if (page === 1) return;
         page--;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-      forwards.on('collect', r => { 
-        if (page === pages.length) return; 
+      forwards.on('collect', r => {
+        if (page === pages.length) return;
         page++;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-   
+
     })
 })};
 
@@ -935,7 +934,7 @@ if(command === `succ`){
   `Maybe a quick one wouldn't hurt, says ${Reciever.displayName}. ${giver} agrees, more than happy to do so.`,
   `${giver} believes that they're really good at giving oral relief. Only one way to find out.`];
   let introOutcome = Math.floor((Math.random() * intro.length));
-  
+
   let middle = [`${giver} is making great progress working their way on ${Reciever.displayName} with those lovely lips.`,
   `${giver}, taking in all of ${Reciever.displayName}, making them periodically thrust upwards, moaning small O's.`,
   `Poor ${giver}, being greedily trapped by ${Reciever.displayName}'s thighs, forcing them into their crotch.`,
@@ -948,7 +947,7 @@ if(command === `succ`){
   `...But what exactly is ${giver} doing? It looks as if they don't even know what giving the succ is.`,
   `${giver} may not be exactly doing such a perfect job, at least they're making good effort. Definitely something than nothing.`];
   let middleOutcome = Math.floor((Math.random() * middle.length));
-  
+
   let end = [`${Reciever.displayName} is satisfied with their little session with ${giver}. Perhaps they might ask for more some other time.`,
   `${Reciever.displayName} may deny it, but they know that they secretly loved it.`,
   `${Reciever.displayName} hated it, despite ${giver} putting all their effort.`,
@@ -966,9 +965,9 @@ if(command === `succ`){
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]}*`)
     }, cdseconds * 2500);
-    
+
     message.channel.stopTyping(true);
-    
+
     setTimeout(() => {
       message.edit(`*${intro[introOutcome]} ${middle[middleOutcome]} ${end[endOutcome]}*`)
     }, cdseconds * 5000);
@@ -986,10 +985,10 @@ if(command === `succ`){
 
 if(command === `smut`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  
+
   if(args[0] == "tradechristmasspecial") return;
   if(args[0] == "keepthisbetweenus") return;
-  
+
   let smutembed = new Discord.RichEmbed()
   .setTitle(`Lemon Scented.`)
   .setColor("#d68998")
@@ -1013,15 +1012,15 @@ if(command === `hentai`){
     .setColor("#ff9900")
     .setTitle("Hentai is an art, after all.")
     .setImage(body.url);
-  
+
   message.channel.send(hentaiemd)
   .catch(error => message.reply(`${redx} ${error}`));
 }}
 
 if(command === `dirtyquote`){
   if(!message.channel.nsfw) return message.channel.send("Whoa, relax. You can only use this command in a channel that is marked as NSFW.");
-  
-  let replies = ["\"I'm straight, but hey, $20 is $20.\"", 
+
+  let replies = ["\"I'm straight, but hey, $20 is $20.\"",
   "\"It's either ass or gas. Nobody rides for free\"",
   "\"Mm, no princess, can't stop won't stop\"",
   "\"You must be my favorite car because I wanna put you into overdrive~\"",
@@ -1145,11 +1144,11 @@ let galeembed = new Discord.RichEmbed()
   .addField("Engine", "*9.7L V8 Duramax*", true)
   .addField("Curb Weight", "*3300 lbs/1497 kg*", true)
   .addField("Layout", "*AWD, Front Engine*", true)
-  .addField("Overview", "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon." + 
+  .addField("Overview", "*A signature vehicle that has a custom galaxy wrap (hence the name) It is the only vehicle that is used to gain access to the SpaceBar, which is located on the moon." +
   " Though it is registered under the names of Travis Rilynar and Jesse Green, it is unknown when exactly the Galaxy Truck was manufactured. The five-seater truck has been modified to sustain the extreme atmospheric pressure, speed, and temperature*", true)
-  .addField("Appearance", "*Equipped with military-grade, high-end materials: Bullet-resistant glass, reinforced carbon fiber plating, and a hardened drivetrain." + 
+  .addField("Appearance", "*Equipped with military-grade, high-end materials: Bullet-resistant glass, reinforced carbon fiber plating, and a hardened drivetrain." +
   " This off-road, five-seater also has an elegant wrap that glows. The interior is custom built: Motorsport racetrack seats with harnesses and steering wheel, UV-resistant tinted windows, 8ball gear shifter, and a fuzzy dashboard with a Hawaiian girl bobble-head.*", true)
-  .addField("Performance", "*Offers extremely poor power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1." + 
+  .addField("Performance", "*Offers extremely poor power steering due to its extremely cumbersome curb weight: 3300lbs. [1497kg]. This can be a potential hazard, especially when achieving speeds of Mach 1." +
   " With only 3 MPG, this makes it one of the WORST in fuel efficiency as it burns with a V8 Duramax 9.7L, outputting a 0–60 in 1.7 seconds. Most of its acceleration power is placed on the wheels themselves, where the drivetrain is an all-wheel drive (AWD) Despite its horrible weight, the speed significantly makes that factor up when its top speed is almost equivalent to a Boeing jet: 767mph [1234kph]*", true);
 
 let zanembed = new Discord.RichEmbed()
@@ -1184,8 +1183,8 @@ let ggembed = new Discord.RichEmbed()
   .setColor("#7d2e3e")
   .setFooter("Signature Beverage")
   //.setThumbnail()
-  .addField("Overview", 
-  "*This coffin-shaped bottle is made of translucent bloodshot red glass. The taste is almost described as strong and sour with a foul aftertaste." + 
+  .addField("Overview",
+  "*This coffin-shaped bottle is made of translucent bloodshot red glass. The taste is almost described as strong and sour with a foul aftertaste." +
   " It has a long neck, stands about nine inches tall, and it has no label other than it displaying a warning: 'So strong it's something to DIE FOR'.*", true);
 
 let dbembed = new Discord.RichEmbed()
@@ -1234,9 +1233,9 @@ let jembed = new Discord.RichEmbed()
   .addField("Weight", "*219 lbs./99 kg*", true)
   .addField("Gender", "*Male*", true)
   .addField("Age", "*42.1 million*", true)
-  .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." + 
+  .addField("Background", "*Though it is exactly unknown when and where Jejus was born, it is estimated to be around the inital release of Roblox in 2006." +
   " Not much is known about the muscular Roblox man other than the fact of having a questionable history. One of which occasions including being involved in a massacare and engaging in Cops n' Robbers*", true)
-  .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." + 
+  .addField("Personality", "*Often known for his unusual behavior that is dynamic in all situations possible. It is an extremely rare occasion for him to speak which eventually led to the assumption of Jejus being a mute." +
   " He strongly believes in the morals of justice and is willing to serve if necessary*", true);
 let rembed = new Discord.RichEmbed()
   .setTitle("Roxuhn")
@@ -1256,7 +1255,7 @@ let rembed = new Discord.RichEmbed()
   .addField("Decay", "*Possesses the ability to rapidy accelerate the age life of an object, person or any entity, serverely inflicting debilitating effects.* ***Especially deadly towards biological material***", true)
   .addField("Regeneration", "*As long as damage is not absorbed during the processes or has not been already dismembered, any wounds can completely heal in a matter of hours.*", true)
   .addField("Fangs", "*Canine-like teeth that are razor sharp. Enough to easily slice and tear through bare skin and flesh.*", true);
-  
+
 let axemurder = new Discord.RichEmbed()
   .setTitle("The Axe Murderer")
   .setDescription("```[Shaky breathing] I don't know what the fuck is going on, man... \n Shit has been happening—I... I think Tr—Travis is out of his mind! \nWhat the fuck has gotten into him!? ...I think it's the damn... drug... B—bizid. It's almost like bath salts but far more worse. \n[Low voice]Travis! It's me! \n [Long pause]...Oh god... TRAVIS NO——```");
@@ -1289,56 +1288,56 @@ if(command === `dws`){
 
 if(command === `pagetest`){
   let pages = ['Section 1', 'Section 2', 'Section 3', 'Section 4', 'Section 5', 'Section 6'];
-  let page = 1; 
- 
-  const embed = new Discord.RichEmbed() 
+  let page = 1;
+
+  const embed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setFooter(`Page ${page} of ${pages.length}`)
     .setDescription(pages[page-1])
- 
-  message.channel.send(embed).then(message => { 
-   
-    message.react('⏪').then( r => { 
-      message.react('⏩') 
-     
+
+  message.channel.send(embed).then(message => {
+
+    message.react('⏪').then( r => {
+      message.react('⏩')
+
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪'
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩'
-     
-      const backwards = message.createReactionCollector(backwardsFilter, { time: 240000 }); 
-      const forwards = message.createReactionCollector(forwardsFilter, { time: 240000 }); 
-     
-      
-      backwards.on('collect', r => { 
-        if (page === 1) return; 
+
+      const backwards = message.createReactionCollector(backwardsFilter, { time: 240000 });
+      const forwards = message.createReactionCollector(forwardsFilter, { time: 240000 });
+
+
+      backwards.on('collect', r => {
+        if (page === 1) return;
         page--;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-     
-      forwards.on('collect', r => { 
-        if (page === pages.length) return; 
+
+      forwards.on('collect', r => {
+        if (page === pages.length) return;
         page++;
-        embed.setDescription(pages[page-1]); 
+        embed.setDescription(pages[page-1]);
         embed.setFooter(`Page ${page} of ${pages.length}`)
-        message.edit(embed) 
+        message.edit(embed)
       })
-   
+
     })
 })};
- 
+
 if(command === `emoji`){
   let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
   let result = Math.floor((Math.random() * replies.length));
-  
+
   if(message.author.id !== "362472426258300928")
     return message.channel.send("**NO.** You ain't Inkwell!");
-    
+
     else
     message.channel.send(replies[result]);
 }
 
-  if(command === `fortune`){
+if(command === `fortune`){
     let replies = ["\"Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.\"",
     "\"Before you ask why someone hates you, ask yourself why you should care deeply.\"",
     "\"The fears we don't face become our limits.\"",
@@ -1375,7 +1374,7 @@ if(command === `emoji`){
     message.channel.send(`*${replies[result]}*`);
   }
 
-  if(command === `ban`){
+if(command === `ban`){
 
     let bUser = message.mentions.users.first()
     if(!bUser) return message.reply("Yeah, banned the air. ***Who do I ban***");
@@ -1402,7 +1401,7 @@ if(command === `emoji`){
     return;
    }
 
-  if(command === `serverinfo`){
+if(command === `serverinfo`){
     let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
     let day = message.guild.createdAt.getDate()
     let month = 1 + message.guild.createdAt.getMonth()
@@ -1424,7 +1423,7 @@ if(command === `emoji`){
     .addField("Human Users", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
     .addField("Bot Users", message.guild.members.filter(m => m.user.bot).size, true)
     .addField("Total Roles", message.guild.roles.size, true);
-    
+
     message.channel.send(serverembed);
   }
 
@@ -1452,7 +1451,7 @@ if(command === `botinfo`){
         "text": `${platform.os} \nNode JS ${process.version} \nDiscord.js v11.30`
       },
       "thumbnail": {
-        "url": `${bot.user.displayAvatarURL}` 
+        "url": `${bot.user.displayAvatarURL}`
       },
       //"image": {
         //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
@@ -1522,63 +1521,63 @@ if(command === `botinfo`){
     };
     message.channel.send({ embed });
   }
-  
+
 
 if(command === `help`){
      if(args[0] == "dws") return message.channel.send(`
-     Usage: !?dws <any> 
- | *Character commands only use the first name.* \`ex. !?dws travis\` \`!?dws ruben\` 
+     Usage: !?dws <any>
+ | *Character commands only use the first name.* \`ex. !?dws travis\` \`!?dws ruben\`
  | *All subcommands are lowercased and should not be spaced* \`ex. !?dws gtgalaxytruck\` \`!?dws nautibuoy\`.`);
-     
+
      if(args[0] == "pick") return message.channel.send(`
-     Out of the choices you supply me, I will pick only **one.** 
- | Usage: !?pick <any> <any> 
+     Out of the choices you supply me, I will pick only **one.**
+ | Usage: !?pick <any> <any>
  | All commas used **will split choices**.`);
-     
+
      if(args[0] == "ping") return message.channel.send("Checks the bot's response time. The lower the value, the more quicker the response is.*");
 
      if(args[0] == "gen") return message.channel.send("I will randomly generate lists of names and descriptions. \nUsage: !?gen <category> <subcategory> <amount (1 or 1-25)> \nUsage: !?gen LIST \nExample: !?gen fantasy werewolfs 5 `//Returns 5 names from this category`");
-     
+
      if(args[0] == "leave") return message.channel.send("I'll leave this server if necessary.");
-     
+
      if(args[0] == "eval") return message.channel.send("Executes the arbitrary Javascript library. \n**Use with caution. This is an extremely powerful and dangerous command if used improperly or maliciously.**");
-     
+
      if(args[0] == "shutoff") return message.channel.send("All of my proccesses are immediately terminated upon execution.");
-     
+
      if(args[0] == "reload") return message.channel.send("Refreshes all commands in located in the directories");
 
      if(args[0] == "calc") return message.channel.send('I will solve a mathematic expression. \nUsage: !?calc <valid expression>');
 
      if(args[0] == "rolldice") return message.channel.send(`Roll a die with any amount of sides inputted or defaults to 6 if none. \nUsage: !?rolldice <number>`);
-     
+
      if(args[0] == "smut") return message.channel.send(`
-     A collection of stories that are most definitely NSFW. 
- | Usage: !?smut <story> 
+     A collection of stories that are most definitely NSFW.
+ | Usage: !?smut <story>
  | *Stories cannot be spaced out; will not work* ex. !?smut tradechristmasspecial
  | :rewind: Previous Page
  | :fast_forward: Next Page`);
-     
+
      if(args[0] == "hentai") return message.channel.send(`
      I'll bring up some of those anime titties or whatever :o \n**Or**, *Nya~* I'll bring up lewd and NSFW images of nekos. \`!?hentai neko\``);
-     
+
  if(args[0] == "succ") return message.channel.send(`
-     Give something *or someone* the oral relief. 
+     Give something *or someone* the oral relief.
  | Usage: !?succ <any>`);
-     
+
      if(args[0] == "dirtyquote") return message.channel.send("I'll say something... dirty.");
-     
+
      if(args[0] == "fliptext") return message.channel.send(`
-     It's like repeating what you say but upside down :o 
+     It's like repeating what you say but upside down :o
  | Usage: !?fliptext <any>`);
-     
+
      if(args[0] == "fortune") return message.channel.send("I'll say some big facts.");
-     
+
      if(args[0] == "rps") return message.channel.send(`
-     We shall duel in a match of Rock, Paper, Scissors. 
+     We shall duel in a match of Rock, Paper, Scissors.
  | Usage: !?rps <rock|paper|scissors> or !?rps <r|p|s>`);
-     
+
      if(args[0] == "docrefs") return message.channel.send("I'll send links that lead to unofficial, but documented, Discord API libraries.");
-     
+
      if(args[0] == "mstrain") return message.channel.send(`
      I will send a database of marijuana strains from three branches: Sativa, Indica, and Hybrid. I can also send lists of flavors and effects.
  | *Can only search strains with ID*
@@ -1598,7 +1597,7 @@ if(command === `help`){
           "text": "You can type help on certain commands."
         },
         "thumbnail": {
-          "url": `https://onlinevapour.com/wp-content/uploads/2017/08/orange-question-mark-icon-png-clip-art-30-copy.png` 
+          "url": `https://onlinevapour.com/wp-content/uploads/2017/08/orange-question-mark-icon-png-clip-art-30-copy.png`
         },
         //"image": {
           //"url": "https://cdn.discordapp.com/embed/avatars/0.png"
