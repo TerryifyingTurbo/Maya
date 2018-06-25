@@ -602,8 +602,9 @@ if(command === `balance` || command === `bal`){
   let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
     let Balance = await db.fetch(`userBalance_${user.id}`)
 
-  if(Balance == null) Balance = 50;
-  
+  if(Balance === null){db.set(`userBalance_${user.id}`, 50);
+    Balance = 50;
+  }
   message.channel.send(`${user.username}, has ***${Balance}*** ${Platinum} Platinum`);
 }
 
@@ -618,8 +619,14 @@ if(command === `pay`){
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null) recipientBalance = 50;
-  if(senderBalance === null) senderBalance = 50;
+  if(recipientBalance === null){
+  db.set(`userBalance_${recipient.id}`, 50);
+  recipientBalance = 50;
+}
+ if(senderBalance === null){
+ db.set(`userBalance_${message.author.id}`, 50);
+senderBalance = 50;
+}
 
   if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
@@ -640,8 +647,14 @@ if(command === `loan`){
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null) recipientBalance = 50;
-  if(senderBalance === null) senderBalance = 50;
+  if(recipientBalance === null){
+    db.set(`userBalance_${recipient.id}`, 50);
+    recipientBalance = 50;
+  }
+   if(senderBalance === null){
+   db.set(`userBalance_${message.author.id}`, 50);
+  senderBalance = 50;
+  }
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
 
   message.channel.send(`All set, Boss x3 \nGave ${recipient.displayName} ***${value}*** ${Platinum} Platinum`);
@@ -649,10 +662,14 @@ if(command === `loan`){
 }
 
 if(command === `ttget`){
-  let senderBalance = await db.fetch(`userBalance_${message.author.id}`);
+  let user = message.author;
+  let Balance = await db.fetch(`userBalance_${user.id}`)
 
-  if(senderBalance == null) senderBalance = 50;
-    db.add(`userBalance_${message.author.id}`, 250);
+if(Balance === null){
+  db.set(`userBalance_${user.id}`, 50);
+  Balance = 50;
+}
+  db.add(`userBalance_${user.id}`, 250);
   message.channel.send("250 Added").then(i => console.log(i, typeof i));
 }
 
