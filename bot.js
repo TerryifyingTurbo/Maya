@@ -1,3 +1,16 @@
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
+
+
 const botsettings = require("./botsettings.json");
 const Discord = require("discord.js");
 const superagent = require("superagent");
@@ -16,7 +29,7 @@ const giphy = require("giphy-api")("l1Y4ECUVv8LSCMnVAQlRjJPds4AsWDNg");
 const fantasyNames = require("fantasy-names");
 const db = require("quick.db");
 const bot = new Discord.Client({disableEveryone: true})
-let cooldown = new Set();
+//let cooldown = new Set();
 let cdseconds = 2;
 
 
@@ -1730,4 +1743,4 @@ const clean = text => {
       return text;
 }
 
-bot.login(botsettings.mightykey);
+bot.login(process.env.mightykey);
