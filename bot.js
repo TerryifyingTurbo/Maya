@@ -1414,17 +1414,6 @@ if(command === `pagetest`){
     })
 })};
 
-if(command === `emoji`){
-  let replies = [":hearts:", ":chocolate_bar:", ":cookie:", ":kissing_heart:", ":sweat_smile:", ":wink:", ":blush:", ":worried:"];
-  let result = Math.floor((Math.random() * replies.length));
-
-  if(message.author.id !== "362472426258300928")
-    return message.channel.send("**NO.** You ain't Inkwell!");
-
-    else
-    message.channel.send(replies[result]);
-}
-
 if(command === `fortune`){
     let replies = ["\"Dont mix foul words with your bad mood. You'll have many chances to change your mood, but rarely the chance to replace the words you spoke.\"",
     "\"Before you ask why someone hates you, ask yourself why you should care deeply.\"",
