@@ -6,8 +6,11 @@
   "scripts": {
     "start": "node bot.js"
   },
-  "author": "Bwapstustu Turbo",
-  "license": "ISC",
+  "engines": { "node": "8.11.3"},
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/TerryifyingTurbo/Anahi.git"
+  },
   "dependencies": {
     "chalk": "^2.3.2",
     "cheerio": "^1.0.0-rc.2",
