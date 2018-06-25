@@ -593,7 +593,8 @@ if(command === `balance` || command === `bal`){
     let user = message.author;    
   let balance = await db.fetch(`userBalance_${user.id}`);
   
-  if (balance === null) db.set(`userBalance_${user.id}`, 50);
+  if (balance === null) balance == 0;
+  //db.set(`userBalance_${user.id}`, 50);
 
   message.channel.send(`${user.username} has ***${balance}*** ${Platinum} Platinum`);
 }
