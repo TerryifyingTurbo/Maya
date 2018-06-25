@@ -604,7 +604,7 @@ if(command === `balance` || command === `bal`){
   if (senderBalance == null){
     db.set(`userBalance_${message.author.id}`, 50);
     senderBalance = 50;
-    //db.set(`userBalance_${user.id}`, 50);
+    db.set(`userBalance_${user.id}`, 50);
   }
   message.channel.send(`${message.member.displayName}, you have ***${senderBalance}*** ${Platinum} Platinum`);
 }
