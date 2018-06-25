@@ -603,10 +603,9 @@ if(command === `balance` || command === `bal`){
     let user = message.author;
     let senderBalance = await db.fetch(`userBalance_${message.author.id}`).then(i => console.log(i, typeof i));
 
-  if (senderBalance == null){
-    db.set(`userBalance_${message.author.id}`, 50);
+  if(senderBalance == null){
+    db.set(`userBalance_${user.id}`, 50);
     senderBalance = 50;
-    //db.set(`userBalance_${user.id}`, 50);
   }
   message.channel.send(`${message.member.displayName}, you have ***${senderBalance}*** ${Platinum} Platinum`);
 }
@@ -626,10 +625,12 @@ if(command === `pay`){
     db.set(`userBalance_${recipient.id}`, 50);
     recipientBalance = 50;
   }
+  
   if(senderBalance === null){
     db.set(`userBalance_${message.author.id}`, 50);
     senderBalance = 50;
   }
+
   if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
   db.subtract(`userBalance_${message.author.id}`, value).then(i => console.log(i, typeof i));
