@@ -293,8 +293,6 @@ Response :satellite_orbital: **${m.createdTimestamp - message.createdTimestamp}m
     if(message.author.id !== "297931837400023041")
     return message.channel.send("**NO.** Only my creator can do that");
 
-    else
-
     await message.channel.send("A'ight, later Boss!");
     message.guild.leave();
   }
@@ -590,9 +588,9 @@ if(command === `convert`){
 
 if(command === `balance` || command === `bal`){
   //let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
-    let user = message.author;    
-    let senderBalance = await db.fetch(`userBalance_${message.author.id}`);
-  
+    let user = message.author;
+    let senderBalance = await db.fetch(`userBalance_${message.author.id}`).then(i => console.log(i, typeof i));
+
   if (senderBalance == null){
     db.set(`userBalance_${message.author.id}`, 50);
     senderBalance = 50;
@@ -615,7 +613,7 @@ if(command === `pay`){
   if(recipientBalance === null){
     db.set(`userBalance_${recipient.id}`, 50);
     recipientBalance = 50;
-}
+  }
   if(senderBalance === null){
     db.set(`userBalance_${message.author.id}`, 50);
     senderBalance = 50;
@@ -625,7 +623,7 @@ if(command === `pay`){
   db.subtract(`userBalance_${message.author.id}`, value).then(i => console.log(i, typeof i));
 
   message.channel.send(`All set ${greencheck} \nGave ${recipient.displayName} ***${value}*** ${Platinum} Platinum`);
-  
+
 }
 
 if(command === `loan`){
@@ -646,12 +644,12 @@ if(command === `loan`){
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
 
   message.channel.send(`All set, Boss x3 \nGave ${recipient.displayName} ***${value}*** ${Platinum} Platinum`);
-  
+
 }
 
 if(command === `ttget`){
   let senderBalance = await db.fetch(`userBalance_${message.author.id}`);
-  
+
   if (senderBalance == null){
     db.set(`userBalance_${message.author.id}`, 50);
     senderBalance = 50;
@@ -759,7 +757,7 @@ if(command === `rps`){
 if(command === `listemotes`){
   if(message.guild.emojis.size === 0) return message.channel.send("There aren't any emojis here.");
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-  message.channel.send(`***Fetching emojis for ${message.guild.name}...***`).then(message => {
+  message.channel.send(`***Wait for ${message.guild.name}...***`).then(message => {
     setTimeout(() => {
     message.edit(`${emojiList}`)
   }, cdseconds * 2500)
@@ -813,7 +811,7 @@ if(command === `dadjoke`){
   let {body} = await superagent
   .get(`https://icanhazdadjoke.com/slack`);
 
-  message.channel.send("**" + body.attachments.map(a => a.text) + "**");
+  message.channel.send("*" + body.attachments.map(a => a.text) + "*");
 }
 
 if(command === `meme`){
