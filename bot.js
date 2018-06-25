@@ -599,15 +599,12 @@ if(command === `convert`){
 }
 
 if(command === `balance` || command === `bal`){
-  //let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
-    let user = message.author;
-    let senderBalance = await db.fetch(`userBalance_${message.author.id}`).then(i => console.log(i, typeof i));
+  let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
+    let Balance = await db.fetch(`userBalance_${user.id}`)
 
-  if(senderBalance == null){
-    db.set(`userBalance_${user.id}`, 50);
-    senderBalance = 50;
-  }
-  message.channel.send(`${message.member.displayName}, you have ***${senderBalance}*** ${Platinum} Platinum`);
+  if(Balance == null) Balance = 50;
+  
+  message.channel.send(`${user.username}, has ***${Balance}*** ${Platinum} Platinum`);
 }
 
 if(command === `pay`){
@@ -616,20 +613,13 @@ if(command === `pay`){
 
   if(!recipient) return message.channel.send(`${message.member.displayName}, you can't magically give the air some Platinum!`);
   if(isNaN(value)) return message.channel.send(`Uhm hello, that must be a number.`);
-  if(recipient == message.author || recipient == message.author.id) return message.channel.send("Silly, you can't loan yourself money!");
+  if(recipient.id == message.author.id) return message.channel.send("Silly, you can't loan yourself money!");
 
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null){
-    db.set(`userBalance_${recipient.id}`, 50);
-    recipientBalance = 50;
-  }
-  
-  if(senderBalance === null){
-    db.set(`userBalance_${message.author.id}`, 50);
-    senderBalance = 50;
-  }
+  if(recipientBalance === null) recipientBalance = 50;
+  if(senderBalance === null) senderBalance = 50;
 
   if(value > senderBalance) return message.channel.send(`No can do, you gotta' have the proper amount of Platinum first`);
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
@@ -650,10 +640,8 @@ if(command === `loan`){
   let recipientBalance = await db.fetch(`userBalance_${recipient.id}`),
   senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if(recipientBalance === null){
-    db.set(`userBalance_${recipient.id}`, 50)
-    recipientBalance = 50;
-  }
+  if(recipientBalance === null) recipientBalance = 50;
+  if(senderBalance === null) senderBalance = 50;
   db.add(`userBalance_${recipient.id}`, value).then(i => console.log(i, typeof i));
 
   message.channel.send(`All set, Boss x3 \nGave ${recipient.displayName} ***${value}*** ${Platinum} Platinum`);
@@ -663,10 +651,7 @@ if(command === `loan`){
 if(command === `ttget`){
   let senderBalance = await db.fetch(`userBalance_${message.author.id}`);
 
-  if (senderBalance == null){
-    db.set(`userBalance_${message.author.id}`, 50);
-    senderBalance = 50;
-  }
+  if(senderBalance == null) senderBalance = 50;
     db.add(`userBalance_${message.author.id}`, 250);
   message.channel.send("250 Added").then(i => console.log(i, typeof i));
 }
