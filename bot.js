@@ -11,7 +11,7 @@ setInterval(() => {
 }, 280000);
 
 
-const botsettings = require("./botsettings.json");
+
 const Discord = require("discord.js");
 const superagent = require("superagent");
 const fs = require("fs");
@@ -31,7 +31,6 @@ const db = require("quick.db");
 const bot = new Discord.Client({disableEveryone: true})
 //let cooldown = new Set();
 let cdseconds = 2;
-
 
 
 bot.commands = new Discord.Collection();
@@ -95,7 +94,7 @@ bot.on("message", async message => {
  const love = bot.emojis.get("454416240904110081");
  const loveydovey = bot.emojis.find("name", "loveydovey");
 
-let prefix = botsettings.prefix;
+let prefix = `!?`
    if(!message.content.startsWith(`${prefix}`)) return;
 //   if(cooldown.has(message.author.id)){
 //     message.delete();
@@ -783,9 +782,7 @@ if(command === `cat`){
   .setColor("RANDOM")
   .setTitle("Kitty :0")
   .setImage(body.file);
-  message.channel.send(catembed).catch(error);{
-    if(error.status == 403) return message.reply(`${redx} 403 Forbidden`)
-  }
+  message.channel.send(catembed)
 }
 
 if(command === `fox`){
@@ -807,7 +804,6 @@ if(command === `dog`){
   .setTitle("A dog :0")
   .setImage(body.url);
   message.channel.send(dogembed)
-  .catch(e => message.channel.send(`Failed. Something went wrong.**${error}**`));
 }
 
 if(command === `catfact`){
@@ -1743,4 +1739,5 @@ const clean = text => {
       return text;
 }
 
-bot.login(process.env.mightykey);
+
+bot.login(process.env.KEY);
