@@ -645,6 +645,10 @@ if(command === `ttget`){
   message.channel.send("250 Added").then(i => console.log(i, typeof i));
 }
 
+if(command === `revoke`){
+  if(message.author.id !== "297931837400023041") return message.channel.send(`${message.member.displayName}, you're not Boss so I ain't going to let you`);
+}
+
 if(command === `say`) {
 let sayMessage = args.join(" ");
 
@@ -1673,12 +1677,16 @@ if(command === `help`){
             "inline": true
           },
           {
-            "name": " :package: Random and Util",
+            "name": ":package: Random and Util",
             "value": "serverinfo, botinfo, ping, docrefs, dws, listemotes, avatar, urban, pick, fortune, mstrain, gen, calc, convert"
           },
           {
-            "name": " :wrench: Moderation",
+            "name": ":wrench: Moderation",
             "value": "purge, kick, ban, giverole, removerole, permcheck"
+          },
+          {
+            "name": `${Platinum} Economy`,
+            "value": "balance, pay, loan (dev), revoke (dev)"
           },
           {
             "name": `Fun ${bmo} ${pikagroove}`,
