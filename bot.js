@@ -591,12 +591,12 @@ if(command === `convert`){
 if(command === `balance` || command === `bal`){
   //let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
     let user = message.author;    
-  let balance = await db.fetch(`userBalance_${user.id}`);
+    let senderBalance = await db.fetch(`userBalance_${message.author.id}`);
   
-  if (balance === null) balance == 0;
+  if (!senderBalance || senderBalance == null) db.set(`userBalance_${message.author.id}`, 50);
   //db.set(`userBalance_${user.id}`, 50);
 
-  message.channel.send(`${user.username} has ***${balance}*** ${Platinum} Platinum`);
+  message.channel.send(`${message.member.displayName}, you have ***${senderBalance}*** ${Platinum} Platinum`);
 }
 
 if(command === `pay`){
